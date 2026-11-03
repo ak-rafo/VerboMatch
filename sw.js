@@ -1,6 +1,6 @@
 /* Verbo Match offline cache.
-   Bump VERSION every time you upload a new index.html (v8, v9, ...). */
-const VERSION = "verbo-match-v8";
+   Bump VERSION every time you upload a new index.html (v11, v12, ...). */
+const VERSION = "verbo-match-v10";
 const FILES = ["./", "./index.html", "./manifest.json",
   "./icon-180.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 
@@ -14,26 +14,21 @@ self.addEventListener("activate", e => {
   self.clients.claim();
 });
 
-/* Offline-first: always answer instantly from the saved copy,
-   then quietly refresh that copy in the background when there is signal.
-   Weak signal can never leave you on a blank screen. */
+/* Offline-first: answer instantly from the saved copy,
+   then quietly refresh it in the background when there is signal. */
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   const url = new URL(e.request.url);
   if (url.origin !== location.origin) return;
-
   const isPage = e.request.mode === "navigate";
   const key = isPage ? "./index.html" : e.request;
-
   e.respondWith(caches.open(VERSION).then(async cache => {
     const cached = await cache.match(key, { ignoreSearch: true });
-
     const refresh = fetchWithTimeout(e.request, 8000)
       .then(r => { if (r && r.ok) cache.put(key, r.clone()); return r; })
       .catch(() => null);
-
-    if (cached) { e.waitUntil(refresh); return cached; }   // instant, even with zero bars
-    const fresh = await refresh;                             // first visit only
+    if (cached) { e.waitUntil(refresh); return cached; }
+    const fresh = await refresh;
     return fresh || new Response("Offline. Open the app once with internet to save it.", {
       status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
   }));

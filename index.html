@@ -346,20 +346,89 @@ body.locked{position:fixed;left:0;right:0;overflow:hidden}
   .sl-rel{grid-template-columns:repeat(3,1fr)}
 }
 
+/* ===== v9: bigger nav icons ===== */
+nav button{display:flex;align-items:center;gap:7px}
+nav button .ic{font-size:20px;line-height:1}
+.ab{font-size:15px}
+@media(max-width:700px){
+  nav button{font-size:11px;padding:7px 2px 5px;gap:3px}
+  nav button .ic{font-size:27px}
+  main{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+}
+/* ===== v9: vocab ===== */
+.seg.full{display:flex;width:100%}
+.seg.full button{flex:1;padding:9px 6px;font-size:13px}
+.vx-sec .vx-in{padding:0 12px 12px}
+.vx-sec summary .gn{margin-left:auto;margin-right:8px;font-weight:600}
+.vx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.vx-it{text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 11px;cursor:pointer;display:flex;flex-direction:column;gap:2px;font:inherit;color:var(--ink)}
+.vx-it b{font-size:15px}.vx-it span{font-size:12px;color:var(--muted)}.vx-it i{font-size:11px;color:#8a6d00;font-style:normal;margin-top:2px}
+.vx-it:hover{border-color:var(--green)}.vx-it.playing{border-color:var(--green);background:#e4f7eb}
+.vx-grid.abc{grid-template-columns:repeat(auto-fill,minmax(66px,1fr))}
+.vx-it.abc{align-items:center;text-align:center;padding:8px 4px}.vx-it.abc b{font-size:26px;color:var(--green)}
+.vx-tool{display:flex;gap:10px;align-items:center;background:#f4f7f3;border-radius:12px;padding:10px 12px;margin-bottom:10px;flex-wrap:wrap}
+.vx-tool input{width:160px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-size:16px}
+.vx-out{flex:1;font-weight:700;color:var(--green);font-size:16px;min-width:160px}
+.clk{font-size:30px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums;background:#fff;border-radius:10px;padding:2px 12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.vx-tip{font-size:12px;color:var(--muted);margin:0 0 10px}
+.vx-play{font-size:20px;padding:14px 26px;border-radius:14px}
+/* ===== v9: body diagram ===== */
+.body-wrap{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:12px;align-items:start}
+.body-stage{background:#fff;border-radius:14px;padding:10px 12px 12px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.body-top{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.body-svg{display:block;width:100%;height:auto;max-height:68vh;margin:4px auto 0;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.bprompt{background:#f4f7f3;border-radius:12px;padding:10px 12px;margin:8px 0 0;display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap;font-size:15px}
+.bprompt b{color:var(--blue);font-size:20px}
+.bprompt.ok{background:#d9f7e4}.bprompt.bad{background:#ffe3e5}
+.pinfo{display:flex;align-items:center;gap:12px;background:#f4f7f3;border-radius:12px;padding:10px 12px;margin-top:8px;min-height:56px}
+.pinfo .big{font-size:22px;font-weight:800;color:var(--green)}
+.pinfo .sm{font-size:13px;color:var(--muted)}
+.plist{background:#fff;border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:2px;max-height:74vh;overflow:auto;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.plist h4{margin:4px 8px 6px;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.pi{display:flex;align-items:center;gap:8px;border:0;background:none;border-radius:9px;padding:7px 8px;cursor:pointer;text-align:left;font:inherit;font-size:14px;color:var(--ink)}
+.pi:hover,.pi.on{background:#e4f7eb}
+.pi .num{width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;font-size:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.pi .num.nb{background:#cfd8cc}
+.pi b{flex:1}.pi span.en{color:var(--muted);font-size:12px}
+.bp{fill:#f2c9a5;stroke:#c48f6c;stroke-width:1.2;cursor:pointer;transition:fill .15s}
+.bp.zone{stroke:rgba(150,100,70,.35);stroke-dasharray:3 3}
+.bp.joint{fill:#e8b893}
+.bp.hair{fill:#4a3426;stroke:#2e2018}
+.bp.brow{fill:#4a3426;stroke:none}
+.bp.white{fill:#fff}.bp.iris{fill:#3a7a4a;stroke:none}.bp.pupil{fill:#111;stroke:none}
+.bp.lip{fill:#d9776f;stroke:#b25a53}.bp.mouth{fill:#6b1f2b;stroke:none}.bp.teeth{fill:#fff;stroke:#ddd}
+.bp.cheek{fill:#f3a596;opacity:.75;stroke:none}.bp.nose{fill:#e8b893}
+.bp.shorts{fill:#1f8f4e;stroke:#156b39}.bp.band{fill:#157a42;stroke:#0f5c31}
+.bp:hover{filter:brightness(1.06)}
+.bp.hi{fill:#ffdf00!important;stroke:#002776!important;stroke-width:2.5!important;opacity:1!important}
+.bp.ok{fill:#5cd68a!important;stroke:#0b7a3b!important;opacity:1!important}
+.bp.bad{fill:#ff8a94!important;stroke:#b0222f!important;opacity:1!important}
+.deco,.badge{pointer-events:none}
+.badge circle{fill:#002776;stroke:#fff;stroke-width:1.5}
+.badge text{fill:#fff;font:800 10px system-ui,sans-serif;text-anchor:middle;dominant-baseline:central}
+@media(max-width:700px){
+  .body-wrap{grid-template-columns:1fr}
+  .body-svg{max-height:52vh}
+  .plist{max-height:none;display:grid;grid-template-columns:1fr 1fr}
+  .plist h4{grid-column:1/-1}
+  .pi{font-size:13px;padding:6px}.pi span.en{display:none}
+  .vx-grid{grid-template-columns:1fr 1fr}
+  .vx-grid.abc{grid-template-columns:repeat(5,1fr)}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="brand">
     <div class="logo"><div class="dia"></div><div class="orb"></div></div>
-    <div><h1>Verbo Match!</h1><p class="sub">100 essential Brazilian Portuguese verbs · present, past &amp; future</p></div>
+    <div><h1>Verbo Match!</h1><p class="sub">Brazilian Portuguese verbs, vocab, articles &amp; slang</p></div>
   </div>
   <nav id="nav">
-    <button data-m="meaning" class="on">🎯 Match Up</button>
-    <button data-m="conj">🔁 Conjugation Match</button>
-    <button data-m="memory">🃏 Memory Flip</button>
+    <button data-m="play" class="on">🎯 Verb Match</button>
     <button data-m="bank">📚 Verb Bank</button>
     <button data-m="words">🧩 Articles &amp; Connectors</button>
+    <button data-m="vocab">🔢 Vocab</button>
     <button data-m="slang">😎 Gírias</button>
     <button data-m="stats">📊 My Stats</button>
   </nav>
@@ -384,6 +453,9 @@ body.locked{position:fixed;left:0;right:0;overflow:hidden}
       <button class="btn go ab" id="newBtn">↻ New<span class="ab-l2"> round</span></button>
     </div>
     <div class="setpanel" id="setPanel">
+      <div class="sp-row"><span class="ctl-lbl">Game</span>
+        <div class="seg" id="styleSeg"><button data-v="tiles">🎯 Tile match</button><button data-v="memory">🃏 Memory flip</button></div>
+        <div class="seg" id="fmtSeg"><button data-v="inf">Infinitive</button><button data-v="conj">Conjugated</button></div></div>
       <div class="sp-row"><span class="ctl-lbl">Difficulty</span><div class="meter" id="meter"></div>
         <button class="auto" id="autoBtn" title="Adjusts level automatically: up after 3 perfect rounds, down after 2 rough ones">⚡ Auto</button></div>
       <div class="lvdesc" id="lvDesc"></div>
@@ -404,6 +476,7 @@ body.locked{position:fixed;left:0;right:0;overflow:hidden}
   <section id="statsView" class="hidden"></section>
   <section id="wordsView" class="hidden"></section>
   <section id="slangView" class="hidden"></section>
+  <section id="vocabView" class="hidden"></section>
 
   <section id="bankView" class="hidden">
 <details class="fold" id="guideFold"><summary>📐 Ending patterns cheat sheet</summary><div class="guide" id="guide"></div></details>
@@ -650,10 +723,10 @@ const TRAPS=[["ser","estar"],["saber","conhecer"],["jogar","tocar","brincar"],["
  ["tomar","beber"],["pegar","levar"],["sair","entrar"],["subir","descer"],["vir","ir"],["dar","receber"],["ganhar","perder"],["ensinar","aprender"],["esperar","acreditar"]];
 
 /* ---------- state & settings ---------- */
-let SET=Object.assign({lvl:1,auto:false,dir:"pt",traps:false,pairs:8,tenses:LEVELS[1].tenses,persons:LEVELS[1].persons,runP:0,runR:0},LS.get("vm_set",{}));
+let SET=Object.assign({fmt:"inf",style:"tiles",lvl:1,auto:false,dir:"pt",traps:false,pairs:8,tenses:LEVELS[1].tenses,persons:LEVELS[1].persons,runP:0,runR:0},LS.get("vm_set",{}));
 const saveSet=()=>LS.set("vm_set",SET);
 const L=()=>LEVELS[SET.lvl];
-let mode="meaning",score=0,streak=0,best=LS.get("vm_best",0),mastered=new Set(LS.get("vm_mast",[]));
+let mode=SET.style==="memory"?"memory":SET.fmt==="conj"?"conj":"meaning",score=0,streak=0,best=LS.get("vm_best",0),mastered=new Set(LS.get("vm_mast",[]));
 let ST=LS.get("vm_stats",null)||{verbs:{},tenses:{},rounds:[],bestStreak:0};
 let round=null,timer=null,t0=0,focusQ=[];
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
@@ -773,7 +846,7 @@ function pickVerb(used){
   return rnd(pool);
 }
 function makeItem(v,force,focused){
-  if(mode!=="conj") return {v,pt:v.inf,en:v.gloss,tense:null};
+  if(SET.fmt!=="conj") return {v,pt:v.inf,en:v.gloss,tense:null};
   let ts=SET.tenses.filter(k=>!(k==="go"&&v.noGo)); if(!ts.length){ if(!focused) return null; ts=["pres"]; }
   const tense=force&&force.tense||rnd(ts), pk=force&&force.person||rnd(SET.persons), p=PERSONS[pk], c=simple(v.inf);
   return {v,tense,person:pk,pt:TENSES[tense].pt(v,p,c),en:TENSES[tense].en(v,p)};
@@ -787,7 +860,7 @@ function buildItems(n){
     const pool=L().pool;
     for(const g of shuffle(TRAPS.filter(x=>x.every(i=>VMAP[i].rank<pool)).map(x=>[...x]))){ if(items.length>=goal) break;
       if(g.some(x=>used.has(x))) continue; g.forEach(inf=>add(makeItem(VMAP[inf]))); }
-    if(mode==="conj"&&items.length<n-1){            // same verb, different person or tense
+    if(SET.fmt==="conj"&&items.length<n-1){            // same verb, different person or tense
       const v=pickVerb(used), base=makeItem(v); if(base&&add(base)){
         const alt=SET.persons.filter(x=>x!==base.person);
         add(makeItem(v,alt.length?{tense:base.tense,person:rnd(alt)}:{person:base.person})); }
@@ -1075,14 +1148,15 @@ $("q").oninput=renderBank; $("onlyMast").onchange=renderBank; $("onlyMiss").onch
 /* ---------- navigation ---------- */
 function start(){
   $("modal").classList.remove("show");
-  const isBank=mode==="bank", isStats=mode==="stats", isWords=mode==="words", isSlang=mode==="slang", game=!isBank&&!isStats&&!isWords&&!isSlang;
+  const isBank=mode==="bank", isStats=mode==="stats", isWords=mode==="words", isSlang=mode==="slang", isVocab=mode==="vocab", game=!isBank&&!isStats&&!isWords&&!isSlang&&!isVocab;
+  $("vocabView").classList.toggle("hidden",!isVocab);
   $("slangView").classList.toggle("hidden",!isSlang);
   $("wordsView").classList.toggle("hidden",!isWords);
   $("bankView").classList.toggle("hidden",!isBank); $("statsView").classList.toggle("hidden",!isStats);
   $("play").classList.toggle("hidden",!game); $("gameCtrls").classList.toggle("hidden",!game);$("stats").classList.toggle("hidden",!game);
-  $("conjCtrls").classList.toggle("hidden",mode!=="conj");
+  $("conjCtrls").classList.toggle("hidden",SET.fmt!=="conj");
   $("dirSeg").style.opacity=mode==="memory"?.45:1; $("dirSeg").title=mode==="memory"?"Direction doesn't apply to Memory Flip":"";
-  if(!game){clearInterval(timer);paused=false;$("pauseOv").classList.add("hidden");round=null;$("banner").classList.add("hidden");isBank?renderBank():isStats?renderStats():isSlang?renderSlang():renderWords();return}
+  if(!game){clearInterval(timer);paused=false;$("pauseOv").classList.add("hidden");round=null;$("banner").classList.add("hidden");isBank?renderBank():isStats?renderStats():isSlang?renderSlang():isVocab?renderVocab():renderWords();return}
   if(!focusQ.length) $("banner").classList.add("hidden");
   mode==="memory"?newMemory():newMatch();
 }
@@ -1665,8 +1739,8 @@ function openSlang(rank){
 
 
 /* ===== PWA: icons in tabs, bank labels, backup, install tip, service worker ===== */
-const NAV_IC={meaning:"🎯",conj:"🔁",memory:"🃏",bank:"📚",words:"🧩",slang:"😎",stats:"📊"};
-const NAV_SHORT={meaning:"Match",conj:"Conjugate",memory:"Memory",bank:"Verbs",words:"Articles",slang:"Gírias",stats:"Stats"};
+const NAV_IC={play:"🎯",bank:"📚",words:"🧩",vocab:"🔢",slang:"😎",stats:"📊"};
+const NAV_SHORT={play:"Match",bank:"Verb Bank",words:"Articles",vocab:"Vocab",slang:"Gírias",stats:"Stats"};
 document.querySelectorAll("nav button").forEach(b=>{const m=b.dataset.m;b.dataset.full=b.textContent.trim();
   b.innerHTML=`<span class="ic">${NAV_IC[m]}</span><span class="lb">${b.dataset.full.replace(/^\S+\s/,"")}</span>`;});
 function fitNav(){const small=innerWidth<=700;document.querySelectorAll("nav button").forEach(b=>{
@@ -1676,7 +1750,7 @@ addEventListener("resize",fitNav); fitNav();
 const _rb=renderBank; renderBank=function(){_rb();const L=["","","",...BANK_T.map(k=>TENSES[k].label)];
   $("bankBody").querySelectorAll("tr").forEach(tr=>tr.querySelectorAll("td").forEach((td,i)=>{if(L[i])td.dataset.l=L[i];}));};
 
-const BK_KEYS=["vm_best","vm_mast","vm_stats","vm_set","vm_wset","vm_sset","vm_slearn"];
+const BK_KEYS=["vm_best","vm_mast","vm_stats","vm_set","vm_wset","vm_sset","vm_slearn","vm_vxset","vm_ui"];
 function exportBackup(){
   const data={app:"verbo-match",v:7,date:new Date().toISOString(),data:{}};
   BK_KEYS.forEach(k=>{const v=localStorage.getItem(k);if(v!=null)data.data[k]=v;});
@@ -1734,6 +1808,462 @@ document.querySelectorAll(".modal").forEach(m=>{
   m.addEventListener("touchmove",e=>{if(e.target===m)e.preventDefault();},{passive:false});
 });
 setPanel(UI.setOpen); updSummary();
+
+/* ===================================================================
+   v9 · combined Verb Match (format + style live in Settings)
+   =================================================================== */
+const GAME_MODES=["meaning","conj","memory"];
+if(!SET.fmt) SET.fmt="inf"; if(!SET.style) SET.style="tiles";
+function gameMode(){return SET.style==="memory"?"memory":(SET.fmt==="conj"?"conj":"meaning")}
+setMode=function(m,keepFocus){
+  if(!keepFocus) focusQ=[];
+  if(m==="meaning"){SET.fmt="inf";SET.style="tiles";saveSet();}
+  else if(m==="conj"){SET.fmt="conj";SET.style="tiles";saveSet();}
+  else if(m==="memory"){SET.style="memory";saveSet();}
+  mode=(m==="play"||GAME_MODES.includes(m))?gameMode():m;
+  const navKey=GAME_MODES.includes(mode)?"play":mode;
+  $("nav").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.m===navKey));
+  renderCtrls(); start();
+};
+const _rcV9=renderCtrls;
+renderCtrls=function(){
+  _rcV9();
+  $("styleSeg").querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.v===SET.style));
+  $("fmtSeg").querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.v===SET.fmt));
+};
+$("styleSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{SET.style=b.dataset.v;saveSet();setMode("play")});
+$("fmtSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{SET.fmt=b.dataset.v;saveSet();setMode("play")});
+updSummary=function(){
+  if(!$("setSummary")) return;
+  const l=L(), dir={pt:"PT→EN",en:"EN→PT",mix:"Mixed"}[SET.dir];
+  const bits=[`<b>${SET.style==="memory"?"🃏 Memory":"🎯 Tiles"}</b>`, SET.fmt==="conj"?"Conjugated":"Infinitive",
+    `<span class="lvdot" style="background:${l.c}"></span>${l.n}${SET.auto?" ⚡":""}`];
+  if(SET.style!=="memory") bits.push(dir);
+  bits.push(SET.pairs+" pairs");
+  if(SET.fmt==="conj") bits.push(SET.tenses.length+" tense"+(SET.tenses.length>1?"s":""));
+  if(SET.traps) bits.push("🪤");
+  $("setSummary").innerHTML=bits.join(" · ");
+};
+
+/* ===================================================================
+   v9 · VOCAB: numbers, alphabet, time, days, weeks, months, years
+   =================================================================== */
+const VX_TOPICS={
+  num:{label:"Numbers",ic:"🔢"}, abc:{label:"Alphabet",ic:"🔤"}, time:{label:"Time",ic:"🕒"},
+  days:{label:"Days",ic:"📅"}, weeks:{label:"Weeks",ic:"🗓️"}, months:{label:"Months",ic:"🌙"}, years:{label:"Years",ic:"🎆"}
+};
+const VX_KEYS=Object.keys(VX_TOPICS);
+/* numbers → words (masculine), 0–999,999 */
+const NU=["zero","um","dois","três","quatro","cinco","seis","sete","oito","nove","dez","onze","doze","treze","catorze","quinze","dezesseis","dezessete","dezoito","dezenove"];
+const NT=["","","vinte","trinta","quarenta","cinquenta","sessenta","setenta","oitenta","noventa"];
+const NH=["","cento","duzentos","trezentos","quatrocentos","quinhentos","seiscentos","setecentos","oitocentos","novecentos"];
+function u100(n){if(n<20)return NU[n];const t=NT[n/10|0],r=n%10;return r?t+" e "+NU[r]:t}
+function u1000(n){if(n===100)return"cem";if(n<100)return u100(n);const h=NH[n/100|0],r=n%100;return r?h+" e "+u100(r):h}
+function numToPt(n){if(n<1000)return u1000(n);const th=n/1000|0,r=n%1000,a=th===1?"mil":u1000(th)+" mil";
+  if(!r)return a;return a+((r<100||r%100===0)?" e ":" ")+u1000(r)}
+const HF=["","uma","duas","três","quatro","cinco","seis","sete","oito","nove","dez","onze","doze"];
+function timeToPt(h,m){
+  if(m===45){const nx=h%12+1;return nx===1?"São quinze para a uma":nx===12?"São quinze para o meio-dia":`São quinze para as ${HF[nx]}`}
+  const base=h===12?"É meio-dia":h===1?"É uma":`São ${HF[h]}`;
+  if(m===0) return h===12?"É meio-dia":h===1?"É uma hora":`São ${HF[h]} horas`;
+  return base+" e "+(m===30?"meia":u100(m));
+}
+const pad2=n=>String(n).padStart(2,"0");
+const rint=n=>Math.random()*n|0;
+
+/* [pt, en, note?, say?] */
+const VX_RAW={
+ num:[["zero","0"],["um / uma","1","uma with feminine words: uma casa"],["dois / duas","2","duas with feminine words: duas horas"],["três","3"],["quatro","4"],
+  ["cinco","5"],["seis","6","On the phone many Brazilians say 'meia' for 6"],["sete","7"],["oito","8"],["nove","9"],["dez","10"],["onze","11"],["doze","12"],
+  ["treze","13"],["catorze","14","Also spelled quatorze"],["quinze","15"],["dezesseis","16"],["dezessete","17"],["dezoito","18"],["dezenove","19"],["vinte","20"],
+  ["vinte e um","21","Tens and units join with 'e'"],["trinta","30"],["quarenta","40"],["cinquenta","50"],["sessenta","60"],["setenta","70"],["oitenta","80"],
+  ["noventa","90"],["cem","100","Exactly 100 = cem · 101–199 = cento e …"],["cento e um","101"],["duzentos","200","Hundreds agree: duzentas pessoas"],["trezentos","300"],
+  ["quinhentos","500"],["mil","1,000","Never 'um mil'"],["dois mil","2,000"],["um milhão","1,000,000"],
+  ["primeiro","1st","Dates: primeiro de maio = May 1st"],["segundo","2nd"],["terceiro","3rd"],["quarto","4th","Also means 'room'"],["quinto","5th"],["décimo","10th"],
+  ["meia dúzia","half a dozen"],["a metade","half"]],
+ abc:[["á","A"],["bê","B"],["cê","C"],["dê","D"],["é","E"],["efe","F"],["gê","G"],["agá","H","Silent at the start of words: hora sounds like 'ora'"],["i","I"],["jota","J"],
+  ["cá","K","K, W and Y appear mainly in foreign words and names"],["ele","L"],["eme","M"],["ene","N"],["ó","O"],["pê","P"],["quê","Q"],
+  ["erre","R","At the start of a word R sounds like English H: Rio ≈ 'Hee-oo'"],["esse","S"],["tê","T"],["u","U"],["vê","V"],["dáblio","W"],["xis","X"],
+  ["ípsilon","Y"],["zê","Z"],["cê-cedilha","Ç","Sounds like S: açúcar, coração"]],
+ time:[["Que horas são?","What time is it?"],["É uma hora.","It's one o'clock.","Only 1 o'clock uses É (singular)"],["São duas horas.","It's two o'clock."],
+  ["meio-dia","noon"],["meia-noite","midnight"],["e meia","half past","São três e meia = 3:30"],["e quinze","quarter past"],
+  ["quinze para as três","quarter to three (2:45)"],["em ponto","on the dot / sharp"],["de manhã","in the morning"],["da tarde","in the afternoon"],
+  ["da noite","in the evening / at night"],["de madrugada","in the early hours (after midnight)"],["A que horas?","At what time?"],["às oito","at eight o'clock"],
+  ["agora","now"],["cedo","early"],["tarde","late","Also 'a tarde' = the afternoon"],["o segundo","second (time)"],["o minuto","minute"],["a hora","hour"],
+  ["meia hora","half an hour"]],
+ days:[["segunda-feira","Monday","Often just 'segunda'. Brazilian weeks start on Sunday"],["terça-feira","Tuesday"],["quarta-feira","Wednesday"],["quinta-feira","Thursday"],
+  ["sexta-feira","Friday","Sextou! = It's Friday!"],["sábado","Saturday"],["domingo","Sunday"],["o dia","day","Masculine even though it ends in -a"],["hoje","today"],
+  ["ontem","yesterday"],["amanhã","tomorrow"],["anteontem","the day before yesterday"],["depois de amanhã","the day after tomorrow"],
+  ["Que dia é hoje?","What day is today?"],["na segunda","on Monday"],["às segundas","on Mondays (every Monday)"],["dia útil","weekday / business day"],
+  ["o feriado","public holiday"]],
+ weeks:[["a semana","week"],["esta semana","this week"],["semana passada","last week"],["semana que vem","next week","Also 'a próxima semana'"],
+  ["o fim de semana","weekend"],["a quinzena","two weeks / fortnight"],["toda semana","every week"],["por semana","per week"],
+  ["duas vezes por semana","twice a week"],["daqui a uma semana","a week from now"],["há uma semana","a week ago"],["durante a semana","during the week"]],
+ months:[["janeiro","January","Months are lowercase in Portuguese"],["fevereiro","February"],["março","March"],["abril","April"],["maio","May"],["junho","June"],
+  ["julho","July"],["agosto","August"],["setembro","September"],["outubro","October"],["novembro","November"],["dezembro","December"],
+  ["o mês","month","Plural: os meses"],["este mês","this month"],["mês passado","last month"],["mês que vem","next month"],["em março","in March"],
+  ["no dia 5 de maio","on May 5th","say: no dia cinco de maio"],["primeiro de janeiro","January 1st","The 1st uses primeiro, other days use plain numbers"]],
+ years:[["o ano","year"],["este ano","this year"],["ano passado","last year"],["ano que vem","next year"],["a década","decade"],["o século","century"],
+  ["o Ano-Novo","New Year's"],["Feliz Ano-Novo!","Happy New Year!"],["o aniversário","birthday","Also 'anniversary'"],
+  ["Quantos anos você tem?","How old are you?"],["Tenho 30 anos.","I'm 30 years old.","Portuguese uses ter: 'I have 30 years'","Tenho trinta anos."],
+  ["o verão","summer","December to March in Brazil!"],["o outono","fall / autumn"],["o inverno","winter"],["a primavera","spring"],
+  ["em 2026","in 2026","say: em dois mil e vinte e seis","em dois mil e vinte e seis"]]
+};
+const VX={};
+VX_KEYS.forEach(t=>VX[t]=VX_RAW[t].map(([pt,en,note,sy])=>({t,pt,en,note:note||"",say:sy||pt})));
+
+/* generated items: any number, any clock time, any year */
+const VX_GEN={
+  num:()=>{const n=rnd([()=>21+rint(79),()=>101+rint(899),()=>1000+rint(9000)])();return mkNum(n)},
+  time:()=>mkTime(1+rint(12),rnd([0,5,10,15,20,30,45])),
+  years:()=>mkYear(1950+rint(86))
+};
+function mkNum(n){const w=numToPt(n);return {t:"num",pt:w,en:n.toLocaleString("en-US"),say:w,gen:"num",val:n,note:""}}
+function mkTime(h,m){const w=timeToPt(h,m);return {t:"time",pt:w,en:`${h}:${pad2(m)}${h===12&&m===0?" (noon)":""}`,say:w,gen:"time",val:[h,m],note:""}}
+function mkYear(y){const w=numToPt(y);return {t:"years",pt:w,en:String(y),say:w,gen:"years",val:y,note:""}}
+function vxVariants(it){
+  const out=[],seen=new Set([it.pt]);
+  const push=x=>{if(x&&!seen.has(x.pt)){seen.add(x.pt);out.push(x)}};
+  if(it.gen==="num"){const n=it.val;[n+1,n-1,n+10,n-10,n+100,n-100,n+2,n+20].filter(x=>x>0).forEach(x=>push(mkNum(x)))}
+  if(it.gen==="years"){const y=it.val;[y+1,y-1,y+10,y-10,y+2,y-20].forEach(x=>push(mkYear(x)))}
+  if(it.gen==="time"){const [h,m]=it.val;[[h,(m+15)%60],[h%12+1,m],[h,(m+30)%60],[(h+10)%12+1,m],[h%12+1,(m+30)%60]].forEach(([a,b])=>push(mkTime(a,b)))}
+  return shuffle(out).slice(0,3);
+}
+
+/* ---------- body parts: [key, pt, en, view, badgeX, badgeY, note, groupKeys] ---------- */
+const BP=[
+ ["cabelo","o cabelo","hair","body",160,34,"Usually singular: Ela tem o cabelo longo"],
+ ["cabeca","a cabeça","head","body",160,82],
+ ["pescoco","o pescoço","neck","body",160,131],
+ ["ombro","o ombro","shoulder","body",101,153,"Plural: os ombros"],
+ ["peito","o peito","chest","body",132,182],
+ ["braco","o braço","arm","body",98,205,"Plural: os braços"],
+ ["barriga","a barriga","belly / stomach","body",188,232],
+ ["umbigo","o umbigo","belly button","body",160,246],
+ ["cotovelo","o cotovelo","elbow","body",81,256],
+ ["cintura","a cintura","waist","body",192,273],
+ ["antebraco","o antebraço","forearm","body",77,300],
+ ["quadril","o quadril","hip","body",192,306,"Plural: os quadris"],
+ ["pulso","o pulso","wrist","body",72,348,"Also means 'pulse'"],
+ ["polegar","o polegar","thumb","body",88,362],
+ ["mao","a mão","hand","body",64,378,"Feminine even though it ends in -o! Plural: as mãos"],
+ ["dedo","o dedo","finger","body",69,404,"Plural: os dedos"],
+ ["perna","a perna","leg","body",null,null,"The whole leg",["coxa","joelho","canela"]],
+ ["coxa","a coxa","thigh","body",135,380],
+ ["joelho","o joelho","knee","body",135,440],
+ ["canela","a canela","shin","body",135,498,"Also means 'cinnamon'!"],
+ ["tornozelo","o tornozelo","ankle","body",135,553],
+ ["pe","o pé","foot","body",144,572,"Plural: os pés · a pé = on foot"],
+ ["dedope","o dedo do pé","toe","body",116,575],
+ ["fcabelo","o cabelo","hair","face",160,58],
+ ["testa","a testa","forehead","face",160,128],
+ ["sobrancelha","a sobrancelha","eyebrow","face",117,151],
+ ["olho","o olho","eye","face",117,182,"Plural: os olhos"],
+ ["orelha","a orelha","ear","face",54,212,"'O ouvido' = inner ear / hearing"],
+ ["nariz","o nariz","nose","face",160,228],
+ ["bochecha","a bochecha","cheek","face",98,254],
+ ["rosto","o rosto","face","face",238,300,"Also 'a cara' (more casual)"],
+ ["labios","os lábios","lips","face",206,302,"Singular: o lábio"],
+ ["dentes","os dentes","teeth","face",172,298,"Singular: o dente"],
+ ["boca","a boca","mouth","face",146,310],
+ ["queixo","o queixo","chin","face",160,347],
+ ["fpescoco","o pescoço","neck","face",160,392]
+].map(([k,pt,en,view,x,y,note,keys])=>({k,pt,en,view,x,y,note:note||"",keys:keys||[k]}));
+const BPK=Object.fromEntries(BP.map(p=>[p.k,p]));
+const genderOf=pt=>/^os /.test(pt)?"masculine plural":/^as /.test(pt)?"feminine plural":/^o /.test(pt)?"masculine":"feminine";
+
+function bodySVG(){
+  const leg=`<path class="bp" data-k="coxa" d="M112,330 L158,330 L151,428 L118,428 Z"/>
+   <path class="bp" data-k="canela" d="M121,452 L149,452 L144,546 L126,546 Z"/>
+   <circle class="bp joint" data-k="joelho" cx="135" cy="440" r="15"/>
+   <ellipse class="bp" data-k="pe" cx="141" cy="572" rx="21" ry="11"/>
+   <ellipse class="bp joint" data-k="dedope" cx="117" cy="575" rx="9" ry="7"/>
+   <circle class="bp joint" data-k="tornozelo" cx="135" cy="553" r="9"/>`;
+  const arm=`<path class="bp" data-k="braco" d="M92,142 L116,160 L95,256 L68,250 Z"/>
+   <path class="bp" data-k="antebraco" d="M69,262 L94,262 L84,342 L60,340 Z"/>
+   <ellipse class="bp joint" data-k="dedo" cx="69" cy="403" rx="12" ry="12"/>
+   <ellipse class="bp" data-k="mao" cx="70" cy="372" rx="16" ry="21"/>
+   <ellipse class="bp joint" data-k="polegar" cx="88" cy="362" rx="5.5" ry="12" transform="rotate(-18 88 362)"/>
+   <circle class="bp joint" data-k="cotovelo" cx="81" cy="256" r="11"/>
+   <circle class="bp joint" data-k="pulso" cx="72" cy="348" r="9"/>
+   <circle class="bp joint" data-k="ombro" cx="101" cy="153" r="15"/>`;
+  const M=s=>`${s}<g transform="matrix(-1 0 0 1 320 0)">${s}</g>`;
+  return `${M(leg)}
+   <rect class="bp" data-k="pescoco" x="145" y="108" width="30" height="40" rx="6"/>
+   <path class="bp" data-k="peito" d="M101,146 Q160,130 219,146 L215,214 L105,214 Z"/>
+   <path class="bp" data-k="barriga" d="M105,214 L215,214 L212,264 L108,264 Z"/>
+   <path class="bp band" data-k="cintura" d="M108,264 L212,264 L211,283 L109,283 Z"/>
+   <path class="bp shorts" data-k="quadril" d="M109,283 L211,283 Q219,312 212,334 L108,334 Q101,312 109,283 Z"/>
+   <circle class="bp joint" data-k="umbigo" cx="160" cy="246" r="6"/>
+   ${M(arm)}
+   <ellipse class="bp" data-k="cabeca" cx="160" cy="72" rx="40" ry="47"/>
+   <path class="bp hair" data-k="cabelo" d="M119,74 C112,20 208,20 201,74 C194,44 126,44 119,74 Z"/>
+   <g class="deco"><circle cx="146" cy="76" r="3.5" fill="#2b2b2b"/><circle cx="174" cy="76" r="3.5" fill="#2b2b2b"/>
+   <path d="M147,96 Q160,105 173,96" stroke="#8a4b3c" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>`;
+}
+function faceSVG(){
+  const half=`<ellipse class="bp" data-k="orelha" cx="54" cy="212" rx="19" ry="34"/>`;
+  const feat=`<rect class="bp brow" data-k="sobrancelha" x="88" y="146" width="58" height="10" rx="5" transform="rotate(-6 117 151)"/>
+   <ellipse class="bp white" data-k="olho" cx="117" cy="182" rx="25" ry="14"/>
+   <circle class="bp iris" data-k="olho" cx="119" cy="182" r="9"/><circle class="bp pupil" data-k="olho" cx="119" cy="182" r="4"/>
+   <circle class="bp cheek" data-k="bochecha" cx="98" cy="254" r="23"/>`;
+  const M=s=>`${s}<g transform="matrix(-1 0 0 1 320 0)">${s}</g>`;
+  return `<rect class="bp" data-k="fpescoco" x="118" y="330" width="84" height="90" rx="10"/>
+   ${M(half)}
+   <ellipse class="bp" data-k="rosto" cx="160" cy="215" rx="108" ry="146"/>
+   <ellipse class="bp zone" data-k="testa" cx="160" cy="128" rx="74" ry="23"/>
+   <path class="bp hair" data-k="fcabelo" d="M52,205 C38,60 110,28 160,28 C210,28 282,60 268,205 C258,128 228,100 160,98 C92,100 62,128 52,205 Z"/>
+   ${M(feat)}
+   <path class="bp nose" data-k="nariz" d="M160,186 C152,212 140,236 143,247 Q160,262 177,247 C180,236 168,212 160,186 Z"/>
+   <ellipse class="bp lip" data-k="labios" cx="160" cy="302" rx="50" ry="21"/>
+   <ellipse class="bp mouth" data-k="boca" cx="160" cy="305" rx="36" ry="11"/>
+   <rect class="bp teeth" data-k="dentes" x="135" y="294" width="50" height="9" rx="3"/>
+   <ellipse class="bp zone" data-k="queixo" cx="160" cy="345" rx="44" ry="14"/>`;
+}
+
+/* ---------- vocab state ---------- */
+let VXS=Object.assign({sub:"learn",topics:[...VX_KEYS],dir:"pt",len:10,open:false,bmode:"explore",bview:"body",labels:true},LS.get("vm_vxset",{}));
+const saveVX=()=>LS.set("vm_vxset",VXS);
+let VXQ=null, BQ=null, bSel=null;
+function vxrec(t,pt,en,ok){
+  ST.vx=ST.vx||{}; const s=ST.vx[pt]||(ST.vx[pt]={r:0,w:0,en,t}); s.en=en; s.t=t; ok?s.r++:s.w++; LS.set("vm_stats",ST);
+}
+const VX_DIRL={pt:"PT→EN",en:"EN→PT",listen:"🎧 Listen"};
+function vxSummary(){
+  const all=VXS.topics.length===VX_KEYS.length;
+  const tp=all?"All topics":VXS.topics.map(t=>VX_TOPICS[t].label).join(", ");
+  if(VXS.sub==="learn") return `<b>📖 Learn</b> · ${tp}`;
+  if(VXS.sub==="quiz") return `<b>✏️ Quiz</b> · ${tp} · ${VX_DIRL[VXS.dir]} · ${VXS.len} Qs`;
+  return `<b>🧍 Body</b> · ${VXS.bmode==="quiz"?"Quiz":"Explore"} · ${VX_DIRL[VXS.dir]} · ${VXS.len} Qs`;
+}
+function renderVocab(){
+  const v=$("vocabView"), sub=VXS.sub, all=VXS.topics.length===VX_KEYS.length;
+  v.innerHTML=`
+   <div class="controls"><div class="seg full" id="vxSub">
+     <button data-s="learn" class="${sub==="learn"?"on":""}">📖 Learn</button>
+     <button data-s="quiz" class="${sub==="quiz"?"on":""}">✏️ Quiz</button>
+     <button data-s="body" class="${sub==="body"?"on":""}">🧍 Body</button></div></div>
+   <div class="actionbar">
+     <button class="sumbtn" id="vxSetToggle" aria-expanded="${VXS.open}"><span class="sum-ic">⚙️</span><span id="vxSum" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">${vxSummary()}</span><span class="chev">▾</span></button>
+     <button class="btn go ab ${sub==="learn"||(sub==="body"&&VXS.bmode!=="quiz")?"hidden":""}" id="vxNew">↻ New</button>
+   </div>
+   <div class="setpanel ${VXS.open?"open":""}" id="vxSetPanel">
+     <div class="sp-row ${sub==="body"?"hidden":""}"><span class="ctl-lbl">Topics</span><div class="chips">
+       <span class="chip ${all?"on":""}" id="vxAll" style="--c:var(--blue)">All</span>
+       ${VX_KEYS.map(k=>`<span class="chip ${!all&&VXS.topics.includes(k)?"on":""}" data-t="${k}" style="--c:var(--green)">${VX_TOPICS[k].ic} ${VX_TOPICS[k].label}</span>`).join("")}</div></div>
+     <div class="sp-row"><span class="ctl-lbl">Quiz</span>
+       <div class="seg" id="vxDir">${Object.entries(VX_DIRL).map(([k,l])=>`<button data-v="${k}" class="${VXS.dir===k?"on":""}">${l}</button>`).join("")}</div>
+       <label>Questions <select id="vxLen">${[6,8,10,15,20].map(n=>`<option ${n===VXS.len?"selected":""}>${n}</option>`).join("")}</select></label></div>
+     <div class="lvdesc">${sub==="body"?"In the body quiz, PT→EN shows the Portuguese word, EN→PT shows the English word, and 🎧 Listen only says it out loud.":"Tap a topic to study just that one. Tap All to bring every topic back."}</div>
+   </div>
+   <div id="vxArea"></div>`;
+  v.querySelectorAll("#vxSub button").forEach(b=>b.onclick=()=>{VXS.sub=b.dataset.s;saveVX();renderVocab()});
+  $("vxSetToggle").onclick=()=>{VXS.open=!VXS.open;saveVX();$("vxSetPanel").classList.toggle("open",VXS.open);$("vxSetToggle").setAttribute("aria-expanded",VXS.open)};
+  $("vxNew").onclick=()=>{ if(sub==="body"){BQ=null;} renderVxArea(true); };
+  if($("vxAll")) $("vxAll").onclick=()=>{VXS.topics=[...VX_KEYS];saveVX();renderVocab()};
+  v.querySelectorAll(".chip[data-t]").forEach(c=>c.onclick=()=>{const k=c.dataset.t;
+    if(VXS.topics.length===VX_KEYS.length) VXS.topics=[k];
+    else if(VXS.topics.includes(k)){ if(VXS.topics.length===1) return toast("Keep at least one topic on"); VXS.topics=VXS.topics.filter(x=>x!==k); }
+    else VXS.topics=VX_KEYS.filter(x=>VXS.topics.includes(x)||x===k);
+    saveVX(); renderVocab();});
+  v.querySelectorAll("#vxDir button").forEach(b=>b.onclick=()=>{VXS.dir=b.dataset.v;saveVX();renderVocab()});
+  $("vxLen").onchange=()=>{VXS.len=+$("vxLen").value;saveVX();renderVocab()};
+  renderVxArea(true);
+}
+function renderVxArea(fresh){
+  const a=$("vxArea");
+  if(VXS.sub==="learn") vxLearn(a);
+  else if(VXS.sub==="quiz") vxNewQuiz();
+  else { if(fresh&&VXS.bmode==="quiz") BQ=null; renderBody(); }
+}
+
+/* ---------- LEARN ---------- */
+function vxLearn(a){
+  a.innerHTML=VXS.topics.map(t=>{
+    const T=VX_TOPICS[t], items=VX[t];
+    let tool="";
+    if(t==="num") tool=`<div class="vx-tool"><input type="number" inputmode="numeric" min="0" max="999999" placeholder="Type any number…" data-conv="num" value="347"><div class="vx-out" id="conv-num">${numToPt(347)}</div><button class="spk2" data-convsay="num" title="Hear it">🔊</button></div>`;
+    if(t==="years") tool=`<div class="vx-tool"><input type="number" inputmode="numeric" min="1" max="2999" placeholder="Type a year…" data-conv="years" value="2026"><div class="vx-out" id="conv-years">${numToPt(2026)}</div><button class="spk2" data-convsay="years" title="Hear it">🔊</button></div>`;
+    if(t==="time"){const it=VX_GEN.time();tool=`<div class="vx-tool"><span class="clk" id="clkD">${it.en}</span><div class="vx-out" id="clkP">${it.pt}.</div><button class="btn ghost sm" id="clkNew">🎲 New time</button><button class="spk2" id="clkSay" title="Hear it">🔊</button></div>`;}
+    const tip=t==="abc"?`<p class="vx-tip">Spelling something? Ask <b>Como se escreve?</b> (How do you spell it?)</p>`:"";
+    const grid=t==="abc"
+      ? `<div class="vx-grid abc">${items.map(x=>`<button class="vx-it abc" data-say="${x.say}" title="${x.note}"><b>${x.en}</b><span>${x.pt}</span></button>`).join("")}</div>
+         <div class="vx-grid" style="margin-top:8px">${items.filter(x=>x.note).map(x=>`<div class="vx-it" style="cursor:default"><b>${x.en} · ${x.pt}</b><i>${x.note}</i></div>`).join("")}</div>`
+      : `<div class="vx-grid">${items.map(x=>`<button class="vx-it" data-say="${x.say.replace(/"/g,"&quot;")}"><b>${x.pt}</b><span>${x.en}</span>${x.note?`<i>💡 ${x.note}</i>`:""}</button>`).join("")}</div>`;
+    return `<details class="fold vx-sec" open><summary>${T.ic} ${T.label}<span class="gn">${items.length} words · tap to hear</span></summary><div class="vx-in">${tool}${tip}${grid}</div></details>`;
+  }).join("")+`<div style="text-align:center;margin:6px 0 18px"><button class="btn go" id="vxGoQuiz">✏️ Quiz me on these</button></div>`;
+  a.querySelectorAll(".vx-it[data-say]").forEach(b=>b.onclick=()=>{sayAlways(b.dataset.say);b.classList.add("playing");setTimeout(()=>b.classList.remove("playing"),700)});
+  a.querySelectorAll("[data-conv]").forEach(inp=>inp.oninput=()=>{const n=parseInt(inp.value,10),o=$("conv-"+inp.dataset.conv);
+    o.textContent=isNaN(n)||n<0||n>999999?"Enter 0 – 999,999":numToPt(n);});
+  a.querySelectorAll("[data-convsay]").forEach(b=>b.onclick=()=>sayAlways($("conv-"+b.dataset.convsay).textContent));
+  if($("clkNew")){const nt=()=>{const it=VX_GEN.time();$("clkD").textContent=it.en;$("clkP").textContent=it.pt+".";sayAlways(it.pt)};
+    $("clkNew").onclick=nt; $("clkSay").onclick=()=>sayAlways($("clkP").textContent);}
+  $("vxGoQuiz").onclick=()=>{VXS.sub="quiz";saveVX();renderVocab()};
+}
+
+/* ---------- QUIZ ---------- */
+function vxWeak(it){const s=ST.vx&&ST.vx[it.pt];return s&&s.w>s.r/2?1:0}
+function vxPool(n){
+  const lists=VXS.topics.map(t=>{let arr=VX[t].map(x=>({...x}));
+    if(VX_GEN[t]) for(let i=0;i<Math.max(3,Math.round(arr.length/4));i++) arr.push(VX_GEN[t]());
+    return shuffle(arr).sort((a,b)=>vxWeak(b)-vxWeak(a));});
+  const out=[]; let i=0;
+  while(out.length<n&&lists.some(l=>l.length)){const l=lists[i++%lists.length]; if(l.length) out.push(l.shift());}
+  return shuffle(out);
+}
+function vxField(){return VXS.dir==="en"?"pt":"en"}
+function vxOpts(it){
+  const f=vxField();
+  const others=it.gen?vxVariants(it):shuffle(VX[it.t].filter(x=>x[f]!==it[f]&&x.pt!==it.pt)).slice(0,3);
+  return shuffle([it,...others].map(x=>x[f]));
+}
+function vxNewQuiz(items){
+  VXQ={items:items||vxPool(VXS.len),i:0,right:0,wrong:[],streak:0,answered:false};
+  vxShowQ();
+}
+function vxShowQ(){
+  const it=VXQ.items[VXQ.i], T=VX_TOPICS[it.t], opts=vxOpts(it), pct=Math.round(VXQ.i/VXQ.items.length*100);
+  VXQ.opts=opts;
+  const prompt=VXS.dir==="listen"?`<button class="btn alt vx-play" id="vxPlay">🔊 Play</button>`:`<div class="qs">${VXS.dir==="en"?it.en:it.pt}</div>`;
+  $("vxArea").innerHTML=`<div class="panel q">
+    <div class="qtop"><span class="tag" style="--c:var(--green)">${T.ic} ${T.label}</span><span class="gn">Question ${VXQ.i+1} of ${VXQ.items.length} · ✅ ${VXQ.right} · 🔥 ${VXQ.streak}</span></div>
+    <div class="bar" style="margin:8px 0 18px"><i style="width:${pct}%"></i></div>
+    ${prompt}
+    <div class="qen">${VXS.dir==="pt"?"What does this mean?":VXS.dir==="en"?"How do you say this in Portuguese?":"What did you hear?"}</div>
+    <div class="qopts">${opts.map((o,k)=>`<button class="qo" data-i="${k}"><small>${k+1}</small>${o}</button>`).join("")}</div>
+    <div id="vxFb" class="qfb"></div></div>`;
+  $("vxArea").querySelectorAll(".qo").forEach(b=>b.onclick=()=>vxAnswer(b));
+  if($("vxPlay")){$("vxPlay").onclick=()=>sayAlways(it.say);setTimeout(()=>sayAlways(it.say),250);}
+}
+function vxAnswer(btn){
+  if(VXQ.answered) return; VXQ.answered=true;
+  const it=VXQ.items[VXQ.i], f=vxField(), pick=VXQ.opts[+btn.dataset.i], ok=pick===it[f];
+  $("vxArea").querySelectorAll(".qo").forEach(b=>{b.disabled=true;if(VXQ.opts[+b.dataset.i]===it[f])b.classList.add("right")});
+  if(ok){VXQ.right++;VXQ.streak++;good();score+=10+Math.min(VXQ.streak,10)*2}
+  else{btn.classList.add("wrong");VXQ.streak=0;bad();VXQ.wrong.push(it)}
+  if(score>best){best=score;LS.set("vm_best",best)}
+  vxrec(it.t,it.gen?`${VX_TOPICS[it.t].label} (built)`:it.pt,it.gen?"numbers, times & years you build":it.en,ok);
+  sayAlways(it.say);
+  $("vxFb").innerHTML=`<div class="${ok?"fb-ok":"fb-bad"}">${ok?"✅ Certo!":"❌ Not quite."}</div>
+    <div class="fb-why"><b>${it.pt}</b> = ${it.en}${it.note?`<br><span class="gn">💡 ${it.note}</span>`:""}</div>
+    <button class="btn go" id="vxNext">${VXQ.i+1<VXQ.items.length?"Next ➜":"See results"}</button> <span class="gn">or press Enter</span>`;
+  $("vxNext").onclick=vxNextQ; $("vxNext").focus();
+}
+function vxNextQ(){VXQ.answered=false; if(++VXQ.i<VXQ.items.length) vxShowQ(); else vxFinish(VXQ,"vquiz");}
+function vxFinish(Q,kind){
+  const total=Q.items.length, right=Q.right, acc=Math.round(right/Math.max(1,total)*100);
+  ST.rounds.push({d:Date.now(),m:kind,n:total,x:total-right,s:0,a:acc}); ST.rounds=ST.rounds.slice(-60); LS.set("vm_stats",ST);
+  if(acc===100){win();confetti();}
+  const seen=new Set(), wr=Q.wrong.filter(w=>!seen.has(w.pt)&&seen.add(w.pt));
+  const host=kind==="vbody"?$("bStage"):$("vxArea");
+  host.innerHTML=`<div class="panel" style="text-align:center;box-shadow:none">
+    <h2 style="margin:0;color:var(--green);font-size:30px">${acc===100?"Perfeito! 🏆":acc>=75?"Muito bem! 🎉":"Bom trabalho! 💪"}</h2>
+    <div class="sum"><div><b>${right}/${total}</b><span>Correct</span></div><div><b>${acc}%</b><span>Accuracy</span></div><div><b>${score}</b><span>Score</span></div></div>
+    ${wr.length?`<div class="review">${wr.map(w=>`<div><span>❌ <b class="hl">${w.pt}</b></span><span class="gn">${w.en}</span></div>`).join("")}</div>`:`<p class="gn">No mistakes this round!</p>`}
+    <div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      ${wr.length?`<button class="btn alt" id="vxRetry">Retry my misses</button>`:""}
+      <button class="btn go" id="vxAgain">Próxima rodada ➜</button></div></div>`;
+  $("vxAgain").onclick=()=>{ if(kind==="vbody"){BQ=null;renderBody();} else vxNewQuiz(); };
+  if($("vxRetry")) $("vxRetry").onclick=()=>{ if(kind==="vbody"){BQ=bqState(shuffle(wr));renderBody();} else vxNewQuiz(shuffle(wr.map(x=>({...x})))); };
+}
+
+/* ---------- BODY ---------- */
+function bqState(items){return {items,i:0,right:0,wrong:[],streak:0,answered:false}}
+function renderBody(){
+  const a=$("vxArea"); const quiz=VXS.bmode==="quiz";
+  if(quiz&&!BQ) BQ=bqState(shuffle([...BP]).slice(0,VXS.len));
+  if(quiz&&BQ.i<BQ.items.length) VXS.bview=BQ.items[BQ.i].view;
+  const view=VXS.bview, parts=BP.filter(p=>p.view===view);
+  let n=0; const num={}; parts.forEach(p=>{if(p.x!=null) num[p.k]=++n});
+  a.innerHTML=`<div class="body-wrap">
+    <div class="body-stage" id="bStage">
+      <div class="body-top">
+        <div class="seg" id="bMode"><button data-v="explore" class="${!quiz?"on":""}">👆 Explore</button><button data-v="quiz" class="${quiz?"on":""}">🎯 Quiz</button></div>
+        <div class="seg" id="bView"><button data-v="body" class="${view==="body"?"on":""}">🧍 Body</button><button data-v="face" class="${view==="face"?"on":""}">🙂 Face</button></div>
+        <button class="toggle ${VXS.labels?"on":""}" id="bLabels" style="${quiz?"display:none":""}">🔢 Labels</button>
+      </div>
+      <div id="bPrompt"></div>
+      <svg id="bodySvg" class="body-svg" viewBox="${view==="body"?"0 0 320 595":"0 0 320 420"}" role="img" aria-label="Body diagram">
+        ${view==="body"?bodySVG():faceSVG()}
+        ${VXS.labels&&!quiz?parts.filter(p=>p.x!=null).map(p=>`<g class="badge"><circle cx="${p.x}" cy="${p.y}" r="9"/><text x="${p.x}" y="${p.y+.5}">${num[p.k]}</text></g>`).join(""):""}
+      </svg>
+      <div id="bInfo" class="pinfo ${quiz?"hidden":""}"><span class="sm">👆 Tap any part of the ${view==="body"?"body":"face"} to see and hear its name.</span></div>
+    </div>
+    <div class="plist ${quiz?"hidden":""}" id="bList"><h4>${view==="body"?"🧍 Body":"🙂 Face"} · ${parts.length} words</h4>
+      ${parts.map(p=>`<button class="pi" data-k="${p.k}"><span class="num ${num[p.k]?"":"nb"}">${num[p.k]||"·"}</span><b>${p.pt}</b><span class="en">${p.en}</span></button>`).join("")}</div>
+  </div>`;
+  if(quiz) a.querySelector(".body-wrap").style.gridTemplateColumns="1fr";
+  a.querySelectorAll("#bMode button").forEach(b=>b.onclick=()=>{VXS.bmode=b.dataset.v;BQ=null;bSel=null;saveVX();renderVocab()});
+  a.querySelectorAll("#bView button").forEach(b=>b.onclick=()=>{ if(quiz) return toast("The quiz switches views for you"); VXS.bview=b.dataset.v;bSel=null;saveVX();renderBody()});
+  $("bLabels").onclick=()=>{VXS.labels=!VXS.labels;saveVX();renderBody()};
+  $("bodySvg").addEventListener("click",e=>{const el=e.target.closest("[data-k]"); if(!el) return; quiz?bAnswer(el.dataset.k):bSelect(el.dataset.k)});
+  a.querySelectorAll(".pi").forEach(b=>b.onclick=()=>bSelect(b.dataset.k));
+  if(quiz){ if(BQ.i>=BQ.items.length) vxFinish(BQ,"vbody"); else bShowQ(); }
+  else if(bSel&&BPK[bSel]&&BPK[bSel].view===view) bSelect(bSel,true);
+}
+function bMark(keys,cls){keys.forEach(k=>$("bodySvg").querySelectorAll(`.bp[data-k="${k}"]`).forEach(e=>e.classList.add(cls)))}
+function bClear(){$("bodySvg").querySelectorAll(".bp").forEach(e=>e.classList.remove("hi","ok","bad"))}
+function bSelect(k,silent){
+  const p=BPK[k]; if(!p) return; bSel=k; bClear(); bMark(p.keys,"hi");
+  document.querySelectorAll(".pi").forEach(b=>b.classList.toggle("on",b.dataset.k===k));
+  $("bInfo").innerHTML=`<button class="spk" id="bSay" title="Hear it">🔊</button><div><div class="big">${p.pt}</div><div class="sm">${p.en} · ${genderOf(p.pt)}${p.note?` · 💡 ${p.note}`:""}</div></div>`;
+  $("bSay").onclick=()=>sayAlways(p.pt);
+  if(!silent) sayAlways(p.pt);
+}
+function bShowQ(){
+  const t=BQ.items[BQ.i];
+  const label=VXS.dir==="en"?t.en:VXS.dir==="listen"?"":t.pt;
+  $("bPrompt").innerHTML=`<div class="bprompt"><span>${VXS.dir==="listen"?"🎧 Tap what you hear":`Toque: <b>${label}</b>`}</span>
+    <span class="gn">${BQ.i+1} / ${BQ.items.length} · ✅ ${BQ.right} · 🔥 ${BQ.streak}</span>
+    <button class="spk" id="bqSay" title="Hear it">🔊</button></div>`;
+  $("bqSay").onclick=()=>sayAlways(t.pt);
+  if(VXS.dir==="listen") setTimeout(()=>sayAlways(t.pt),250);
+  BQ.answered=false;
+}
+function bAnswer(k){
+  if(!BQ||BQ.answered) return;
+  const t=BQ.items[BQ.i], ok=t.keys.includes(k), tapped=BP.find(p=>p.k===k&&p.view===t.view)||BPK[k];
+  BQ.answered=true; bClear();
+  if(ok){ BQ.right++; BQ.streak++; good(); score+=12; bMark(t.keys,"ok"); sayAlways(t.pt);
+    $("bPrompt").innerHTML=`<div class="bprompt ok"><span>✅ Certo! <b>${t.pt}</b> = ${t.en}</span></div>`;
+    vxrec("body",t.pt,t.en,true);
+    setTimeout(bNext,1000);
+  } else { BQ.streak=0; bad(); BQ.wrong.push(t); bMark([k],"bad"); bMark(t.keys,"hi"); sayAlways(t.pt);
+    vxrec("body",t.pt,t.en,false);
+    $("bPrompt").innerHTML=`<div class="bprompt bad"><span>❌ That's <b style="font-size:16px">${tapped?tapped.pt:"?"}</b>${tapped?` (${tapped.en})`:""}. <b>${t.pt}</b> (${t.en}) is in yellow.</span>
+      <button class="btn go sm" id="bqNext">Next ➜</button></div>`;
+    $("bqNext").onclick=bNext;
+  }
+  if(score>best){best=score;LS.set("vm_best",best)}
+}
+function bNext(){ if(!BQ) return; BQ.i++; renderBody(); }
+
+/* keyboard for the vocab quiz */
+document.addEventListener("keydown",e=>{
+  if(mode!=="vocab"||VXS.sub!=="quiz"||!VXQ||/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
+  if(!VXQ.answered&&/^[1-4]$/.test(e.key)){const b=$("vxArea").querySelectorAll(".qo")[+e.key-1]; if(b) vxAnswer(b);}
+  else if(VXQ.answered&&e.key==="Enter"){e.preventDefault();vxNextQ();}
+});
+
+/* stats: vocab & body misses */
+MODE_LBL.vquiz="🔢 Vocab quiz"; MODE_LBL.vbody="🧍 Body quiz";
+const _rsV9=renderStats;
+renderStats=function(){
+  _rsV9();
+  const rows=Object.entries(ST.vx||{}).filter(([,s])=>s.w>0).map(([k,s])=>({k,...s,acc:Math.round(s.r/(s.r+s.w)*100)}))
+    .sort((a,b)=>b.w/(b.r+b.w+1)-a.w/(a.r+a.w+1)||b.w-a.w).slice(0,12);
+  const tl=t=>t==="body"?"🧍 Body":VX_TOPICS[t]?VX_TOPICS[t].ic+" "+VX_TOPICS[t].label:t;
+  const box=document.createElement("div"); box.className="panel";
+  box.innerHTML=`<h3>🔢 Vocab &amp; body parts you miss most</h3>${rows.length?`<table class="miss"><thead><tr><th>Word</th><th>Meaning</th><th>Topic</th><th>Wrong</th><th>Right</th><th>Accuracy</th></tr></thead><tbody>${rows.map(r=>
+    `<tr><td style="font-weight:800;color:var(--green)">${r.k}</td><td style="font-size:12px">${r.en||""}</td><td style="font-size:12px">${tl(r.t)}</td><td style="color:var(--bad);font-weight:800">${r.w}</td><td>${r.r}</td>
+     <td><div style="display:flex;align-items:center;gap:6px"><div class="mbar"><i style="width:${100-r.acc}%"></i></div>${r.acc}%</div></td></tr>`).join("")}</tbody></table>`
+    :`<div class="empty">No misses yet. Try the Vocab tab's Quiz or Body quiz.</div>`}`;
+  const sv=$("statsView"); sv.insertBefore(box, sv.lastElementChild);
+};
+
+/* boot */
+renderCtrls(); updSummary();
+if(GAME_MODES.includes(mode)) { mode=gameMode(); start(); }
 
 </script>
 </body></html>
