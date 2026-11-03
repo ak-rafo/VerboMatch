@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -12,6 +12,7 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <title>Verbo Match!</title>
+<script>try{if(localStorage.getItem("vm_lang")==="es"&&!/[?&]pt/.test(location.search))location.replace("es.html"+location.hash)}catch(e){}</script>
 <style>
 :root{--green:#009c3b;--green2:#00b347;--yellow:#ffdf00;--blue:#002776;--bg:#eef4ec;--card:#fff;--ink:#14213d;--muted:#5b6475;--bad:#e63946;--line:#dfe6dc}
 *{box-sizing:border-box}
@@ -486,6 +487,48 @@ body{min-height:100%}
   .sq-o{flex:1 1 100%;text-align:left}
 }
 
+/* ===== v13: language switch ===== */
+.lang-sw{display:flex;background:rgba(0,0,0,.2);border-radius:999px;padding:3px;gap:2px;margin-left:8px;position:relative;z-index:2;flex:none;align-self:center}
+.lang-sw button{border:0;background:none;color:#fff;font-weight:800;font-size:12.5px;padding:5px 11px;border-radius:999px;cursor:pointer;opacity:.8;font-family:inherit;white-space:nowrap}
+.lang-sw button.on{background:#fff;color:var(--ink);opacity:1;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.lang-sw button:not(.on):hover{opacity:1;background:rgba(255,255,255,.15)}
+h1{white-space:nowrap}
+@media(max-width:700px){h1{font-size:20px}.lang-sw{margin-left:6px}.lang-sw button{padding:4px 8px;font-size:12px}.lang-sw .lt{display:none}.brand{padding-right:52px}}
+/* ===== v14: desktop mouse-wheel fix (body was trapping wheel scroll) ===== */
+html,body{overflow-x:hidden;overflow-x:clip}
+body{overscroll-behavior-y:auto}
+html{overscroll-behavior-y:none}
+@media(min-width:701px){
+  #bankView .bank,#slangView .bank{max-height:none;overflow-x:auto;overflow-y:hidden}
+  .plist{max-height:none;overflow:visible}
+}
+/* ===== v14: A–Z verb bank + search ===== */
+.sortsel{padding:7px 10px;border:1px solid var(--line);border-radius:9px;font-size:13px;background:#fff;color:var(--ink)}
+#bankBody tr.lt-row td{background:#eef4ec!important;color:var(--green);font-weight:900;font-size:13px;letter-spacing:1px;padding:5px 12px;border-bottom:1px solid var(--line)}
+html[data-lang=es] #bankBody tr.lt-row td{color:#c60b1e;background:#fdf1ef!important}
+.vx-search{margin-bottom:10px}
+.vx-search input{flex:1;min-width:160px;font-size:15px}
+.vx-res-h{margin:4px 2px 8px;font-size:12px;color:var(--muted)}
+.bsearch{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-size:14px;margin:0 0 6px}
+.pi .vtag{font-size:10px;color:#fff;background:var(--blue);border-radius:99px;padding:1px 6px;flex:none}
+.empty-s{color:var(--muted);font-size:13px;padding:8px}
+@media(max-width:700px){
+  #bankView tbody tr.lt-row{display:block;padding:0;border:0}
+  #bankView tbody tr.lt-row td{display:block!important;grid-column:auto;font-size:13px;padding:6px 12px}
+  .plist .bsearch,.plist .empty-s{grid-column:1/-1}
+  .vx-search input,.bsearch{font-size:16px}
+}
+/* ===== v14: phone sideways / short screens: compact header ===== */
+@media(max-height:500px) and (min-width:701px){
+  header{padding:calc(6px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+  .sub{display:none} h1{font-size:20px}
+  .logo{width:34px;height:34px}.logo .orb{left:10px;top:10px;width:14px;height:14px}
+  nav{margin-top:6px} nav button{padding:6px 12px;font-size:13px} nav button .ic{font-size:16px}
+  main{padding:10px max(14px,env(safe-area-inset-right)) 10px max(14px,env(safe-area-inset-left))}
+  .stats{margin-bottom:6px}.stats .stat{padding:3px 12px}.stats .stat b{font-size:16px}
+  .actionbar{margin-bottom:6px}
+  .modal{padding:6px}.box{max-height:96vh;padding:16px}
+}
 </style>
 </head>
 <body>
@@ -494,6 +537,7 @@ body{min-height:100%}
     <div class="logo"><div class="dia"></div><div class="orb"></div></div>
     <button class="hdr-spk" id="spkSet" title="Voice & speed settings">🔊<span class="lb2"> Voice</span></button>
     <div><h1>Verbo Match!</h1><p class="sub">200 Brazilian Portuguese verbs, vocab, stories, articles &amp; slang</p></div>
+    <div class="lang-sw" id="langSw" role="group" aria-label="Language"><button data-l="pt" title="Português (Brasil)">🇧🇷<span class="lt"> PT</span></button><button data-l="es" title="Español">🇪🇸<span class="lt"> ES</span></button></div>
   </div>
   <nav id="nav">
     <button data-m="play" class="on">🎯 Match</button>
@@ -517,9 +561,9 @@ body{min-height:100%}
     <div class="actionbar">
       <button class="sumbtn" id="setToggle" aria-expanded="false"><span class="sum-ic">⚙️</span><span id="setSummary">Settings</span><span class="chev">▾</span></button>
       <span class="spacer"></span>
-      <button class="btn ghost ab" id="hintBtn" title="Hint">💡<span class="ab-l"> Hint</span><span class="hcount" id="hCount"></span></button>
-      <button class="btn ghost ab" id="pauseBtn" title="Pause (P)">⏸️<span class="ab-l"> Pause</span></button>
-      <button class="btn go ab" id="newBtn">↻ New<span class="ab-l2"> round</span></button>
+      <button class="btn ghost ab" id="hintBtn" title="Hint">💡<span class="ab-l">&nbsp;Hint</span><span class="hcount" id="hCount"></span></button>
+      <button class="btn ghost ab" id="pauseBtn" title="Pause (P)">⏸️<span class="ab-l">&nbsp;Pause</span></button>
+      <button class="btn go ab" id="newBtn">↻ New<span class="ab-l2">&nbsp;round</span></button>
     </div>
     <div class="setpanel" id="setPanel">
       <div class="sp-row"><span class="ctl-lbl">Game</span>
@@ -999,7 +1043,7 @@ function setPause(on,why){
   if(on){ pauseAt=Date.now(); $("pauseWhy").textContent=why||"Your timer is stopped."; }
   else pausedMs+=Date.now()-pauseAt;
   $("pauseOv").classList.toggle("hidden",!on);
-  $("pauseBtn").classList.toggle("on",on); $("pauseBtn").innerHTML=on?'▶️<span class="ab-l"> Resume</span>':'⏸️<span class="ab-l"> Pause</span>';
+  $("pauseBtn").classList.toggle("on",on); $("pauseBtn").innerHTML=on?'▶️<span class="ab-l">&nbsp;Resume</span>':'⏸️<span class="ab-l">&nbsp;Pause</span>';
   $("hintBtn").disabled=on||!round||round.hints<=0;
   if(window.speechSynthesis&&on) speechSynthesis.cancel();
 }
@@ -1009,7 +1053,7 @@ document.addEventListener("visibilitychange",()=>{ if(document.hidden) setPause(
 document.addEventListener("keydown",e=>{ if((e.key==="p"||e.key==="P")&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)&&!$("gameCtrls").classList.contains("hidden")) setPause(!paused); });
 function startTimer(){
   clearInterval(timer); t0=Date.now(); pausedMs=0; paused=false; $("pauseOv").classList.add("hidden");
-  $("pauseBtn").classList.remove("on"); $("pauseBtn").innerHTML='⏸️<span class="ab-l"> Pause</span>'; const lim=round.limit;
+  $("pauseBtn").classList.remove("on"); $("pauseBtn").innerHTML='⏸️<span class="ab-l">&nbsp;Pause</span>'; const lim=round.limit;
   $("sTimeLbl").textContent=lim?"Time left ⏳":"Time"; $("timeBox").classList.remove("warn");
   const tick=()=>{if(paused) return; const el=elapsed()|0;
     if(lim){const left=lim-el; $("sTime").textContent=fmt(left); $("timeBox").classList.toggle("warn",left<=10);
@@ -2891,6 +2935,113 @@ renderStats=function(){
 /* boot */
 renderCtrls(); updSummary();
 if(GAME_MODES.includes(mode)) { mode=gameMode(); start(); }
+
+/* ===== v14: alphabetical verb bank, accent-insensitive search, vocab + body search ===== */
+const LANGC=document.documentElement.dataset.lang==="es"?"es":"pt";
+const LNAME=LANGC==="es"?"Spanish":"Portuguese";
+const LKEY=k=>(LANGC==="es"?"es_":"vm_")+k;
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+let BANK_SORT=LS.get(LKEY("banksort"),"az");
+(function(){
+  const q=$("q"); if(!q) return;
+  q.placeholder=`🔍 Search ${LNAME} or English…`;
+  const sel=document.createElement("select"); sel.className="sortsel"; sel.id="bankSort"; sel.title="Sort verbs";
+  sel.innerHTML=`<option value="az">A–Z</option><option value="freq">Most common</option>`; sel.value=BANK_SORT;
+  q.after(sel); sel.onchange=()=>{BANK_SORT=sel.value;LS.set(LKEY("banksort"),BANK_SORT);renderBank();};
+})();
+const goForm=v=>LANGC==="es"?"voy a "+v.inf:(v.noGo?"vou (= I'm going)":"vou "+v.inf);
+renderBank=function(){
+  const q=norm($("q").value.trim()), only=$("onlyMast").checked, om=$("onlyMiss").checked;
+  let list=VERBS.filter(v=>(!q||norm(v.inf).includes(q)||norm(v.gloss).includes(q)||norm(v.eb).includes(q))&&(!only||mastered.has(v.inf))&&(!om||(ST.verbs[v.inf]&&ST.verbs[v.inf].w)));
+  if(BANK_SORT==="az") list=[...list].sort((a,b)=>a.inf.localeCompare(b.inf,LANGC));
+  /* when searching, exact / starts-with matches first */
+  if(q) list=[...list].sort((a,b)=>{const s=v=>norm(v.inf)===q?0:norm(v.inf).startsWith(q)?1:norm(v.gloss).split(/[\s/(),·]+/).includes(q)?2:3;return s(a)-s(b)});
+  const L=["","","",...BANK_T.map(k=>TENSES[k].label)];
+  let html="",last="",n=0;
+  list.forEach(v=>{
+    const letter=norm(v.inf)[0].toUpperCase();
+    if(BANK_SORT==="az"&&!q&&letter!==last){ last=letter; html+=`<tr class="lt-row"><td colspan="8">${letter}</td></tr>`; }
+    const w=ST.verbs[v.inf]?.w||0; n++;
+    const cells=[n,`${v.inf}${mastered.has(v.inf)?' <span class="star">★</span>':""}${w?`<span class="miss-b">${w}</span>`:""}`,v.gloss,v.p,v.pt,v.i,goForm(v),v.f];
+    html+=`<tr>${cells.map((c,i)=>i===1?`<td class="v" data-v="${v.inf}">${c}</td>`:`<td${L[i]?` data-l="${L[i]}"`:""}>${c}</td>`).join("")}</tr>`;
+  });
+  $("bankBody").innerHTML=html||`<tr><td colspan="8" class="empty" style="text-align:center;white-space:normal">No verbs match “${$("q").value}”. Try the English meaning, e.g. “to eat”.</td></tr>`;
+  $("bankBody").querySelectorAll("td.v").forEach(td=>td.onclick=()=>openVerb(td.dataset.v));
+};
+$("q").oninput=()=>renderBank(); $("onlyMast").onchange=()=>renderBank(); $("onlyMiss").onchange=()=>renderBank();
+/* slang: accent-insensitive search */
+slangList=function(){
+  const q=norm(SSET.q.trim());
+  return SLANG.filter(s=>(SSET.reg==="all"||s.r===SSET.reg)&&(SSET.cat==="all"||s.c===SSET.cat)&&(!SSET.learned||!SLEARN.has(s.t))&&
+    (!q||norm(s.t+" "+s.m+" "+s.ex+" "+s.en).includes(q)));
+};
+/* ---------- Vocab › Learn search ---------- */
+let VXQS="";
+const _vxLearn14=vxLearn;
+vxLearn=function(a){
+  a.innerHTML=`<div class="controls vx-search"><input type="search" id="vxQ" placeholder="🔍 Search ${LNAME} or English (all topics)…" value="${VXQS.replace(/"/g,"&quot;")}" autocomplete="off"></div><div id="vxLearnList"></div>`;
+  const run=()=>{
+    const raw=VXQS.trim(), q=norm(raw), box=$("vxLearnList");
+    if(!q){ _vxLearn14(box); return; }
+    const groups={};
+    const add=(t,x)=>{(groups[t]=groups[t]||[]).push(x)};
+    if(/^\d{1,6}$/.test(raw)) add("num",{pt:numToPt(+raw),en:(+raw).toLocaleString("en-US"),say:numToPt(+raw),note:"Built from your search"});
+    VX_KEYS.forEach(t=>VX[t].forEach(x=>{ if(norm(x.pt+" | "+x.en).includes(q)) add(t,x); }));
+    VX_BODY.forEach(x=>{ if(norm(x.pt+" | "+x.en).includes(q)) add("body",x); });
+    const keys=Object.keys(groups), total=keys.reduce((s,k)=>s+groups[k].length,0);
+    box.innerHTML=total?`<div class="vx-res-h">${total} result${total>1?"s":""} for “${raw.replace(/</g,"&lt;")}” · tap to hear</div>`+keys.map(t=>{const T=VM_LBL(t);
+      return `<details class="fold vx-sec" open><summary>${T.ic} ${T.label}<span class="gn">${groups[t].length}</span></summary><div class="vx-in"><div class="vx-grid">${groups[t].map(x=>
+        `<button class="vx-it" data-say="${String(x.say||x.pt).replace(/"/g,"&quot;")}"><b>${x.pt}</b><span>${x.en}</span>${x.note?`<i>💡 ${x.note}</i>`:""}</button>`).join("")}</div></div></details>`}).join("")
+      :`<div class="panel empty">No words match “${raw.replace(/</g,"&lt;")}”. Try the ${LNAME} word or its English meaning.</div>`;
+    box.querySelectorAll(".vx-it[data-say]").forEach(b=>b.onclick=()=>{sayAlways(b.dataset.say);b.classList.add("playing");setTimeout(()=>b.classList.remove("playing"),700)});
+  };
+  $("vxQ").oninput=()=>{VXQS=$("vxQ").value;run()};
+  run();
+};
+/* ---------- Vocab › Body search (Explore) ---------- */
+let BQS="";
+const _renderBody14=renderBody;
+renderBody=function(){
+  _renderBody14();
+  if(VXS.bmode==="quiz"||!$("bList")) return;
+  const h4=$("bList").querySelector("h4");
+  const inp=document.createElement("input"); inp.type="search"; inp.className="bsearch"; inp.id="bQ"; inp.autocomplete="off";
+  inp.placeholder=`🔍 ${LNAME} or English…`; inp.value=BQS; h4.after(inp);
+  const res=document.createElement("div"); res.id="bRes"; res.style.display="contents"; inp.after(res);
+  const filter=()=>{
+    const q=norm(BQS.trim()), orig=[...$("bList").querySelectorAll(".pi:not(.res)")];
+    if(!q){ orig.forEach(b=>b.style.display=""); res.innerHTML=""; return; }
+    orig.forEach(b=>b.style.display="none");
+    const seen=new Set(), hits=BP.filter(p=>norm(p.pt+" | "+p.en).includes(q)&&!seen.has(p.view+p.pt)&&seen.add(p.view+p.pt))
+      .sort((a,b)=>(a.view===VXS.bview?0:1)-(b.view===VXS.bview?0:1));
+    res.innerHTML=hits.length?hits.map(p=>`<button class="pi res" data-k="${p.k}"><b>${p.pt}</b><span class="en">${p.en}</span>${p.view!==VXS.bview?`<span class="vtag">${p.view==="face"?"🙂 Face":"🧍 Body"}</span>`:""}</button>`).join("")
+      :`<div class="empty-s">No match. Try the English word, e.g. “knee”.</div>`;
+    res.querySelectorAll(".pi").forEach(b=>b.onclick=()=>{const p=BPK[b.dataset.k];
+      if(p.view!==VXS.bview){ VXS.bview=p.view; bSel=p.k; saveVX(); renderBody(); sayAlways(p.pt); }
+      else bSelect(p.k);
+      res.querySelectorAll(".pi").forEach(x=>x.classList.toggle("on",x.dataset.k===p.k)); });
+  };
+  inp.oninput=()=>{BQS=inp.value;filter()};
+  inp.onkeydown=e=>{ if(e.key==="Enter"){ const f=res.querySelector(".pi"); if(f) f.click(); } };
+  filter();
+};
+if(mode==="bank") renderBank();
+
+/* ===== v13: language switch + tab routing ===== */
+(function(){
+  const cur=document.documentElement.dataset.lang||"pt";
+  try{localStorage.setItem("vm_lang",cur)}catch(e){}
+  document.querySelectorAll("#langSw button").forEach(b=>{
+    b.classList.toggle("on",b.dataset.l===cur);
+    b.onclick=()=>{ if(b.dataset.l===cur) return;
+      const on=document.querySelector("nav button.on"), tab=on?on.dataset.m:"play";
+      try{localStorage.setItem("vm_lang",b.dataset.l)}catch(e){}
+      if(window.speechSynthesis) speechSynthesis.cancel();
+      location.href=(b.dataset.l==="es"?"es.html":"index.html?pt")+"#"+tab; };
+  });
+  const h=location.hash.slice(1);
+  if(["bank","words","vocab","slang","stats"].includes(h)) setMode(h);
+})();
 
 </script>
 </body></html>
