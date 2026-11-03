@@ -538,6 +538,102 @@ html[data-lang=es] #bankBody tr.lt-row td{color:#c60b1e;background:#fdf1ef!impor
   .actionbar{margin-bottom:6px}
   .modal{padding:6px}.box{max-height:96vh;padding:16px}
 }
+/* ===== v15: type-the-answer ===== */
+.ty-card{max-width:680px;margin:0 auto;background:var(--card);border-radius:16px;padding:18px 18px 16px;box-shadow:0 1px 4px rgba(0,0,0,.06);text-align:center}
+.ty-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.ty-prompt{font-size:26px;font-weight:800;color:var(--blue);margin:14px 0 4px;line-height:1.3}
+.ty-sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+.ty-row{display:flex;gap:8px;max-width:520px;margin:0 auto}
+.ty-in{flex:1;min-width:0;font-size:20px;padding:12px 14px;border:2px solid var(--line);border-radius:12px;font-family:inherit;color:var(--ink);background:#fff}
+.ty-in:focus{outline:none;border-color:var(--green)}
+.ty-in.ok{border-color:var(--green);background:#e4f7eb}.ty-in.bad{border-color:var(--bad);background:#ffe3e5}
+.acc-keys{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin:10px auto 0;max-width:520px}
+.acc-keys button{border:1px solid var(--line);background:#f4f7f3;border-radius:8px;min-width:34px;padding:6px 8px;font-size:15px;font-weight:700;cursor:pointer;color:var(--ink);font-family:inherit}
+.acc-keys button:hover{border-color:var(--green)}
+.ty-acts{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.ty-fb{min-height:64px;margin-top:12px;font-size:15px}
+.ty-fb .ans{font-size:22px;font-weight:800;color:var(--green)}
+.ty-fb .note{font-size:13px;color:#8a6d00;background:#fff7d1;border-radius:8px;padding:5px 9px;display:inline-block;margin-top:6px}
+.ty-dots{display:flex;gap:4px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.ty-dots i{width:10px;height:10px;border-radius:50%;background:#dfe6dc}
+.ty-dots i.ok{background:var(--green)}.ty-dots i.bad{background:var(--bad)}.ty-dots i.cur{background:var(--yellow);box-shadow:0 0 0 2px var(--blue)}
+.tmarks{display:none}
+.qtype{max-width:520px;margin:0 auto}
+/* ===== v15: daily goal + review ===== */
+.daily{display:flex;align-items:center;gap:10px 14px;background:var(--card);border-radius:14px;padding:8px 12px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.05);flex-wrap:wrap;font-size:13px}
+.daily .fire{font-weight:800;color:#e8590c;white-space:nowrap}
+.daily .goal{display:flex;align-items:center;gap:8px;flex:1;min-width:150px}
+.daily .gbar{flex:1;height:8px;background:#e9eee8;border-radius:9px;overflow:hidden;min-width:60px}
+.daily .gbar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--yellow))}
+.daily .gnum{font-weight:800;white-space:nowrap}
+.daily .done{color:var(--green)}
+.daily .due{white-space:nowrap;color:var(--muted)}
+.cal{display:flex;gap:4px;align-items:flex-end;height:54px;margin:8px 0 2px}
+.cal div{flex:1;background:#e9eee8;border-radius:4px 4px 0 0;position:relative;min-height:3px}
+.cal div.met{background:var(--green)}.cal div.part{background:var(--yellow)}
+.cal-l{display:flex;gap:4px;font-size:9px;color:var(--muted)}.cal-l span{flex:1;text-align:center}
+.due-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.due-list span{background:#f4f7f3;border-radius:99px;padding:3px 9px;font-size:12px;font-weight:700;cursor:pointer}
+.due-list span:hover{background:#e4f7eb}
+.big3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
+.big3 div{background:#f4f7f3;border-radius:12px;padding:8px;text-align:center}
+.big3 b{display:block;font-size:22px;color:var(--blue)}.big3 span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+@media(max-width:700px){
+  .ty-prompt{font-size:22px}.ty-in{font-size:18px;padding:11px 12px}
+  .daily{padding:7px 10px;gap:6px 10px;font-size:12px}
+  .daily .due{order:3}
+  #styleSeg button{padding:7px 7px}
+}
+/* ===== v16: grammar nav, map, family tree, phrases & idioms ===== */
+.gnav{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px;position:sticky;top:0;z-index:4;background:var(--bg);padding:6px 0}
+.gnav button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-weight:700;font-size:12.5px;cursor:pointer;color:var(--ink);font-family:inherit}
+.gnav button:hover{border-color:var(--green);color:var(--green)}
+#g-art,#g-pron,#g-conn,#g-qn,#g-cmp{scroll-margin-top:56px}
+.say-ex{cursor:pointer;border-bottom:1px dotted var(--green)}
+.map-svg,.tree-svg{display:block;width:100%;height:auto;max-height:66vh;margin:6px auto 0;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.mbg{fill:#e8eee5}
+.mst line{stroke:#c3ccc0;stroke-width:18;stroke-linecap:round}
+.mcl line{stroke:#fff;stroke-width:1.5;stroke-dasharray:6 6}
+.mb{cursor:pointer}
+.mb rect{fill:#fff;stroke:#cfd8cc;stroke-width:1.5;transition:fill .15s}
+.mb:hover rect{fill:#f4fbf6}
+.mb .me{font-size:24px;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.mb .ml{font:700 8.5px system-ui,sans-serif;text-anchor:middle;fill:#5b6475;pointer-events:none}
+.mb.hi rect{fill:#ffdf00;stroke:#002776;stroke-width:2.5}
+.mb.ok rect{fill:#5cd68a;stroke:#0b7a3b;stroke-width:2.5}
+.mb.bad rect{fill:#ff8a94;stroke:#b0222f;stroke-width:2.5}
+.mstart circle{fill:#002776;stroke:#fff;stroke-width:2}.mstart path{fill:#ffdf00}
+html[data-lang=es] .mstart circle{fill:#c60b1e}
+.mnorth{font:800 12px system-ui,sans-serif;fill:#5b6475}
+.mroute{fill:none;stroke:#3a86ff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:10 6;opacity:.9}
+.mend{fill:#3a86ff;stroke:#fff;stroke-width:2}
+.bprompt.mq{align-items:flex-start}
+.mq-txt{flex:1 1 260px;font-size:15px;line-height:1.45}
+.mq-pt{color:var(--blue);font-size:17px}
+.flink{fill:none;stroke:#b8c4b4;stroke-width:2.2}
+.fcouple{stroke:#e8a0a6;stroke-width:3}
+.fn{cursor:pointer}
+.fn circle{fill:#fff;stroke:#cfd8cc;stroke-width:2;transition:fill .15s}
+.fn:hover circle{fill:#f4fbf6}
+.fn .fe{font-size:22px;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.fn .fl{font:700 11px system-ui,sans-serif;text-anchor:middle;fill:#3d4656;pointer-events:none}
+.fn.me circle{fill:#fff7d1;stroke:#e0a800}.fn.me{cursor:default}
+.fn.hi circle{fill:#ffdf00;stroke:#002776;stroke-width:3}
+.fn.ok circle{fill:#5cd68a;stroke:#0b7a3b;stroke-width:3}
+.fn.bad circle{fill:#ff8a94;stroke:#b0222f;stroke-width:3}
+.id-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px}
+.id-card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--yellow);border-radius:14px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.05);font-size:13.5px}
+.id-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px}.id-top b{font-size:16px;color:var(--green)}
+.id-row{margin:3px 0}.id-row span{display:inline-block;min-width:78px;font-size:10.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.id-ex{margin-top:8px;background:#f4f7f3;border-radius:9px;padding:7px 9px}
+.spk2.playing,.vx-it.playing{background:#e4f7eb}
+@media(max-width:700px){
+  #vxSub button{font-size:11.5px;padding:9px 2px}
+  .map-svg,.tree-svg{max-height:none}
+  .gnav{gap:5px}.gnav button{font-size:11.5px;padding:5px 9px}
+  .id-grid{grid-template-columns:1fr}
+  .fn .fl{font-size:12.5px}
+}
 </style>
 </head>
 <body>
@@ -545,7 +641,7 @@ html[data-lang=es] #bankBody tr.lt-row td{color:#c60b1e;background:#fdf1ef!impor
   <div class="brand">
     <div class="logo"><div class="dia"></div><div class="orb"></div></div>
     <button class="hdr-spk" id="spkSet" title="Voice & speed settings">🔊<span class="lb2"> Voice</span></button>
-    <div><h1>Verbo Match!</h1><p class="sub">200 Spanish verbs, vocab, stories, articles &amp; slang</p></div>
+    <div><h1>Verbo Match!</h1><p class="sub">200 Spanish verbs, vocab, stories, grammar &amp; slang</p></div>
     <div class="lang-sw" id="langSw" role="group" aria-label="Language"><button data-l="pt" title="Português (Brasil)">🇧🇷<span class="lt"> PT</span></button><button data-l="es" title="Español">🇪🇸<span class="lt"> ES</span></button></div>
   </div>
   <nav id="nav">
@@ -576,7 +672,7 @@ html[data-lang=es] #bankBody tr.lt-row td{color:#c60b1e;background:#fdf1ef!impor
     </div>
     <div class="setpanel" id="setPanel">
       <div class="sp-row"><span class="ctl-lbl">Game</span>
-        <div class="seg" id="styleSeg"><button data-v="tiles">🎯 Tile match</button><button data-v="memory">🃏 Memory flip</button></div>
+        <div class="seg" id="styleSeg"><button data-v="tiles">🎯 Tile match</button><button data-v="memory">🃏 Memory flip</button><button data-v="type">⌨️ Type it</button></div>
         <div class="seg" id="fmtSeg"><button data-v="inf">Infinitive</button><button data-v="conj">Conjugated</button><button data-v="vocab">🔢 Vocab</button></div></div>
       <div class="sp-row"><span class="ctl-lbl">Difficulty</span><div class="meter" id="meter"></div>
         <button class="auto" id="autoBtn" title="Adjusts level automatically: up after 3 perfect rounds, down after 2 rough ones">⚡ Auto</button></div>
@@ -637,7 +733,7 @@ html[data-lang=es] #bankBody tr.lt-row td{color:#c60b1e;background:#fdf1ef!impor
   <select id="spVoice"></select>
   <div style="display:flex;gap:8px;margin-top:12px"><button class="btn alt" id="spTest">▶️ Test voice</button><span class="spacer"></span><button class="btn go" id="spClose">Done</button></div>
   <div class="sp-tip" id="spWarn">⚠️ No voice found for this accent on your device, so another Spanish voice is used.</div>
-  <div class="sp-tip"><b>Best quality on iPhone:</b> Settings → Accessibility → Spoken Content → Voices → Spanish → download <b>Paulina (Enhanced)</b> or <b>Juan</b> for Mexico and <b>Mónica (Enhanced)</b> or <b>Jorge</b> for Spain. Then pick it here. On Windows/Edge, “Microsoft Dalia (Mexico)” and “Microsoft Elvira (Spain) Online (Natural)” sound great. Slang from Spain is read with a Spain voice, Mexico and Costa Rica with a Latin American one. ☁️ = needs internet.</div>
+  <div class="sp-tip"><b>Why so few voices on iPhone?</b> Apple only lets web apps use a small set of built-in voices. Voices you download in Settings (like <b>Paulina</b> or <b>Mónica Enhanced</b>) won't appear here, and installing an enhanced version can even hide the regular one. If a voice disappeared, delete the enhanced download in Settings → Accessibility → Read &amp; Speak → Voices → Spanish.<br><b>Clearer speech:</b> try 🐢 Slow or 🚶 Relaxed.<br><b>On a computer:</b> Microsoft Edge includes natural voices (Dalia for Mexico, Elvira for Spain) that this app picks automatically. Slang from Spain is read with a Spain voice, Mexico and Costa Rica with a Latin American one. ☁️ = needs internet.</div>
 </div></div>
 
 <div class="toast" id="toast"></div>
@@ -1778,11 +1874,11 @@ function wordsStatsHTML(){
   const cats=Object.entries(WGROUPS).map(([k,g])=>{const s=(ST.wcats||{})[k]||{r:0,w:0},n=s.r+s.w,a=n?Math.round(s.r/n*100):0;
     return `<div class="tbar"><span>${g.label}</span><div class="tr"><i style="width:${a}%;background:${g.c}"></i></div><b style="width:60px;text-align:right">${n?a+"%":"—"}</b></div>`}).join("");
   const conf=s=>{const e=Object.entries(s.c||{}).sort((a,b)=>b[1]-a[1])[0];return e?`<b>${e[0]}</b>`:"—"};
-  return `<div class="two"><div class="panel"><h3>🧩 Articles &amp; connectors you miss most <span class="spacer"></span><button class="btn alt sm" id="wDrill" ${rows.length?"":"disabled"}>Practice these</button></h3>
+  return `<div class="two"><div class="panel"><h3>🧩 Grammar words you miss most <span class="spacer"></span><button class="btn alt sm" id="wDrill" ${rows.length?"":"disabled"}>Practice these</button></h3>
     ${rows.length?`<table class="miss"><thead><tr><th>Word</th><th>What it is</th><th>Wrong</th><th>Right</th><th>Accuracy</th><th>You picked instead</th></tr></thead><tbody>${rows.map(r=>
       `<tr><td style="font-weight:800;color:var(--green)">${r.k}</td><td style="font-size:12px">${CONTRACT[r.k]||ART_INFO[r.k]||PREP_INFO[r.k]||CONN_INFO[r.k]||""}</td><td style="color:var(--bad);font-weight:800">${r.w}</td><td>${r.r}</td>
        <td><div style="display:flex;align-items:center;gap:6px"><div class="mbar"><i style="width:${100-r.acc}%"></i></div>${r.acc}%</div></td><td>${conf(r)}</td></tr>`).join("")}</tbody></table>`
-     :`<div class="empty">No misses yet. Try the Articles &amp; Connectors tab.</div>`}</div>
+     :`<div class="empty">No misses yet. Try the Grammar tab.</div>`}</div>
     <div class="panel"><h3>📊 Accuracy by word type</h3>${cats}</div></div>`;
 }
 const _renderStats=renderStats;
@@ -3096,6 +3192,761 @@ renderBody=function(){
   filter();
 };
 if(mode==="bank") renderBank();
+
+/* =====================================================================
+   v15 · TYPE-THE-ANSWER · DAILY GOAL & STREAK · REVIEW QUEUE
+   ===================================================================== */
+const TLANG=LANGC==="es"?"Spanish":"Portuguese";
+const ACC_KEYS=LANGC==="es"?["á","é","í","ó","ú","ñ","ü","¿","¡"]:["á","â","ã","à","é","ê","í","ó","ô","õ","ú","ç"];
+const PUNCT=/[¿?¡!.,;:"“”«»()]/g;
+const cleanX=s=>String(s||"").toLowerCase().replace(PUNCT,"").replace(/\s+/g," ").trim();
+const cleanN=s=>norm(String(s||"")).replace(PUNCT,"").replace(/\s+/g," ").trim();
+const ART_RE=LANGC==="es"?/^(el|la|los|las|un|una) /:/^(o|a|os|as|um|uma) /;
+function accKeysHTML(){return `<div class="acc-keys">${ACC_KEYS.map(k=>`<button type="button" data-k="${k}" tabindex="-1">${k}</button>`).join("")}</div>`}
+function bindAccKeys(box,inp){box.querySelectorAll(".acc-keys button").forEach(b=>b.onmousedown=e=>{e.preventDefault();
+  const s=inp.selectionStart??inp.value.length,t=inp.selectionEnd??s; inp.value=inp.value.slice(0,s)+b.dataset.k+inp.value.slice(t);
+  inp.setSelectionRange(s+1,s+1); inp.focus();});}
+/* grade one typed answer against an item; returns {ok,note} */
+function gradeTyped(v,it){
+  const alts=new Set();
+  String(it.pt).split(/\s*\/\s*/).forEach(a=>alts.add(a));
+  if(it.person){ const pr=PERSONS[it.person].pt;
+    [...alts].forEach(a=>{ let x=a.replace(/^que /,""); alts.add(x); if(x.startsWith(pr+" ")) alts.add(x.slice(pr.length+1)); }); }
+  const ve=cleanX(v), vn=cleanN(v);
+  if(!vn) return {ok:false};
+  for(const a of alts) if(cleanX(a)===ve) return {ok:true};
+  for(const a of alts) if(cleanN(a)===vn) return {ok:true,note:`✍️ Watch the accents: <b>${it.pt}</b>`};
+  for(const a of alts){ const na=cleanN(a); if(ART_RE.test(na)&&na.replace(ART_RE,"")===vn) return {ok:true,note:`💡 Include the article next time: <b>${it.pt}</b>`}; }
+  return {ok:false};
+}
+/* ---------- ⌨️ Type-it game (Match tab) ---------- */
+let TY=null;
+const _newMatch15=newMatch;
+newMatch=function(){ if(SET.style==="type") newType(); else _newMatch15(); };
+function newType(){
+  const items=buildItems(SET.pairs);
+  round=Object.assign(newRoundState(items),{type:true}); if(round.limit) round.limit=Math.round(round.limit*2.5);
+  TY={i:0,answered:false,hint:0};
+  $("play").innerHTML=`<div class="ty-card" id="tyCard"></div><div class="tmarks">${items.map(it=>`<i data-id="${it.id}"></i>`).join("")}</div>`;
+  stats(); startTimer(); showType();
+}
+function showType(){
+  const it=round.items[TY.i]; TY.answered=false; TY.hint=0;
+  const tag=it.tense?`<span class="tag" style="--c:${TENSES[it.tense].c}">${TENSES[it.tense].label}</span>`:it.vxi?`<span class="tag" style="--c:var(--green)">${VM_LBL(it.vxi.t).ic} ${VM_LBL(it.vxi.t).label}</span>`:`<span class="tag" style="--c:var(--blue)">Verb</span>`;
+  $("tyCard").innerHTML=`
+    <div class="ty-top">${tag}<span>${TY.i+1} / ${round.items.length}</span></div>
+    <div class="ty-prompt">${it.en}</div>
+    <div class="ty-sub">Type it in ${TLANG}${it.person?" · include the pronoun or not, your choice":""}</div>
+    <div class="ty-row"><input class="ty-in" id="tyIn" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" lang="${LANGC}" placeholder="Your answer…"></div>
+    ${accKeysHTML()}
+    <div class="ty-acts"><button class="btn go" id="tyCheck">Check ↵</button><button class="btn ghost" id="tyIdk">I don't know</button></div>
+    <div class="ty-fb" id="tyFb"></div>
+    <div class="ty-dots">${round.items.map((x,k)=>`<i class="${k<TY.i?(x.missed?"bad":"ok"):k===TY.i?"cur":""}"></i>`).join("")}</div>`;
+  const inp=$("tyIn"); bindAccKeys($("tyCard"),inp);
+  inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); TY.answered?nextType():checkType(); } };
+  $("tyCheck").onclick=()=>TY.answered?nextType():checkType();
+  $("tyIdk").onclick=()=>{ if(!TY.answered) checkType(true); };
+  setTimeout(()=>inp.focus({preventScroll:true}),60);
+}
+function checkType(giveUp){
+  if(!round||round.over||paused||TY.answered) return;
+  const it=round.items[TY.i], inp=$("tyIn"), v=inp.value;
+  if(!giveUp&&!v.trim()){ inp.focus(); return toast("Type an answer first"); }
+  const g=giveUp?{ok:false}:gradeTyped(v,it);
+  TY.answered=true; inp.readOnly=true; inp.classList.add(g.ok?"ok":"bad");
+  document.querySelector(`.tmarks i[data-id="${it.id}"]`).classList.add("ok");
+  if(g.ok){ good(); addPoints(); if(!it.missed){rec(it.v.inf,true,it.tense);master(it.v.inf);} }
+  else { it.missed=true; round.mistakes++; rec(it.v.inf,false,it.tense,v.trim()||null); unmaster(it.v.inf); }
+  say(it.pt);
+  $("tyFb").innerHTML=g.ok?`<div class="fb-ok">✅ ${LANGC==="es"?"¡Correcto!":"Certo!"}</div><div class="ans">${it.pt}</div>${g.note?`<div class="note">${g.note}</div>`:""}`
+    :`<div class="fb-bad">${giveUp?"👀 Here it is:":"❌ Not quite."}</div><div class="ans">${it.pt}</div>${v.trim()?`<div class="gn">You typed: <s>${v.replace(/</g,"&lt;")}</s></div>`:""}`;
+  $("tyCheck").textContent=TY.i+1<round.items.length?"Next ➜":"See results"; $("tyIdk").classList.add("hidden");
+  round.done++;
+  if(!g.ok&&penalize()){ round.over=true; return; }
+  setTimeout(()=>{ const b=$("tyCheck"); if(b) b.focus({preventScroll:true}); },30);
+}
+function nextType(){ if(!round||round.over&&round.done<round.items.length) return;
+  if(TY.i+1<round.items.length){ TY.i++; showType(); } else finish(); }
+/* hint in type mode = reveal the next letter */
+const _hint15=$("hintBtn").onclick;
+$("hintBtn").onclick=()=>{
+  if(SET.style!=="type"||!round||!round.type) return _hint15();
+  if(paused||round.over||round.hints<=0||TY.answered) return;
+  const it=round.items[TY.i], ans=String(it.pt).split(/\s*\/\s*/)[0];
+  TY.hint=Math.min(ans.length,TY.hint+1); round.hints--; streak=0; it.missed=true; stats();
+  const inp=$("tyIn"); inp.value=ans.slice(0,TY.hint); inp.focus();
+};
+/* direction doesn't apply in type mode (always English → target) */
+const _start15=start;
+start=function(){ _start15();
+  const ds=$("dirSeg"); if(SET.style==="type"){ds.style.opacity=.45;ds.title="Type it always shows English and you write the "+TLANG;}
+  renderDaily(); };
+const _upd15=updSummary;
+updSummary=function(){ _upd15(); if(SET.style==="type"&&$("setSummary")) $("setSummary").innerHTML=$("setSummary").innerHTML.replace(/<b>🎯 Tiles<\/b>/,"<b>⌨️ Type it</b>").replace(/ · (PT|ES)→EN| · EN→(PT|ES)| · Mixed/,""); };
+const _lr15=logRound; logRound=function(a,s,f){ _lr15(a,s,f); if(SET.style==="type"){ST.rounds[ST.rounds.length-1].m=SET.fmt==="vocab"?"tvocab":"type";LS.set(LKEY("stats"),ST);} };
+MODE_LBL.type="⌨️ Type it"; MODE_LBL.tvocab="⌨️ Type vocab";
+if(SET.style==="type") updSummary();
+
+/* ---------- ⌨️ Type answers in Fill the Blank ---------- */
+const _rw15=renderWords;
+renderWords=function(){
+  _rw15();
+  if(WSET.sub!=="fill") return;
+  const lab=document.createElement("label"); lab.className="ty-tog";
+  lab.innerHTML=`<input type="checkbox" id="wType" ${WSET.type?"checked":""}> ⌨️ Type answers`;
+  $("wSub").after(lab);
+  $("wType").onchange=()=>{WSET.type=$("wType").checked;saveW();renderWords();};
+};
+const _showQ15=showQ;
+showQ=function(){
+  _showQ15();
+  if(!WSET.type) return;
+  const it=WR.items[WR.i], box=$("wBody").querySelector(".qopts");
+  box.outerHTML=`<div class="qtype"><div class="ty-row"><input class="ty-in" id="wIn" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" lang="${LANGC}" placeholder="Type the missing word…"><button class="btn go" id="wChk">Check</button></div>${accKeysHTML()}</div>`;
+  const inp=$("wIn"); bindAccKeys($("wBody"),inp);
+  const go=()=>{ if(WR.answered) return; const v=inp.value; if(!v.trim()) return toast("Type an answer first");
+    const exact=cleanX(v)===cleanX(it.a), loose=cleanN(v)===cleanN(it.a);
+    inp.readOnly=true; inp.classList.add(loose?"ok":"bad");
+    answer({dataset:{o:loose?it.a:v.trim()},classList:{add(){}}});
+    if(loose&&!exact) $("qfb").insertAdjacentHTML("beforeend",`<div class="ty-fb"><span class="note">✍️ Watch the accents: <b>${it.a}</b></span></div>`); };
+  inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); e.stopPropagation(); go(); } };
+  $("wChk").onclick=go;
+  setTimeout(()=>inp.focus({preventScroll:true}),60);
+};
+
+/* ---------- 📅 DAILY GOAL · STREAK · SPACED REVIEW ---------- */
+let DAILY=Object.assign({goal:20,days:{},best:0},LS.get(LKEY("daily"),{}));
+const saveDaily=()=>LS.set(LKEY("daily"),DAILY);
+const dayKey=(d=new Date())=>{const x=new Date(d);return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0")};
+const todayN=()=>DAILY.days[dayKey()]||0;
+function streakDays(){
+  let n=0; const d=new Date();
+  if(todayN()<DAILY.goal) d.setDate(d.getDate()-1);
+  while((DAILY.days[dayKey(d)]||0)>=DAILY.goal){ n++; d.setDate(d.getDate()-1); }
+  return n;
+}
+function bumpDay(){
+  const k=dayKey(), was=DAILY.days[k]||0; DAILY.days[k]=was+1;
+  const keys=Object.keys(DAILY.days).sort(); while(keys.length>120) delete DAILY.days[keys.shift()];
+  const s=streakDays(); if(s>DAILY.best) DAILY.best=s; saveDaily();
+  if(was+1===DAILY.goal){ toast(`🎯 Daily goal hit! 🔥 ${s}-day streak`); win(); }
+  renderDaily();
+}
+/* simple Leitner boxes for verbs: wrong → due now, right → push further out */
+const SRS_DAYS=[0,1,3,7,14,30];
+ST.srs=ST.srs||{};
+(function seed(){ let ch=0; Object.entries(ST.verbs||{}).forEach(([inf,s])=>{ if(!VMAP[inf]||ST.srs[inf]) return; ch=1;
+  ST.srs[inf]=s.w>s.r/2?{b:0,due:Date.now()}:{b:1,due:(s.last||Date.now())+864e5}; }); if(ch) LS.set(LKEY("stats"),ST); })();
+function srsUpdate(inf,ok){
+  const s=ST.srs[inf]||(ST.srs[inf]={b:0,due:0});
+  if(ok){ s.b=Math.min(SRS_DAYS.length-1,s.b+1); s.due=Date.now()+SRS_DAYS[s.b]*864e5-36e5; }
+  else { s.b=0; s.due=Date.now(); }
+  s.seen=Date.now();
+}
+const dueList=()=>Object.entries(ST.srs).filter(([inf,s])=>VMAP[inf]&&s.due<=Date.now()).sort((a,b)=>a[1].b-b[1].b||a[1].due-b[1].due).map(([inf])=>inf);
+const _rec15=rec;
+rec=function(inf,ok,tense,conf){
+  _rec15(inf,ok,tense,conf);
+  if(typeof inf==="string"&&!inf.startsWith("vx:")&&VMAP[inf]){ srsUpdate(inf,ok); LS.set(LKEY("stats"),ST); }
+  if(ok&&!(typeof inf==="string"&&inf.startsWith("vx:"))) bumpDay();
+};
+const _vxrec15=vxrec; vxrec=function(t,pt,en,ok){ _vxrec15(t,pt,en,ok); if(ok) bumpDay(); };
+const _wrec15=wrec; wrec=function(it,ok,p){ _wrec15(it,ok,p); if(ok) bumpDay(); };
+const _sd15=storyDone; storyDone=function(s,ans){ _sd15(s,ans); Object.values(ans).filter(Boolean).forEach(()=>bumpDay()); };
+function startReview(){
+  const due=dueList(); if(!due.length) return toast("Nothing due. Nice work! 🎉");
+  if(SET.fmt==="vocab"){SET.fmt="inf";saveSet();}
+  const list=due.slice(0,SET.pairs); focusQ=shuffle([...list]);
+  $("banner").textContent=`📅 Review: ${list.length} verb${list.length>1?"s":""} due today${due.length>list.length?` (${due.length-list.length} more after this round)`:""}.`;
+  $("banner").classList.remove("hidden"); setMode("play",true); scrollTo({top:0,behavior:"smooth"});
+}
+/* bar on the Match tab */
+(function(){ const d=document.createElement("div"); d.id="dailyBar"; d.className="daily"; $("stats").before(d); })();
+function renderDaily(){
+  const bar=$("dailyBar"); if(!bar) return;
+  const game=!$("gameCtrls").classList.contains("hidden"); bar.classList.toggle("hidden",!game); if(!game) return;
+  const n=todayN(), g=DAILY.goal, s=streakDays(), due=dueList().length;
+  bar.innerHTML=`<span class="fire" title="Days in a row you hit your goal">🔥 ${s} day${s===1?"":"s"}</span>
+    <span class="goal"><span class="gnum ${n>=g?"done":""}">${n>=g?"✅ ":""}${Math.min(n,999)}/${g} today</span><span class="gbar"><i style="width:${Math.min(100,n/g*100)}%"></i></span></span>
+    <span class="due">📚 ${due} due</span>
+    ${due?`<button class="btn alt sm" id="revBtn">Review now</button>`:""}`;
+  if($("revBtn")) $("revBtn").onclick=startReview;
+}
+/* stats panel */
+const _rs15=renderStats;
+renderStats=function(){
+  _rs15();
+  const s=streakDays(), n=todayN(), due=dueList();
+  const days=[...Array(14)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()-13+i);return d});
+  const mx=Math.max(DAILY.goal,...days.map(d=>DAILY.days[dayKey(d)]||0));
+  const box=document.createElement("div"); box.className="panel";
+  box.innerHTML=`<h3>📅 Daily goal &amp; review <span class="spacer"></span>
+      <label class="gn">Goal <select id="goalSel">${[10,20,30,50,80].map(v=>`<option ${v===DAILY.goal?"selected":""}>${v}</option>`).join("")}</select> correct / day</label></h3>
+    <div class="big3"><div><b>🔥 ${s}</b><span>Day streak</span></div><div><b>${n}/${DAILY.goal}</b><span>Today</span></div><div><b>${DAILY.best}</b><span>Best streak</span></div></div>
+    <div class="cal">${days.map(d=>{const v=DAILY.days[dayKey(d)]||0;return `<div class="${v>=DAILY.goal?"met":v?"part":""}" style="height:${Math.max(6,v/mx*100)}%" title="${dayKey(d)}: ${v}"></div>`}).join("")}</div>
+    <div class="cal-l">${days.map(d=>`<span>${"SMTWTFS"[d.getDay()]}</span>`).join("")}</div>
+    <div style="margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap"><b>📚 ${due.length} verb${due.length===1?"":"s"} due for review</b>
+      ${due.length?`<button class="btn alt sm" id="revBtn2">Review now</button>`:`<span class="gn">You're all caught up.</span>`}</div>
+    ${due.length?`<div class="due-list">${due.slice(0,30).map(v=>`<span data-v="${v}">${v}</span>`).join("")}${due.length>30?`<span>+${due.length-30} more</span>`:""}</div>`:""}
+    <div class="vnote">Any correct answer counts toward your goal. Verbs you miss come back today; ones you get right come back in 1, 3, 7, 14, then 30 days.</div>`;
+  const sv=$("statsView"); sv.insertBefore(box, sv.children[1]||null);
+  $("goalSel").onchange=()=>{DAILY.goal=+$("goalSel").value;saveDaily();renderStats();};
+  if($("revBtn2")) $("revBtn2").onclick=startReview;
+  box.querySelectorAll(".due-list span[data-v]").forEach(x=>x.onclick=()=>openVerb(x.dataset.v));
+};
+/* backups include the daily log */
+if(typeof BK_KEYS!=="undefined"&&!BK_KEYS.includes(LKEY("daily"))) BK_KEYS.push(LKEY("daily"),LKEY("banksort"));
+renderDaily();
+/* iPhone voice note inside the voice sheet */
+(function(){
+  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+  if(!ios) return;
+  const n=document.createElement("div"); n.className="sp-tip"; n.id="iosNote";
+  n.innerHTML="📱 <b>You're on iPhone/iPad:</b> only Apple's built-in voices listed above can be used in a web app. That's an Apple limit, not a setting you missed.";
+  $("spWarn").after(n);
+})();
+
+/* ===== v16 data · Spanish ===== */
+const G16T=(head,rows)=>`<table class="gt"><thead><tr>${head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+const G16B=x=>`<b class="hl">${x}</b>`;
+const G16={
+ ui:{tap:"Toca",correct:"¡Correcto!",itWas:"Not quite. It was",me:"⭐ Yo",res:["¡Perfecto! 🏆","¡Muy bien! 🎉","¡Buen trabajo! 💪"],nextRound:"Siguiente ronda ➜",
+   slangTab:"Jerga",phrHead:"Everyday phrases",phrSub:"Ready-to-use Spanish for real situations, with notes for Spain, Mexico and Costa Rica.",idHead:"Idioms · modismos",idSub:"Literal meaning, real meaning and the closest English idiom.",
+   tempTip:"Spain, Mexico and Costa Rica use Celsius. Type a temperature in °C or °F to hear how it's said.",
+   mapDesc:"Quiz: read or listen to the directions, starting at ⭐ facing north, then tap the place you end up at. 🎧 Listen plays the directions without text.",
+   treeDesc:"Quiz: tap the relative. ES→EN shows the Spanish word, EN→ES shows the English, 🎧 Listen only says it.",
+   mapStart:"⭐ You start here, facing north", mapTapHint:"Tap a building to see and hear its name.", treeTapHint:"Tap a relative to see and hear the word.", listenDir:"Listen to the directions, then tap where you end up."},
+ wgroups:{pron:{label:"Pronouns · me / lo / la / le",c:"#0b7285"},poss:{label:"Possessives",c:"#5f3dc4"},refl:{label:"Reflexives",c:"#2b8a3e"},
+   quest:{label:"Question words",c:"#e67700"},neg:{label:"Negatives",c:"#c92a2a"},cmp:{label:"Comparisons",c:"#1864ab"},place:{label:"Place words",c:"#862e9c"}},
+ gexpl:{pron:"object pronoun",poss:"possessive",refl:"reflexive pronoun",quest:"question word (always with an accent)",neg:"negative word",cmp:"comparison",place:"place word (+ de)"},
+ winfo:{lo:"lo = it / him (masculine direct object)",la:"la = it / her (feminine direct object)",los:"los = them (masculine or mixed)",me:"me = me / myself",te:"te = you (informal)",nos:"nos = us / ourselves",
+   le:"le = to him / to her / to you (indirect object)",se:"le + lo → se lo (never “le lo”) · se = himself / herself / each other",
+   mi:"mi = my (singular)",mis:"mis = my (plural)",tu:"tu = your (no accent; tú with accent = you)",su:"su = his / her / your (usted) / their",nuestros:"nuestros = our (masculine plural)",mía:"mía = mine (feminine thing)","él":"de él = his (clearer than su)",
+   "dónde":"dónde = where","cuál":"cuál = which / what. Use it with ser: ¿Cuál es…?","cómo":"cómo = how","quién":"quién = who","cuánto":"cuánto = how much","cuántos":"cuántos = how many (masculine)","cuándo":"cuándo = when","por qué":"por qué = why (two words + accent)","qué":"qué = what",
+   nada:"nada = nothing / anything",nadie:"nadie = nobody / anybody",nunca:"nunca = never",ninguna:"ninguna = no / none (feminine)","ningún":"ninguno → ningún before a masculine noun","todavía":"todavía no = not yet",tampoco:"tampoco = neither / either (negative)",
+   mejor:"bueno → mejor (never más bueno for quality)",peor:"malo → peor",mayor:"mayor = older / bigger",como:"tan … como = as … as","buenísima":"-ísimo = very: buenísimo, riquísimo",
+   debajo:"debajo de = under",encima:"encima de = on top of","al lado":"al lado de = next to",delante:"delante de = in front of",detrás:"detrás de = behind",dentro:"dentro de = inside",entre:"entre = between",cerca:"cerca de = near"},
+ witems:[
+  ["¿El libro? No __ encuentro.","lo","The book? I can't find it.","pron",["lo","la","le","él"]],
+  ["¿La llave? __ dejé en la mesa.","la","The key? I left it on the table.","pron",["la","lo","le","se"]],
+  ["¿Los papeles? Ya __ mandé.","los","The papers? I already sent them.","pron",["los","las","les","ellos"]],
+  ["Ella __ quiere mucho.","me","She loves me a lot.","pron",["me","te","se","nos"]],
+  ["__ llamo mañana.","te","I'll call you tomorrow.","pron",["te","me","le","se"]],
+  ["Mi madre __ dio un regalo.","nos","My mom gave us a gift.","pron",["nos","los","les","se"]],
+  ["__ di el libro a Juan.","le","I gave the book to Juan.","pron",["le","lo","la","se"]],
+  ["¿El regalo para María? Ya __ lo di.","se","The gift for María? I already gave it to her.","pron",["se","le","la","me"]],
+  ["Voy a ayudar__.","te","I'm going to help you. (pronoun attaches to the infinitive)","pron",["te","se","le","lo"]],
+  ["Este es __ coche.","mi","This is my car.","poss",["mi","mis","tu","su"]],
+  ["__ hermanos viven en Madrid.","mis","My brothers live in Madrid.","poss",["mis","mi","sus","tus"]],
+  ["¿Es __ libro?","tu","Is it your book? (informal)","poss",["tu","tú","su","te"]],
+  ["__ casa es muy bonita.","su","Her house is very pretty.","poss",["su","sus","la","suya"]],
+  ["__ abuelos son de México.","nuestros","Our grandparents are from Mexico.","poss",["nuestros","nuestras","nuestro","sus"]],
+  ["Esa mochila es __.","mía","That backpack is mine.","poss",["mía","mi","mío","mis"]],
+  ["El coche de __ es rojo.","él","His car is red.","poss",["él","el","su","lo"]],
+  ["__ levanto a las seis.","me","I get up at six.","refl",["me","se","te","nos"]],
+  ["Ella __ llama Ana.","se","Her name is Ana.","refl",["se","me","te","le"]],
+  ["¿Cómo __ llamas?","te","What's your name?","refl",["te","se","me","le"]],
+  ["Nosotros __ casamos en mayo.","nos","We got married in May.","refl",["nos","se","os","me"]],
+  ["Mis hijos __ duchan por la noche.","se","My kids shower at night.","refl",["se","les","los","nos"]],
+  ["No __ acuerdo de eso.","me","I don't remember that.","refl",["me","se","te","le"]],
+  ["¿__ vives?","dónde","Where do you live?","quest",["dónde","cuándo","quién","cuál"]],
+  ["¿__ es tu nombre?","cuál","What's your name?","quest",["cuál","qué","quién","cómo"]],
+  ["¿__ estás?","cómo","How are you?","quest",["cómo","dónde","cuándo","cuál"]],
+  ["¿__ es ella?","quién","Who is she?","quest",["quién","cuál","qué","dónde"]],
+  ["¿__ cuesta?","cuánto","How much does it cost?","quest",["cuánto","cuántos","cuál","cómo"]],
+  ["¿__ años tienes?","cuántos","How old are you?","quest",["cuántos","cuánto","cuántas","cuál"]],
+  ["¿__ vas a viajar?","cuándo","When are you going to travel?","quest",["cuándo","dónde","cómo","quién"]],
+  ["¿__ estás triste?","por qué","Why are you sad?","quest",["por qué","porque","qué","cómo"]],
+  ["¿__ quieres comer?","qué","What do you want to eat?","quest",["qué","cuál","quién","cómo"]],
+  ["No vi __.","nada","I didn't see anything.","neg",["nada","nadie","ningún","tampoco"]],
+  ["No hay __ aquí.","nadie","There's nobody here.","neg",["nadie","ningún","tampoco","ninguna"]],
+  ["Ella __ come carne.","nunca","She never eats meat.","neg",["nunca","nada","nadie","ninguna"]],
+  ["No tengo __ idea.","ninguna","I have no idea.","neg",["ninguna","ningún","nada","nadie"]],
+  ["No hay __ problema.","ningún","There's no problem.","neg",["ningún","ninguno","nada","nadie"]],
+  ["¿Ya terminaste? —No, __ no.","todavía","Did you finish? —No, not yet.","neg",["todavía","ya","nunca","nada"]],
+  ["—No me gusta. —A mí __.","tampoco","—I don't like it. —Me neither.","neg",["tampoco","también","nunca","nada"]],
+  ["Este café es __ que el otro.","mejor","This coffee is better than the other one.","cmp",["mejor","peor","mayor","menor"]],
+  ["Hoy está __ que ayer.","peor","Today is worse than yesterday.","cmp",["peor","mejor","menor","mayor"]],
+  ["Mi hermano es __ que yo.","mayor","My brother is older than me.","cmp",["mayor","menor","mejor","peor"]],
+  ["Ella es tan alta __ yo.","como","She's as tall as I am.","cmp",["como","que","de","tan"]],
+  ["¡La comida está __!","buenísima","The food is great!","cmp",["buenísima","mejor","mayor","peor"]],
+  ["El gato está __ de la mesa.","debajo","The cat is under the table.","place",["debajo","encima","detrás","dentro"]],
+  ["El libro está __ de la cama.","encima","The book is on top of the bed.","place",["encima","debajo","cerca","entre"]],
+  ["La farmacia está __ del banco.","al lado","The pharmacy is next to the bank.","place",["al lado","dentro","debajo","entre"]],
+  ["El coche está __ de la casa.","delante","The car is in front of the house.","place",["delante","encima","dentro","entre"]],
+  ["El jardín está __ de la casa.","detrás","The garden is behind the house.","place",["detrás","dentro","encima","debajo"]],
+  ["Las llaves están __ del bolso.","dentro","The keys are inside the bag.","place",["dentro","detrás","encima","entre"]],
+  ["La escuela está __ el parque y el mercado.","entre","The school is between the park and the market.","place",["entre","al lado","cerca","dentro"]],
+  ["Vivo __ de la playa.","cerca","I live near the beach.","place",["cerca","entre","dentro","debajo"]]
+ ],
+ guideHTML:`
+ <div class="panel" id="g-pron"><h3>🙋 Pronouns: I, me, my, it, they…</h3>
+  ${G16T(["Person","Subject","Object (it / him…)","To / for","Possessive","Reflexive"],[
+   ["I",G16B("yo"),"me","me · a mí","mi / mis · mío","me"],
+   ["you (informal)","tú","te","te · a ti","tu / tus · tuyo","te"],
+   ["he · she · you (formal)","él · ella · usted","lo / la","le · a él","su / sus · suyo","se"],
+   ["we","nosotros / nosotras","nos","nos","nuestro / nuestra","nos"],
+   ["you all (Spain)","vosotros","os","os","vuestro","os"],
+   ["they · you all","ellos / ellas · ustedes","los / las","les","su / sus · suyo","se"]])}
+  <p class="gn">Spain often uses <b>le</b> for “him” too (<i>Le vi</i>). Latin America prefers <b>lo</b> (<i>Lo vi</i>). Both are understood everywhere.</p></div>
+ <div class="two" style="grid-template-columns:1fr 1fr">
+  <div class="panel"><h3>🫥 Where did “it” go?</h3><ul class="gl">
+   <li>Subject “it” disappears: <b>Es caro.</b> (It's expensive) · <b>Llueve.</b> (It's raining) · <b>Es verdad.</b></li>
+   <li>As an object, “it” is <b>lo / la</b> by gender: <i>¿El libro? <b>Lo</b> tengo. ¿La foto? <b>La</b> vi.</i></li>
+   <li>For ideas, use <b>esto / eso / aquello</b> or <b>lo</b>: <i><b>Eso</b> es genial.</i> · <i>No <b>lo</b> sé.</i> (I don't know it)</li>
+   <li>Pronouns go <b>before</b> a conjugated verb, or <b>attach</b> to an infinitive, gerund or command: <i>Te ayudo · Voy a ayudar<b>te</b> · ¡Ayúda<b>me</b>!</i></li></ul></div>
+  <div class="panel"><h3>👥 They / them · double pronouns</h3><ul class="gl">
+   <li><b>ellos</b> = they (male or mixed) · <b>ellas</b> = they (all female)</li>
+   <li>them = <b>los / las</b>: <i>Los vi ayer.</i> · to them = <b>les</b>: <i>Les escribí.</i></li>
+   <li>Indirect before direct: <i>Me <b>lo</b> dio.</i> (He gave it to me)</li>
+   <li><b>le / les + lo / la → se</b>: <i>Se lo di.</i> (I gave it to him), never “le lo”</li></ul></div>
+ </div>
+ <div class="two" style="grid-template-columns:1fr 1fr">
+  <div class="panel"><h3>🏷️ Possessives</h3><ul class="gl">
+   <li>Short forms go before the noun: <i>mi casa, tus libros, nuestra familia</i></li>
+   <li>Long forms go after or alone: <i>Es <b>mío</b>. · un amigo <b>mío</b></i></li>
+   <li><b>su</b> can mean his, her, your (usted) or their. To be clear: <i>la casa <b>de él</b> / <b>de ella</b></i></li>
+   <li><b>tu</b> (your) has no accent; <b>tú</b> (you) does.</li></ul></div>
+  <div class="panel"><h3>🪞 Reflexive verbs</h3><ul class="gl">
+   <li><b>llamarse</b>: <i>Me llamo Andrew.</i> · <b>levantarse</b>: <i>Me levanto temprano.</i></li>
+   <li><b>ducharse</b>, <b>acostarse</b>, <b>acordarse</b>, <b>casarse</b>, <b>sentirse</b>, <b>irse</b></li>
+   <li>Spanish uses reflexives a lot more than English: <i>Me lavo las manos</i> (I wash my hands).</li></ul></div>
+ </div>
+ <div class="panel" id="g-qn"><h3>❓ Question words</h3>
+  ${G16T(["Spanish","English","Example"],[
+   [G16B("¿qué?"),"what","¿Qué quieres?"],[G16B("¿cuál? / ¿cuáles?"),"which / what (+ ser)","¿Cuál es tu nombre?"],[G16B("¿quién?"),"who","¿Quién es ella?"],
+   [G16B("¿dónde?"),"where","¿Dónde está el baño?"],[G16B("¿adónde?"),"where to","¿Adónde vas?"],[G16B("¿de dónde?"),"where from","¿De dónde eres?"],
+   [G16B("¿cuándo?"),"when","¿Cuándo llegas?"],[G16B("¿cómo?"),"how","¿Cómo estás?"],[G16B("¿por qué?"),"why","¿Por qué estás aquí?"],
+   [G16B("¿cuánto? / ¿cuántos?"),"how much / how many","¿Cuánto cuesta? · ¿Cuántos años?"]])}
+  <p class="gn">Question words always carry an accent, and questions open with <b>¿</b>. Answer “why” with <b>porque</b> (one word, no accent).</p>
+  <h3 style="margin-top:14px">🚫 Negatives</h3>
+  ${G16T(["Spanish","English","Example"],[
+   [G16B("no"),"not / no","No sé."],[G16B("nunca / jamás"),"never","Nunca fui a Madrid."],[G16B("nada"),"nothing / anything","No vi nada."],
+   [G16B("nadie"),"nobody / anybody","No hay nadie."],[G16B("ningún / ninguna"),"no / none","No tengo ninguna idea."],[G16B("ni … ni"),"neither … nor","Ni café ni té."],
+   [G16B("todavía no"),"not yet","Todavía no comí."],[G16B("ya no"),"no longer","Ya no vivo allí."],[G16B("tampoco"),"me neither / not … either","Yo tampoco."]])}
+  <p class="gn">Double negatives are correct: <b>No</b> vi <b>nada</b>. If the negative word comes first, drop <b>no</b>: <i>Nadie vino.</i></p></div>
+ <div class="two" style="grid-template-columns:1fr 1fr" id="g-cmp">
+  <div class="panel"><h3>📏 Comparisons</h3><ul class="gl">
+   <li><b>más … que</b> = more … than · <b>menos … que</b> = less … than</li>
+   <li><b>tan … como</b> = as … as · <b>tanto(s) … como</b> = as much / many as</li>
+   <li>Irregular: <b>bueno → mejor</b> · <b>malo → peor</b> · <b>mayor</b> (older) · <b>menor</b> (younger)</li>
+   <li>Most: <b>el más</b> alto · Very: <b>muy</b> bueno or <b>-ísimo</b>: <i>riquísimo</i></li></ul></div>
+  <div class="panel"><h3>📍 Place words</h3>
+   ${G16T(["Spanish","English"],[["encima de","on top of"],["debajo de","under"],["dentro de","inside"],["fuera de","outside"],["delante de / enfrente de","in front of / across from"],["detrás de","behind"],["al lado de","next to"],["entre","between"],["cerca de / lejos de","near / far from"]])}
+   <p class="gn">de + el = <b>del</b>: <i>al lado <b>del</b> banco, encima <b>de la</b> mesa</i></p></div>
+ </div>`,
+ vx:{
+  weather:[["el tiempo","the weather","¿Qué tiempo hace? · tiempo also means time"],["el sol","sun","Hace sol = It's sunny"],["la lluvia","rain","Está lloviendo / Llueve"],["llover","to rain","Va a llover mañana."],
+   ["la nube","cloud","Está nublado = It's cloudy"],["el viento","wind","Hace viento = It's windy"],["la tormenta","storm"],["el trueno","thunder"],["el relámpago","lightning"],["la niebla","fog"],
+   ["la nieve","snow"],["el paraguas","umbrella"],["Hace calor.","It's hot.","Weather uses hacer: hace calor, hace frío"],["Hace frío.","It's cold."],["Hace buen tiempo.","The weather is nice."],["Hace mal tiempo.","The weather is bad."],
+   ["¡Qué calor!","It's so hot!"],["Hace bochorno.","It's muggy."],["la temperatura","temperature"],["el grado","degree","Estamos a 30 grados = It's 30 degrees"],["¿A cuánto estamos?","What's the temperature?","Also: ¿Qué temperatura hace?"],
+   ["bajo cero","below zero"],["el pronóstico del tiempo","weather forecast","Spain: la previsión"],["húmedo","humid"],["seco","dry"],["la temporada de lluvias","rainy season","Costa Rica calls it invierno (May–Nov)"]],
+  dir:[["gire a la derecha","turn right","Also: doble a la derecha"],["gire a la izquierda","turn left"],["siga recto","go straight","Latin America: siga derecho"],["regrese","go back","Spain: vuelva"],["cruce la calle","cross the street"],
+   ["tome la primera a la derecha","take the first right","Spain: coja"],["la segunda a la izquierda","the second on the left"],["al final de la calle","at the end of the street"],["en la esquina","on the corner"],
+   ["en el semáforo","at the traffic light"],["la cuadra","block","Spain: la manzana"],["cerca de","near"],["lejos de","far from"],["al lado de","next to"],["enfrente de","across from"],["detrás de","behind"],["entre","between"],
+   ["a la derecha","on the right"],["a la izquierda","on the left"],["el norte","north"],["el sur","south"],["el este","east"],["el oeste","west"],
+   ["¿Cómo llego a…?","How do I get to…?"],["¿Está lejos de aquí?","Is it far from here?"],["Está a diez minutos a pie.","It's ten minutes on foot.","Mexico: caminando"],["Estoy perdido.","I'm lost.","Perdida for a woman"],
+   ["¿Me lo puede mostrar en el mapa?","Can you show me on the map?"],["100 metros al norte","100 meters north","Costa Rica: 100 metros = one block"]],
+  family:[["la familia","family"],["el padre","father","Also papá"],["la madre","mother","Also mamá"],["los padres","parents"],["el hermano","brother"],["la hermana","sister"],["el hijo","son"],["la hija","daughter"],["los hijos","children (sons and daughters)"],
+   ["el abuelo","grandfather"],["la abuela","grandmother"],["los abuelos","grandparents"],["el nieto","grandson"],["la nieta","granddaughter"],["el tío","uncle","In Spain, tío is also slang for dude!"],["la tía","aunt"],
+   ["el primo","cousin (male)"],["la prima","cousin (female)"],["el sobrino","nephew"],["la sobrina","niece"],["el suegro","father-in-law"],["la suegra","mother-in-law"],["el cuñado","brother-in-law"],["la cuñada","sister-in-law"],
+   ["el yerno","son-in-law"],["la nuera","daughter-in-law"],["el esposo","husband","Also el marido"],["la esposa","wife","Also la mujer"],["el novio","boyfriend / fiancé / groom","Context decides!"],["la novia","girlfriend / fiancée / bride"],
+   ["el prometido","fiancé (formal)"],["la boda","wedding"],["casado","married"],["soltero","single"],["el padrino","godfather / best man"],["la madrina","godmother / maid of honor"],
+   ["el compadre","co-parent / close family friend","Your child's godfather, or your own child's godparent"],["el hijastro","stepson"],["el padrastro","stepfather"],["la madrastra","stepmother"],["el bebé","baby"],["el benjamín","youngest child"],["el medio hermano","half-brother"]]
+ },
+ tempPhrase:c=>{const a=Math.abs(c),n=a===0?"cero":numToPt(a).replace(/veintiuno$/,"veintiún").replace(/uno$/,"un"),w=n+(a===1?" grado":" grados");return "Estamos a "+w+(c<0?" bajo cero":"")},
+ feel:c=>c>=30?["¡Qué calor!","it's so hot!"]:c>=24?["Hace calor.","it's warm"]:c>=17?["Hace buen tiempo.","it's pleasant"]:c>=8?["Hace frío.","it's cold"]:["¡Hace mucho frío!","it's very cold!"],
+ landmarks:[["la panadería","bakery","🥖"],["la farmacia","pharmacy","💊"],["el banco","bank","🏦"],["la iglesia","church","⛪"],["la escuela","school","🏫"],["el parque","park","🌳"],["el mercado","market","🛒"],["el hospital","hospital","🏥"],
+   ["el restaurante","restaurant","🍽️"],["el hotel","hotel","🏨"],["la oficina de correos","post office","📮"],["el museo","museum","🏛️"],["el cine","movie theater","🎬"],["la comisaría","police station","🚓"],["la gasolinera","gas station","⛽"],["la biblioteca","library","📚"]],
+ mapTxt:{go:n=>`Siga recto ${["","una cuadra","dos cuadras","tres cuadras"][n]}.`,right:"Gire a la derecha.",left:"Gire a la izquierda.",final:s=>`El lugar está en la esquina, a su ${s==="right"?"derecha":"izquierda"}.`},
+ mapEn:{go:n=>`Go straight ${["","one block","two blocks","three blocks"][n]}.`,right:"Turn right.",left:"Turn left.",final:s=>`The place is on the corner, on your ${s}.`},
+ ftree:{avo:["el abuelo","grandfather","🧓",260,55],avoa:["la abuela","grandmother","👵",360,55],
+  tia:["la tía","aunt (your uncle's wife)","👩",60,165],tio:["el tío","uncle (your dad's brother)","👨",150,165],pai:["el padre","father","👨",270,165],mae:["la madre","mother","👩",350,165],sogro:["el suegro","father-in-law","🧓",520,165],sogra:["la suegra","mother-in-law","👵",610,165],
+  prima:["la prima","cousin (female)","👧",35,275],primo:["el primo","cousin (male)","👦",110,275],irmao:["el hermano","brother","👨",195,275],irma:["la hermana","sister","👩",270,275],eu:["yo","you","⭐",350,275],esposa:["la esposa","wife","👰",430,275],cunhado:["el cuñado","brother-in-law (your wife's brother)","🧔",590,275],
+  sobrinho:["el sobrino","nephew (your brother's son)","👦",195,385],sobrinha:["la sobrina","niece (your sister's daughter)","👧",270,385],filho:["el hijo","son","👦",350,385],filha:["la hija","daughter","👧",430,385]},
+ phrases:[
+  ["🙏 Courtesy",[["Disculpe. / Con permiso.","Excuse me.","Con permiso to pass by · disculpe to get attention"],["Perdón. / Lo siento.","Sorry.","Lo siento for something serious"],["Por favor.","Please."],["Gracias.","Thank you."],
+    ["De nada.","You're welcome.","Mexico also: Por nada / Para servirle"],["¿Qué tal?","How's it going?"],["Mucho gusto.","Nice to meet you.","Reply: Igualmente"],["Buenos días. / Buenas tardes. / Buenas noches.","Good morning / afternoon / evening."],["¡Hasta luego!","See you later!"],["Está en su casa.","Make yourself at home.","Mexico: Mi casa es su casa"]]],
+  ["💬 Small talk",[["¿De dónde eres?","Where are you from?"],["Soy de los Estados Unidos.","I'm from the United States."],["¿A qué te dedicas?","What do you do (for work)?"],["¿Hablas inglés?","Do you speak English?"],
+    ["Estoy aprendiendo español.","I'm learning Spanish."],["¿Puedes hablar más despacio?","Can you speak more slowly?"],["¿Me lo repites?","Can you repeat that?","Mexico: ¿Mande? = Pardon?"],["¿Cómo se dice … en español?","How do you say … in Spanish?"],["No entendí.","I didn't understand.","Spain: No he entendido"]]],
+  ["🍽️ Restaurant",[["Una mesa para dos, por favor.","A table for two, please."],["La carta, por favor.","The menu, please.","Latin America also: el menú"],["Para mí…","I'll have…","Also: Me trae… / Quisiera…"],["Sin hielo, por favor.","No ice, please."],
+    ["¡Está riquísimo!","It's delicious!"],["La cuenta, por favor.","The check, please."],["¿Me trae otro, por favor?","Can you bring another one?"],["¿Aceptan tarjeta?","Do you take cards?"]]],
+  ["🛍️ Shopping",[["¿Cuánto cuesta?","How much is it?"],["Está muy caro.","It's too expensive."],["¿Tiene descuento?","Is there a discount?"],["¿Me lo puedo probar?","Can I try it on?"],["Solo estoy mirando.","I'm just looking.","Mexico: Nada más estoy viendo"],["Me lo llevo.","I'll take it."]]],
+  ["🧳 Travel & help",[["¿Dónde está el baño?","Where's the bathroom?","Spain: el servicio / el aseo"],["¿Me puede ayudar?","Can you help me?"],["Estoy perdido.","I'm lost."],["¿Nos puede tomar una foto?","Can you take a photo of us?","Spain: hacer una foto"],["¿A qué hora sale el autobús?","What time does the bus leave?"],["¿Hay wifi?","Is there Wi-Fi?"]]],
+  ["🚨 Emergencies",[["¡Socorro! / ¡Ayuda!","Help!"],["¡Llame a una ambulancia!","Call an ambulance!","Emergency number: 112 Spain, 911 Mexico and Costa Rica"],["Necesito un médico.","I need a doctor."],["Me robaron.","I was robbed.","Spain: Me han robado"],["Me siento mal.","I don't feel well."],["¿Dónde está la farmacia más cercana?","Where's the nearest pharmacy?"]]]
+ ],
+ idioms:[
+  ["Costar un ojo de la cara","To cost an eye from the face","To be very expensive","To cost an arm and a leg","El hotel costó un ojo de la cara.","The hotel cost an arm and a leg."],
+  ["Estar en las nubes","To be in the clouds","To be daydreaming","To have your head in the clouds","Perdona, estaba en las nubes.","Sorry, I was daydreaming."],
+  ["Echar una mano","To throw a hand","To help out","To lend a hand","¿Me echas una mano con la mudanza?","Can you lend me a hand with the move?"],
+  ["No tener pelos en la lengua","To have no hairs on your tongue","To speak bluntly","To not mince words","Mi abuela no tiene pelos en la lengua.","My grandma doesn't mince words."],
+  ["Meter la pata","To put your paw in","To make a blunder","To put your foot in it","Metí la pata con mi jefe.","I put my foot in it with my boss."],
+  ["Tomar el pelo","To take the hair","To tease someone","To pull someone's leg","¿Me estás tomando el pelo?","Are you pulling my leg?"],
+  ["Ponerse las pilas","To put your batteries in","To get your act together","To get on the ball","¡Ponte las pilas, que el examen es mañana!","Get on the ball, the exam is tomorrow!"],
+  ["Ser pan comido","To be eaten bread","To be very easy","To be a piece of cake","El examen fue pan comido.","The exam was a piece of cake."],
+  ["Estar como una cabra","To be like a goat","To be a bit crazy","To be nuts","Tu primo está como una cabra.","Your cousin is nuts."],
+  ["Dar en el clavo","To hit the nail","To be exactly right","To hit the nail on the head","¡Diste en el clavo!","You hit the nail on the head!"],
+  ["Matar dos pájaros de un tiro","To kill two birds with one shot","To get two things done at once","To kill two birds with one stone","Fui al banco y al súper: maté dos pájaros de un tiro.","Bank and supermarket in one trip: two birds, one stone."],
+  ["Estar hasta las narices","To be up to the nostrils","To be fed up","To be sick and tired","Estoy hasta las narices del tráfico.","I'm sick and tired of the traffic."],
+  ["Quedarse en blanco","To stay in white","To go blank","To draw a blank","En la entrevista me quedé en blanco.","I drew a blank in the interview."],
+  ["Ser uña y carne","To be nail and flesh","To be inseparable","To be two peas in a pod","Ana y Sofía son uña y carne.","Ana and Sofía are two peas in a pod."],
+  ["Hablar hasta por los codos","To talk even through the elbows","To talk a lot","To talk someone's ear off","Mi tía habla hasta por los codos.","My aunt talks your ear off."],
+  ["Llover a cántaros","To rain by the jugful","To rain heavily","To rain cats and dogs","Está lloviendo a cántaros.","It's raining cats and dogs."],
+  ["No hay mal que por bien no venga","There's no bad that doesn't come for good","Something good comes out of bad things","Every cloud has a silver lining","Perdí el tren, pero no hay mal que por bien no venga.","I missed the train, but every cloud has a silver lining."],
+  ["A otro perro con ese hueso","To another dog with that bone","I don't believe you","Pull the other one","¿Que llegaste a las ocho? A otro perro con ese hueso.","You got here at eight? Pull the other one."],
+  ["Hacer una vaquita","To make a little cow","To pool money together (Latin America)","To chip in","Hagamos una vaquita para el regalo.","Let's chip in for the gift."],
+  ["Más vale tarde que nunca","More worth late than never","It's better to do it late than not at all","Better late than never","Llegaste, ¡más vale tarde que nunca!","You made it, better late than never!"]
+ ],
+ stories:[
+  {lv:1,ic:"🍽️",t:"La comida del domingo",en:"Sunday lunch",l:[
+   ["El domingo, toda la familia se {reunió|got together} en casa de mis abuelos.","On Sunday, the whole family got together at my grandparents' house."],
+   ["Mi abuela {cocinó|cooked|cocinar} mole y mi abuelo {preparó|made|preparar} agua de jamaica.","My grandma cooked mole and my grandpa made hibiscus water."],
+   ["Mi tío {llegó|arrived|llegar} tarde, como siempre, con mi tía y mis primos.","My uncle arrived late, as always, with my aunt and my cousins."],
+   ["Mi hermana {trajo|brought|traer} a su novio nuevo para {conocer|meet|conocer} a todos.","My sister brought her new boyfriend to meet everyone."],
+   ["Él {estaba|was|estar} nervioso, pero mi padre {contó|told|contar} un chiste y todos se {rieron|laughed|reír}.","He was nervous, but my dad told a joke and everyone laughed."],
+   ["Después de comer, mis sobrinos {jugaron|played|jugar} al fútbol en el patio.","After lunch, my nephews played soccer in the patio."],
+   ["Por la tarde, mi madre {dijo|said|decir}: —Esta familia es muy ruidosa, ¡pero me {encanta|love it|encantar}!","In the afternoon, my mom said: \"This family is really loud, but I love it!\""]],
+   q:[["¿Dónde comió la familia?","Where did the family eat?","En casa de los abuelos","En un restaurante","En la playa"],["¿Quién llegó tarde?","Who arrived late?","El tío","El abuelo","La hermana"],["¿A quién trajo la hermana?","Who did the sister bring?","A su novio nuevo","A una amiga","Al perro"]]},
+  {lv:2,ic:"🌧️",t:"Un día de lluvia en Monteverde",en:"A rainy day in Monteverde",l:[
+   ["El pronóstico {decía|said|decir} que iba a hacer sol, así que {fuimos|we went|ir} a Monteverde.","The forecast said it would be sunny, so we went to Monteverde."],
+   ["Cuando {llegamos|we arrived|llegar}, había mucha niebla y {hacía|it was|hacer} solo quince grados.","When we arrived, it was very foggy and only fifteen degrees."],
+   ["De repente {empezó|started|empezar} a llover a cántaros y nadie {tenía|had|tener} paraguas.","Suddenly it started pouring, and nobody had an umbrella."],
+   ["{Corrimos|We ran|correr} a una cafetería y {pedimos|we ordered|pedir} chocolate caliente.","We ran to a café and ordered hot chocolate."],
+   ["Mientras {llovía|it was raining}, {hablamos|we talked|hablar} durante horas con el dueño, un {mae|guy (Costa Rica)} muy simpático.","While it was raining, we talked for hours with the owner, a really nice guy."],
+   ["Por la tarde {salió|came out|salir} el sol y {vimos|we saw|ver} un quetzal en el bosque.","In the afternoon the sun came out and we saw a quetzal in the forest."],
+   ["Si {hubiera hecho|had been} sol todo el día, no {habríamos conocido|would have found} aquella cafetería tan especial.","If it had been sunny all day, we wouldn't have found that special café."]],
+   q:[["¿Qué decía el pronóstico?","What did the forecast say?","Que iba a hacer sol","Que iba a nevar","Que iba a llover"],["¿Cuántos grados hacía?","What was the temperature?","Quince grados","Treinta grados","Cero grados"],["¿Qué vieron en el bosque?","What did they see in the forest?","Un quetzal","Un mono","Una serpiente"]]},
+  {lv:2,ic:"🗺️",t:"Perdido en Sevilla",en:"Lost in Seville",l:[
+   ["Mi primer día en Sevilla, {salí|I left|salir} del hotel sin el móvil.","My first day in Seville, I left the hotel without my phone."],
+   ["{Quería|I wanted|querer} ir a la catedral, pero media hora después {me di cuenta|I realized} de que estaba perdido.","I wanted to go to the cathedral, but half an hour later I realized I was lost."],
+   ["{Paré|I stopped|parar} a una señora y le {pregunté|asked|preguntar}: —Disculpe, ¿cómo llego a la catedral?","I stopped a woman and asked her: \"Excuse me, how do I get to the cathedral?\""],
+   ["—¡Es fácil! {Siga|Go|seguir} recto dos calles y {gire|turn} a la izquierda en la iglesia.","\"It's easy! Go straight two streets and turn left at the church.\""],
+   ["—Después, {cruce|cross|cruzar} la plaza. La catedral está detrás del museo.","\"Then cross the square. The cathedral is behind the museum.\""],
+   ["Le {di|I gave|dar} las gracias, {seguí|I followed|seguir} sus indicaciones y {llegué|I arrived|llegar} en diez minutos.","I thanked her, followed her directions and arrived in ten minutes."],
+   ["Desde ese día, siempre {pido|I ask for|pedir} indicaciones: ¡es la mejor clase de español!","Since that day, I always ask for directions: it's the best Spanish lesson!"]],
+   q:[["¿Qué olvidó en el hotel?","What did he forget at the hotel?","El móvil","La cartera","El mapa"],["¿Dónde tenía que girar a la izquierda?","Where did he have to turn left?","En la iglesia","En el banco","En la playa"],["¿Dónde está la catedral?","Where is the cathedral?","Detrás del museo","Delante del hotel","Al lado de la playa"]]}
+ ]
+};
+
+/* =====================================================================
+   v16 · GRAMMAR TAB · NEW VOCAB TOPICS · MAP & FAMILY DIAGRAMS ·
+         PHRASES & IDIOMS · NEW STORIES
+   ===================================================================== */
+const U16=G16.ui;
+/* ---------- nav: Articles & Connectors → Grammar ---------- */
+(function(){ const b=document.querySelector('nav [data-m="words"]'); if(!b) return;
+  b.dataset.full="🧩 Grammar"; NAV_SHORT.words="Grammar"; fitNav(); })();
+
+/* ---------- 1 · GRAMMAR: new groups, items, guide sections ---------- */
+Object.assign(WGROUPS,G16.wgroups);
+G16.witems.forEach(([s,a,en,g,opts])=>WITEMS.push({id:WITEMS.length,s,a,en,g,opts}));
+(function(){ const rw=LS.get(LKEY("wset"),{}), all=Object.keys(WGROUPS);
+  let k=Array.isArray(rw.cats)?rw.cats.filter(x=>WGROUPS[x]):all;
+  if(!rw.v16) k=[...new Set([...k,...Object.keys(G16.wgroups)])];
+  WSET.cats=k.length?k:all; WSET.v16=1; saveW(); })();
+WSET.cats=WSET.cats.filter(k=>WGROUPS[k]);
+const _why16=whyOf;
+whyOf=function(it){ if(G16.wgroups[it.g]) return `<b>${it.a}</b> · ${G16.winfo[it.a]||G16.gexpl[it.g]}`; return _why16(it); };
+const _rg16=renderGuide;
+renderGuide=function(){
+  _rg16();
+  const body=$("wBody"), kids=[...body.children];
+  if(kids[0]) kids[0].id="g-art";
+  const conn=[...body.querySelectorAll(".panel")].find(p=>/Connectors/.test((p.querySelector("h3")||{}).textContent||""));
+  if(conn) conn.id="g-conn";
+  body.lastElementChild.insertAdjacentHTML("beforebegin",G16.guideHTML);
+  const nav=[["g-art","🔤 Articles"],["g-pron","🙋 Pronouns"],["g-conn","🧵 Connectors"],["g-qn","❓ Questions & negatives"],["g-cmp","📏 Compare & place"]];
+  body.insertAdjacentHTML("afterbegin",`<div class="gnav">${nav.map(([id,l])=>`<button data-g="${id}">${l}</button>`).join("")}</div>`);
+  body.querySelectorAll(".gnav button").forEach(b=>b.onclick=()=>{const t=$(b.dataset.g); if(t) t.scrollIntoView({behavior:"smooth",block:"start"});});
+  body.querySelectorAll("[data-say]").forEach(x=>x.onclick=()=>sayAlways(x.dataset.say));
+};
+
+/* ---------- 2 · VOCAB: weather · directions · family (+ phrases & idioms for Match) ---------- */
+const OLD_VX=VX_KEYS.length, OLD_VM=VM_CATS.length;
+Object.assign(VX_TOPICS,{weather:{label:"Weather",ic:"🌦️"},dir:{label:"Directions",ic:"🧭"},family:{label:"Family",ic:"👨‍👩‍👧"},
+  phrase:{label:"Phrases",ic:"💬"},idiom:{label:"Idioms",ic:"🦜"},map:{label:"Map quiz",ic:"🗺️"},ftree:{label:"Family tree",ic:"🌳"}});
+["weather","dir","family"].forEach(k=>{ VX_KEYS.push(k); VX[k]=G16.vx[k].map(([pt,en,note,sy])=>({t:k,pt,en,note:note||"",say:sy||pt})); });
+VX.phrase=G16.phrases.flatMap(([cat,list])=>list.map(([pt,en,note])=>({t:"phrase",pt,en,note:note||"",say:pt,cat})));
+VX.idiom=G16.idioms.map(([pt,lit,mean,eq,ex,exen])=>({t:"idiom",pt,en:mean,note:"≈ "+eq,say:pt,lit,eq,ex,exen}));
+VM_CATS.splice(VM_CATS.indexOf("body"),0,"weather","dir","family","phrase","idiom");
+/* earlier code filtered saved choices against the old key lists; re-read the raw saved values */
+(function(){
+  const rs=LS.get(LKEY("set"),{}), rv=LS.get(LKEY("vxset"),{});
+  if(Array.isArray(rs.vcats)){ const k=rs.vcats.filter(x=>VM_CATS.includes(x)); SET.vcats=!rs.v16&&k.length>=OLD_VM?[...VM_CATS]:(k.length?k:[...VM_CATS]); }
+  else SET.vcats=[...VM_CATS];
+  if(Array.isArray(rv.topics)){ const k=rv.topics.filter(x=>VX_KEYS.includes(x)); VXS.topics=!rv.v16&&k.length>=OLD_VX?[...VX_KEYS]:(k.length?k:[...VX_KEYS]); }
+  else VXS.topics=[...VX_KEYS];
+  SET.v16=1; VXS.v16=1; saveSet(); saveVX();
+})();
+/* temperature tool injected into the Weather section of Learn */
+function g16Temp(sec){
+  if(!sec||sec.querySelector(".temp-tool")) return;
+  const host=sec.querySelector(".vx-in"); if(!host) return;
+  host.insertAdjacentHTML("afterbegin",`<div class="vx-tool temp-tool"><input type="number" id="tIn" value="30" step="1" inputmode="numeric" aria-label="Temperature">
+    <div class="seg" id="tUnit"><button data-u="C" class="on">°C</button><button data-u="F">°F</button></div>
+    <div class="vx-out"><span id="tP"></span><div class="clk-en" id="tE"></div></div><button class="spk2" id="tSay" title="Hear it">🔊</button></div>
+    <p class="vx-tip">${U16.tempTip}</p>`);
+  let unit="C";
+  const run=speak=>{ const v=parseFloat($("tIn").value); if(isNaN(v)) return;
+    const c=unit==="C"?Math.round(v):Math.round((v-32)*5/9), f=unit==="F"?Math.round(v):Math.round(v*9/5+32);
+    const p=G16.tempPhrase(c), fe=G16.feel(c);
+    $("tP").textContent=p+"."; $("tE").textContent=`${c} °C = ${f} °F${fe?` · ${fe[0]} (${fe[1]})`:""}`; if(speak) sayAlways(p+(fe?". "+fe[0]:"")); };
+  $("tIn").oninput=()=>run(false); $("tIn").onchange=()=>run(true);
+  $("tUnit").querySelectorAll("button").forEach(b=>b.onclick=()=>{unit=b.dataset.u;$("tUnit").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));
+    $("tIn").value=unit==="F"?86:30; run(true);});
+  $("tSay").onclick=()=>sayAlways($("tP").textContent);
+  run(false);
+}
+new MutationObserver(()=>{ const s=[...document.querySelectorAll("#vocabView details.vx-sec")].find(d=>/^🌦️/.test(d.querySelector("summary").textContent.trim())); if(s) g16Temp(s); })
+  .observe($("vocabView"),{childList:true,subtree:true});
+
+/* ---------- 3 · VOCAB sub-tabs: 🗺️ Map and 🌳 Family tree ---------- */
+let MQ=null, FQ=null, mSel=null, fSel=null;
+if(!VXS.mmode) VXS.mmode="explore"; if(!VXS.fmode) VXS.fmode="explore"; if(VXS.flabels==null) VXS.flabels=true; if(VXS.mlabels==null) VXS.mlabels=true;
+const _rv16=renderVocab;
+renderVocab=function(){
+  const xs=VXS.xsub;
+  if(xs){ const keep=VXS.sub; VXS.sub="learn"; _rv16(); VXS.sub=keep; } else _rv16();
+  const seg=$("vxSub");
+  seg.insertAdjacentHTML("beforeend",`<button data-s="map">🗺️ Map</button><button data-s="ftree">🌳 Family</button>`);
+  seg.querySelectorAll("button").forEach(b=>{ b.classList.toggle("on",xs?b.dataset.s===xs:b.dataset.s===VXS.sub);
+    b.onclick=()=>{ const s=b.dataset.s; if(s==="map"||s==="ftree"){VXS.xsub=s;MQ=null;FQ=null;} else {VXS.xsub=null;VXS.sub=s;if(s==="stories")STV.open=null;} saveVX(); renderVocab(); }; });
+  if(!xs) return;
+  const isMap=xs==="map", qmode=isMap?VXS.mmode:VXS.fmode;
+  $("vxSum").innerHTML=`<b>${isMap?"🗺️ Map":"🌳 Family tree"}</b> · ${qmode==="quiz"?"Quiz":"Explore"} · ${VX_DIRL[VXS.dir]} · ${VXS.len} Qs`;
+  const ab=$("vxSetToggle").parentElement; [...ab.children].forEach(c=>{ if(c.id!=="vxSetToggle") c.remove(); });
+  ab.insertAdjacentHTML("beforeend",`<button class="btn go ab ${qmode!=="quiz"?"hidden":""}" id="vxNew16">↻ New</button>`);
+  $("vxNew16").onclick=()=>{ if(isMap) MQ=null; else FQ=null; isMap?renderMap():renderTree(); };
+  $("vxSetPanel").innerHTML=`<div class="sp-row"><span class="ctl-lbl">Quiz</span>
+     <div class="seg" id="vxDir16">${Object.entries(VX_DIRL).map(([k,l])=>`<button data-v="${k}" class="${VXS.dir===k?"on":""}">${l}</button>`).join("")}</div>
+     <label>Questions <select id="vxLen16">${[6,8,10,15,20].map(n=>`<option ${n===VXS.len?"selected":""}>${n}</option>`).join("")}</select></label></div>
+     <div class="lvdesc">${isMap?U16.mapDesc:U16.treeDesc}</div>`;
+  $("vxSetPanel").querySelectorAll("#vxDir16 button").forEach(b=>b.onclick=()=>{VXS.dir=b.dataset.v;saveVX();MQ=null;FQ=null;renderVocab()});
+  $("vxLen16").onchange=()=>{VXS.len=+$("vxLen16").value;saveVX();MQ=null;FQ=null;renderVocab()};
+  isMap?renderMap():renderTree();
+};
+function g16Result(host,Q,kind,again,retry){
+  const total=Q.n, right=Q.right, acc=Math.round(right/Math.max(1,total)*100);
+  ST.rounds.push({d:Date.now(),m:kind,n:total,x:total-right,s:0,a:acc}); ST.rounds=ST.rounds.slice(-60); LS.set(LKEY("stats"),ST);
+  if(acc===100){win();confetti();}
+  const seen=new Set(), wr=Q.wrong.filter(w=>!seen.has(w.pt)&&seen.add(w.pt));
+  host.innerHTML=`<div class="panel" style="text-align:center;box-shadow:none">
+    <h2 style="margin:0;color:var(--green);font-size:30px">${acc===100?U16.res[0]:acc>=75?U16.res[1]:U16.res[2]}</h2>
+    <div class="sum"><div><b>${right}/${total}</b><span>Correct</span></div><div><b>${acc}%</b><span>Accuracy</span></div><div><b>${score}</b><span>Score</span></div></div>
+    ${wr.length?`<div class="review">${wr.map(w=>`<div><span>❌ <b class="hl">${w.pt}</b></span><span class="gn">${w.en}</span></div>`).join("")}</div>`:`<p class="gn">No mistakes this round!</p>`}
+    <div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      ${wr.length&&retry?`<button class="btn alt" id="g16Retry">Retry my misses</button>`:""}<button class="btn go" id="g16Again">${U16.nextRound}</button></div></div>`;
+  $("g16Again").onclick=again; if($("g16Retry")) $("g16Retry").onclick=()=>retry(wr);
+}
+/* ---- 🗺️ Map ---- */
+const LM=G16.landmarks; // [word, english, emoji]
+const MX=x=>40+x*80, MY=y=>360-y*80;
+const HD=[[0,1],[1,0],[0,-1],[-1,0]]; // N E S W
+function frontBlock(x,y,h,side){ // side: "right" | "left"
+  const t={0:{right:[x,y],left:[x-1,y]},1:{right:[x,y-1],left:[x,y]},2:{right:[x-1,y-1],left:[x,y-1]},3:{right:[x-1,y],left:[x-1,y-1]}}[h][side];
+  return t[0]>=0&&t[0]<4&&t[1]>=0&&t[1]<4?(3-t[1])*4+t[0]:-1;
+}
+function genRoute(){
+  for(let tries=0;tries<500;tries++){
+    let x=2,y=0,h=0; const steps=[], path=[[x,y]]; const segs=1+rint(3); let ok=true;
+    for(let s=0;s<segs;s++){
+      if(s>0){ const turn=rnd(["right","left"]); h=(h+(turn==="right"?1:3))%4; steps.push({t:turn}); }
+      const n=1+rint(3), nx=x+HD[h][0]*n, ny=y+HD[h][1]*n;
+      if(nx<0||nx>4||ny<0||ny>4){ok=false;break;}
+      x=nx;y=ny; steps.push({t:"go",n}); path.push([x,y]);
+    }
+    if(!ok) continue;
+    const side=rnd(["right","left"]), target=frontBlock(x,y,h,side);
+    if(target<0) continue;
+    return {steps,side,target,path,end:[x,y,h]};
+  }
+}
+function routeText(r,en){ const T=en?G16.mapEn:G16.mapTxt;
+  return r.steps.map(s=>s.t==="go"?T.go(s.n):T[s.t]).concat(T.final(r.side)).join(" "); }
+function renderMap(){
+  const a=$("vxArea"), quiz=VXS.mmode==="quiz";
+  if(quiz&&!MQ) MQ={i:0,n:VXS.len,right:0,wrong:[],streak:0,r:genRoute(),answered:false};
+  const lab=VXS.mlabels&&!quiz;
+  const blocks=LM.map(([w,en,e],i)=>{const bx=i%4, by=3-Math.floor(i/4), x=MX(bx)+10, y=MY(by+1)+10;
+    return `<g class="mb" data-i="${i}"><rect x="${x}" y="${y}" width="60" height="60" rx="9"/><text class="me" x="${x+30}" y="${y+(lab?30:36)}">${e}</text>${lab?`<text class="ml" x="${x+30}" y="${y+52}">${w.replace(/^(o|a|os|as|el|la|los|las) /,"")}</text>`:""}</g>`}).join("");
+  const streets=[0,1,2,3,4].map(i=>`<line x1="${MX(i)}" y1="${MY(0)}" x2="${MX(i)}" y2="${MY(4)}"/><line x1="${MX(0)}" y1="${MY(i)}" x2="${MX(4)}" y2="${MY(i)}"/>`).join("");
+  a.innerHTML=`<div class="body-wrap">
+    <div class="body-stage" id="mStage">
+      <div class="body-top">
+        <div class="seg" id="mMode"><button data-v="explore" class="${!quiz?"on":""}">👆 Explore</button><button data-v="quiz" class="${quiz?"on":""}">🎯 Quiz</button></div>
+        <button class="toggle ${VXS.mlabels?"on":""}" id="mLabels" style="${quiz?"display:none":""}">🏷️ Labels</button>
+        <span class="gn">${U16.mapStart}</span>
+      </div>
+      <div id="mPrompt"></div>
+      <svg id="mapSvg" class="map-svg" viewBox="0 0 400 400" role="img" aria-label="Street map">
+        <rect x="0" y="0" width="400" height="400" rx="16" class="mbg"/>
+        <g class="mst">${streets}</g><g class="mcl">${streets}</g>
+        ${blocks}
+        <g id="mPath"></g>
+        <g class="mstart" transform="translate(${MX(2)},${MY(0)})"><circle r="13"/><path d="M0,-8 L6,5 L0,2 L-6,5 Z"/></g>
+        <text class="mnorth" x="372" y="30">N ↑</text>
+      </svg>
+      <div id="mInfo" class="pinfo ${quiz?"hidden":""}"><span class="sm">👆 ${U16.mapTapHint}</span></div>
+    </div>
+    <div class="plist ${quiz?"hidden":""}" id="mList"><h4>🏙️ ${LM.length} places</h4>
+      ${LM.map(([w,en,e],i)=>`<button class="pi" data-i="${i}"><span class="num nb">${e}</span><b>${w}</b><span class="en">${en}</span></button>`).join("")}</div>
+  </div>`;
+  if(quiz) a.querySelector(".body-wrap").style.gridTemplateColumns="1fr";
+  a.querySelectorAll("#mMode button").forEach(b=>b.onclick=()=>{VXS.mmode=b.dataset.v;MQ=null;mSel=null;saveVX();renderVocab()});
+  $("mLabels").onclick=()=>{VXS.mlabels=!VXS.mlabels;saveVX();renderMap()};
+  $("mapSvg").addEventListener("click",e=>{const g=e.target.closest(".mb"); if(!g) return; quiz?mAnswer(+g.dataset.i):mSelect(+g.dataset.i)});
+  a.querySelectorAll("#mList .pi").forEach(b=>b.onclick=()=>mSelect(+b.dataset.i));
+  if(quiz){ if(MQ.i>=MQ.n) g16Result($("mStage"),MQ,"vmap",()=>{MQ=null;renderMap()},null); else mShowQ(); }
+  else if(mSel!=null) mSelect(mSel,true);
+}
+function mSelect(i,silent){
+  mSel=i; const [w,en,e]=LM[i];
+  $("mapSvg").querySelectorAll(".mb").forEach(g=>g.classList.toggle("hi",+g.dataset.i===i));
+  document.querySelectorAll("#mList .pi").forEach(b=>b.classList.toggle("on",+b.dataset.i===i));
+  $("mInfo").innerHTML=`<button class="spk" id="mSay" title="Hear it">🔊</button><div><div class="big">${e} ${w}</div><div class="sm">${en} · ${genderOf(w)}</div></div>`;
+  $("mSay").onclick=()=>sayAlways(w); if(!silent) sayAlways(w);
+}
+function mShowQ(){
+  const r=MQ.r, txt=routeText(r,false), en=routeText(r,true), lis=VXS.dir==="listen";
+  $("mPrompt").innerHTML=`<div class="bprompt mq"><div class="mq-txt">${lis?`🎧 ${U16.listenDir}`:`<b class="mq-pt">${txt}</b>${VXS.dir==="en"?`<div class="gn">${en}</div>`:""}`}</div>
+    <span class="gn">${MQ.i+1} / ${MQ.n} · ✅ ${MQ.right} · 🔥 ${MQ.streak}</span><button class="spk" id="mqSay" title="Hear the directions">🔊</button></div>`;
+  $("mqSay").onclick=()=>sayAlways(txt);
+  if(lis) setTimeout(()=>sayAlways(txt),250);
+  MQ.answered=false;
+}
+function mDrawPath(r){
+  const pts=r.path.map(([x,y])=>`${MX(x)},${MY(y)}`).join(" ");
+  $("mPath").innerHTML=`<polyline points="${pts}" class="mroute"/><circle cx="${MX(r.end[0])}" cy="${MY(r.end[1])}" r="7" class="mend"/>`;
+}
+function mAnswer(i){
+  if(!MQ||MQ.answered) return; MQ.answered=true;
+  const r=MQ.r, ok=i===r.target, [w,en]=LM[r.target], txt=routeText(r,false), ten=routeText(r,true);
+  mDrawPath(r);
+  $("mapSvg").querySelectorAll(".mb").forEach(g=>{const k=+g.dataset.i; g.classList.toggle("ok",k===r.target&&ok); g.classList.toggle("hi",k===r.target&&!ok); g.classList.toggle("bad",k===i&&!ok);});
+  vxrec("map",w,en,ok);
+  if(ok){MQ.right++;MQ.streak++;good();score+=12;} else {MQ.streak=0;bad();MQ.wrong.push({pt:w,en});}
+  if(score>best){best=score;LS.set(LKEY("best"),best)}
+  sayAlways(w);
+  $("mPrompt").innerHTML=`<div class="bprompt ${ok?"ok":"bad"} mq"><div class="mq-txt">${ok?`✅ ${U16.correct}`:`❌ ${U16.itWas}`} <b>${w}</b> (${en})
+     <div class="gn" style="margin-top:4px">${txt}<br><i>${ten}</i></div></div>
+     <button class="btn go sm" id="mqNext">Next ➜</button></div>`;
+  $("mqNext").onclick=()=>{ MQ.i++; MQ.r=genRoute(); renderMap(); };
+}
+/* ---- 🌳 Family tree ---- */
+const FT=G16.ftree; // key → [word, english, emoji, x, y]
+const FT_K=Object.keys(FT);
+const FT_LINKS=[["avo","avoa",["tio","pai"]],["tio","tia",["primo","prima"]],["pai","mae",["irmao","irma","eu"]],["sogro","sogra",["esposa","cunhado"]],["eu","esposa",["filho","filha"]],["irmao",null,["sobrinho"]],["irma",null,["sobrinha"]]];
+function treeSVG(quiz){
+  const P=k=>FT[k];
+  let lines="";
+  FT_LINKS.forEach(([a,b,kids])=>{ const A=P(a), B=b&&P(b); const mx=B?(A[3]+B[3])/2:A[3], y=A[4];
+    if(B) lines+=`<line x1="${A[3]+22}" y1="${y}" x2="${B[3]-22}" y2="${y}" class="fcouple"/>`;
+    const ky=P(kids[0])[4], bar=y+(ky-y)/2+(B?0:4);
+    const xs=kids.map(k=>P(k)[3]).concat(mx);
+    lines+=`<path d="M${mx},${B?y:y+24} V${bar} M${Math.min(...xs)},${bar} H${Math.max(...xs)} ${kids.map(k=>`M${P(k)[3]},${bar} V${P(k)[4]-24}`).join(" ")}" class="flink"/>`; });
+  const nodes=FT_K.map(k=>{const [w,en,e,x,y]=FT[k], me=k==="eu";
+    const lbl=me?U16.me:(VXS.flabels&&!quiz?w.replace(/^(o|a|os|as|el|la|los|las) /,""):"?");
+    return `<g class="fn ${me?"me":""}" data-k="${k}"><circle cx="${x}" cy="${y}" r="23"/><text class="fe" x="${x}" y="${y+1}">${e}</text><text class="fl" x="${x}" y="${y+38}">${lbl}</text></g>`}).join("");
+  return `<svg id="treeSvg" class="tree-svg" viewBox="0 0 660 430" role="img" aria-label="Family tree">${lines}${nodes}</svg>`;
+}
+function renderTree(){
+  const a=$("vxArea"), quiz=VXS.fmode==="quiz";
+  if(quiz&&!FQ) FQ={i:0,n:VXS.len,right:0,wrong:[],streak:0,items:shuffle(FT_K.filter(k=>k!=="eu")).concat(shuffle(FT_K.filter(k=>k!=="eu"))).slice(0,VXS.len),answered:false};
+  a.innerHTML=`<div class="body-wrap">
+    <div class="body-stage" id="fStage">
+      <div class="body-top">
+        <div class="seg" id="fMode"><button data-v="explore" class="${!quiz?"on":""}">👆 Explore</button><button data-v="quiz" class="${quiz?"on":""}">🎯 Quiz</button></div>
+        <button class="toggle ${VXS.flabels?"on":""}" id="fLabels" style="${quiz?"display:none":""}">🏷️ Labels</button>
+      </div>
+      <div id="fPrompt"></div>
+      ${treeSVG(quiz)}
+      <div id="fInfo" class="pinfo ${quiz?"hidden":""}"><span class="sm">👆 ${U16.treeTapHint}</span></div>
+    </div>
+    <div class="plist ${quiz?"hidden":""}" id="fList"><h4>🌳 ${FT_K.length-1} relatives</h4>
+      ${FT_K.filter(k=>k!=="eu").map(k=>`<button class="pi" data-k="${k}"><span class="num nb">${FT[k][2]}</span><b>${FT[k][0]}</b><span class="en">${FT[k][1].split(" (")[0]}</span></button>`).join("")}</div>
+  </div>`;
+  if(quiz) a.querySelector(".body-wrap").style.gridTemplateColumns="1fr";
+  a.querySelectorAll("#fMode button").forEach(b=>b.onclick=()=>{VXS.fmode=b.dataset.v;FQ=null;fSel=null;saveVX();renderVocab()});
+  $("fLabels").onclick=()=>{VXS.flabels=!VXS.flabels;saveVX();renderTree()};
+  $("treeSvg").addEventListener("click",e=>{const g=e.target.closest(".fn"); if(!g||g.dataset.k==="eu") return; quiz?fAnswer(g.dataset.k):fSelect(g.dataset.k)});
+  a.querySelectorAll("#fList .pi").forEach(b=>b.onclick=()=>fSelect(b.dataset.k));
+  if(quiz){ if(FQ.i>=FQ.n) g16Result($("fStage"),FQ,"vtree",()=>{FQ=null;renderTree()},null); else fShowQ(); }
+  else if(fSel) fSelect(fSel,true);
+}
+function fMark(k,cls){ const g=$("treeSvg").querySelector(`.fn[data-k="${k}"]`); if(g) g.classList.add(cls); }
+function fSelect(k,silent){
+  fSel=k; const [w,en,e]=FT[k];
+  $("treeSvg").querySelectorAll(".fn").forEach(g=>g.classList.toggle("hi",g.dataset.k===k));
+  document.querySelectorAll("#fList .pi").forEach(b=>b.classList.toggle("on",b.dataset.k===k));
+  $("fInfo").innerHTML=`<button class="spk" id="fSay" title="Hear it">🔊</button><div><div class="big">${e} ${w}</div><div class="sm">${en} · ${genderOf(w)}</div></div>`;
+  $("fSay").onclick=()=>sayAlways(w); if(!silent) sayAlways(w);
+}
+function fShowQ(){
+  const k=FQ.items[FQ.i], [w,en]=FT[k];
+  const label=VXS.dir==="en"?`your ${en}`:VXS.dir==="listen"?"":w;
+  $("fPrompt").innerHTML=`<div class="bprompt"><span>${VXS.dir==="listen"?"🎧 Tap who you hear":`${U16.tap}: <b>${label}</b>`}</span>
+    <span class="gn">${FQ.i+1} / ${FQ.n} · ✅ ${FQ.right} · 🔥 ${FQ.streak}</span><button class="spk" id="fqSay" title="Hear it">🔊</button></div>`;
+  $("fqSay").onclick=()=>sayAlways(w); if(VXS.dir==="listen") setTimeout(()=>sayAlways(w),250);
+  FQ.answered=false;
+}
+function fAnswer(k){
+  if(!FQ||FQ.answered) return; FQ.answered=true;
+  const t=FQ.items[FQ.i], [w,en]=FT[t], ok=k===t, [tw,ten]=FT[k];
+  vxrec("ftree",w,en,ok);
+  if(ok){ FQ.right++;FQ.streak++;good();score+=12;fMark(t,"ok");
+    $("fPrompt").innerHTML=`<div class="bprompt ok"><span>✅ ${U16.correct} <b>${w}</b> = ${en}</span></div>`; setTimeout(fNext,1000); }
+  else { FQ.streak=0;bad();FQ.wrong.push({pt:w,en});fMark(k,"bad");fMark(t,"hi");
+    $("fPrompt").innerHTML=`<div class="bprompt bad"><span>❌ That's <b style="font-size:16px">${tw}</b> (${ten}). <b>${w}</b> (${en}) is in yellow.</span><button class="btn go sm" id="fqNext">Next ➜</button></div>`;
+    $("fqNext").onclick=fNext; }
+  sayAlways(w);
+  if(score>best){best=score;LS.set(LKEY("best"),best)}
+}
+function fNext(){ if(!FQ) return; FQ.i++; renderTree(); }
+MODE_LBL.vmap="🗺️ Map quiz"; MODE_LBL.vtree="🌳 Family quiz";
+
+/* ---------- 4 · Gírias/Jerga tab: 😎 Slang · 💬 Phrases · 🦜 Idioms ---------- */
+let PQ16="";
+const _rsl16=renderSlang;
+renderSlang=function(){
+  const sub=SSET.sub||"slang";
+  if(sub==="slang") _rsl16(); else renderPhr(sub);
+  $("slangView").insertAdjacentHTML("afterbegin",`<div class="controls"><div class="seg full" id="slSub">
+    <button data-s="slang" class="${sub==="slang"?"on":""}">😎 ${U16.slangTab}</button><button data-s="phrases" class="${sub==="phrases"?"on":""}">💬 Phrases</button><button data-s="idioms" class="${sub==="idioms"?"on":""}">🦜 Idioms</button></div></div>`);
+  $("slSub").querySelectorAll("button").forEach(b=>b.onclick=()=>{SSET.sub=b.dataset.s;saveS();PQ16="";renderSlang();});
+};
+function renderPhr(sub){
+  const v=$("slangView"), isP=sub==="phrases";
+  const total=isP?VX.phrase.length:VX.idiom.length;
+  v.innerHTML=`<div class="slang-hero"><div><h2>${isP?"💬 "+U16.phrHead:"🦜 "+U16.idHead}</h2><p>${isP?U16.phrSub:U16.idSub}</p></div>
+      <div class="sh-stats"><div><b>${total}</b><span>${isP?"phrases":"idioms"}</span></div><button class="btn alt" id="phrMatch">🎯 Match these</button></div></div>
+    <div class="controls searchbar"><input type="search" id="phrQ" placeholder="🔍 Search ${LNAME} or English…" value="${PQ16.replace(/"/g,"&quot;")}" style="flex:1;min-width:160px" autocomplete="off"></div>
+    <div id="phrBody"></div>`;
+  const draw=()=>{ const q=norm(PQ16.trim());
+    if(isP){
+      const html=G16.phrases.map(([cat,list])=>{const rows=list.filter(([pt,en,n])=>!q||norm(pt+" "+en+" "+(n||"")).includes(q));
+        return rows.length?`<details class="fold vx-sec" open><summary>${cat}<span class="gn">${rows.length}</span></summary><div class="vx-in"><div class="vx-grid">${rows.map(([pt,en,n])=>
+          `<button class="vx-it" data-say="${pt.replace(/"/g,"&quot;")}"><b>${pt}</b><span>${en}</span>${n?`<i>💡 ${n}</i>`:""}</button>`).join("")}</div></div></details>`:""}).join("");
+      $("phrBody").innerHTML=html||`<div class="panel empty">No phrases match “${PQ16.replace(/</g,"&lt;")}”.</div>`;
+    } else {
+      const rows=VX.idiom.filter(x=>!q||norm([x.pt,x.lit,x.en,x.eq,x.ex,x.exen].join(" ")).includes(q));
+      $("phrBody").innerHTML=rows.length?`<div class="id-grid">${rows.map(x=>`<div class="id-card">
+        <div class="id-top"><b>${x.pt}</b><button class="spk2" data-say="${(x.pt+". "+x.ex).replace(/"/g,"&quot;")}" title="Hear it">🔊</button></div>
+        <div class="id-row"><span>Literally</span>${x.lit}</div><div class="id-row"><span>Means</span>${x.en}</div><div class="id-row"><span>≈ English</span><b>${x.eq}</b></div>
+        <div class="id-ex"><i>${x.ex}</i><div class="gn">${x.exen}</div></div></div>`).join("")}</div>`:`<div class="panel empty">No idioms match “${PQ16.replace(/</g,"&lt;")}”.</div>`;
+    }
+    v.querySelectorAll("[data-say]").forEach(b=>b.onclick=()=>{sayAlways(b.dataset.say);b.classList.add("playing");setTimeout(()=>b.classList.remove("playing"),700)});
+  };
+  $("phrQ").oninput=()=>{PQ16=$("phrQ").value;draw()};
+  $("phrMatch").onclick=()=>{SET.fmt="vocab";SET.vcats=[isP?"phrase":"idiom"];saveSet();setMode("play");toast(`🎯 Vocab match: ${isP?"Phrases":"Idioms"}`)};
+  draw();
+}
+
+/* ---------- 5 · New stories ---------- */
+G16.stories.forEach(s=>STORIES.push(Object.assign(s,{id:STORIES.length})));
+
+/* ---------- refresh ---------- */
+renderCtrls(); updSummary();
+if(mode==="words") renderWords(); if(mode==="vocab") renderVocab(); if(mode==="slang") renderSlang();
 
 /* ===== v13: language switch + tab routing ===== */
 (function(){
