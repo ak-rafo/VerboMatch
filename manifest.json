@@ -1,0 +1,17 @@
+{
+  "name": "Verbo Match! Brazilian Portuguese",
+  "short_name": "Verbo Match",
+  "description": "Practice Brazilian Portuguese verbs, articles, connectors and slang.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef4ec",
+  "theme_color": "#009c3b",
+  "lang": "pt-BR",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
