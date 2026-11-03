@@ -1,19 +1,16 @@
 /* Verbo Match offline cache.
-   Bump VERSION every time you upload a new index.html (v13, v14, ...). */
-const VERSION = "verbo-match-v12";
+   Bump VERSION every time you upload a new index.html (v14, v15, ...). */
+const VERSION = "verbo-match-v13";
 const FILES = ["./", "./index.html", "./manifest.json",
   "./icon-180.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
-
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES)));
   self.skipWaiting();
 });
-
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION).map(k => caches.delete(k)))));
   self.clients.claim();
 });
-
 /* Offline-first: answer instantly from the saved copy,
    then quietly refresh it in the background when there is signal. */
 self.addEventListener("fetch", e => {
@@ -33,7 +30,6 @@ self.addEventListener("fetch", e => {
       status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
   }));
 });
-
 function fetchWithTimeout(req, ms) {
   return new Promise((resolve, reject) => {
     const t = setTimeout(() => reject(new Error("timeout")), ms);
