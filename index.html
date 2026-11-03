@@ -369,9 +369,7 @@ nav button .ic{font-size:20px;line-height:1}
 .vx-tool{display:flex;gap:10px;align-items:center;background:#f4f7f3;border-radius:12px;padding:10px 12px;margin-bottom:10px;flex-wrap:wrap}
 .vx-tool input{width:160px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-size:16px}
 .vx-out{flex:1;font-weight:700;color:var(--green);font-size:16px;min-width:160px}
-.clk{font-size:30px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums;background:#fff;border-radius:10px;padding:2px 12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .vx-tip{font-size:12px;color:var(--muted);margin:0 0 10px}
-.vx-play{font-size:20px;padding:14px 26px;border-radius:14px}
 /* ===== v9: body diagram ===== */
 .body-wrap{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:12px;align-items:start}
 .body-stage{background:#fff;border-radius:14px;padding:10px 12px 12px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
@@ -406,6 +404,10 @@ nav button .ic{font-size:20px;line-height:1}
 .deco,.badge{pointer-events:none}
 .badge circle{fill:#002776;stroke:#fff;stroke-width:1.5}
 .badge text{fill:#fff;font:800 10px system-ui,sans-serif;text-anchor:middle;dominant-baseline:central}
+/* ===== v10: time picker + vocab categories ===== */
+.vx-tool input.clkin{width:auto;font-size:26px;font-weight:800;color:var(--blue);padding:4px 10px;font-variant-numeric:tabular-nums;background:#fff}
+.clk-en{font-size:12px;color:var(--muted);font-weight:600}
+#vcatCtrls{display:flex;flex-direction:column;gap:10px;border-top:1px dashed var(--line);padding-top:10px}
 @media(max-width:700px){
   .body-wrap{grid-template-columns:1fr}
   .body-svg{max-height:52vh}
@@ -425,7 +427,7 @@ nav button .ic{font-size:20px;line-height:1}
     <div><h1>Verbo Match!</h1><p class="sub">Brazilian Portuguese verbs, vocab, articles &amp; slang</p></div>
   </div>
   <nav id="nav">
-    <button data-m="play" class="on">🎯 Verb Match</button>
+    <button data-m="play" class="on">🎯 Match</button>
     <button data-m="bank">📚 Verb Bank</button>
     <button data-m="words">🧩 Articles &amp; Connectors</button>
     <button data-m="vocab">🔢 Vocab</button>
@@ -455,7 +457,7 @@ nav button .ic{font-size:20px;line-height:1}
     <div class="setpanel" id="setPanel">
       <div class="sp-row"><span class="ctl-lbl">Game</span>
         <div class="seg" id="styleSeg"><button data-v="tiles">🎯 Tile match</button><button data-v="memory">🃏 Memory flip</button></div>
-        <div class="seg" id="fmtSeg"><button data-v="inf">Infinitive</button><button data-v="conj">Conjugated</button></div></div>
+        <div class="seg" id="fmtSeg"><button data-v="inf">Infinitive</button><button data-v="conj">Conjugated</button><button data-v="vocab">🔢 Vocab</button></div></div>
       <div class="sp-row"><span class="ctl-lbl">Difficulty</span><div class="meter" id="meter"></div>
         <button class="auto" id="autoBtn" title="Adjusts level automatically: up after 3 perfect rounds, down after 2 rough ones">⚡ Auto</button></div>
       <div class="lvdesc" id="lvDesc"></div>
@@ -465,6 +467,7 @@ nav button .ic{font-size:20px;line-height:1}
       <div class="sp-row"><label>Pairs <select id="pairs"><option>6</option><option>8</option><option>10</option><option>12</option></select></label>
         <label title="Say Portuguese words aloud"><input type="checkbox" id="voice" checked> 🔊 Voice</label>
         <label title="Sound effects"><input type="checkbox" id="sfx" checked> 🎵 Sounds</label></div>
+      <div id="vcatCtrls" class="hidden"><div class="sp-row"><span class="ctl-lbl">Categories</span><div class="chips" id="vcatChips"></div></div></div>
       <div id="conjCtrls">
         <div class="sp-row"><span class="ctl-lbl">Tenses</span><div class="chips" id="tenseChips"></div></div>
         <div class="sp-row"><span class="ctl-lbl">Persons</span><div class="chips" id="personChips"></div></div>
@@ -1833,27 +1836,16 @@ renderCtrls=function(){
 };
 $("styleSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{SET.style=b.dataset.v;saveSet();setMode("play")});
 $("fmtSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{SET.fmt=b.dataset.v;saveSet();setMode("play")});
-updSummary=function(){
-  if(!$("setSummary")) return;
-  const l=L(), dir={pt:"PT→EN",en:"EN→PT",mix:"Mixed"}[SET.dir];
-  const bits=[`<b>${SET.style==="memory"?"🃏 Memory":"🎯 Tiles"}</b>`, SET.fmt==="conj"?"Conjugated":"Infinitive",
-    `<span class="lvdot" style="background:${l.c}"></span>${l.n}${SET.auto?" ⚡":""}`];
-  if(SET.style!=="memory") bits.push(dir);
-  bits.push(SET.pairs+" pairs");
-  if(SET.fmt==="conj") bits.push(SET.tenses.length+" tense"+(SET.tenses.length>1?"s":""));
-  if(SET.traps) bits.push("🪤");
-  $("setSummary").innerHTML=bits.join(" · ");
-};
 
 /* ===================================================================
-   v9 · VOCAB: numbers, alphabet, time, days, weeks, months, years
+   VOCAB data
    =================================================================== */
 const VX_TOPICS={
   num:{label:"Numbers",ic:"🔢"}, abc:{label:"Alphabet",ic:"🔤"}, time:{label:"Time",ic:"🕒"},
-  days:{label:"Days",ic:"📅"}, weeks:{label:"Weeks",ic:"🗓️"}, months:{label:"Months",ic:"🌙"}, years:{label:"Years",ic:"🎆"}
+  days:{label:"Days",ic:"📅"}, weeks:{label:"Weeks",ic:"🗓️"}, months:{label:"Months",ic:"🌙"}, years:{label:"Years",ic:"🎆"},
+  house:{label:"Kitchen & house",ic:"🏠"}, city:{label:"Neighborhood & city",ic:"🏙️"}
 };
 const VX_KEYS=Object.keys(VX_TOPICS);
-/* numbers → words (masculine), 0–999,999 */
 const NU=["zero","um","dois","três","quatro","cinco","seis","sete","oito","nove","dez","onze","doze","treze","catorze","quinze","dezesseis","dezessete","dezoito","dezenove"];
 const NT=["","","vinte","trinta","quarenta","cinquenta","sessenta","setenta","oitenta","noventa"];
 const NH=["","cento","duzentos","trezentos","quatrocentos","quinhentos","seiscentos","setecentos","oitocentos","novecentos"];
@@ -1868,6 +1860,20 @@ function timeToPt(h,m){
   if(m===0) return h===12?"É meio-dia":h===1?"É uma hora":`São ${HF[h]} horas`;
   return base+" e "+(m===30?"meia":u100(m));
 }
+/* any 24-hour time → natural Brazilian Portuguese */
+const dayPart=h=>h>=1&&h<=4?" da madrugada":h<12?" da manhã":h<18?" da tarde":" da noite";
+function time24Pt(h,m){
+  if(m===45){const nh=(h+1)%24,n12=nh%12||12;
+    if(nh===0) return "São quinze para a meia-noite";
+    if(nh===12) return "São quinze para o meio-dia";
+    return (n12===1?"São quinze para a uma":`São quinze para as ${HF[n12]}`)+dayPart(nh);}
+  const h12=h%12||12;
+  let s=h===0?"É meia-noite":h===12?"É meio-dia":h12===1?"É uma":`São ${HF[h12]}`;
+  if(m===0){ if(h===0||h===12) return s; s+=h12===1?" hora":" horas"; }
+  else s+=" e "+(m===30?"meia":u100(m));
+  return s+(h===0||h===12?"":dayPart(h));
+}
+const time24En=(h,m)=>h===0&&m===0?"midnight":h===12&&m===0?"noon":`${h%12||12}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`;
 const pad2=n=>String(n).padStart(2,"0");
 const rint=n=>Math.random()*n|0;
 
@@ -1902,17 +1908,38 @@ const VX_RAW={
  months:[["janeiro","January","Months are lowercase in Portuguese"],["fevereiro","February"],["março","March"],["abril","April"],["maio","May"],["junho","June"],
   ["julho","July"],["agosto","August"],["setembro","September"],["outubro","October"],["novembro","November"],["dezembro","December"],
   ["o mês","month","Plural: os meses"],["este mês","this month"],["mês passado","last month"],["mês que vem","next month"],["em março","in March"],
-  ["no dia 5 de maio","on May 5th","say: no dia cinco de maio"],["primeiro de janeiro","January 1st","The 1st uses primeiro, other days use plain numbers"]],
+  ["no dia 5 de maio","on May 5th","say: no dia cinco de maio","no dia cinco de maio"],["primeiro de janeiro","January 1st","The 1st uses primeiro, other days use plain numbers"]],
  years:[["o ano","year"],["este ano","this year"],["ano passado","last year"],["ano que vem","next year"],["a década","decade"],["o século","century"],
   ["o Ano-Novo","New Year's"],["Feliz Ano-Novo!","Happy New Year!"],["o aniversário","birthday","Also 'anniversary'"],
   ["Quantos anos você tem?","How old are you?"],["Tenho 30 anos.","I'm 30 years old.","Portuguese uses ter: 'I have 30 years'","Tenho trinta anos."],
   ["o verão","summer","December to March in Brazil!"],["o outono","fall / autumn"],["o inverno","winter"],["a primavera","spring"],
-  ["em 2026","in 2026","say: em dois mil e vinte e seis","em dois mil e vinte e seis"]]
+  ["em 2026","in 2026","say: em dois mil e vinte e seis","em dois mil e vinte e seis"]],
+ house:[["a casa","house / home","Em casa = at home · Vou pra casa = I'm going home"],["o apartamento","apartment","Often just 'o apê'"],["a cozinha","kitchen"],
+  ["a sala","living room","Sala de jantar = dining room"],["o quarto","bedroom","Also means 'fourth' and 'quarter'"],["o banheiro","bathroom"],
+  ["a área de serviço","laundry area","Almost every Brazilian apartment has one"],["a varanda","balcony / porch"],["o quintal","backyard"],["a garagem","garage"],
+  ["a porta","door"],["a janela","window"],["a parede","wall"],["o chão","floor"],["o teto","ceiling"],["a escada","stairs"],["o elevador","elevator"],
+  ["a chave","key"],["a mesa","table"],["a cadeira","chair"],["o sofá","sofa / couch"],["a cama","bed"],["o travesseiro","pillow"],
+  ["o armário","cupboard / closet","Guarda-roupa = wardrobe"],["a gaveta","drawer"],["a lâmpada","light bulb"],["o chuveiro","shower","Many Brazilian showers are electric"],
+  ["a geladeira","fridge","Portugal says 'frigorífico'"],["o fogão","stove"],["o forno","oven"],["o micro-ondas","microwave"],
+  ["a pia","sink","Kitchen or bathroom sink"],["a torneira","faucet / tap"],["o prato","plate"],["o copo","glass / cup (no handle)"],
+  ["a xícara","cup (with handle)","Uma xícara de café"],["o garfo","fork"],["a faca","knife"],["a colher","spoon","Colher de chá = teaspoon"],
+  ["a panela","pot / pan","Panela de pressão = pressure cooker, a Brazilian kitchen staple"],["a frigideira","frying pan"],
+  ["o lixo","trash","Jogar o lixo fora = take out the trash"],["a toalha","towel"],["o tapete","rug / mat"]],
+ city:[["a cidade","city"],["o bairro","neighborhood","Em que bairro você mora? = What neighborhood do you live in?"],["o centro","downtown / city center"],
+  ["a rua","street"],["a avenida","avenue","Avenida Paulista is São Paulo's best-known avenue"],["a esquina","corner","Na esquina = on the corner"],
+  ["a calçada","sidewalk"],["o quarteirão","city block"],["o semáforo","traffic light","In São Paulo people usually say 'o farol'"],
+  ["a faixa de pedestres","crosswalk"],["o prédio","building"],["o condomínio","apartment complex","Also the monthly building fee"],
+  ["a praça","town square"],["o parque","park"],["a padaria","bakery","SP padarias serve coffee and pão na chapa all day"],
+  ["o mercado","market / grocery store","Also 'o supermercado'"],["a feira","street market","The weekly 'feira livre' for fruit and pastel"],
+  ["a farmácia","pharmacy"],["o banco","bank","Also means 'bench'"],["o correio","post office"],["o hospital","hospital"],["a escola","school"],
+  ["a igreja","church"],["o restaurante","restaurant"],["a lanchonete","snack bar / diner"],["o shopping","mall","Always 'o shopping', never 'mall'"],
+  ["a loja","store / shop"],["o ponto de ônibus","bus stop"],["o metrô","subway / metro"],["a estação","station"],["a rodoviária","bus terminal"],
+  ["o aeroporto","airport"],["o trânsito","traffic","Tô preso no trânsito = I'm stuck in traffic"],["o estacionamento","parking lot"],
+  ["o posto de gasolina","gas station"],["a delegacia","police station"],["perto","near / close"],["longe","far"],
+  ["vire à direita","turn right"],["vire à esquerda","turn left"],["siga em frente","go straight ahead","Also 'siga reto'"],["Onde fica…?","Where is…?"]]
 };
 const VX={};
 VX_KEYS.forEach(t=>VX[t]=VX_RAW[t].map(([pt,en,note,sy])=>({t,pt,en,note:note||"",say:sy||pt})));
-
-/* generated items: any number, any clock time, any year */
 const VX_GEN={
   num:()=>{const n=rnd([()=>21+rint(79),()=>101+rint(899),()=>1000+rint(9000)])();return mkNum(n)},
   time:()=>mkTime(1+rint(12),rnd([0,5,10,15,20,30,45])),
@@ -1921,16 +1948,8 @@ const VX_GEN={
 function mkNum(n){const w=numToPt(n);return {t:"num",pt:w,en:n.toLocaleString("en-US"),say:w,gen:"num",val:n,note:""}}
 function mkTime(h,m){const w=timeToPt(h,m);return {t:"time",pt:w,en:`${h}:${pad2(m)}${h===12&&m===0?" (noon)":""}`,say:w,gen:"time",val:[h,m],note:""}}
 function mkYear(y){const w=numToPt(y);return {t:"years",pt:w,en:String(y),say:w,gen:"years",val:y,note:""}}
-function vxVariants(it){
-  const out=[],seen=new Set([it.pt]);
-  const push=x=>{if(x&&!seen.has(x.pt)){seen.add(x.pt);out.push(x)}};
-  if(it.gen==="num"){const n=it.val;[n+1,n-1,n+10,n-10,n+100,n-100,n+2,n+20].filter(x=>x>0).forEach(x=>push(mkNum(x)))}
-  if(it.gen==="years"){const y=it.val;[y+1,y-1,y+10,y-10,y+2,y-20].forEach(x=>push(mkYear(x)))}
-  if(it.gen==="time"){const [h,m]=it.val;[[h,(m+15)%60],[h%12+1,m],[h,(m+30)%60],[(h+10)%12+1,m],[h%12+1,(m+30)%60]].forEach(([a,b])=>push(mkTime(a,b)))}
-  return shuffle(out).slice(0,3);
-}
 
-/* ---------- body parts: [key, pt, en, view, badgeX, badgeY, note, groupKeys] ---------- */
+/* ---------- body parts ---------- */
 const BP=[
  ["cabelo","o cabelo","hair","body",160,34,"Usually singular: Ela tem o cabelo longo"],
  ["cabeca","a cabeça","head","body",160,82],
@@ -2021,19 +2040,21 @@ function faceSVG(){
    <ellipse class="bp zone" data-k="queixo" cx="160" cy="345" rx="44" ry="14"/>`;
 }
 
-/* ---------- vocab state ---------- */
+/* ---------- vocab tab state ---------- */
 let VXS=Object.assign({sub:"learn",topics:[...VX_KEYS],dir:"pt",len:10,open:false,bmode:"explore",bview:"body",labels:true},LS.get("vm_vxset",{}));
+VXS.topics=VXS.topics.filter(t=>VX_KEYS.includes(t)); if(!VXS.topics.length) VXS.topics=[...VX_KEYS];
+if(VXS.sub!=="body") VXS.sub="learn";
 const saveVX=()=>LS.set("vm_vxset",VXS);
-let VXQ=null, BQ=null, bSel=null;
+let BQ=null, bSel=null;
 function vxrec(t,pt,en,ok){
   ST.vx=ST.vx||{}; const s=ST.vx[pt]||(ST.vx[pt]={r:0,w:0,en,t}); s.en=en; s.t=t; ok?s.r++:s.w++; LS.set("vm_stats",ST);
 }
+function vxWeak(it){const s=ST.vx&&ST.vx[it.pt];return s&&s.w>s.r/2?1:0}
 const VX_DIRL={pt:"PT→EN",en:"EN→PT",listen:"🎧 Listen"};
 function vxSummary(){
   const all=VXS.topics.length===VX_KEYS.length;
   const tp=all?"All topics":VXS.topics.map(t=>VX_TOPICS[t].label).join(", ");
   if(VXS.sub==="learn") return `<b>📖 Learn</b> · ${tp}`;
-  if(VXS.sub==="quiz") return `<b>✏️ Quiz</b> · ${tp} · ${VX_DIRL[VXS.dir]} · ${VXS.len} Qs`;
   return `<b>🧍 Body</b> · ${VXS.bmode==="quiz"?"Quiz":"Explore"} · ${VX_DIRL[VXS.dir]} · ${VXS.len} Qs`;
 }
 function renderVocab(){
@@ -2041,25 +2062,27 @@ function renderVocab(){
   v.innerHTML=`
    <div class="controls"><div class="seg full" id="vxSub">
      <button data-s="learn" class="${sub==="learn"?"on":""}">📖 Learn</button>
-     <button data-s="quiz" class="${sub==="quiz"?"on":""}">✏️ Quiz</button>
      <button data-s="body" class="${sub==="body"?"on":""}">🧍 Body</button></div></div>
    <div class="actionbar">
      <button class="sumbtn" id="vxSetToggle" aria-expanded="${VXS.open}"><span class="sum-ic">⚙️</span><span id="vxSum" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">${vxSummary()}</span><span class="chev">▾</span></button>
-     <button class="btn go ab ${sub==="learn"||(sub==="body"&&VXS.bmode!=="quiz")?"hidden":""}" id="vxNew">↻ New</button>
+     ${sub==="learn"?`<button class="btn alt ab" id="vxToMatch" title="Practice these words in the Match tab">🎯 Match these</button>`
+       :`<button class="btn go ab ${VXS.bmode!=="quiz"?"hidden":""}" id="vxNew">↻ New</button>`}
    </div>
    <div class="setpanel ${VXS.open?"open":""}" id="vxSetPanel">
-     <div class="sp-row ${sub==="body"?"hidden":""}"><span class="ctl-lbl">Topics</span><div class="chips">
+     ${sub==="learn"?`<div class="sp-row"><span class="ctl-lbl">Topics</span><div class="chips">
        <span class="chip ${all?"on":""}" id="vxAll" style="--c:var(--blue)">All</span>
        ${VX_KEYS.map(k=>`<span class="chip ${!all&&VXS.topics.includes(k)?"on":""}" data-t="${k}" style="--c:var(--green)">${VX_TOPICS[k].ic} ${VX_TOPICS[k].label}</span>`).join("")}</div></div>
-     <div class="sp-row"><span class="ctl-lbl">Quiz</span>
+       <div class="lvdesc">Tap a topic to study just that one. Tap All to bring every topic back. To test yourself, use 🎯 Match these.</div>`
+     :`<div class="sp-row"><span class="ctl-lbl">Body quiz</span>
        <div class="seg" id="vxDir">${Object.entries(VX_DIRL).map(([k,l])=>`<button data-v="${k}" class="${VXS.dir===k?"on":""}">${l}</button>`).join("")}</div>
        <label>Questions <select id="vxLen">${[6,8,10,15,20].map(n=>`<option ${n===VXS.len?"selected":""}>${n}</option>`).join("")}</select></label></div>
-     <div class="lvdesc">${sub==="body"?"In the body quiz, PT→EN shows the Portuguese word, EN→PT shows the English word, and 🎧 Listen only says it out loud.":"Tap a topic to study just that one. Tap All to bring every topic back."}</div>
+       <div class="lvdesc">PT→EN shows the Portuguese word, EN→PT shows the English word, and 🎧 Listen only says it out loud. Then tap that spot on the body.</div>`}
    </div>
    <div id="vxArea"></div>`;
   v.querySelectorAll("#vxSub button").forEach(b=>b.onclick=()=>{VXS.sub=b.dataset.s;saveVX();renderVocab()});
   $("vxSetToggle").onclick=()=>{VXS.open=!VXS.open;saveVX();$("vxSetPanel").classList.toggle("open",VXS.open);$("vxSetToggle").setAttribute("aria-expanded",VXS.open)};
-  $("vxNew").onclick=()=>{ if(sub==="body"){BQ=null;} renderVxArea(true); };
+  if($("vxNew")) $("vxNew").onclick=()=>{BQ=null;renderBody()};
+  if($("vxToMatch")) $("vxToMatch").onclick=vxGoMatch;
   if($("vxAll")) $("vxAll").onclick=()=>{VXS.topics=[...VX_KEYS];saveVX();renderVocab()};
   v.querySelectorAll(".chip[data-t]").forEach(c=>c.onclick=()=>{const k=c.dataset.t;
     if(VXS.topics.length===VX_KEYS.length) VXS.topics=[k];
@@ -2067,15 +2090,10 @@ function renderVocab(){
     else VXS.topics=VX_KEYS.filter(x=>VXS.topics.includes(x)||x===k);
     saveVX(); renderVocab();});
   v.querySelectorAll("#vxDir button").forEach(b=>b.onclick=()=>{VXS.dir=b.dataset.v;saveVX();renderVocab()});
-  $("vxLen").onchange=()=>{VXS.len=+$("vxLen").value;saveVX();renderVocab()};
-  renderVxArea(true);
+  if($("vxLen")) $("vxLen").onchange=()=>{VXS.len=+$("vxLen").value;saveVX();renderVocab()};
+  if(sub==="learn") vxLearn($("vxArea")); else { if(VXS.bmode==="quiz") BQ=null; renderBody(); }
 }
-function renderVxArea(fresh){
-  const a=$("vxArea");
-  if(VXS.sub==="learn") vxLearn(a);
-  else if(VXS.sub==="quiz") vxNewQuiz();
-  else { if(fresh&&VXS.bmode==="quiz") BQ=null; renderBody(); }
-}
+function vxGoMatch(){SET.fmt="vocab";SET.vcats=[...VXS.topics];saveSet();setMode("play");toast("🎯 Vocab match: "+(SET.vcats.length===VX_KEYS.length?"all topics":SET.vcats.map(k=>VM_LBL(k).label).join(", ")))}
 
 /* ---------- LEARN ---------- */
 function vxLearn(a){
@@ -2084,87 +2102,46 @@ function vxLearn(a){
     let tool="";
     if(t==="num") tool=`<div class="vx-tool"><input type="number" inputmode="numeric" min="0" max="999999" placeholder="Type any number…" data-conv="num" value="347"><div class="vx-out" id="conv-num">${numToPt(347)}</div><button class="spk2" data-convsay="num" title="Hear it">🔊</button></div>`;
     if(t==="years") tool=`<div class="vx-tool"><input type="number" inputmode="numeric" min="1" max="2999" placeholder="Type a year…" data-conv="years" value="2026"><div class="vx-out" id="conv-years">${numToPt(2026)}</div><button class="spk2" data-convsay="years" title="Hear it">🔊</button></div>`;
-    if(t==="time"){const it=VX_GEN.time();tool=`<div class="vx-tool"><span class="clk" id="clkD">${it.en}</span><div class="vx-out" id="clkP">${it.pt}.</div><button class="btn ghost sm" id="clkNew">🎲 New time</button><button class="spk2" id="clkSay" title="Hear it">🔊</button></div>`;}
+    if(t==="time") tool=`<div class="vx-tool"><input type="time" class="clkin" id="clkIn" value="14:45" step="60" aria-label="Pick any time">
+       <div class="vx-out"><span id="clkP">${time24Pt(14,45)}.</span><div class="clk-en" id="clkE">${time24En(14,45)}</div></div>
+       <button class="btn ghost sm" id="clkNew">🎲 New time</button><button class="spk2" id="clkSay" title="Hear it">🔊</button></div>
+       <p class="vx-tip">Tap the clock to set any hour and minute, or tap 🎲 for a random one.</p>`;
     const tip=t==="abc"?`<p class="vx-tip">Spelling something? Ask <b>Como se escreve?</b> (How do you spell it?)</p>`:"";
     const grid=t==="abc"
       ? `<div class="vx-grid abc">${items.map(x=>`<button class="vx-it abc" data-say="${x.say}" title="${x.note}"><b>${x.en}</b><span>${x.pt}</span></button>`).join("")}</div>
          <div class="vx-grid" style="margin-top:8px">${items.filter(x=>x.note).map(x=>`<div class="vx-it" style="cursor:default"><b>${x.en} · ${x.pt}</b><i>${x.note}</i></div>`).join("")}</div>`
       : `<div class="vx-grid">${items.map(x=>`<button class="vx-it" data-say="${x.say.replace(/"/g,"&quot;")}"><b>${x.pt}</b><span>${x.en}</span>${x.note?`<i>💡 ${x.note}</i>`:""}</button>`).join("")}</div>`;
     return `<details class="fold vx-sec" open><summary>${T.ic} ${T.label}<span class="gn">${items.length} words · tap to hear</span></summary><div class="vx-in">${tool}${tip}${grid}</div></details>`;
-  }).join("")+`<div style="text-align:center;margin:6px 0 18px"><button class="btn go" id="vxGoQuiz">✏️ Quiz me on these</button></div>`;
+  }).join("")+`<div style="text-align:center;margin:6px 0 18px"><button class="btn go" id="vxGoMatch2">🎯 Match these words</button></div>`;
   a.querySelectorAll(".vx-it[data-say]").forEach(b=>b.onclick=()=>{sayAlways(b.dataset.say);b.classList.add("playing");setTimeout(()=>b.classList.remove("playing"),700)});
   a.querySelectorAll("[data-conv]").forEach(inp=>inp.oninput=()=>{const n=parseInt(inp.value,10),o=$("conv-"+inp.dataset.conv);
     o.textContent=isNaN(n)||n<0||n>999999?"Enter 0 – 999,999":numToPt(n);});
   a.querySelectorAll("[data-convsay]").forEach(b=>b.onclick=()=>sayAlways($("conv-"+b.dataset.convsay).textContent));
-  if($("clkNew")){const nt=()=>{const it=VX_GEN.time();$("clkD").textContent=it.en;$("clkP").textContent=it.pt+".";sayAlways(it.pt)};
-    $("clkNew").onclick=nt; $("clkSay").onclick=()=>sayAlways($("clkP").textContent);}
-  $("vxGoQuiz").onclick=()=>{VXS.sub="quiz";saveVX();renderVocab()};
+  if($("clkIn")){
+    const show=(speak)=>{const [h,m]=($("clkIn").value||"00:00").split(":").map(Number); if(isNaN(h)||isNaN(m)) return;
+      const w=time24Pt(h,m); $("clkP").textContent=w+"."; $("clkE").textContent=time24En(h,m); if(speak) sayAlways(w);};
+    $("clkIn").oninput=()=>show(false); $("clkIn").onchange=()=>show(true);
+    $("clkNew").onclick=()=>{$("clkIn").value=pad2(rint(24))+":"+pad2(rnd([0,5,10,15,20,25,30,40,45,50]));show(true)};
+    $("clkSay").onclick=()=>sayAlways($("clkP").textContent);
+  }
+  $("vxGoMatch2").onclick=vxGoMatch;
 }
 
-/* ---------- QUIZ ---------- */
-function vxWeak(it){const s=ST.vx&&ST.vx[it.pt];return s&&s.w>s.r/2?1:0}
-function vxPool(n){
-  const lists=VXS.topics.map(t=>{let arr=VX[t].map(x=>({...x}));
-    if(VX_GEN[t]) for(let i=0;i<Math.max(3,Math.round(arr.length/4));i++) arr.push(VX_GEN[t]());
-    return shuffle(arr).sort((a,b)=>vxWeak(b)-vxWeak(a));});
-  const out=[]; let i=0;
-  while(out.length<n&&lists.some(l=>l.length)){const l=lists[i++%lists.length]; if(l.length) out.push(l.shift());}
-  return shuffle(out);
-}
-function vxField(){return VXS.dir==="en"?"pt":"en"}
-function vxOpts(it){
-  const f=vxField();
-  const others=it.gen?vxVariants(it):shuffle(VX[it.t].filter(x=>x[f]!==it[f]&&x.pt!==it.pt)).slice(0,3);
-  return shuffle([it,...others].map(x=>x[f]));
-}
-function vxNewQuiz(items){
-  VXQ={items:items||vxPool(VXS.len),i:0,right:0,wrong:[],streak:0,answered:false};
-  vxShowQ();
-}
-function vxShowQ(){
-  const it=VXQ.items[VXQ.i], T=VX_TOPICS[it.t], opts=vxOpts(it), pct=Math.round(VXQ.i/VXQ.items.length*100);
-  VXQ.opts=opts;
-  const prompt=VXS.dir==="listen"?`<button class="btn alt vx-play" id="vxPlay">🔊 Play</button>`:`<div class="qs">${VXS.dir==="en"?it.en:it.pt}</div>`;
-  $("vxArea").innerHTML=`<div class="panel q">
-    <div class="qtop"><span class="tag" style="--c:var(--green)">${T.ic} ${T.label}</span><span class="gn">Question ${VXQ.i+1} of ${VXQ.items.length} · ✅ ${VXQ.right} · 🔥 ${VXQ.streak}</span></div>
-    <div class="bar" style="margin:8px 0 18px"><i style="width:${pct}%"></i></div>
-    ${prompt}
-    <div class="qen">${VXS.dir==="pt"?"What does this mean?":VXS.dir==="en"?"How do you say this in Portuguese?":"What did you hear?"}</div>
-    <div class="qopts">${opts.map((o,k)=>`<button class="qo" data-i="${k}"><small>${k+1}</small>${o}</button>`).join("")}</div>
-    <div id="vxFb" class="qfb"></div></div>`;
-  $("vxArea").querySelectorAll(".qo").forEach(b=>b.onclick=()=>vxAnswer(b));
-  if($("vxPlay")){$("vxPlay").onclick=()=>sayAlways(it.say);setTimeout(()=>sayAlways(it.say),250);}
-}
-function vxAnswer(btn){
-  if(VXQ.answered) return; VXQ.answered=true;
-  const it=VXQ.items[VXQ.i], f=vxField(), pick=VXQ.opts[+btn.dataset.i], ok=pick===it[f];
-  $("vxArea").querySelectorAll(".qo").forEach(b=>{b.disabled=true;if(VXQ.opts[+b.dataset.i]===it[f])b.classList.add("right")});
-  if(ok){VXQ.right++;VXQ.streak++;good();score+=10+Math.min(VXQ.streak,10)*2}
-  else{btn.classList.add("wrong");VXQ.streak=0;bad();VXQ.wrong.push(it)}
-  if(score>best){best=score;LS.set("vm_best",best)}
-  vxrec(it.t,it.gen?`${VX_TOPICS[it.t].label} (built)`:it.pt,it.gen?"numbers, times & years you build":it.en,ok);
-  sayAlways(it.say);
-  $("vxFb").innerHTML=`<div class="${ok?"fb-ok":"fb-bad"}">${ok?"✅ Certo!":"❌ Not quite."}</div>
-    <div class="fb-why"><b>${it.pt}</b> = ${it.en}${it.note?`<br><span class="gn">💡 ${it.note}</span>`:""}</div>
-    <button class="btn go" id="vxNext">${VXQ.i+1<VXQ.items.length?"Next ➜":"See results"}</button> <span class="gn">or press Enter</span>`;
-  $("vxNext").onclick=vxNextQ; $("vxNext").focus();
-}
-function vxNextQ(){VXQ.answered=false; if(++VXQ.i<VXQ.items.length) vxShowQ(); else vxFinish(VXQ,"vquiz");}
+/* ---------- results screen (body quiz) ---------- */
 function vxFinish(Q,kind){
   const total=Q.items.length, right=Q.right, acc=Math.round(right/Math.max(1,total)*100);
   ST.rounds.push({d:Date.now(),m:kind,n:total,x:total-right,s:0,a:acc}); ST.rounds=ST.rounds.slice(-60); LS.set("vm_stats",ST);
   if(acc===100){win();confetti();}
   const seen=new Set(), wr=Q.wrong.filter(w=>!seen.has(w.pt)&&seen.add(w.pt));
-  const host=kind==="vbody"?$("bStage"):$("vxArea");
-  host.innerHTML=`<div class="panel" style="text-align:center;box-shadow:none">
+  $("bStage").innerHTML=`<div class="panel" style="text-align:center;box-shadow:none">
     <h2 style="margin:0;color:var(--green);font-size:30px">${acc===100?"Perfeito! 🏆":acc>=75?"Muito bem! 🎉":"Bom trabalho! 💪"}</h2>
     <div class="sum"><div><b>${right}/${total}</b><span>Correct</span></div><div><b>${acc}%</b><span>Accuracy</span></div><div><b>${score}</b><span>Score</span></div></div>
     ${wr.length?`<div class="review">${wr.map(w=>`<div><span>❌ <b class="hl">${w.pt}</b></span><span class="gn">${w.en}</span></div>`).join("")}</div>`:`<p class="gn">No mistakes this round!</p>`}
     <div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       ${wr.length?`<button class="btn alt" id="vxRetry">Retry my misses</button>`:""}
       <button class="btn go" id="vxAgain">Próxima rodada ➜</button></div></div>`;
-  $("vxAgain").onclick=()=>{ if(kind==="vbody"){BQ=null;renderBody();} else vxNewQuiz(); };
-  if($("vxRetry")) $("vxRetry").onclick=()=>{ if(kind==="vbody"){BQ=bqState(shuffle(wr));renderBody();} else vxNewQuiz(shuffle(wr.map(x=>({...x})))); };
+  $("vxAgain").onclick=()=>{BQ=null;renderBody();};
+  if($("vxRetry")) $("vxRetry").onclick=()=>{BQ=bqState(shuffle(wr));renderBody();};
 }
 
 /* ---------- BODY ---------- */
@@ -2238,26 +2215,86 @@ function bAnswer(k){
 }
 function bNext(){ if(!BQ) return; BQ.i++; renderBody(); }
 
-/* keyboard for the vocab quiz */
-document.addEventListener("keydown",e=>{
-  if(mode!=="vocab"||VXS.sub!=="quiz"||!VXQ||/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
-  if(!VXQ.answered&&/^[1-4]$/.test(e.key)){const b=$("vxArea").querySelectorAll(".qo")[+e.key-1]; if(b) vxAnswer(b);}
-  else if(VXQ.answered&&e.key==="Enter"){e.preventDefault();vxNextQ();}
-});
+/* ===================================================================
+   v10 · VOCAB MATCH inside the Match tab
+   =================================================================== */
+const VM_CATS=[...VX_KEYS,"body"];
+const VM_LBL=k=>k==="body"?{label:"Body",ic:"🧍"}:VX_TOPICS[k];
+if(!Array.isArray(SET.vcats)) SET.vcats=[...VM_CATS];
+SET.vcats=SET.vcats.filter(k=>VM_CATS.includes(k)); if(!SET.vcats.length) SET.vcats=[...VM_CATS];
+const VX_BODY=[]; {const seen=new Set(); BP.forEach(p=>{if(!seen.has(p.pt)){seen.add(p.pt);VX_BODY.push({t:"body",pt:p.pt,en:p.en,say:p.pt,note:p.note})}})}
+const vmList=k=>k==="body"?VX_BODY:VX[k];
+const VXMAP={};
+function vmItem(x){const key="vx:"+x.t+":"+x.pt; VXMAP[key]=x; return {v:{inf:key,vx:true},pt:x.pt,en:x.en,tense:null,vxi:x};}
+function buildVocabItems(n){
+  const lists=shuffle([...SET.vcats]).map(k=>{let arr=vmList(k).map(x=>({...x}));
+    if(VX_GEN[k]) for(let i=0;i<Math.max(3,Math.round(arr.length/5));i++) arr.push(VX_GEN[k]());
+    return shuffle(arr).sort((a,b)=>vxWeak(b)-vxWeak(a));});
+  const items=[],sp=new Set(),se=new Set(); let i=0,guard=0;
+  while(items.length<n&&lists.some(l=>l.length)&&guard++<2000){
+    const l=lists[i++%lists.length]; if(!l.length) continue; const x=l.shift();
+    const ek=x.en.toLowerCase().replace(/\s*\(.*\)$/,"");
+    if(sp.has(x.pt)||se.has(ek)) continue; sp.add(x.pt); se.add(ek);
+    const it=vmItem(x); it.id=items.length; it.missed=false; items.push(it);
+  }
+  return items;
+}
+const _biV10=buildItems; buildItems=function(n){return SET.fmt==="vocab"?buildVocabItems(n):_biV10(n)};
+const _recV10=rec; rec=function(inf,ok,tense,conf){
+  if(typeof inf==="string"&&inf.startsWith("vx:")){const x=VXMAP[inf]; if(x) vxrec(x.t,x.gen?`${VM_LBL(x.t).label} (built)`:x.pt,x.gen?"numbers, times & years you build":x.en,ok); return;}
+  _recV10(inf,ok,tense,conf);
+};
+const _masterV10=master; master=function(inf){ if(String(inf).startsWith("vx:")) return; _masterV10(inf); };
+const _unmasterV10=unmaster; unmaster=function(inf){ if(String(inf).startsWith("vx:")) return; _unmasterV10(inf); };
+const _rvV10=reviewHTML; reviewHTML=function(){
+  if(!round.items.length||!round.items[0].vxi) return _rvV10();
+  return round.items.map(it=>{const c=VM_LBL(it.vxi.t);return `<div><span>${it.missed?"❌":round.failed&&!it.done?"⏸️":"✅"} <b style="color:var(--green)">${it.pt}</b> = ${it.en}</span><span class="tag" style="--c:var(--green)">${c.ic} ${c.label}</span></div>`}).join("");
+};
+const _lrV10=logRound; logRound=function(a,s,f){_lrV10(a,s,f); if(SET.fmt==="vocab"){ST.rounds[ST.rounds.length-1].m="vmatch";LS.set("vm_stats",ST);}};
+MODE_LBL.vmatch="🔢 Vocab match"; MODE_LBL.vbody="🧍 Body quiz"; MODE_LBL.vquiz="🔢 Vocab quiz";
+
+/* settings UI for vocab match */
+const _rcV10=renderCtrls;
+renderCtrls=function(){
+  _rcV10();
+  const voc=SET.fmt==="vocab", all=SET.vcats.length===VM_CATS.length;
+  $("vcatCtrls").classList.toggle("hidden",!voc);
+  $("conjCtrls").classList.toggle("hidden",SET.fmt!=="conj");
+  $("trapBtn").classList.toggle("hidden",voc);
+  $("vcatChips").innerHTML=`<span class="chip ${all?"on":""}" data-vc="all" style="--c:var(--blue)">All</span>`+
+    VM_CATS.map(k=>`<span class="chip ${!all&&SET.vcats.includes(k)?"on":""}" data-vc="${k}" style="--c:var(--green)">${VM_LBL(k).ic} ${VM_LBL(k).label}</span>`).join("");
+  $("vcatChips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{const k=c.dataset.vc;
+    if(k==="all") SET.vcats=[...VM_CATS];
+    else if(SET.vcats.length===VM_CATS.length) SET.vcats=[k];
+    else if(SET.vcats.includes(k)){ if(SET.vcats.length===1) return toast("Keep at least one category on"); SET.vcats=SET.vcats.filter(x=>x!==k); }
+    else SET.vcats=VM_CATS.filter(x=>SET.vcats.includes(x)||x===k);
+    saveSet(); renderCtrls(); start();});
+  if(voc) $("lvDesc").innerHTML=$("lvDesc").innerHTML.replace(/top \d+ verbs( \(irregulars weighted\))?/,"words from your categories");
+};
+updSummary=function(){
+  if(!$("setSummary")) return;
+  const l=L(), dir={pt:"PT→EN",en:"EN→PT",mix:"Mixed"}[SET.dir];
+  const fmt=SET.fmt==="conj"?"Conjugated":SET.fmt==="vocab"?(SET.vcats.length===VM_CATS.length?"Vocab · all":SET.vcats.length<=2?"Vocab · "+SET.vcats.map(k=>VM_LBL(k).label).join(", "):`Vocab · ${SET.vcats.length} categories`):"Infinitive";
+  const bits=[`<b>${SET.style==="memory"?"🃏 Memory":"🎯 Tiles"}</b>`,fmt,`<span class="lvdot" style="background:${l.c}"></span>${l.n}${SET.auto?" ⚡":""}`];
+  if(SET.style!=="memory") bits.push(dir);
+  bits.push(SET.pairs+" pairs");
+  if(SET.fmt==="conj") bits.push(SET.tenses.length+" tense"+(SET.tenses.length>1?"s":""));
+  if(SET.traps&&SET.fmt!=="vocab") bits.push("🪤");
+  $("setSummary").innerHTML=bits.join(" · ");
+};
 
 /* stats: vocab & body misses */
-MODE_LBL.vquiz="🔢 Vocab quiz"; MODE_LBL.vbody="🧍 Body quiz";
 const _rsV9=renderStats;
 renderStats=function(){
   _rsV9();
   const rows=Object.entries(ST.vx||{}).filter(([,s])=>s.w>0).map(([k,s])=>({k,...s,acc:Math.round(s.r/(s.r+s.w)*100)}))
     .sort((a,b)=>b.w/(b.r+b.w+1)-a.w/(a.r+a.w+1)||b.w-a.w).slice(0,12);
-  const tl=t=>t==="body"?"🧍 Body":VX_TOPICS[t]?VX_TOPICS[t].ic+" "+VX_TOPICS[t].label:t;
+  const tl=t=>VM_LBL(t)?VM_LBL(t).ic+" "+VM_LBL(t).label:t;
   const box=document.createElement("div"); box.className="panel";
   box.innerHTML=`<h3>🔢 Vocab &amp; body parts you miss most</h3>${rows.length?`<table class="miss"><thead><tr><th>Word</th><th>Meaning</th><th>Topic</th><th>Wrong</th><th>Right</th><th>Accuracy</th></tr></thead><tbody>${rows.map(r=>
     `<tr><td style="font-weight:800;color:var(--green)">${r.k}</td><td style="font-size:12px">${r.en||""}</td><td style="font-size:12px">${tl(r.t)}</td><td style="color:var(--bad);font-weight:800">${r.w}</td><td>${r.r}</td>
      <td><div style="display:flex;align-items:center;gap:6px"><div class="mbar"><i style="width:${100-r.acc}%"></i></div>${r.acc}%</div></td></tr>`).join("")}</tbody></table>`
-    :`<div class="empty">No misses yet. Try the Vocab tab's Quiz or Body quiz.</div>`}`;
+    :`<div class="empty">No misses yet. Try Vocab in the Match tab, or the Body quiz.</div>`}`;
   const sv=$("statsView"); sv.insertBefore(box, sv.lastElementChild);
 };
 
