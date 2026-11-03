@@ -1,6 +1,6 @@
 /* Verbo Match offline cache.
-   Bump VERSION every time you upload a new index.html (v12, v13, ...). */
-const VERSION = "verbo-match-v11";
+   Bump VERSION every time you upload a new index.html (v13, v14, ...). */
+const VERSION = "verbo-match-v12";
 const FILES = ["./", "./index.html", "./manifest.json",
   "./icon-180.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 

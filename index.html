@@ -418,6 +418,32 @@ nav button .ic{font-size:20px;line-height:1}
   .vx-grid.abc{grid-template-columns:repeat(5,1fr)}
 }
 
+
+/* ===== v11 ===== */
+/* 1) English subject column in the verb pop-up */
+.vc td.pn{width:36%}
+.vc td.pe{text-align:right;color:var(--muted);font-size:12px;font-style:italic;white-space:nowrap;padding-left:6px;width:1%}
+/* 3) iOS home-screen app: stop the bottom bar floating up on short pages */
+html{min-height:calc(100% + env(safe-area-inset-top))}
+body{min-height:100%}
+@media(max-width:700px){
+  .vc td.pn{width:34%}
+  /* 2) Verb Bank cards: meaning sits to the right of the verb */
+  #bankView tbody tr{align-items:baseline;row-gap:3px}
+  #bankView td.v{grid-column:1;font-size:18px;padding-bottom:4px}
+  #bankView td:nth-child(3){grid-column:2;font-size:14.5px;line-height:1.3;color:#3d4656;padding-bottom:4px}
+  /* 3) bottom bar always pinned flush to the bottom */
+  nav{bottom:0!important;top:auto!important;transform:translateZ(0)}
+  /* 4) pop-ups start below the status bar, header fully visible */
+  .modal{padding:calc(env(safe-area-inset-top) + 14px) 0 0;align-items:flex-end}
+  .box{max-height:100%}
+  .box.wide{height:100%!important;max-height:100%!important}
+  .vhead{padding-top:16px}
+  .vhead .x{top:12px;right:12px;width:38px;height:38px;font-size:18px;background:rgba(255,255,255,.28)}
+}
+@media(max-height:520px) and (orientation:landscape){
+  .modal{padding:env(safe-area-inset-top) 0 0}
+}
 </style>
 </head>
 <body>
@@ -1027,6 +1053,10 @@ function confetti(){
 
 /* ---------- verb detail pop-up ---------- */
 const PERS5=["eu","tu","você / ele / ela","nós","vocês / eles / elas"];
+const PERS_EN={def:["I","you","you / he / she","we","you all / they"],
+  imp:["","you","you","let's","you all"],
+  pinf:["for me","for you","for you / him / her","for us","for you all / them"]};
+const persEn=(k,i)=>(k==="impA"||k==="impN"?PERS_EN.imp:k==="pinf"?PERS_EN.pinf:PERS_EN.def)[i];
 const VSECTIONS=[
  {name:"Indicative",cards:[
   ["pres","Presente","#009c3b",v=>`I ${enPres(v,PERSONS.eu)}`],
@@ -1072,7 +1102,7 @@ function openVerb(inf){
   const statLine=s&&(s.r+s.w)?`<div class="vstat">📊 Your record: <b>${s.r}</b> right · <b>${s.w}</b> wrong (${Math.round(s.r/(s.r+s.w)*100)}% accuracy)${topConf(s)?` · most often confused with <b>${topConf(s)}</b>`:""}</div>`:"";
   $("vBody").innerHTML=statLine+secs.map(sec=>`${vTab==="all"?`<h3 style="margin:14px 0 8px;color:var(--blue)">${sec.name}</h3>`:""}<div class="vgrid">${sec.cards.map(([k,name,col,en,pre=""])=>
     `<div class="vc" style="--c:${col}"><h4>${name}</h4><div class="en">${en(v)}</div><table>${c[k].map((f,i)=>
-      `<tr><td class="pn">${pre}${PERS5[i]}</td><td class="f" data-s="${f==="—"?"":(k==="impA"||k==="impN"?f:PERS5[i].split(" /")[0]+" "+f)}">${f}</td></tr>`).join("")}</table></div>`).join("")}</div>`).join("")+
+      `<tr><td class="pn">${pre}${PERS5[i]}</td><td class="f" data-s="${f==="—"?"":(k==="impA"||k==="impN"?f:PERS5[i].split(" /")[0]+" "+f)}">${f}</td><td class="pe">${f==="—"?"":persEn(k,i)}</td></tr>`).join("")}</table></div>`).join("")}</div>`).join("")+
     `<div class="vnote">Tip: click any form to hear it. <b>você</b> and <b>a gente</b> use the same form as <b>ele/ela</b>. Imperative for <b>você</b> uses the subjunctive form, which is what most Brazilians say.</div>`;
   $("vBody").querySelectorAll("td.f").forEach(td=>td.onclick=()=>td.dataset.s&&say(td.dataset.s));
   $("vBody").scrollTop=0; const ot=$("vTabs").querySelector(".on"); if(ot) ot.scrollIntoView({block:"nearest",inline:"center"});
