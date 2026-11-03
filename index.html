@@ -246,6 +246,106 @@ header{padding-top:calc(18px + env(safe-area-inset-top))}
 html,body{max-width:100%;overflow-x:hidden}
 .install-tip{position:fixed;left:10px;right:10px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:16;background:var(--blue);color:#fff;border-radius:14px;padding:12px 40px 12px 14px;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .install-tip b{color:var(--yellow)}.install-tip button{position:absolute;right:8px;top:8px;border:0;background:rgba(255,255,255,.2);color:#fff;border-radius:50%;width:26px;height:26px}
+/* ===== v8: calmer layout ===== */
+.stats{display:flex;gap:0;background:var(--card);border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);padding:4px 6px;margin-bottom:10px;overflow-x:auto;scrollbar-width:none}
+.stats::-webkit-scrollbar{display:none}
+.stats .stat{background:none;box-shadow:none;border-radius:0;padding:6px 14px;flex:1 0 auto;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.stats .stat:last-child{border-right:0}
+.stats .stat b{font-size:19px}.stats .stat span{font-size:10px}
+.stats .stat .bar{margin-top:4px;min-width:60px}
+.actionbar{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.sumbtn{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:9px 12px;font-size:13px;color:var(--ink);cursor:pointer;min-width:0;text-align:left;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.sumbtn .chev{transition:transform .2s;color:var(--muted)}
+.sumbtn[aria-expanded=true]{border-color:var(--green)}
+.sumbtn[aria-expanded=true] .chev{transform:rotate(180deg)}
+.lvdot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:1px}
+#setSummary{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ab{display:flex;align-items:center;gap:2px}
+.setpanel{background:var(--card);border-radius:14px;padding:12px 14px;margin:0 0 12px;box-shadow:0 1px 4px rgba(0,0,0,.05);display:none;flex-direction:column;gap:10px}
+.setpanel.open{display:flex;animation:fold .18s ease-out}
+@keyframes fold{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.sp-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.sp-row label{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.setpanel .lvdesc{margin:-4px 0 0}
+#conjCtrls{display:flex;flex-direction:column;gap:10px;border-top:1px dashed var(--line);padding-top:10px}
+.fold{background:var(--card);border-radius:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.fold summary{padding:11px 14px;font-weight:700;font-size:14px;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary:after{content:"▾";color:var(--muted);transition:transform .2s}
+.fold[open] summary:after{transform:rotate(180deg)}
+.fold .guide{padding:0 12px 12px;margin:0}
+.fold .g{box-shadow:none;background:#f8faf7}
+.fbtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 12px;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink);white-space:nowrap}
+.fbtn.on{border-color:var(--green);color:var(--green)}
+.fbtn b{background:var(--green);color:#fff;border-radius:99px;padding:0 6px;font-size:11px}
+.fpanel{flex-basis:100%;display:flex;flex-direction:column;gap:8px;padding-top:4px;border-top:1px dashed var(--line)}
+.foot{font-size:12px;color:var(--muted);margin:8px 2px}
+.slang-hero{padding:12px 18px}.slang-hero h2{font-size:21px}
+.controls,.panel,.bank{box-shadow:0 1px 4px rgba(0,0,0,.05)}
+
+/* ===== v8: pop-ups that scroll properly ===== */
+body.locked{position:fixed;left:0;right:0;overflow:hidden}
+.modal{overscroll-behavior:contain}
+.box{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.box.wide{max-height:min(92vh,92dvh);display:flex;flex-direction:column;overflow:hidden}
+.vhead,.vtabs{flex:none}
+.vbody{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.vtabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.vtabs::-webkit-scrollbar{display:none}
+.vtabs button{flex:none;white-space:nowrap}
+.vtabs:empty{display:none}
+.vhead h2{padding-right:44px}
+
+@media(max-width:700px){
+  .stats{padding:2px 4px}.stats .stat{padding:5px 10px}.stats .stat b{font-size:16px}.stats .stat span{font-size:9px}
+  .stats .stat .bar{display:none}
+  .actionbar{gap:6px}.actionbar .spacer{display:none}
+  .sumbtn{flex:1 1 auto;padding:9px 10px;font-size:12px}
+  .ab{padding:9px 11px;flex:none}.ab-l{display:none}
+  .ab-l2{display:none}
+  .setpanel{padding:10px}
+  .meter{flex:1 1 100%}
+  .modal{padding:0;align-items:flex-end}
+  .box{border-radius:20px 20px 0 0;max-height:92dvh;padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+  .box.wide{height:94dvh;max-height:94dvh!important;padding-bottom:0;border-radius:18px 18px 0 0}
+  .vhead{padding:14px 16px 12px}
+  .vhead h2{font-size:24px;gap:10px}
+  .vhead .x{top:10px;right:10px;width:34px;height:34px}
+  .spk{width:30px;height:30px;font-size:14px}
+  #vMean{font-size:14px}
+  .vchips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-top:8px;gap:6px}
+  .vchips::-webkit-scrollbar{display:none}
+  .vchips span{flex:none;font-size:12px;white-space:nowrap}
+  .vtabs{padding:8px 12px 0;gap:4px}
+  .vtabs button{padding:7px 11px;font-size:12px}
+  .vbody{padding:12px 12px calc(20px + env(safe-area-inset-bottom))}
+  .vgrid{grid-template-columns:1fr;gap:10px}
+  .vc td{font-size:14px;padding:5px 2px}
+  .vc td.pn{width:46%}
+  .sl-ex{padding:12px}.sl-pt{font-size:19px}
+  .sl-rel{grid-template-columns:1fr 1fr}
+  .slang-hero{padding:10px 14px;gap:8px}.slang-hero p{display:none}
+  .sh-stats{gap:12px}.sh-stats b{font-size:18px}
+  #sRand{padding:7px 10px;font-size:12px}
+}
+/* phone turned sideways: full screen pop-up, two columns */
+@media(max-height:520px) and (orientation:landscape){
+  .modal{padding:0;align-items:stretch}
+  .box{max-height:100dvh;border-radius:0}
+  .box.wide{max-width:none;height:100dvh;max-height:100dvh!important;border-radius:0;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+  .vhead{padding:8px 56px 8px 16px;display:flex;align-items:center;gap:14px;flex-wrap:nowrap}
+  .vhead h2{font-size:22px;flex:none;padding-right:0}
+  #vMean{font-size:13px;flex:none;max-width:30%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .vchips{margin:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;min-width:0}
+  .vchips::-webkit-scrollbar{display:none}
+  .vchips span{flex:none;white-space:nowrap;font-size:12px}
+  .vhead .x{top:50%;transform:translateY(-50%)}
+  .vtabs{padding:6px 12px 0}
+  .vbody{padding:10px 14px calc(14px + env(safe-area-inset-bottom))}
+  .vgrid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))!important}
+  .sl-rel{grid-template-columns:repeat(3,1fr)}
+}
+
 </style>
 </head>
 <body>
@@ -276,32 +376,29 @@ html,body{max-width:100%;overflow-x:hidden}
   </div>
 
   <div id="gameCtrls">
-    <div class="controls">
-      <span class="ctl-lbl">Difficulty</span>
-      <div class="meter" id="meter"></div>
-      <button class="auto" id="autoBtn" title="Adjusts level automatically: up after 3 perfect rounds, down after 2 rough ones">⚡ Auto</button>
-      <span class="ctl-lbl" style="margin-left:6px">Direction</span>
-      <div class="seg" id="dirSeg">
-        <button data-d="pt">PT → EN</button><button data-d="en">EN → PT</button><button data-d="mix">🔀 Mixed</button>
-      </div>
-      <button class="toggle" id="trapBtn" title="Puts easily confused verbs in the same round">🪤 Traps</button>
-      <div class="lvdesc" id="lvDesc"></div>
-    </div>
-    <div class="controls">
-      <label>Pairs <select id="pairs"><option>6</option><option>8</option><option>10</option><option>12</option></select></label>
-      <label title="Say Portuguese words aloud"><input type="checkbox" id="voice" checked> 🔊 Voice</label>
-      <label title="Sound effects"><input type="checkbox" id="sfx" checked> 🎵 Sounds</label>
-      <button class="btn ghost" id="hintBtn">💡 Hint<span class="hcount" id="hCount"></span></button>
+    <div class="actionbar">
+      <button class="sumbtn" id="setToggle" aria-expanded="false"><span class="sum-ic">⚙️</span><span id="setSummary">Settings</span><span class="chev">▾</span></button>
       <span class="spacer"></span>
-      <button class="btn ghost" id="pauseBtn">⏸️ Pause</button>
-      <button class="btn go" id="newBtn">New round</button>
+      <button class="btn ghost ab" id="hintBtn" title="Hint">💡<span class="ab-l"> Hint</span><span class="hcount" id="hCount"></span></button>
+      <button class="btn ghost ab" id="pauseBtn" title="Pause (P)">⏸️<span class="ab-l"> Pause</span></button>
+      <button class="btn go ab" id="newBtn">↻ New<span class="ab-l2"> round</span></button>
     </div>
-    <div class="controls" id="conjCtrls">
-      <span class="ctl-lbl">Tenses</span><div class="chips" id="tenseChips"></div>
-      <span class="ctl-lbl" style="margin-left:8px">Persons</span><div class="chips" id="personChips"></div>
+    <div class="setpanel" id="setPanel">
+      <div class="sp-row"><span class="ctl-lbl">Difficulty</span><div class="meter" id="meter"></div>
+        <button class="auto" id="autoBtn" title="Adjusts level automatically: up after 3 perfect rounds, down after 2 rough ones">⚡ Auto</button></div>
+      <div class="lvdesc" id="lvDesc"></div>
+      <div class="sp-row"><span class="ctl-lbl">Direction</span>
+        <div class="seg" id="dirSeg"><button data-d="pt">PT → EN</button><button data-d="en">EN → PT</button><button data-d="mix">🔀 Mixed</button></div>
+        <button class="toggle" id="trapBtn" title="Puts easily confused verbs in the same round">🪤 Traps</button></div>
+      <div class="sp-row"><label>Pairs <select id="pairs"><option>6</option><option>8</option><option>10</option><option>12</option></select></label>
+        <label title="Say Portuguese words aloud"><input type="checkbox" id="voice" checked> 🔊 Voice</label>
+        <label title="Sound effects"><input type="checkbox" id="sfx" checked> 🎵 Sounds</label></div>
+      <div id="conjCtrls">
+        <div class="sp-row"><span class="ctl-lbl">Tenses</span><div class="chips" id="tenseChips"></div></div>
+        <div class="sp-row"><span class="ctl-lbl">Persons</span><div class="chips" id="personChips"></div></div>
+      </div>
     </div>
   </div>
-
   <div id="banner" class="banner hidden"></div>
   <div id="playWrap" style="position:relative"><section id="play"></section><div id="pauseOv" class="pause-ov hidden"><div><div style="font-size:44px">⏸️</div><h2>Pausado</h2><p id="pauseWhy">Your timer is stopped.</p><button class="btn go" id="resumeBtn">▶️ Continuar</button></div></div></div>
   <section id="statsView" class="hidden"></section>
@@ -309,9 +406,9 @@ html,body{max-width:100%;overflow-x:hidden}
   <section id="slangView" class="hidden"></section>
 
   <section id="bankView" class="hidden">
-    <div class="guide" id="guide"></div>
-    <div class="controls">
-      <input type="search" id="q" placeholder="Search a verb or meaning…" style="flex:1">
+<details class="fold" id="guideFold"><summary>📐 Ending patterns cheat sheet</summary><div class="guide" id="guide"></div></details>
+    <div class="controls searchbar">
+      <input type="search" id="q" placeholder="🔍 Search a verb or meaning…" style="flex:1;min-width:160px">
       <label><input type="checkbox" id="onlyMast"> Mastered only</label>
       <label><input type="checkbox" id="onlyMiss"> Missed only</label>
     </div>
@@ -331,7 +428,7 @@ html,body{max-width:100%;overflow-x:hidden}
   </div>
 </div></div>
 
-<div class="modal" id="vmodal"><div class="box wide" style="max-height:92vh">
+<div class="modal" id="vmodal"><div class="box wide">
   <div class="vhead"><button class="x" id="vClose" title="Close">✕</button><h2><span id="vTitle"></span><button class="spk" id="vSpeak" title="Hear it">🔊</button></h2><div id="vMean" style="opacity:.92"></div><div class="vchips" id="vChips"></div></div>
   <div class="vtabs" id="vTabs"></div>
   <div class="vbody" id="vBody"></div>
@@ -587,6 +684,7 @@ function renderCtrls(){
     const k=c.dataset.k, arr=SET[key]; if(arr.includes(k)&&arr.length===1) return toast("Keep at least one on");
     SET[key]=arr.includes(k)?arr.filter(x=>x!==k):[...arr,k]; saveSet(); renderCtrls(); start();});
   chipToggle("tenseChips","tenses"); chipToggle("personChips","persons");
+  updSummary();
 }
 $("autoBtn").onclick=()=>{SET.auto=!SET.auto;SET.runP=SET.runR=0;saveSet();renderCtrls();toast(SET.auto?"⚡ Auto difficulty on":"Auto difficulty off")};
 $("dirSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{SET.dir=b.dataset.d;saveSet();renderCtrls();start()});
@@ -637,7 +735,7 @@ function setPause(on,why){
   if(on){ pauseAt=Date.now(); $("pauseWhy").textContent=why||"Your timer is stopped."; }
   else pausedMs+=Date.now()-pauseAt;
   $("pauseOv").classList.toggle("hidden",!on);
-  $("pauseBtn").classList.toggle("on",on); $("pauseBtn").textContent=on?"▶️ Resume":"⏸️ Pause";
+  $("pauseBtn").classList.toggle("on",on); $("pauseBtn").innerHTML=on?'▶️<span class="ab-l"> Resume</span>':'⏸️<span class="ab-l"> Pause</span>';
   $("hintBtn").disabled=on||!round||round.hints<=0;
   if(window.speechSynthesis&&on) speechSynthesis.cancel();
 }
@@ -647,7 +745,7 @@ document.addEventListener("visibilitychange",()=>{ if(document.hidden) setPause(
 document.addEventListener("keydown",e=>{ if((e.key==="p"||e.key==="P")&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)&&!$("gameCtrls").classList.contains("hidden")) setPause(!paused); });
 function startTimer(){
   clearInterval(timer); t0=Date.now(); pausedMs=0; paused=false; $("pauseOv").classList.add("hidden");
-  $("pauseBtn").classList.remove("on"); $("pauseBtn").textContent="⏸️ Pause"; const lim=round.limit;
+  $("pauseBtn").classList.remove("on"); $("pauseBtn").innerHTML='⏸️<span class="ab-l"> Pause</span>'; const lim=round.limit;
   $("sTimeLbl").textContent=lim?"Time left ⏳":"Time"; $("timeBox").classList.remove("warn");
   const tick=()=>{if(paused) return; const el=elapsed()|0;
     if(lim){const left=lim-el; $("sTime").textContent=fmt(left); $("timeBox").classList.toggle("warn",left<=10);
@@ -901,6 +999,7 @@ function openVerb(inf){
       `<tr><td class="pn">${pre}${PERS5[i]}</td><td class="f" data-s="${f==="—"?"":(k==="impA"||k==="impN"?f:PERS5[i].split(" /")[0]+" "+f)}">${f}</td></tr>`).join("")}</table></div>`).join("")}</div>`).join("")+
     `<div class="vnote">Tip: click any form to hear it. <b>você</b> and <b>a gente</b> use the same form as <b>ele/ela</b>. Imperative for <b>você</b> uses the subjunctive form, which is what most Brazilians say.</div>`;
   $("vBody").querySelectorAll("td.f").forEach(td=>td.onclick=()=>td.dataset.s&&say(td.dataset.s));
+  $("vBody").scrollTop=0; const ot=$("vTabs").querySelector(".on"); if(ot) ot.scrollIntoView({block:"nearest",inline:"center"});
   $("vmodal").classList.add("show");
 }
 $("vClose").onclick=()=>$("vmodal").classList.remove("show");
@@ -980,7 +1079,7 @@ function start(){
   $("slangView").classList.toggle("hidden",!isSlang);
   $("wordsView").classList.toggle("hidden",!isWords);
   $("bankView").classList.toggle("hidden",!isBank); $("statsView").classList.toggle("hidden",!isStats);
-  $("play").classList.toggle("hidden",!game); $("gameCtrls").classList.toggle("hidden",!game); $("stats").classList.toggle("hidden",isStats||isWords||isSlang);
+  $("play").classList.toggle("hidden",!game); $("gameCtrls").classList.toggle("hidden",!game);$("stats").classList.toggle("hidden",!game);
   $("conjCtrls").classList.toggle("hidden",mode!=="conj");
   $("dirSeg").style.opacity=mode==="memory"?.45:1; $("dirSeg").title=mode==="memory"?"Direction doesn't apply to Memory Flip":"";
   if(!game){clearInterval(timer);paused=false;$("pauseOv").classList.add("hidden");round=null;$("banner").classList.add("hidden");isBank?renderBank():isStats?renderStats():isSlang?renderSlang():renderWords();return}
@@ -1141,7 +1240,8 @@ function renderWords(){
      </div>
      ${sub==="guide"?"":`<span class="spacer"></span><label>Questions <select id="wLen">${[6,8,10,15,20].map(n=>`<option ${n===WSET.len?"selected":""}>${n}</option>`).join("")}</select></label>
        <button class="btn go" id="wNew">New round</button>
-       <div style="flex-basis:100%;display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="ctl-lbl">Practice</span>
+       <button class="fbtn ${WSET.copen?"on":""}" id="wCatBtn">${WSET.cats.length===Object.keys(WGROUPS).length?"All topics":WSET.cats.length+" topic"+(WSET.cats.length>1?"s":"")} ▾</button>
+       <div class="fpanel ${WSET.copen?"":"hidden"}" style="flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px"><span class="ctl-lbl">Practice</span>
        <span class="chip ${WSET.cats.length===Object.keys(WGROUPS).length?"on":""}" id="wAll" style="--c:var(--blue)">All</span>
        ${Object.entries(WGROUPS).map(([k,g])=>`<span class="chip ${WSET.cats.includes(k)?"on":""}" data-k="${k}" style="--c:${g.c}">${g.label}</span>`).join("")}</div>`}
    </div>
@@ -1150,6 +1250,7 @@ function renderWords(){
   if(sub!=="guide"){
     $("wLen").onchange=()=>{WSET.len=+$("wLen").value;saveW();renderWords()};
     $("wNew").onclick=()=>renderWords();
+    $("wCatBtn").onclick=()=>{WSET.copen=!WSET.copen;saveW();renderWords()};
     $("wAll").onclick=()=>{WSET.cats=Object.keys(WGROUPS);saveW();renderWords()};
     v.querySelectorAll(".chip[data-k]").forEach(c=>c.onclick=()=>{const k=c.dataset.k;
       if(WSET.cats.length===Object.keys(WGROUPS).length) WSET.cats=[k];
@@ -1494,23 +1595,27 @@ function renderSlang(){
   const v=$("slangView");
   const regCount=r=>SLANG.filter(s=>r==="all"||s.r===r).length;
   v.innerHTML=`
-   <div class="slang-hero"><div><h2>🇧🇷 Gírias brasileiras</h2><p>100 everyday slang terms, São Paulo first. Click any word for examples and notes.</p></div>
+   <div class="slang-hero"><div><h2>🇧🇷 Gírias brasileiras</h2><p>100 everyday slang terms, São Paulo first.</p></div>
      <div class="sh-stats"><div><b>${SLANG.filter(s=>s.r==="SP").length}</b><span>São Paulo</span></div><div><b>${SLEARN.size}</b><span>Learned ✓</span></div>
      <button class="btn alt" id="sRand">🎲 Random gíria</button></div></div>
-   <div class="controls">
-     <input type="search" id="sQ" placeholder="Search slang or meaning…" value="${SSET.q.replace(/"/g,"&quot;")}" style="flex:1;min-width:200px">
+   <div class="controls searchbar">
+     <input type="search" id="sQ" placeholder="🔍 Search slang or meaning…" value="${SSET.q.replace(/"/g,"&quot;")}" style="flex:1;min-width:160px">
+     <button class="fbtn ${SSET.fopen?"on":""}" id="sFiltBtn">Filters${(SSET.reg!=="all")+(SSET.cat!=="all")+(SSET.learned?1:0)?` <b>${(SSET.reg!=="all")+(SSET.cat!=="all")+(SSET.learned?1:0)}</b>`:""} ▾</button>
+     <div class="fpanel ${SSET.fopen?"":"hidden"}" id="sFilt">
      <label><input type="checkbox" id="sLearned" ${SSET.learned?"checked":""}> Hide learned</label>
-     <div style="flex-basis:100%;display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="ctl-lbl">Region</span>
+     <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="ctl-lbl">Region</span>
       <span class="chip ${SSET.reg==="all"?"on":""}" data-r="all" style="--c:var(--ink)">All (${regCount("all")})</span>
       ${REG_ORDER.map(r=>`<span class="chip ${SSET.reg===r?"on":""}" data-r="${r}" style="--c:${SREG[r].c}">${r==="SP"?"⭐ ":""}${SREG[r].l} (${regCount(r)})</span>`).join("")}</div>
-     <div style="flex-basis:100%;display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="ctl-lbl">Type</span>
+     <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="ctl-lbl">Type</span>
       <span class="chip ${SSET.cat==="all"?"on":""}" data-c="all" style="--c:var(--blue)">All</span>
       ${SCATS.map(c=>`<span class="chip ${SSET.cat===c?"on":""}" data-c="${c}" style="--c:var(--blue)">${c}</span>`).join("")}</div>
+     </div>
    </div>
    <div class="bank"><table><thead><tr><th>#</th><th>Gíria</th><th>Meaning</th><th>Region</th><th>Type</th><th>Example</th><th>✓</th></tr></thead><tbody id="sBody"></tbody></table></div>
-   <p style="font-size:12px;color:var(--muted)">Click a term to open it · 🔊 to hear it · ✓ marks it learned. Slang is casual: great with friends, skip it in formal emails.</p>`;
+   <p class="foot">Tap a term for examples and notes · 🔊 to hear it · ✓ marks it learned. Slang is casual: great with friends, skip it in work emails.</p>`;
+  $("sFiltBtn").onclick=()=>{SSET.fopen=!SSET.fopen;saveS();renderSlang()};
   $("sQ").oninput=()=>{SSET.q=$("sQ").value;saveS();slangRows()};
-  $("sLearned").onchange=()=>{SSET.learned=$("sLearned").checked;saveS();slangRows()};
+  $("sLearned").onchange=()=>{SSET.learned=$("sLearned").checked;saveS();renderSlang()};
   v.querySelectorAll("[data-r]").forEach(c=>c.onclick=()=>{SSET.reg=c.dataset.r;saveS();renderSlang()});
   v.querySelectorAll("[data-c]").forEach(c=>c.onclick=()=>{SSET.cat=c.dataset.c;saveS();renderSlang()});
   $("sRand").onclick=()=>{const l=slangList();openSlang(rnd(l.length?l:SLANG).rank)};
@@ -1548,6 +1653,7 @@ function openSlang(rank){
       <button class="btn ghost" id="slPrev" ${idx<=0?"disabled":""}>◀ Previous</button>
       <button class="btn ${SLEARN.has(s.t)?"ghost":"go"}" id="slLearn">${SLEARN.has(s.t)?"↺ Mark not learned":"✓ Mark learned"}</button>
       <button class="btn ghost" id="slNext" ${idx<0||idx>=list.length-1?"disabled":""}>Next ▶</button></div>`;
+  $("vBody").scrollTop=0;
   $("vSpeak").onclick=()=>sayAlways(s.t.split(" / ")[0]);
   $("slSay").onclick=()=>sayAlways(s.ex);
   $("vBody").querySelectorAll(".sl-rel button").forEach(b=>b.onclick=()=>openSlang(+b.dataset.s));
@@ -1601,6 +1707,33 @@ function importBackup(){
 /* persistent storage + offline */
 if(navigator.storage&&navigator.storage.persist) navigator.storage.persist().catch(()=>{});
 if("serviceWorker" in navigator&&location.protocol.startsWith("http")) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+
+/* ===== v8: collapsible settings + pop-up scroll lock ===== */
+const UI=Object.assign({setOpen:false},LS.get("vm_ui",{}));
+function setPanel(open){UI.setOpen=open;LS.set("vm_ui",UI);$("setPanel").classList.toggle("open",open);$("setToggle").setAttribute("aria-expanded",open);}
+$("setToggle").onclick=()=>setPanel(!UI.setOpen);
+function updSummary(){
+  if(!$("setSummary")) return;
+  const l=L(), dir={pt:"PT→EN",en:"EN→PT",mix:"Mixed"}[SET.dir];
+  const bits=[`<span class="lvdot" style="background:${l.c}"></span><b>${l.n}${SET.auto?" ⚡":""}</b>`];
+  if(mode!=="memory") bits.push(dir);
+  bits.push(SET.pairs+" pairs");
+  if(mode==="conj") bits.push(SET.tenses.length+" tense"+(SET.tenses.length>1?"s":""));
+  if(SET.traps) bits.push("🪤");
+  $("setSummary").innerHTML=bits.join(" · ");
+}
+const _start=start; start=function(){_start();updSummary();};
+let lockY=0;
+function syncLock(){
+  const open=!!document.querySelector(".modal.show"), b=document.body;
+  if(open&&!b.classList.contains("locked")){lockY=scrollY;b.style.top=`-${lockY}px`;b.classList.add("locked");}
+  else if(!open&&b.classList.contains("locked")){b.classList.remove("locked");b.style.top="";scrollTo(0,lockY);}
+}
+document.querySelectorAll(".modal").forEach(m=>{
+  new MutationObserver(syncLock).observe(m,{attributes:true,attributeFilter:["class"]});
+  m.addEventListener("touchmove",e=>{if(e.target===m)e.preventDefault();},{passive:false});
+});
+setPanel(UI.setOpen); updSummary();
 
 </script>
 </body></html>
