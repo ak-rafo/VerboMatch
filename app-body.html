@@ -1,0 +1,100 @@
+<!--BUILD v18-->
+
+<header>
+  <div class="brand">
+    <div class="logo"><div class="dia"></div><div class="orb"></div></div>
+    <button class="hdr-spk" id="spkSet" title="Voice & speed settings">🔊<span class="lb2"> Voice</span></button>
+<!--@@B1@@-->
+    <div class="lang-sw" id="langSw" role="group" aria-label="Language"><button data-l="pt" title="Português (Brasil)">🇧🇷<span class="lt"> PT</span></button><button data-l="es" title="Español">🇪🇸<span class="lt"> ES</span></button></div>
+  </div>
+  <nav id="nav">
+    <button data-m="play" class="on">🎯 Match</button>
+    <button data-m="bank">📚 Verb Bank</button>
+    <button data-m="words">🧩 Articles &amp; Connectors</button>
+    <button data-m="vocab">🔢 Vocab</button>
+<!--@@B2@@-->
+    <button data-m="stats">📊 My Stats</button>
+  </nav>
+</header>
+<main>
+  <div class="stats" id="stats">
+    <div class="stat"><span>Score</span><b id="sScore">0</b></div>
+    <div class="stat"><span>Streak 🔥</span><b id="sStreak">0</b></div>
+    <div class="stat"><span>Best score</span><b id="sBest">0</b></div>
+    <div class="stat" id="timeBox"><span id="sTimeLbl">Time</span><b id="sTime">0:00</b></div>
+    <div class="stat hidden" id="livesBox"><span>Lives</span><b id="sLives"></b></div>
+    <div class="stat"><span>Mastered</span><b id="sMast">0/200</b><div class="bar"><i id="mBar"></i></div></div>
+  </div>
+  <div id="gameCtrls">
+    <div class="actionbar">
+      <button class="sumbtn" id="setToggle" aria-expanded="false"><span class="sum-ic">⚙️</span><span id="setSummary">Settings</span><span class="chev">▾</span></button>
+      <span class="spacer"></span>
+      <button class="btn ghost ab" id="hintBtn" title="Hint">💡<span class="ab-l">&nbsp;Hint</span><span class="hcount" id="hCount"></span></button>
+      <button class="btn ghost ab" id="pauseBtn" title="Pause (P)">⏸️<span class="ab-l">&nbsp;Pause</span></button>
+      <button class="btn go ab" id="newBtn">↻ New<span class="ab-l2">&nbsp;round</span></button>
+    </div>
+    <div class="setpanel" id="setPanel">
+      <div class="sp-row"><span class="ctl-lbl">Game</span>
+        <div class="seg" id="styleSeg"><button data-v="tiles">🎯 Tile match</button><button data-v="memory">🃏 Memory flip</button><button data-v="type">⌨️ Type it</button></div>
+        <div class="seg" id="fmtSeg"><button data-v="inf">Infinitive</button><button data-v="conj">Conjugated</button><button data-v="vocab">🔢 Vocab</button></div></div>
+      <div class="sp-row"><span class="ctl-lbl">Difficulty</span><div class="meter" id="meter"></div>
+        <button class="auto" id="autoBtn" title="Adjusts level automatically: up after 3 perfect rounds, down after 2 rough ones">⚡ Auto</button></div>
+      <div class="lvdesc" id="lvDesc"></div>
+      <div class="sp-row"><span class="ctl-lbl">Direction</span>
+<!--@@B3@@-->
+        <button class="toggle" id="trapBtn" title="Puts easily confused verbs in the same round">🪤 Traps</button></div>
+      <div class="sp-row"><label>Pairs <select id="pairs"><option>6</option><option>8</option><option>10</option><option>12</option></select></label>
+<!--@@B4@@-->
+        <label title="Sound effects"><input type="checkbox" id="sfx" checked> 🎵 Sounds</label></div>
+      <div id="vcatCtrls" class="hidden"><div class="sp-row"><span class="ctl-lbl">Categories</span><div class="chips" id="vcatChips"></div></div></div>
+      <div id="conjCtrls">
+        <div class="sp-row"><span class="ctl-lbl">Tenses</span><div class="chips" id="tenseChips"></div></div>
+        <div class="sp-row"><span class="ctl-lbl">Persons</span><div class="chips" id="personChips"></div></div>
+      </div>
+    </div>
+  </div>
+  <div id="banner" class="banner hidden"></div>
+<!--@@B5@@-->
+  <section id="statsView" class="hidden"></section>
+  <section id="wordsView" class="hidden"></section>
+  <section id="slangView" class="hidden"></section>
+  <section id="vocabView" class="hidden"></section>
+  <section id="bankView" class="hidden">
+<details class="fold" id="guideFold"><summary>📐 Ending patterns cheat sheet</summary><div class="guide" id="guide"></div></details>
+    <div class="controls searchbar">
+      <input type="search" id="q" placeholder="🔍 Search a verb or meaning…" style="flex:1;min-width:160px">
+      <label><input type="checkbox" id="onlyMast"> Mastered only</label>
+      <label><input type="checkbox" id="onlyMiss"> Missed only</label>
+    </div>
+    <div class="bank"><table><thead><tr id="bankHead"></tr></thead><tbody id="bankBody"></tbody></table></div>
+<!--@@B6@@-->
+  </section>
+</main>
+<div class="modal" id="modal"><div class="box">
+<!--@@B7@@-->
+  <p id="mSub" style="color:var(--muted);margin:6px 0 0"></p>
+  <div class="sum" id="mSum"></div>
+  <div class="review" id="mReview"></div>
+  <div style="margin-top:16px;display:flex;gap:10px;justify-content:center">
+    <button class="btn ghost" id="mClose">Close</button>
+<!--@@B8@@-->
+  </div>
+</div></div>
+<div class="modal" id="vmodal"><div class="box wide">
+  <div class="vhead"><button class="x" id="vClose" title="Close">✕</button><h2><span id="vTitle"></span><button class="spk" id="vSpeak" title="Hear it">🔊</button></h2><div id="vMean" style="opacity:.92"></div><div class="vchips" id="vChips"></div></div>
+  <div class="vtabs" id="vTabs"></div>
+  <div class="vbody" id="vBody"></div>
+</div></div>
+<div class="modal" id="spModal"><div class="box sp-box">
+  <h2>🔊 Voice &amp; speed</h2>
+  <div class="gn" id="spNow"></div>
+  <div class="sp-row2">Speed</div>
+  <div class="seg" id="spSpeed"></div>
+<!--@@B9@@-->
+  <select id="spVoice"></select>
+  <div style="display:flex;gap:8px;margin-top:12px"><button class="btn alt" id="spTest">▶️ Test voice</button><span class="spacer"></span><button class="btn go" id="spClose">Done</button></div>
+<!--@@B10@@-->
+</div></div>
+
+<div class="toast" id="toast"></div>
+<canvas id="fx"></canvas>

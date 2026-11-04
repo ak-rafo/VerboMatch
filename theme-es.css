@@ -1,0 +1,10 @@
+
+/* ===== Spanish theme ===== */
+header{background:linear-gradient(135deg,#c60b1e,#e8590c)}
+header:after{background:#ffc400}
+.logo .dia{background:#ffc400}.logo .orb{background:#c60b1e}
+.vhead{background:linear-gradient(135deg,#c60b1e,#e8590c)}
+nav button.on{color:#c60b1e}
+.slang-hero{background:linear-gradient(135deg,#8a0a17,#c60b1e 55%,#e8590c)}
+.sh-stats div b{font-size:17px}
+@media(max-width:700px){nav button.on{background:#fdeaea;color:#c60b1e}.sh-stats div span{font-size:9px}}

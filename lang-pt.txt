@@ -1,0 +1,1485 @@
+BUILD v18
+@@@H1 1@@@
+/* ---------- DATA: [infinitive, meaning, English base, English past, overrides] ---------- */
+@@@H2 19@@@
+["ser","to be (identity, traits)","be (ser)","was (ser)",{p:"sou",pt:"fui",i:"era",f:"serei"}],
+["estar","to be (state, location)","be (estar)","was (estar)",{p:"estou",pt:"estive"}],
+["ter","to have","have","had",{p:"tenho",pt:"tive",i:"tinha"}],
+["ir","to go","go","went",{p:"vou",pt:"fui",noGo:1}],
+["fazer","to do / make","do","did",{p:"faço",pt:"fiz",f:"farei"}],
+["poder","to be able to / can","be able to","was able to",{p:"posso",pt:"pude",can:1}],
+["dizer","to say / tell","say","said",{p:"digo",pt:"disse",f:"direi"}],
+["dar","to give","give","gave",{p:"dou"}],
+["ver","to see","see","saw",{p:"vejo"}],
+["saber","to know (facts)","know","found out",{p:"sei",pt:"soube"}],
+["querer","to want","want","wanted",{p:"quero",pt:"quis"}],
+["vir","to come","come","came",{p:"venho",pt:"vim",i:"vinha"}],
+["ficar","to stay / become","stay","stayed"],
+["falar","to speak / talk","speak","spoke"],
+["chegar","to arrive","arrive","arrived"],
+["passar","to pass / spend (time)","pass","passed"],
+["deixar","to let / leave behind","allow","allowed"],
+["pensar","to think","think","thought"],
+["levar","to take / carry","carry","carried"],
+@@@H3 11@@@
+["achar","to find / think (opinion)","find","found"],
+["encontrar","to meet / find","meet","met"],
+["conhecer","to know (people, places)","know (someone)","got to know",{p:"conheço"}],
+["começar","to begin / start","start","started"],
+["trabalhar","to work","work","worked"],
+["viver","to live","live","lived"],
+["morar","to live (reside)","reside","resided"],
+["chamar","to call","call","called"],
+["ligar","to call (phone) / turn on","phone","phoned"],
+["acabar","to finish / end up","finish","finished"],
+["terminar","to end / finish","end","ended"],
+@@@H4 2@@@
+["sair","to leave / go out","go out","went out",{p:"saio",pt:"saí",i:"saía"}],
+["voltar","to come back / return","return","returned"],
+@@@H5 1@@@
+["fechar","to close","close","closed"],
+@@@H6 3@@@
+["dormir","to sleep","sleep","slept",{p:"durmo"}],
+["acordar","to wake up","wake up","woke up"],
+["andar","to walk","walk","walked"],
+@@@H7 4@@@
+["jogar","to play (games, sports)","play (sports)","played (sports)"],
+["tocar","to play (music) / touch","play (music)","played (music)"],
+["brincar","to play (for fun)","play (for fun)","played (for fun)"],
+["estudar","to study","study","studied"],
+@@@H8 8@@@
+["ensinar","to teach","teach","taught"],
+["ler","to read","read","read (past)",{p:"leio"}],
+["escrever","to write","write","wrote"],
+["ouvir","to hear","hear","heard",{p:"ouço"}],
+["escutar","to listen","listen","listened"],
+["olhar","to look","look","looked"],
+["assistir","to watch / attend","watch","watched"],
+["perguntar","to ask (a question)","ask","asked"],
+@@@H9 6@@@
+["entender","to understand","understand","understood"],
+["lembrar","to remember","remember","remembered"],
+["esquecer","to forget","forget","forgot",{p:"esqueço"}],
+["gostar","to like","like","liked"],
+["amar","to love","love","loved"],
+["precisar","to need","need","needed"],
+@@@H10 16@@@
+["ajudar","to help","help","helped"],
+["tentar","to try","try","tried"],
+["conseguir","to manage to / get","manage","managed",{p:"consigo"}],
+["esperar","to wait / hope","wait","waited"],
+["procurar","to look for","look for","looked for"],
+["perder","to lose / miss","lose","lost",{p:"perco"}],
+["ganhar","to win / earn","win","won"],
+["receber","to receive","receive","received"],
+["mandar","to send / order","send","sent"],
+["trazer","to bring","bring","brought",{p:"trago",pt:"trouxe",f:"trarei"}],
+["pôr","to put","put","put (past)",{p:"ponho",pt:"pus",i:"punha",f:"porei"}],
+["colocar","to place / put","place","placed"],
+["pegar","to grab / catch","grab","grabbed"],
+["mudar","to change / move","change","changed"],
+["cozinhar","to cook","cook","cooked"],
+["limpar","to clean","clean","cleaned"],
+@@@H11 1@@@
+["dirigir","to drive","drive","drove",{p:"dirijo"}],
+@@@H12 1@@@
+["dançar","to dance","dance","danced"],
+@@@H13 3@@@
+["sentir","to feel","feel","felt",{p:"sinto"}],
+["parecer","to seem","seem","seemed",{p:"pareço"}],
+["acreditar","to believe","believe","believed"],
+@@@H14 2@@@
+["mostrar","to show","show","showed"],
+["seguir","to follow","follow","followed",{p:"sigo"}],
+@@@H15 6@@@
+["descer","to go down","go down","went down",{p:"desço"}],
+["cair","to fall","fall","fell",{p:"caio",pt:"caí",i:"caía"}],
+["preferir","to prefer","prefer","preferred",{p:"prefiro"}],
+["pedir","to ask for / order","ask for","asked for",{p:"peço"}],
+["escolher","to choose","choose","chose"],
+/* ----- v12: verbs 101–200 ----- */
+@@@H16 15@@@
+["acontecer","to happen","happen","happened",{p:"aconteço"}],
+["continuar","to continue / keep on","continue","continued"],
+["criar","to create / raise (kids)","create","created"],
+["permitir","to allow / permit","permit","permitted"],
+["aparecer","to appear / show up","appear","appeared",{p:"apareço"}],
+["servir","to serve","serve","served",{p:"sirvo"}],
+["produzir","to produce","produce","produced",{p:"produzo"}],
+["manter","to keep / maintain","maintain","maintained",{p:"mantenho",pt:"mantive",i:"mantinha",f:"manterei"}],
+["tornar","to become / make (into)","become","became"],
+["oferecer","to offer","offer","offered",{p:"ofereço"}],
+["apresentar","to present / introduce","present","presented"],
+["sentar","to sit","sit","sat"],
+["tratar","to treat / deal with","treat","treated"],
+["buscar","to fetch / pick up","fetch","fetched"],
+["perceber","to notice / realize","notice","noticed"],
+@@@H17 5@@@
+["cuidar","to take care of","take care","took care"],
+["contar","to tell (a story) / count","tell","told"],
+["chorar","to cry","cry","cried"],
+["rir","to laugh","laugh","laughed",{p:"rio"}],
+["sorrir","to smile","smile","smiled",{p:"sorrio"}],
+@@@H18 12@@@
+["beijar","to kiss","kiss","kissed"],
+["abraçar","to hug","hug","hugged"],
+["casar","to marry / get married","marry","married"],
+["nascer","to be born","am born","was born",{p:"nasço"}],
+["morrer","to die","die","died"],
+["crescer","to grow / grow up","grow","grew",{p:"cresço"}],
+["mexer","to stir / move / touch","stir","stirred"],
+["empurrar","to push","push","pushed"],
+["puxar","to pull","pull","pulled"],
+["quebrar","to break","break","broke"],
+["consertar","to fix / repair","fix","fixed"],
+["construir","to build","build","built",{p:"construo",pt:"construí",i:"construía"}],
+@@@H19 1@@@
+["desenhar","to draw","draw","drew"],
+@@@H20 1@@@
+["mentir","to lie (not tell the truth)","lie","lied",{p:"minto"}],
+@@@H21 1@@@
+["convidar","to invite","invite","invited"],
+@@@H22 4@@@
+["almoçar","to have lunch","have lunch","had lunch"],
+["jantar","to have dinner","have dinner","had dinner"],
+["vestir","to dress / put on","put on","put on (past)",{p:"visto"}],
+["tirar","to take off / take out","take off","took off"],
+@@@H23 50@@@
+["esquentar","to heat up / warm","heat up","heated up"],
+["ferver","to boil","boil","boiled"],
+["experimentar","to try (on / out)","try out","tried out"],
+["alugar","to rent","rent","rented"],
+["emprestar","to lend","lend","lent"],
+["devolver","to give back / return (an item)","give back","gave back"],
+["trocar","to exchange / swap","swap","swapped"],
+["gastar","to spend (money)","spend","spent"],
+["economizar","to save (money)","save","saved"],
+["custar","to cost","cost","cost (past)"],
+["valer","to be worth","am worth","was worth",{p:"valho"}],
+["faltar","to be missing / lack","lack","lacked"],
+["caber","to fit","fit","fit (past)",{p:"caibo",pt:"coube"}],
+["doer","to hurt / ache","hurt","hurt (past)",{p:"doo"}],
+["adorar","to love / adore","adore","adored"],
+["odiar","to hate","hate","hated",{p:"odeio"}],
+["sonhar","to dream","dream","dreamed"],
+["imaginar","to imagine","imagine","imagined"],
+["merecer","to deserve","deserve","deserved",{p:"mereço"}],
+["conversar","to chat / talk","chat","chatted"],
+["discutir","to argue / discuss","argue","argued"],
+["reclamar","to complain","complain","complained"],
+["concordar","to agree","agree","agreed"],
+["combinar","to arrange / match","arrange","arranged"],
+["avisar","to let know / warn","warn","warned"],
+["repetir","to repeat","repeat","repeated",{p:"repito"}],
+["corrigir","to correct","correct","corrected",{p:"corrijo"}],
+["traduzir","to translate","translate","translated",{p:"traduzo"}],
+["descobrir","to discover / find out","discover","discovered",{p:"descubro"}],
+["resolver","to solve / sort out","solve","solved"],
+["parar","to stop","stop","stopped"],
+["atravessar","to cross","cross","crossed"],
+["virar","to turn / become","turn","turned"],
+["entregar","to deliver / hand in","deliver","delivered"],
+["enviar","to send (formal)","dispatch","dispatched"],
+["apagar","to turn off / erase","erase","erased"],
+["acender","to light / turn on","light","lit"],
+["desligar","to turn off / hang up","switch off","switched off"],
+["melhorar","to improve / get better","improve","improved"],
+["aumentar","to increase / turn up","increase","increased"],
+["diminuir","to decrease / turn down","decrease","decreased",{p:"diminuo",pt:"diminuí",i:"diminuía"}],
+["fugir","to run away / escape","escape","escaped",{p:"fujo"}],
+["treinar","to train / practice","train","trained"],
+["descansar","to rest","rest","rested"],
+["preocupar","to worry","worry","worried"],
+["vencer","to win / beat","beat","beat (past)",{p:"venço"}],
+["atender","to answer (phone) / serve","pick up","picked up"],
+["marcar","to schedule / mark","schedule","scheduled"],
+["cancelar","to cancel","cancel","canceled"],
+["agradecer","to thank","thank","thanked",{p:"agradeço"}]
+@@@H24 11@@@
+function befE(s){ if(s.endsWith("c")) return s.slice(0,-1)+"qu"; if(s.endsWith("g")) return s+"u"; if(s.endsWith("ç")) return s.slice(0,-1)+"c"; return s; }
+function regular(inf){
+  const end=inf.slice(-2), stem=inf.slice(0,-2);
+  return end==="ar"?{p:stem+"o",pt:befE(stem)+"ei",i:stem+"ava",f:inf+"ei"}:{p:stem+"o",pt:stem+"i",i:stem+"ia",f:inf+"ei"};
+}
+const VERBS=RAW.map(([inf,gloss,eb,epast,o={}],rank)=>{
+  const r=regular(inf);
+  return {inf,gloss,eb,epast,rank,can:!!o.can,noGo:!!o.noGo,irr:!!o.p,p:o.p||r.p,pt:o.pt||r.pt,i:o.i||r.i,f:o.f||r.f};
+});
+const VMAP=Object.fromEntries(VERBS.map(v=>[v.inf,v]));
+/* ---------- FULL conjugation engine ---------- */
+@@@H25 38@@@
+ ser:{pres:"sou és é somos são",pret:"fui foste foi fomos foram",imp:"era eras era éramos eram",psub:"seja sejas seja sejamos sejam",tu:"sê"},
+ estar:{pres:"estou estás está estamos estão",pret:"estive estiveste esteve estivemos estiveram",psub:"esteja estejas esteja estejamos estejam",strong:1},
+ ter:{pres:"tenho tens tem temos têm",pret:"tive tiveste teve tivemos tiveram",imp:"tinha tinhas tinha tínhamos tinham",strong:1},
+ ir:{pres:"vou vais vai vamos vão",pret:"fui foste foi fomos foram",psub:"vá vás vá vamos vão"},
+ fazer:{pres:"faço fazes faz fazemos fazem",pret:"fiz fizeste fez fizemos fizeram",fst:"far",part:"feito",strong:1},
+ poder:{pres:"posso podes pode podemos podem",pret:"pude pudeste pôde pudemos puderam",strong:1},
+ dizer:{pres:"digo dizes diz dizemos dizem",pret:"disse disseste disse dissemos disseram",fst:"dir",part:"dito",strong:1},
+ dar:{pres:"dou dás dá damos dão",pret:"dei deste deu demos deram",psub:"dê dês dê demos deem"},
+ ver:{pres:"vejo vês vê vemos veem",pret:"vi viste viu vimos viram",part:"visto"},
+ saber:{pres:"sei sabes sabe sabemos sabem",pret:"soube soubeste soube soubemos souberam",psub:"saiba saibas saiba saibamos saibam",strong:1},
+ querer:{pres:"quero queres quer queremos querem",pret:"quis quiseste quis quisemos quiseram",psub:"queira queiras queira queiramos queiram",strong:1},
+ vir:{pres:"venho vens vem vimos vêm",pret:"vim vieste veio viemos vieram",imp:"vinha vinhas vinha vínhamos vinham",part:"vindo",strong:1},
+ sair:{pres:"saio sais sai saímos saem",pret:"saí saíste saiu saímos saíram",imp:"saía saías saía saíamos saíam",fsub:"sair saíres sair sairmos saírem"},
+ cair:{pres:"caio cais cai caímos caem",pret:"caí caíste caiu caímos caíram",imp:"caía caías caía caíamos caíam",fsub:"cair caíres cair cairmos caírem"},
+ ler:{pres:"leio lês lê lemos leem"},
+ trazer:{pres:"trago trazes traz trazemos trazem",pret:"trouxe trouxeste trouxe trouxemos trouxeram",fst:"trar",strong:1},
+ "pôr":{pres:"ponho pões põe pomos põem",pret:"pus puseste pôs pusemos puseram",imp:"punha punhas punha púnhamos punham",fst:"por",part:"posto",ger:"pondo",strong:1},
+ subir:{pres:"subo sobes sobe subimos sobem"},
+ abrir:{part:"aberto"}, escrever:{part:"escrito"}, ganhar:{part:"ganho"}, pagar:{part:"pago"},
+ /* v12 irregulars */
+ produzir:{pres:"produzo produzes produz produzimos produzem"},
+ traduzir:{pres:"traduzo traduzes traduz traduzimos traduzem"},
+ manter:{pres:"mantenho manténs mantém mantemos mantêm",pret:"mantive mantiveste manteve mantivemos mantiveram",imp:"mantinha mantinhas mantinha mantínhamos mantinham",strong:1},
+ construir:{pres:"construo constróis constrói construímos constroem",pret:"construí construíste construiu construímos construíram",imp:"construía construías construía construíamos construíam",fsub:"construir construíres construir construirmos construírem"},
+ diminuir:{pres:"diminuo diminuis diminui diminuímos diminuem",pret:"diminuí diminuíste diminuiu diminuímos diminuíram",imp:"diminuía diminuías diminuía diminuíamos diminuíam",fsub:"diminuir diminuíres diminuir diminuirmos diminuírem"},
+ rir:{pres:"rio ris ri rimos riem"},
+ sorrir:{pres:"sorrio sorris sorri sorrimos sorriem"},
+ caber:{pres:"caibo cabes cabe cabemos cabem",pret:"coube coubeste coube coubemos couberam",psub:"caiba caibas caiba caibamos caibam",strong:1},
+ doer:{pres:"doo dóis dói doemos doem",pret:"doí doeste doeu doemos doeram",imp:"doía doías doía doíamos doíam"},
+ odiar:{pres:"odeio odeias odeia odiamos odeiam",psub:"odeie odeies odeie odiemos odeiem"},
+ fugir:{pres:"fujo foges foge fugimos fogem"},
+ descobrir:{pres:"descubro descobres descobre descobrimos descobrem",part:"descoberto"},
+ gastar:{part:"gastado"}
+};
+const END={
+ ar:{pres:["o","as","a","amos","am"],pret:["ei","aste","ou","amos","aram"],imp:["ava","avas","ava","ávamos","avam"]},
+ er:{pres:["o","es","e","emos","em"],pret:["i","este","eu","emos","eram"],imp:["ia","ias","ia","íamos","iam"]},
+ ir:{pres:["o","es","e","imos","em"],pret:["i","iste","iu","imos","iram"],imp:["ia","ias","ia","íamos","iam"]}
+@@@H26 1@@@
+function accent(b,strong){const m={a:"á",i:"í",e:strong?"é":"ê",o:"ô"},l=b.slice(-1);return m[l]?b.slice(0,-1)+m[l]:b}
+@@@H27 4@@@
+  const v=VMAP[inf]||{}, I=IRR[inf]||{};
+  const c=inf==="pôr"?"er":inf.slice(-2), st=inf==="pôr"?"p":inf.slice(0,-2), E=END[c];
+  const pres=I.pres?S(I.pres):E.pres.map((e,k)=>k===0&&v.p?v.p:st+e);
+  const pret=I.pret?S(I.pret):E.pret.map((e,k)=>k===0&&c==="ar"?befE(st)+"ei":st+e);
+@@@H28 3@@@
+  const fst=I.fst||(inf==="pôr"?"por":inf);
+  const fut=["ei","ás","á","emos","ão"].map(e=>fst+e);
+  const cond=["ia","ias","ia","íamos","iam"].map(e=>fst+e);
+@@@H29 12@@@
+  else { const b=pres[0].replace(/o$/,""); psub=c==="ar"?["e","es","e","emos","em"].map(e=>befE(b)+e):["a","as","a","amos","am"].map(e=>b+e); }
+  const base=pret[4].replace(/ram$/,""), ac=accent(base,I.strong);
+  const isub=[base+"sse",base+"sses",base+"sse",ac+"ssemos",base+"ssem"];
+  const fsub=I.fsub?S(I.fsub):[base+"r",base+"res",base+"r",base+"rmos",base+"rem"];
+  const mqp=[base+"ra",base+"ras",base+"ra",ac+"ramos",base+"ram"];
+  const pb=inf==="pôr"?"por":inf;
+  const pinf=[inf,pb+"es",inf,pb+"mos",pb+"em"];
+  const part=I.part||(c==="ar"?st+"ado":/[aeiou]$/.test(st)?st+"ído":st+"ido");
+  const ger=I.ger||st+(c==="ar"?"ando":c==="er"?"endo":"indo");
+  const impA=["—",I.tu||pres[2],psub[2],psub[3],psub[4]];
+  const impN=["—","não "+psub[1],"não "+psub[2],"não "+psub[3],"não "+psub[4]];
+  return _simple[inf]={pres,pret,imp,fut,cond,psub,isub,fsub,mqp,pinf,part,ger,impA,impN};
+@@@H30 1@@@
+  const s=simple(inf), T=simple("ter"), E=simple("estar"), R=simple("ir");
+@@@H31 3@@@
+  return {...s, ppc:w(T.pres,s.part), mqpc:w(T.imp,s.part), futp:w(T.fut,s.part), condp:w(T.cond,s.part),
+    psubp:w(T.psub,s.part), isubp:w(T.isub,s.part), fsubp:w(T.fsub,s.part),
+    prog:w(E.pres,s.ger), progp:w(E.imp,s.ger), progf:w(E.fut,s.ger), irf:w(R.pres,inf), irp:w(R.imp,inf)};
+@@@H32 0@@@
+@@@H33 2@@@
+  eu:{pt:"eu",en:"I",i:0,g:"1"}, tu:{pt:"tu",en:"you (tu)",i:1,g:"p"}, voce:{pt:"você",en:"you",i:2,g:"p"},
+  ele:{pt:"ele",en:"he",i:2,g:"3"}, nos:{pt:"nós",en:"we",i:3,g:"p"}, voces:{pt:"vocês",en:"you all",i:4,g:"p"}, eles:{pt:"eles",en:"they",i:4,g:"p"}
+@@@H34 1@@@
+  pret:{label:"Past · completed",c:"#e63946",pt:(v,p,c)=>`${p.pt} ${c.pret[p.i]}`,en:(v,p)=>`${p.en} ${enPast(v,p)}`},
+@@@H35 1@@@
+  go:{label:"Future · going to",c:"#3a86ff",pt:(v,p)=>`${p.pt} ${simple("ir").pres[p.i]} ${v.inf}`,en:(v,p)=>`${p.en} ${beP(p)} going to ${enBase(v)}`},
+@@@H36 0@@@
+@@@H37 4@@@
+ {n:"Fácil",c:"#009c3b",pairs:6,pool:30,irr:false,tenses:["pres"],persons:["eu"],hints:Infinity,secPer:0,pen:0,reset:false,lives:0},
+ {n:"Médio",c:"#c9a400",pairs:8,pool:80,irr:false,tenses:["pres","pret","go"],persons:["eu","voce"],hints:3,secPer:0,pen:0,reset:true,lives:0},
+ {n:"Difícil",c:"#f08c00",pairs:10,pool:150,irr:false,tenses:["pres","pret","imp","go","fut"],persons:["eu","voce","nos"],hints:1,secPer:12,pen:5,reset:true,lives:0},
+ {n:"Expert",c:"#e63946",pairs:12,pool:200,irr:true,tenses:ALLT,persons:ALLP,hints:0,secPer:7.5,pen:10,reset:true,lives:3}
+@@@H38 5@@@
+const TRAPS=[["ser","estar"],["saber","conhecer"],["jogar","tocar","brincar"],["levar","trazer"],["ouvir","escutar"],["olhar","ver","assistir"],
+ ["pôr","colocar"],["acabar","terminar"],["viver","morar"],["pedir","perguntar"],["ligar","chamar"],["achar","encontrar","procurar"],
+ ["tomar","beber"],["pegar","levar"],["sair","entrar"],["subir","descer"],["vir","ir"],["dar","receber"],["ganhar","perder"],["ensinar","aprender"],["esperar","acreditar"],
+ ["rir","sorrir"],["acender","apagar"],["ligar","desligar"],["emprestar","alugar"],["empurrar","puxar"],["contar","explicar"],["guardar","esconder"],
+ ["aumentar","diminuir"],["conversar","discutir"],["buscar","procurar"],["vencer","ganhar"],["gastar","economizar"],["adorar","odiar"]];
+@@@H39 2@@@
+let SET=Object.assign({fmt:"inf",style:"tiles",lvl:1,auto:false,dir:"pt",traps:false,pairs:8,tenses:LEVELS[1].tenses,persons:LEVELS[1].persons,runP:0,runR:0},LS.get("vm_set",{}));
+const saveSet=()=>LS.set("vm_set",SET);
+@@@H40 2@@@
+let mode=SET.style==="memory"?"memory":SET.fmt==="conj"?"conj":"meaning",score=0,streak=0,best=LS.get("vm_best",0),mastered=new Set(LS.get("vm_mast",[]));
+let ST=LS.get("vm_stats",null)||{verbs:{},tenses:{},rounds:[],bestStreak:0};
+@@@H41 1@@@
+  LS.set("vm_stats",ST);
+@@@H42 3@@@
+  if(score>best){best=score;LS.set("vm_best",best)}
+  if(streak>(ST.bestStreak||0)){ST.bestStreak=streak;LS.set("vm_stats",ST)}
+  if([5,10,15,20].includes(streak)) toast(["🔥 Que demais!","⚡ Incrível!","🌟 Sensacional!","🏆 Mestre dos verbos!"][[5,10,15,20].indexOf(streak)]);
+@@@H43 2@@@
+function master(inf){ mastered.add(inf); LS.set("vm_mast",[...mastered]); stats(); }
+function unmaster(inf){ if(mastered.delete(inf)){LS.set("vm_mast",[...mastered]); stats();} }
+@@@H44 2@@@
+    return `<div class="tile" data-side="${side}" data-id="${it.id}" data-lang="${lang}"><span>${showPt?it.pt:it.en}</span><span class="fl">${lang.toUpperCase()}</span></div>`;};
+  const head=SET.dir==="pt"?["🇧🇷 Português","🇺🇸 English"]:SET.dir==="en"?["🇺🇸 English","🇧🇷 Português"]:["🔀 Mixed","🔀 Match it"];
+@@@H45 1@@@
+  $("play").innerHTML=`<div class="mem" style="--cols:${cols}">${cards.map(c=>`<div class="card" data-id="${c.id}" data-side="${c.side}"><div class="in"><div class="face back">✦</div><div class="face front"><small style="background:${c.side==="pt"?"var(--green)":"var(--blue)"}">${c.side==="pt"?"PT":"EN"}</small><span>${c.txt}</span></div></div></div>`).join("")}</div>`;
+@@@H46 1@@@
+function logRound(acc,secs,failed){ ST.rounds.push({d:Date.now(),m:mode,n:round.items.length,x:round.mistakes,s:secs,a:acc,l:SET.lvl,f:failed?1:0}); ST.rounds=ST.rounds.slice(-60); LS.set("vm_stats",ST); }
+@@@H47 1@@@
+  score+=bonus; if(score>best){best=score;LS.set("vm_best",best)} stats();
+@@@H48 1@@@
+  showModal(round.mistakes===0?"Perfeito! 🏆":acc>=75?"Muito bem! 🎉":"Bom trabalho! 💪",
+@@@H49 1@@@
+    `<div><b>${secs}s</b><span>Time</span></div><div><b>${acc}%</b><span>Accuracy</span></div><div><b>+${bonus}</b><span>Bonus</span></div><div><b style="color:${LEVELS[lvBefore].c}">${LEVELS[lvBefore].n}</b><span>Level</span></div>`,"Próxima rodada ➜");
+@@@H50 1@@@
+  showModal(why==="time"?"Tempo esgotado! ⏰":"Sem vidas! 💔",
+@@@H51 1@@@
+    `<div><b>${round.done}/${round.items.length}</b><span>Matched</span></div><div><b>${round.mistakes}</b><span>Misses</span></div><div><b style="color:${LEVELS[lvBefore].c}">${LEVELS[lvBefore].n}</b><span>Level</span></div>`,"Tentar de novo ↻");
+@@@H52 1@@@
+  const cols=["#009c3b","#ffdf00","#002776","#ffffff","#00b347"];
+@@@H53 5@@@
+const PERS5=["eu","tu","você / ele / ela","nós","vocês / eles / elas"];
+const PERS_EN={def:["I","you","you / he / she","we","you all / they"],
+  imp:["","you","you","let's","you all"],
+  pinf:["for me","for you","for you / him / her","for us","for you all / them"]};
+const persEn=(k,i)=>(k==="impA"||k==="impN"?PERS_EN.imp:k==="pinf"?PERS_EN.pinf:PERS_EN.def)[i];
+@@@H54 6@@@
+  ["pres","Presente","#009c3b",v=>`I ${enPres(v,PERSONS.eu)}`],
+  ["pret","Pretérito perfeito","#e63946",v=>`I ${v.epast} (completed)`],
+  ["imp","Pretérito imperfeito","#f08c00",v=>`I used to ${enBase(v)} / was …ing`],
+  ["mqp","Mais-que-perfeito (literary)","#8d6e63",()=>`I had … (written style)`],
+  ["fut","Futuro do presente","#002776",v=>`I will ${enBase(v)}`],
+  ["cond","Futuro do pretérito (conditional)","#6a4c93",v=>`I would ${enBase(v)}`]]},
+@@@H55 3@@@
+  ["psub","Presente do subjuntivo","#009c3b",v=>`(that) I ${enBase(v)}`,"que "],
+  ["isub","Imperfeito do subjuntivo","#f08c00",v=>`if I were to ${enBase(v)}`,"se "],
+  ["fsub","Futuro do subjuntivo","#002776",v=>`when / if I ${enBase(v)} (future)`,"quando "]]},
+@@@H56 14@@@
+  ["ppc","Pretérito perfeito composto","#e63946",()=>"I have been …ing (lately)"],
+  ["mqpc","Mais-que-perfeito composto","#8d6e63",()=>"I had …"],
+  ["futp","Futuro perfeito","#002776",()=>"I will have …"],
+  ["condp","Condicional perfeito","#6a4c93",()=>"I would have …"],
+  ["psubp","Perfeito do subjuntivo","#009c3b",()=>"(that) I have …","que "],
+  ["isubp","Mais-que-perfeito do subjuntivo","#f08c00",()=>"if I had …","se "],
+  ["fsubp","Futuro perfeito do subjuntivo","#3a86ff",()=>"when I have …","quando "]]},
+ {name:"Everyday Brazilian",cards:[
+  ["prog","Presente contínuo","#009c3b",()=>`I am …ing (right now)`],
+  ["progp","Passado contínuo","#f08c00",()=>`I was …ing`],
+  ["progf","Futuro contínuo","#002776",()=>`I will be …ing`],
+  ["irf","Futuro com ir ⭐","#3a86ff",v=>`I'm going to ${enBase(v)}`],
+  ["irp","Futuro do passado com ir","#6a4c93",v=>`I was going to ${enBase(v)}`]]},
+ {name:"Imperative & more",cards:[
+@@@H57 2@@@
+  ["impN","Imperativo negativo","#8d6e63",v=>`Don't ${enBase(v)}!`],
+  ["pinf","Infinitivo pessoal","#6a4c93",()=>"for me to … / for us to …","para "]]}
+@@@H58 1@@@
+  $("vMean").textContent=v.gloss+(IRR[inf]&&IRR[inf].pres?"  ·  irregular":"");
+@@@H59 1@@@
+  $("vChips").innerHTML=`<span>Gerúndio <b>${c.ger}</b></span><span>Particípio <b>${c.part}</b></span><span>eu <b>${c.pres[0]}</b> · <b>${c.pret[0]}</b> · <b>${c.fut[0]}</b></span>`+
+@@@H60 0@@@
+@@@H61 1@@@
+    `<div class="vnote">Tip: click any form to hear it. <b>você</b> and <b>a gente</b> use the same form as <b>ele/ela</b>. Imperative for <b>você</b> uses the subjunctive form, which is what most Brazilians say.</div>`;
+@@@H62 1@@@
+function vSpeakVerb(){const c=simple(vInf);say(`${vInf}. eu ${c.pres[0]}. eu ${c.pret[0]}. eu ${c.fut[0]}`)}
+@@@H63 1@@@
+    ["vm_stats","vm_mast","vm_best"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}}); stats(); renderStats(); };
+@@@H64 5@@@
+ ["Present","#009c3b","-ar: <code>o as a amos am</code><br>-er: <code>o es e emos em</code><br>-ir: <code>o es e imos em</code><br><i>falo, como, abro</i>"],
+ ["Past · completed","#e63946","-ar: <code>ei aste ou amos aram</code><br>-er: <code>i este eu emos eram</code><br>-ir: <code>i iste iu imos iram</code><br><i>falei, comi, abri</i>"],
+ ["Past · used to","#f08c00","-ar: <code>ava avas ava ávamos avam</code><br>-er/-ir: <code>ia ias ia íamos iam</code><br><i>falava, comia, abria</i>"],
+ ["Future · going to","#3a86ff","<code>vou / vais / vai / vamos / vão</code> + infinitive<br><i>vou falar, vai comer</i><br>Most common in conversation"],
+ ["Future · will","#002776","Infinitive + <code>ei ás á emos ão</code><br><i>falarei, comerei, abrirei</i><br>Irregular: farei, direi, trarei"]
+@@@H65 0@@@
+@@@H66 1@@@
+   .map(v=>{const w=ST.verbs[v.inf]?.w||0;return `<tr><td>${v.rank+1}</td><td class="v" data-v="${v.inf}">${v.inf}${mastered.has(v.inf)?' <span class="star">★</span>':""}${w?`<span class="miss-b">${w}</span>`:""}</td><td>${v.gloss}</td><td>${v.p}</td><td>${v.pt}</td><td>${v.i}</td><td>${v.noGo?"vou (= I'm going)":"vou "+v.inf}</td><td>${v.f}</td></tr>`}).join("");
+@@@H67 6@@@
+  def:{label:"Articles · the",c:"#009c3b",forms:["o","a","os","as"]},
+  indef:{label:"Articles · a / some",c:"#00b347",forms:["um","uma","uns","umas"]},
+  em:{label:"em → no / na",c:"#3a86ff",forms:["no","na","nos","nas"]},
+  de:{label:"de → do / da",c:"#002776",forms:["do","da","dos","das"]},
+  a:{label:"a → ao / à",c:"#f08c00",forms:["ao","à","aos","às"]},
+  por:{label:"por → pelo / pela",c:"#6a4c93",forms:["pelo","pela","pelos","pelas"]},
+@@@H68 9@@@
+const CONTRACT={no:"em + o",na:"em + a",nos:"em + os",nas:"em + as",do:"de + o",da:"de + a",dos:"de + os",das:"de + as",
+  ao:"a + o","à":"a + a (crase)",aos:"a + os","às":"a + as (crase)",pelo:"por + o",pela:"por + a",pelos:"por + os",pelas:"por + as"};
+const ART_INFO={o:"masculine singular",a:"feminine singular",os:"masculine plural",as:"feminine plural",
+  um:"masculine singular",uma:"feminine singular",uns:"masculine plural",umas:"feminine plural"};
+const CONN_INFO={"e":"and · adds","mas":"but · contrast","ou":"or · choice","porque":"because · cause","então":"so · result",
+  "quando":"when · time","se":"if · condition","que":"that · links a clause","embora":"although · + subjunctive","também":"also / too",
+  "enquanto":"while · two things at once","pois":"since / because (a bit formal)","por isso":"that's why / so","porém":"however · formal contrast",
+  "apesar":"apesar de = despite","antes de":"before + infinitive","para":"to / in order to","quanto":"tão … quanto = as … as",
+  "do que":"mais … do que = more … than","já que":"since / given that","além de":"besides / in addition to","nem":"nor / not even"};
+@@@H69 81@@@
+ ["__ livro está na mesa.","o","The book is on the table.","def"],
+ ["__ casa é grande.","a","The house is big.","def"],
+ ["__ meninos estão jogando bola.","os","The boys are playing ball.","def"],
+ ["__ flores são bonitas.","as","The flowers are pretty.","def"],
+ ["__ Maria chegou cedo.","a","Maria arrived early. (names often take an article)","def"],
+ ["__ meu carro é azul.","o","My car is blue. (article before possessive)","def"],
+ ["__ Brasil é enorme.","o","Brazil is huge. (most countries take an article)","def"],
+ ["__ França fica na Europa.","a","France is in Europe.","def"],
+ ["__ problema é sério.","o","The problem is serious. (problema is masculine!)","def"],
+ ["__ mão está doendo.","a","My hand hurts. (mão is feminine)","def"],
+ ["__ dia está lindo.","o","The day is beautiful. (dia is masculine)","def"],
+ ["__ água está fria.","a","The water is cold.","def"],
+ ["Eu tenho __ cachorro.","um","I have a dog.","indef"],
+ ["Ela comprou __ bicicleta.","uma","She bought a bicycle.","indef"],
+ ["Preciso de __ minutos.","uns","I need a few minutes.","indef"],
+ ["Comprei __ maçãs.","umas","I bought some apples.","indef"],
+ ["Ele mora em __ apartamento pequeno.","um","He lives in a small apartment.","indef"],
+ ["Tive __ ideia!","uma","I had an idea!","indef"],
+ ["É __ mapa antigo.","um","It's an old map. (mapa is masculine)","indef"],
+ ["Conheci __ pessoas legais.","umas","I met some nice people.","indef"],
+ ["Eu moro __ Brasil.","no","I live in Brazil.","em"],
+ ["O livro está __ mesa.","na","The book is on the table.","em"],
+ ["Ela está __ escritório.","no","She is at the office.","em"],
+ ["As chaves estão __ bolsos.","nos","The keys are in the pockets.","em"],
+ ["Tem muita gente __ ruas.","nas","There are a lot of people in the streets.","em"],
+ ["A gente se vê __ sexta-feira.","na","See you on Friday.","em"],
+ ["Ele trabalha __ fim de semana.","no","He works on the weekend.","em"],
+ ["Tem um erro __ documento.","no","There's an error in the document.","em"],
+ ["__ minha opinião, é caro.","na","In my opinion, it's expensive.","em"],
+ ["Este é o carro __ João.","do","This is João's car.","de"],
+ ["Ela é __ Bahia.","da","She is from Bahia.","de"],
+ ["Gosto __ filmes brasileiros.","dos","I like Brazilian movies.","de"],
+ ["A porta __ casa está aberta.","da","The door of the house is open.","de"],
+ ["Ele saiu __ escritório às seis.","do","He left the office at six.","de"],
+ ["O preço __ passagens subiu.","das","The price of the tickets went up.","de"],
+ ["Eu venho __ Estados Unidos.","dos","I come from the United States.","de"],
+ ["Ela gosta muito __ praia.","da","She really likes the beach.","de"],
+ ["Vou __ mercado agora.","ao","I'm going to the market now.","a"],
+ ["Vamos __ praia amanhã.","à","Let's go to the beach tomorrow.","a"],
+ ["A reunião é __ três horas.","às","The meeting is at three o'clock.","a"],
+ ["Ele deu presentes __ filhos.","aos","He gave gifts to his children.","a"],
+ ["Fui __ farmácia ontem.","à","I went to the pharmacy yesterday.","a"],
+ ["Eu chego __ meio-dia.","ao","I arrive at noon.","a"],
+ ["Ele obedece __ regras.","às","He follows the rules.","a"],
+ ["Passei __ centro hoje.","pelo","I went through downtown today.","por"],
+ ["Obrigado __ ajuda!","pela","Thanks for the help!","por"],
+ ["Andamos __ ruas de Salvador.","pelas","We walked through the streets of Salvador.","por"],
+ ["Obrigada __ presentes!","pelos","Thanks for the gifts!","por"],
+ ["Mandei a carta __ correio.","pelo","I sent the letter by mail.","por"],
+ ["O livro foi escrito __ autora.","pela","The book was written by the author.","por"],
+ ["Moro __ Rio de Janeiro.","no","I live in Rio de Janeiro.","mix",["no","do","ao","o"]],
+ ["Sou __ Rio de Janeiro.","do","I'm from Rio de Janeiro.","mix",["do","no","ao","o"]],
+ ["Vou __ Rio de Janeiro amanhã.","ao","I'm going to Rio de Janeiro tomorrow.","mix",["ao","no","do","pelo"]],
+ ["Gosto muito __ comida baiana.","da","I really like Bahian food.","mix",["da","na","à","a"]],
+ ["Penso muito __ minha família.","na","I think about my family a lot.","mix",["na","da","à","pela"]],
+ ["Isso depende __ tempo.","do","That depends on the weather.","mix",["do","no","ao","pelo"]],
+ ["Acredito __ você.","em","I believe in you.","mix",["em","de","a","por"]],
+ ["Ela chegou __ duas da tarde.","às","She arrived at two in the afternoon.","mix",["às","nas","das","as"]],
+ ["Eu gosto de café __ de chá.","e","I like coffee and tea.","conn",["e","mas","porque","se"]],
+ ["Quero ir, __ não tenho tempo.","mas","I want to go, but I don't have time.","conn",["mas","porque","quando","se"]],
+ ["Você quer café __ chá?","ou","Do you want coffee or tea?","conn",["ou","mas","porque","quando"]],
+ ["Fiquei em casa __ estava chovendo.","porque","I stayed home because it was raining.","conn",["porque","mas","embora","ou"]],
+ ["Estava cansado, __ fui dormir cedo.","então","I was tired, so I went to bed early.","conn",["então","embora","ou","porque"]],
+ ["__ você chegar, me liga.","quando","When you arrive, call me.","conn",["quando","porque","mas","ou"]],
+ ["__ chover, a gente fica em casa.","se","If it rains, we'll stay home.","conn",["se","porque","mas","ou"]],
+ ["Acho __ ele vem hoje.","que","I think (that) he's coming today.","conn",["que","se","mas","e"]],
+ ["__ esteja cansada, ela vai trabalhar.","embora","Although she's tired, she's going to work.","conn",["embora","porque","então","quando"]],
+ ["Ele fala inglês e __ espanhol.","também","He speaks English and also Spanish.","conn",["também","mas","porque","então"]],
+ ["Eu cozinho __ você arruma a mesa.","enquanto","I cook while you set the table.","conn",["enquanto","porque","embora","então"]],
+ ["Não fui à festa, __ estava doente.","pois","I didn't go to the party, since I was sick.","conn",["pois","mas","então","embora"]],
+ ["Choveu muito; __, o jogo foi cancelado.","por isso","It rained a lot; that's why the game was canceled.","conn",["por isso","porém","embora","se"]],
+ ["O hotel é caro. __, a localização é ótima.","porém","The hotel is expensive. However, the location is great.","conn",["porém","porque","então","se"]],
+ ["__ de estar cansado, ele saiu.","apesar","Despite being tired, he went out.","conn",["apesar","embora","porque","mas"]],
+ ["Escove os dentes __ dormir.","antes de","Brush your teeth before going to sleep.","conn",["antes de","porque","embora","se"]],
+ ["Estudo muito __ passar na prova.","para","I study a lot to pass the test.","conn",["para","porque","embora","mas"]],
+ ["Ela é tão alta __ o irmão.","quanto","She is as tall as her brother.","conn",["quanto","que","mas","e"]],
+ ["Ela é mais alta __ o irmão.","do que","She is taller than her brother.","conn",["do que","quanto","mas","e"]],
+ ["__ você não vem, vou sozinho.","já que","Since you're not coming, I'll go alone.","conn",["já que","embora","mas","para"]],
+ ["__ ser barato, é muito bom.","além de","Besides being cheap, it's very good.","conn",["além de","apesar","embora","porque"]],
+ ["Não bebo café __ chá.","nem","I don't drink coffee or tea.","conn",["nem","mas","porque","se"]],
+ ["Vou te ligar __ sair do trabalho.","quando","I'll call you when I leave work.","conn",["quando","porque","embora","mas"]]
+@@@H70 0@@@
+@@@H71 1@@@
+const atStart=it=>it.s.startsWith("__");
+@@@H72 2@@@
+  if(it.g==="conn") return `<b>${a}</b> = ${CONN_INFO[a]||""}`;
+  if(CONTRACT[a]) return `<b>${a}</b> = ${CONTRACT[a]} · used with a ${ART_INFO[CONTRACT[a].split("+ ")[1].split(" ")[0]]} noun`;
+@@@H73 1@@@
+  return `<b>${a}</b> · no article here, so no contraction`;
+@@@H74 2@@@
+let WSET=Object.assign({sub:"guide",cats:Object.keys(WGROUPS),len:10},LS.get("vm_wset",{}));
+const saveW=()=>LS.set("vm_wset",WSET);
+@@@H75 1@@@
+  LS.set("vm_stats",ST);
+@@@H76 2@@@
+   <p class="gp">Portuguese articles go before nouns and must <b>agree</b> with the noun in <b>gender</b> (masculine / feminine) and <b>number</b> (singular / plural).
+   Small words like <b>no, na, do, da, ao, à, pelo</b> are just a <b>preposition + article</b> squeezed into one word. Learn the 4 articles and 4 prepositions below, and you can build all of them.</p></div>
+@@@H77 2@@@
+    ${T(["","Singular","Plural"],[["Masculine",`${b("o")} livro`,`${b("os")} livros`],["Feminine",`${b("a")} casa`,`${b("as")} casas`]])}
+    <p class="gn">Use for something specific or already known.</p></div>
+@@@H78 2@@@
+    ${T(["","Singular","Plural"],[["Masculine",`${b("um")} livro`,`${b("uns")} livros`],["Feminine",`${b("uma")} casa`,`${b("umas")} casas`]])}
+    <p class="gn">Use for something general or mentioned for the first time. Plural = “some / a few”.</p></div>
+@@@H79 6@@@
+  <div class="panel"><h3>🔗 Preposition + article contractions</h3>
+   ${T(["Preposition","Meaning","+ o","+ a","+ os","+ as","+ um / uma"],[
+     [b("em"),"in / on / at","no","na","nos","nas","num / numa <span class='gn'>(optional)</span>"],
+     [b("de"),"of / from / 's","do","da","dos","das","dum / duma <span class='gn'>(informal)</span>"],
+     [b("a"),"to / at","ao","à","aos","às","<span class='gn'>no contraction</span>"],
+     [b("por"),"through / by / for","pelo","pela","pelos","pelas","<span class='gn'>no contraction</span>"]])}
+@@@H80 4@@@
+     <div><b>no carro</b> = in the car</div><div><b>na casa</b> = in the house</div>
+     <div><b>do carro</b> = from the car</div><div><b>da casa</b> = of/from the house</div>
+     <div><b>ao mercado</b> = to the market</div><div><b>à praia</b> = to the beach</div>
+     <div><b>pelo parque</b> = through the park</div><div><b>pela ajuda</b> = for the help</div>
+@@@H81 1@@@
+   <p class="gn">Shortcut: the ending tells you the noun. <b>-o / -os</b> = masculine, <b>-a / -as</b> = feminine.</p></div>
+@@@H82 7@@@
+   <div class="panel"><h3>👉 With this / that</h3>
+    ${T(["","este (this)","esse (that)","aquele (that, far)"],[
+      [b("de"),"deste / desta","desse / dessa","daquele / daquela"],
+      [b("em"),"neste / nesta","nesse / nessa","naquele / naquela"],
+      [b("a"),"<span class='gn'>—</span>","<span class='gn'>—</span>","àquele / àquela"]])}
+    <p class="gn">Also: <b>disso</b> (of that), <b>nisso</b> (in that), <b>daqui</b> (from here), <b>dele / dela</b> (his / hers).</p></div>
+   <div class="panel"><h3>🗣️ How Brazilians actually say it</h3>
+@@@H83 4@@@
+     <li><b>pro / pra</b> = para o / para a → <i>Vou pro trabalho. Vou pra casa.</i></li>
+     <li><b>pros / pras</b> = para os / para as</li>
+     <li><b>num / numa</b> = em um / em uma → <i>Moro numa casa.</i></li>
+     <li><b>no / na</b> often replaces <b>ao / à</b> with “chegar”: <i>Cheguei no aeroporto.</i></li>
+@@@H84 8@@@
+    <div><b>Names</b><span>Article is common before first names in speech: <i>a Maria, o João</i>.</span></div>
+    <div><b>Possessives</b><span><i>o meu carro, a minha casa</i>. The article is optional, and very common.</span></div>
+    <div><b>Countries</b><span>Most take one: <i>o Brasil, a França, os Estados Unidos</i>. Exceptions: <i>Portugal, Angola, Moçambique, Cuba</i>.</span></div>
+    <div><b>Cities</b><span>Usually none: <i>Moro em São Paulo</i>. Exception: <i>o Rio de Janeiro → no Rio</i>.</span></div>
+    <div><b>Days</b><span><i>na segunda</i> = on Monday · <i>no fim de semana</i> = on the weekend.</span></div>
+    <div><b>Clock time</b><span><i>à uma hora</i>, <i>às três</i>, <i>ao meio-dia</i>. The accent (crase) shows a + a.</span></div>
+    <div><b>Watch the gender</b><span>-a ≠ always feminine: <i>o dia, o mapa, o problema, o sistema</i>. -o ≠ always masculine: <i>a foto, a moto</i>. Also <i>a mão</i>.</span></div>
+    <div><b>Crase (à)</b><span>Only before feminine words that need “to the”: <i>Vou à praia</i> (but <i>Vou ao mercado</i>).</span></div>
+@@@H85 11@@@
+     ["➕ Add","<b>e</b> (and) · <b>também</b> (also) · <b>além de / além disso</b> (besides) · <b>nem</b> (nor)","Falo inglês <b>e</b> espanhol."],
+     ["↔️ Choice","<b>ou</b> (or) · <b>ou seja</b> (in other words)","Café <b>ou</b> chá?"],
+     ["⚖️ Contrast","<b>mas</b> (but) · <b>porém / no entanto</b> (however) · <b>embora</b> (although, + subj.) · <b>apesar de</b> (despite)","Quero ir, <b>mas</b> não posso."],
+     ["❓ Cause","<b>porque</b> (because) · <b>pois</b> (since) · <b>já que / como</b> (since, given that)","Fiquei <b>porque</b> choveu."],
+     ["➡️ Result","<b>então</b> (so) · <b>por isso</b> (that's why) · <b>portanto / logo</b> (therefore)","Cansei, <b>então</b> dormi."],
+     ["⏰ Time","<b>quando</b> (when) · <b>enquanto</b> (while) · <b>antes de / depois de</b> (before / after) · <b>assim que</b> (as soon as)","Me liga <b>quando</b> chegar."],
+     ["🔀 Condition","<b>se</b> (if) · <b>caso</b> (in case, + subj.) · <b>a menos que</b> (unless)","<b>Se</b> chover, fico."],
+     ["🎯 Purpose","<b>para</b> + infinitive (to) · <b>para que</b> + subj. (so that)","Estudo <b>para</b> passar."],
+     ["📏 Compare","<b>mais … do que</b> (more than) · <b>tão … quanto</b> (as … as) · <b>como</b> (like)","Ela é <b>mais</b> alta <b>do que</b> eu."],
+     ["🔗 Link a clause","<b>que</b> (that) · <b>o que</b> (what) · <b>onde</b> (where)","Acho <b>que</b> sim."]])}
+   <p class="gn"><b>porque</b> (because) · <b>por que</b> (why?) · <b>por quê</b> (why? at the end of a sentence) · <b>o porquê</b> (the reason). In speech they all sound the same.</p></div>
+@@@H86 0@@@
+@@@H87 1@@@
+  if(score>best){best=score;LS.set("vm_best",best)}
+@@@H88 1@@@
+  $("qfb").innerHTML=`<div class="${ok?"fb-ok":"fb-bad"}">${ok?"✅ Certo!":"❌ Not quite. You picked <b>"+pick+"</b>."}</div><div class="fb-why">${whyOf(it)}</div>
+@@@H89 2@@@
+  $("wBody").innerHTML=`<p class="gn" style="margin:0 0 8px">Match each Portuguese sentence to its meaning. Watch the little words: <b>no</b> vs <b>do</b> vs <b>ao</b> changes everything.</p>
+   <div class="board"><div><p class="colhead">🇧🇷 Português</p><div class="tiles">${shuffle([...items]).map(i=>tile(i,"L")).join("")}</div></div>
+@@@H90 1@@@
+    if(score>best){best=score;LS.set("vm_best",best)}
+@@@H91 1@@@
+  ST.rounds=ST.rounds.slice(-60); LS.set("vm_stats",ST); stats();
+@@@H92 1@@@
+    <h2 style="margin:0;color:var(--green);font-size:30px">${acc===100?"Perfeito! 🏆":acc>=75?"Muito bem! 🎉":"Bom trabalho! 💪"}</h2>
+@@@H93 1@@@
+      <button class="btn go" onclick="renderWords()">Próxima rodada ➜</button></div></div>`;
+@@@H94 1@@@
+      `<tr><td style="font-weight:800;color:var(--green)">${r.k}</td><td style="font-size:12px">${CONTRACT[r.k]||ART_INFO[r.k]||CONN_INFO[r.k]||""}</td><td style="color:var(--bad);font-weight:800">${r.w}</td><td>${r.r}</td>
+@@@H95 100@@@
+["mano","bro / dude","E aí, mano, tudo certo?","Hey bro, all good?","SP","People","The #1 São Paulo word. Used for anyone, even women in casual speech."],
+["meu","dude / man (lit. 'my')","Ô meu, cê viu isso?","Dude, did you see this?","SP","People","Classic paulistano. Short for 'meu amigo'. Often 'ô meu!'"],
+["truta","close friend / buddy","Ele é meu truta desde a escola.","He's been my buddy since school.","SP","People","Street slang from SP periphery; very loyal friendship."],
+["parça","partner / buddy","Valeu, parça!","Thanks, buddy!","SP","People","Short for 'parceiro'. Huge in SP and funk/rap culture."],
+["mina","girl / woman","Aquela mina é minha amiga.","That girl is my friend.","SP","People","Very common in SP. Neutral-casual, not rude."],
+["moleque","kid / young guy","O moleque joga muito!","That kid plays really well!","SP","People","Can be affectionate ('meu moleque') or 'brat'."],
+["boy / boyzinho","rich kid / preppy guy","Ele é mó boyzinho, só anda de carro importado.","He's such a rich kid, only drives imported cars.","SP","People","SP term for playboy types. Also 'boy' = boyfriend in the Nordeste."],
+["patricinha","preppy / spoiled girl","Ela virou patricinha depois da faculdade.","She became a preppy girl after college.","Nacional","People","Male version: mauricinho."],
+["chegado","close friend","Ele é chegado meu.","He's a close friend of mine.","SP","People","Also 'ser chegado em' = to be into something."],
+["nóis","we / us (slangy 'nós')","É nóis, mano!","We're together, bro! / That's us!","SP","Expressions","'É nóis' = solidarity, 'we got this'. SP periphery classic."],
+["é nóis","we're together / we got this","Precisa de ajuda? É nóis!","Need help? I got you!","SP","Expressions","Also used as 'thanks' or a goodbye."],
+["tamo junto","we're in this together / I got you","Qualquer coisa me chama, tamo junto.","Call me if you need anything, I got you.","Nacional","Expressions","From 'estamos juntos'. Also a warm goodbye."],
+["salve","hey / shout-out","Salve, rapaziada!","Hey, everyone!","SP","Greetings","SP greeting. 'Mandar um salve' = send a shout-out."],
+["firmeza?","all good? / how's it going?","Firmeza, mano? — Firmeza!","All good, bro? — All good!","SP","Greetings","Works as question AND answer. Also 'firmeza total'."],
+["suave","chill / easy / no problem","Tá suave, pode vir mais tarde.","It's chill, you can come later.","SP","Reactions","'Tá suave?' = is everything ok? Huge in SP."],
+["de boa","cool / relaxed / no worries","Tô de boa, só descansando.","I'm good, just resting.","Nacional","Reactions","Also 'de boas'. 'Na boa' = no worries."],
+["sussa","chill / all good","Amanhã? Sussa, combinado.","Tomorrow? Cool, deal.","SP","Reactions","Short for 'sossegado'."],
+["tá ligado?","you know? / get it?","Ele é gente boa, tá ligado?","He's a good guy, you know?","SP","Expressions","Filler at the end of sentences. Answer: 'tô ligado'."],
+["da hora","awesome / cool","Esse show foi da hora!","That show was awesome!","SP","Reactions","THE São Paulo word for 'cool'. Rio says 'maneiro'."],
+["mó","really / so (from 'maior')","Tá mó calor hoje.","It's so hot today.","SP","Expressions","Intensifier: mó legal, mó fila, mó fome."],
+["mó cota","ages / a long time","Faz mó cota que não te vejo!","It's been ages since I saw you!","SP","Expressions","Very paulistano."],
+["rolê","outing / hangout / going out","Bora dar um rolê no shopping?","Want to go hang out at the mall?","SP","Going out","'Rolê aleatório' = random outing. Also spelled 'rolé'."],
+["balada","nightclub / party","Sábado tem balada na Augusta.","Saturday there's a party on Augusta Street.","SP","Going out","SP word. Rua Augusta and Vila Madalena are balada hubs."],
+["colar","to show up / come by","Vou colar aí mais tarde.","I'll swing by later.","SP","Going out","'Cola aí!' = come over!"],
+["vazar","to leave / bounce","Já vou vazar, tô cansado.","I'm gonna bounce, I'm tired.","Nacional","Going out","Also = to leak (info)."],
+["meter o pé","to leave / get out","Bora meter o pé antes da chuva.","Let's head out before the rain.","SP","Going out",""],
+["dar um perdido","to ditch someone / disappear","Ele deu um perdido na gente na festa.","He ditched us at the party.","SP","Going out",""],
+["trampo","work / job","Tô saindo do trampo agora.","I'm leaving work now.","SP","Money & work","Verb: trampar. Very SP."],
+["bico","side gig","Faço uns bicos de garçom no fim de semana.","I do some waiter gigs on weekends.","Nacional","Money & work",""],
+["grana","money / cash","Tô sem grana esse mês.","I'm broke this month.","Nacional","Money & work","The most common slang for money."],
+["conto","reais (money)","Custou cinquenta conto.","It cost fifty bucks.","SP","Money & work","Like 'bucks'. Note: stays 'conto', not 'contos'."],
+["busão","bus","Peguei o busão lotado.","I took the packed bus.","SP","Everyday","From 'ônibus'."],
+["bagulho","thing / stuff","Que bagulho é esse?","What's this thing?","SP","Everyday","Super versatile. 'Bagulho doido' = crazy stuff."],
+["fita","situation / thing / story","Qual é a fita?","What's the deal? / What's up?","SP","Expressions","Very SP. 'Mó fita' = big deal / drama."],
+["treta","fight / drama / beef","Deu treta no grupo da família.","There was drama in the family group chat.","SP","Expressions","Born in SP, now national."],
+["embaçado","complicated / messed up","Tá embaçado achar vaga aqui.","It's tough to find parking here.","SP","Reactions","Also 'embaçar' = to complicate / to stall."],
+["zica","bad luck / jinx / (also) awesome","Que zica, perdi o ônibus.","What bad luck, I missed the bus.","SP","Reactions","In SP periphery it can also mean 'awesome / skilled'."],
+["zoado","broken / messed up / lame","Meu celular tá zoado.","My phone is messed up.","SP","Reactions","'Zoar' = to tease / joke around."],
+["zoar","to tease / joke around","Para de me zoar!","Stop messing with me!","Nacional","Expressions","'Zoeira' = joking around."],
+["zoeira","fun / joking around","A zoeira não tem limites.","The jokes have no limits.","Nacional","Internet","Famous meme phrase."],
+["quebrada","the neighborhood / the hood","Lá na minha quebrada todo mundo se conhece.","In my neighborhood everyone knows each other.","SP","Everyday","SP periphery term, often proud."],
+["pagar de","to act like / show off as","Ele paga de rico, mas tá devendo.","He acts rich, but he's in debt.","SP","Expressions","'Pagar de louco' = play dumb."],
+["meter o louco","to go for it / act crazy","Meti o louco e pedi aumento.","I went for it and asked for a raise.","SP","Expressions",""],
+["pode pá","for sure / sounds good","Amanhã às oito? Pode pá!","Tomorrow at eight? Sure thing!","SP","Reactions","SP agreement. 'E pá' = 'and stuff'."],
+["tipo","like (filler)","Tipo, eu não sabia, sabe?","Like, I didn't know, you know?","Nacional","Expressions","Exactly like English 'like'."],
+["ô loco","wow / no way","Ô loco, que golaço!","Wow, what a goal!","SP","Reactions","Made famous by TV host Faustão ('ô loco, meu')."],
+["nossa","wow / oh my","Nossa, que lindo!","Wow, how beautiful!","Nacional","Reactions","From 'Nossa Senhora'. Used everywhere."],
+["caraca","wow / damn","Caraca, você tá aqui?","Whoa, you're here?","Nacional","Reactions","Clean alternative to stronger swear words."],
+["pô","man / come on","Pô, que pena!","Man, what a shame!","Nacional","Reactions","Softened swear word, very common in Rio too."],
+["aff","ugh","Aff, segunda-feira de novo.","Ugh, Monday again.","Nacional","Internet","Used in texts and in speech."],
+["sextou","it's Friday! (party time)","Sextou! Bora pro bar?","It's Friday! Bar?","Nacional","Internet","From 'sexta-feira'. Social media favorite."],
+["partiu","let's go / off to","Partiu praia!","Beach time, let's go!","Nacional","Going out","'Partiu?' = shall we go?"],
+["bora","let's go / come on","Bora, tá ficando tarde!","Come on, it's getting late!","Nacional","Going out","From 'vamos embora'."],
+["fechou","deal / done / sounds good","Te pego às sete. — Fechou!","I'll pick you up at seven. — Deal!","Nacional","Reactions",""],
+["demorou","sure / sounds good (not 'took long')","Vamos almoçar? — Demorou!","Want to grab lunch? — For sure!","Nacional","Reactions","Means YES, not 'it took long'! Big in SP and Rio."],
+["top","great / awesome","Seu trabalho ficou top!","Your work turned out great!","Nacional","Reactions","Also 'topzera'."],
+["show","great / awesome","Show, valeu!","Great, thanks!","Nacional","Reactions","'Show de bola' = excellent."],
+["valeu","thanks / cheers","Valeu pela carona!","Thanks for the ride!","Nacional","Greetings","Also a quick goodbye."],
+["firmão","solid / strong (person)","O cara é firmão, pode confiar.","The guy is solid, you can trust him.","SP","People",""],
+["na moral","seriously / honestly / chill","Na moral, para com isso.","Seriously, stop that.","Nacional","Expressions","Also 'calmly / without drama'."],
+["mandar a real","to tell it like it is","Vou mandar a real: não gostei.","I'll be honest: I didn't like it.","SP","Expressions",""],
+["migué","excuse / BS / fake","Ele deu um migué pra não ir.","He made up an excuse not to go.","SP","Expressions","'Migueiro' = someone who fakes it."],
+["perrengue","hardship / tough spot","Passei um perrengue na viagem.","I went through a rough time on the trip.","Nacional","Expressions","Often used humorously for travel fails."],
+["pagar mico","to embarrass yourself","Paguei mó mico na reunião.","I really embarrassed myself in the meeting.","Nacional","Expressions","'Mico' = embarrassing moment."],
+["dar ruim","to go wrong","Se chover, vai dar ruim.","If it rains, it's going to go wrong.","Nacional","Expressions","Past: 'deu ruim!' = it went wrong!"],
+["dar bom","to work out","Fica tranquilo, vai dar bom.","Relax, it'll work out.","Nacional","Expressions",""],
+["nada a ver","nothing to do with it / nonsense","Isso não tem nada a ver!","That makes no sense!","Nacional","Reactions",""],
+["tô nem aí","I don't care","Ele pode falar, tô nem aí.","He can talk, I don't care.","Nacional","Reactions",""],
+["pior que","the thing is / actually","Pior que eu esqueci!","The thing is, I forgot!","SP","Expressions","Agreement-ish filler: 'pior que é verdade'."],
+["cê","you (short for você)","Cê vem hoje?","Are you coming today?","SP","Everyday","Common in SP, MG and the interior."],
+["rango","food / grub","Bora pegar um rango?","Want to grab some grub?","Nacional","Food & drink",""],
+["breja","beer","Uma breja gelada, por favor.","A cold beer, please.","SP","Food & drink","Also 'cerva'."],
+["cerva","beer","Bora tomar uma cerva?","Want to grab a beer?","Nacional","Food & drink",""],
+["boteco","neighborhood bar","Vamos no boteco da esquina.","Let's go to the corner bar.","Nacional","Food & drink","Also 'buteco'. Heart of Brazilian social life."],
+["chapa","griddle / (also) pal","Um misto-quente na chapa!","A grilled ham-and-cheese on the griddle!","SP","Food & drink","Padaria classic. 'Meu chapa' = my pal."],
+["pingado","coffee with a splash of milk","Me vê um pingado e um pão na chapa.","I'll have a coffee with milk and toast.","SP","Food & drink","Essential SP padaria order."],
+["gato / gata","hot guy / girl","Ele é muito gato.","He's really cute.","Nacional","Love & dating",""],
+["ficar","to hook up / make out casually","A gente ficou na festa.","We made out at the party.","Nacional","Love & dating","Not 'to stay' here! Casual, not dating."],
+["crush","crush","Meu crush me respondeu!","My crush replied to me!","Nacional","Love & dating","Borrowed straight from English."],
+["mozão","babe / honey","Te amo, mozão!","Love you, babe!","Nacional","Love & dating","From 'amorzão'."],
+["contatinho","casual romantic contact","Ela tem vários contatinhos.","She has several people she's talking to.","Nacional","Love & dating",""],
+["ranço","strong dislike / the ick","Peguei ranço dele.","I got the ick from him.","Nacional","Internet",""],
+["lacrou","nailed it / slayed","Ela lacrou na apresentação!","She nailed the presentation!","Nacional","Internet","Verb: lacrar."],
+["shippar","to ship (a couple)","Todo mundo shippa os dois.","Everyone ships those two.","Nacional","Internet",""],
+["kkkk","lol / haha","kkkkk muito bom","lol so good","Nacional","Internet","Brazilian laughter. Also 'rsrs' (risos)."],
+["gente boa","good person / nice guy","Seu irmão é gente boa.","Your brother is a nice guy.","Nacional","People",""],
+["cara de pau","shameless / nervy","Que cara de pau, furou a fila!","How shameless, he cut the line!","Nacional","People","Lit. 'wood face'."],
+["pão-duro","cheapskate","Ele é muito pão-duro, nunca paga nada.","He's such a cheapskate, never pays for anything.","Nacional","People","Also 'mão de vaca'."],
+["puxa-saco","suck-up / brown-noser","Ele é o puxa-saco do chefe.","He's the boss's suck-up.","Nacional","People",""],
+["maneiro","cool","Que tênis maneiro!","What cool sneakers!","Rio","Reactions","Rio's 'da hora'."],
+["mermão","bro (my brother)","Qual foi, mermão?","What's up, bro?","Rio","People","From 'meu irmão'."],
+["qual foi?","what's up? / what happened?","Qual foi, tá bolado?","What's up, are you upset?","Rio","Greetings",""],
+["bolado","upset / annoyed (or amazed)","Fiquei bolado com aquilo.","I got upset about that.","Rio","Reactions",""],
+["sinistro","awesome / insane (or scary)","Esse lugar é sinistro!","This place is insane!","Rio","Reactions","Positive or negative depending on tone."],
+["caô","lie / BS","Isso aí é caô!","That's BS!","Rio","Expressions",""],
+["oxe","what?! / huh?","Oxe, que história é essa?","Huh, what's this story?","Nordeste","Reactions","Also 'oxente'."],
+["massa","cool / great","Ficou massa!","It turned out great!","Nordeste","Reactions","Big in the Northeast and Brasília."],
+["uai","well / huh (filler)","Uai, cê não vai?","Huh, you're not going?","Minas","Reactions","Minas Gerais trademark."],
+["trem","thing / stuff","Me passa esse trem aí.","Pass me that thing there.","Minas","Everyday","Mineiro's 'bagulho'."],
+["bah","wow / man","Bah, que frio!","Man, it's cold!","Sul","Reactions","Gaúcho (Rio Grande do Sul) classic. Also 'tchê'."]
+@@@H96 2@@@
+const SREG={SP:{c:"#e63946",l:"São Paulo"},Nacional:{c:"#009c3b",l:"Nationwide"},Rio:{c:"#3a86ff",l:"Rio"},Nordeste:{c:"#f08c00",l:"Nordeste"},Minas:{c:"#6a4c93",l:"Minas"},Sul:{c:"#002776",l:"Sul"}};
+const REG_ORDER=["SP","Nacional","Rio","Nordeste","Minas","Sul"];
+@@@H97 3@@@
+let SSET=Object.assign({reg:"all",cat:"all",learned:false,q:""},LS.get("vm_sset",{}));
+let SLEARN=new Set(LS.get("vm_slearn",[]));
+const saveS=()=>{LS.set("vm_sset",SSET);LS.set("vm_slearn",[...SLEARN])};
+@@@H98 3@@@
+   <div class="slang-hero"><div><h2>🇧🇷 Gírias brasileiras</h2><p>100 everyday slang terms, São Paulo first.</p></div>
+     <div class="sh-stats"><div><b>${SLANG.filter(s=>s.r==="SP").length}</b><span>São Paulo</span></div><div><b>${SLEARN.size}</b><span>Learned ✓</span></div>
+     <button class="btn alt" id="sRand">🎲 Random gíria</button></div></div>
+@@@H99 1@@@
+      ${REG_ORDER.map(r=>`<span class="chip ${SSET.reg===r?"on":""}" data-r="${r}" style="--c:${SREG[r].c}">${r==="SP"?"⭐ ":""}${SREG[r].l} (${regCount(r)})</span>`).join("")}</div>
+@@@H100 1@@@
+   <div class="bank"><table><thead><tr><th>#</th><th>Gíria</th><th>Meaning</th><th>Region</th><th>Type</th><th>Example</th><th>✓</th></tr></thead><tbody id="sBody"></tbody></table></div>
+@@@H101 2@@@
+    <td><span class="tag" style="--c:${SREG[s.r].c}">${SREG[s.r].l}</span></td><td style="font-size:12px;color:var(--muted)">${s.c}</td>
+    <td class="sx"><button class="spk2" data-say="${s.ex.replace(/"/g,"&quot;")}" title="Hear it">🔊</button><i>${s.ex}</i></td>
+@@@H102 1@@@
+  $("sBody").querySelectorAll(".spk2").forEach(b=>b.onclick=()=>sayAlways(b.dataset.say));
+@@@H103 1@@@
+  const rel=SLANG.filter(x=>x!==s&&x.c===s.c&&(x.r===s.r||x.r==="Nacional")).slice(0,6);
+@@@H104 1@@@
+  $("vChips").innerHTML=`<span>📍 <b>${SREG[s.r].l}</b></span><span>${s.c}</span><span>#${s.rank} of ${SLANG.length}</span>${SLEARN.has(s.t)?"<span>✓ Learned</span>":""}`;
+@@@H105 2@@@
+  $("vSpeak").onclick=()=>sayAlways(s.t.split(" / ")[0]);
+  $("slSay").onclick=()=>sayAlways(s.ex);
+@@@H106 1@@@
+const NAV_SHORT={play:"Match",bank:"Verb Bank",words:"Articles",vocab:"Vocab",slang:"Gírias",stats:"Stats"};
+@@@H107 1@@@
+const BK_KEYS=["vm_best","vm_mast","vm_stats","vm_set","vm_wset","vm_sset","vm_slearn","vm_vxset","vm_ui","vm_story","vm_speech"];
+@@@H108 1@@@
+  const data={app:"verbo-match",v:12,date:new Date().toISOString(),data:{}};
+@@@H109 1@@@
+  const blob=new Blob([JSON.stringify(data)],{type:"application/json"}), name=`verbo-match-backup-${new Date().toISOString().slice(0,10)}.json`;
+@@@H110 1@@@
+    try{const j=JSON.parse(t);if(j.app!=="verbo-match"||!j.data) throw 0;
+@@@H111 1@@@
+    }catch(e){alert("That file isn't a Verbo Match backup.");}});};
+@@@H112 1@@@
+  if(!ios||standalone||LS.get("vm_tip",0)) return;
+@@@H113 1@@@
+  d.querySelector("button").onclick=()=>{d.remove();LS.set("vm_tip",1)};document.body.appendChild(d);
+@@@H114 2@@@
+const UI=Object.assign({setOpen:false},LS.get("vm_ui",{}));
+function setPanel(open){UI.setOpen=open;LS.set("vm_ui",UI);$("setPanel").classList.toggle("open",open);$("setToggle").setAttribute("aria-expanded",open);}
+@@@H115 1@@@
+  const l=L(), dir={pt:"PT→EN",en:"EN→PT",mix:"Mixed"}[SET.dir];
+@@@H116 0@@@
+@@@H117 8@@@
+const NU=["zero","um","dois","três","quatro","cinco","seis","sete","oito","nove","dez","onze","doze","treze","catorze","quinze","dezesseis","dezessete","dezoito","dezenove"];
+const NT=["","","vinte","trinta","quarenta","cinquenta","sessenta","setenta","oitenta","noventa"];
+const NH=["","cento","duzentos","trezentos","quatrocentos","quinhentos","seiscentos","setecentos","oitocentos","novecentos"];
+function u100(n){if(n<20)return NU[n];const t=NT[n/10|0],r=n%10;return r?t+" e "+NU[r]:t}
+function u1000(n){if(n===100)return"cem";if(n<100)return u100(n);const h=NH[n/100|0],r=n%100;return r?h+" e "+u100(r):h}
+function numToPt(n){if(n<1000)return u1000(n);const th=n/1000|0,r=n%1000,a=th===1?"mil":u1000(th)+" mil";
+  if(!r)return a;return a+((r<100||r%100===0)?" e ":" ")+u1000(r)}
+const HF=["","uma","duas","três","quatro","cinco","seis","sete","oito","nove","dez","onze","doze"];
+@@@H118 4@@@
+  if(m===45){const nx=h%12+1;return nx===1?"São quinze para a uma":nx===12?"São quinze para o meio-dia":`São quinze para as ${HF[nx]}`}
+  const base=h===12?"É meio-dia":h===1?"É uma":`São ${HF[h]}`;
+  if(m===0) return h===12?"É meio-dia":h===1?"É uma hora":`São ${HF[h]} horas`;
+  return base+" e "+(m===30?"meia":u100(m));
+@@@H119 1@@@
+const dayPart=h=>h>=1&&h<=4?" da madrugada":h<12?" da manhã":h<18?" da tarde":" da noite";
+@@@H120 4@@@
+  if(m===45){const nh=(h+1)%24,n12=nh%12||12;
+    if(nh===0) return "São quinze para a meia-noite";
+    if(nh===12) return "São quinze para o meio-dia";
+    return (n12===1?"São quinze para a uma":`São quinze para as ${HF[n12]}`)+dayPart(nh);}
+@@@H121 4@@@
+  let s=h===0?"É meia-noite":h===12?"É meio-dia":h12===1?"É uma":`São ${HF[h12]}`;
+  if(m===0){ if(h===0||h===12) return s; s+=h12===1?" hora":" horas"; }
+  else s+=" e "+(m===30?"meia":u100(m));
+  return s+(h===0||h===12?"":dayPart(h));
+@@@H122 58@@@
+ num:[["zero","0"],["um / uma","1","uma with feminine words: uma casa"],["dois / duas","2","duas with feminine words: duas horas"],["três","3"],["quatro","4"],
+  ["cinco","5"],["seis","6","On the phone many Brazilians say 'meia' for 6"],["sete","7"],["oito","8"],["nove","9"],["dez","10"],["onze","11"],["doze","12"],
+  ["treze","13"],["catorze","14","Also spelled quatorze"],["quinze","15"],["dezesseis","16"],["dezessete","17"],["dezoito","18"],["dezenove","19"],["vinte","20"],
+  ["vinte e um","21","Tens and units join with 'e'"],["trinta","30"],["quarenta","40"],["cinquenta","50"],["sessenta","60"],["setenta","70"],["oitenta","80"],
+  ["noventa","90"],["cem","100","Exactly 100 = cem · 101–199 = cento e …"],["cento e um","101"],["duzentos","200","Hundreds agree: duzentas pessoas"],["trezentos","300"],
+  ["quinhentos","500"],["mil","1,000","Never 'um mil'"],["dois mil","2,000"],["um milhão","1,000,000"],
+  ["primeiro","1st","Dates: primeiro de maio = May 1st"],["segundo","2nd"],["terceiro","3rd"],["quarto","4th","Also means 'room'"],["quinto","5th"],["décimo","10th"],
+  ["meia dúzia","half a dozen"],["a metade","half"]],
+ abc:[["á","A"],["bê","B"],["cê","C"],["dê","D"],["é","E"],["efe","F"],["gê","G"],["agá","H","Silent at the start of words: hora sounds like 'ora'"],["i","I"],["jota","J"],
+  ["cá","K","K, W and Y appear mainly in foreign words and names"],["ele","L"],["eme","M"],["ene","N"],["ó","O"],["pê","P"],["quê","Q"],
+  ["erre","R","At the start of a word R sounds like English H: Rio ≈ 'Hee-oo'"],["esse","S"],["tê","T"],["u","U"],["vê","V"],["dáblio","W"],["xis","X"],
+  ["ípsilon","Y"],["zê","Z"],["cê-cedilha","Ç","Sounds like S: açúcar, coração"]],
+ time:[["Que horas são?","What time is it?"],["É uma hora.","It's one o'clock.","Only 1 o'clock uses É (singular)"],["São duas horas.","It's two o'clock."],
+  ["meio-dia","noon"],["meia-noite","midnight"],["e meia","half past","São três e meia = 3:30"],["e quinze","quarter past"],
+  ["quinze para as três","quarter to three (2:45)"],["em ponto","on the dot / sharp"],["de manhã","in the morning"],["da tarde","in the afternoon"],
+  ["da noite","in the evening / at night"],["de madrugada","in the early hours (after midnight)"],["A que horas?","At what time?"],["às oito","at eight o'clock"],
+  ["agora","now"],["cedo","early"],["tarde","late","Also 'a tarde' = the afternoon"],["o segundo","second (time)"],["o minuto","minute"],["a hora","hour"],
+  ["meia hora","half an hour"]],
+ days:[["segunda-feira","Monday","Often just 'segunda'. Brazilian weeks start on Sunday"],["terça-feira","Tuesday"],["quarta-feira","Wednesday"],["quinta-feira","Thursday"],
+  ["sexta-feira","Friday","Sextou! = It's Friday!"],["sábado","Saturday"],["domingo","Sunday"],["o dia","day","Masculine even though it ends in -a"],["hoje","today"],
+  ["ontem","yesterday"],["amanhã","tomorrow"],["anteontem","the day before yesterday"],["depois de amanhã","the day after tomorrow"],
+  ["Que dia é hoje?","What day is today?"],["na segunda","on Monday"],["às segundas","on Mondays (every Monday)"],["dia útil","weekday / business day"],
+  ["o feriado","public holiday"]],
+ weeks:[["a semana","week"],["esta semana","this week"],["semana passada","last week"],["semana que vem","next week","Also 'a próxima semana'"],
+  ["o fim de semana","weekend"],["a quinzena","two weeks / fortnight"],["toda semana","every week"],["por semana","per week"],
+  ["duas vezes por semana","twice a week"],["daqui a uma semana","a week from now"],["há uma semana","a week ago"],["durante a semana","during the week"]],
+ months:[["janeiro","January","Months are lowercase in Portuguese"],["fevereiro","February"],["março","March"],["abril","April"],["maio","May"],["junho","June"],
+  ["julho","July"],["agosto","August"],["setembro","September"],["outubro","October"],["novembro","November"],["dezembro","December"],
+  ["o mês","month","Plural: os meses"],["este mês","this month"],["mês passado","last month"],["mês que vem","next month"],["em março","in March"],
+  ["no dia 5 de maio","on May 5th","say: no dia cinco de maio","no dia cinco de maio"],["primeiro de janeiro","January 1st","The 1st uses primeiro, other days use plain numbers"]],
+ years:[["o ano","year"],["este ano","this year"],["ano passado","last year"],["ano que vem","next year"],["a década","decade"],["o século","century"],
+  ["o Ano-Novo","New Year's"],["Feliz Ano-Novo!","Happy New Year!"],["o aniversário","birthday","Also 'anniversary'"],
+  ["Quantos anos você tem?","How old are you?"],["Tenho 30 anos.","I'm 30 years old.","Portuguese uses ter: 'I have 30 years'","Tenho trinta anos."],
+  ["o verão","summer","December to March in Brazil!"],["o outono","fall / autumn"],["o inverno","winter"],["a primavera","spring"],
+  ["em 2026","in 2026","say: em dois mil e vinte e seis","em dois mil e vinte e seis"]],
+ house:[["a casa","house / home","Em casa = at home · Vou pra casa = I'm going home"],["o apartamento","apartment","Often just 'o apê'"],["a cozinha","kitchen"],
+  ["a sala","living room","Sala de jantar = dining room"],["o quarto","bedroom","Also means 'fourth' and 'quarter'"],["o banheiro","bathroom"],
+  ["a área de serviço","laundry area","Almost every Brazilian apartment has one"],["a varanda","balcony / porch"],["o quintal","backyard"],["a garagem","garage"],
+  ["a porta","door"],["a janela","window"],["a parede","wall"],["o chão","floor"],["o teto","ceiling"],["a escada","stairs"],["o elevador","elevator"],
+  ["a chave","key"],["a mesa","table"],["a cadeira","chair"],["o sofá","sofa / couch"],["a cama","bed"],["o travesseiro","pillow"],
+  ["o armário","cupboard / closet","Guarda-roupa = wardrobe"],["a gaveta","drawer"],["a lâmpada","light bulb"],["o chuveiro","shower","Many Brazilian showers are electric"],
+  ["a geladeira","fridge","Portugal says 'frigorífico'"],["o fogão","stove"],["o forno","oven"],["o micro-ondas","microwave"],
+  ["a pia","sink","Kitchen or bathroom sink"],["a torneira","faucet / tap"],["o prato","plate"],["o copo","glass / cup (no handle)"],
+  ["a xícara","cup (with handle)","Uma xícara de café"],["o garfo","fork"],["a faca","knife"],["a colher","spoon","Colher de chá = teaspoon"],
+  ["a panela","pot / pan","Panela de pressão = pressure cooker, a Brazilian kitchen staple"],["a frigideira","frying pan"],
+  ["o lixo","trash","Jogar o lixo fora = take out the trash"],["a toalha","towel"],["o tapete","rug / mat"]],
+ city:[["a cidade","city"],["o bairro","neighborhood","Em que bairro você mora? = What neighborhood do you live in?"],["o centro","downtown / city center"],
+  ["a rua","street"],["a avenida","avenue","Avenida Paulista is São Paulo's best-known avenue"],["a esquina","corner","Na esquina = on the corner"],
+  ["a calçada","sidewalk"],["o quarteirão","city block"],["o semáforo","traffic light","In São Paulo people usually say 'o farol'"],
+  ["a faixa de pedestres","crosswalk"],["o prédio","building"],["o condomínio","apartment complex","Also the monthly building fee"],
+  ["a praça","town square"],["o parque","park"],["a padaria","bakery","SP padarias serve coffee and pão na chapa all day"],
+  ["o mercado","market / grocery store","Also 'o supermercado'"],["a feira","street market","The weekly 'feira livre' for fruit and pastel"],
+  ["a farmácia","pharmacy"],["o banco","bank","Also means 'bench'"],["o correio","post office"],["o hospital","hospital"],["a escola","school"],
+  ["a igreja","church"],["o restaurante","restaurant"],["a lanchonete","snack bar / diner"],["o shopping","mall","Always 'o shopping', never 'mall'"],
+  ["a loja","store / shop"],["o ponto de ônibus","bus stop"],["o metrô","subway / metro"],["a estação","station"],["a rodoviária","bus terminal"],
+  ["o aeroporto","airport"],["o trânsito","traffic","Tô preso no trânsito = I'm stuck in traffic"],["o estacionamento","parking lot"],
+  ["o posto de gasolina","gas station"],["a delegacia","police station"],["perto","near / close"],["longe","far"],
+  ["vire à direita","turn right"],["vire à esquerda","turn left"],["siga em frente","go straight ahead","Also 'siga reto'"],["Onde fica…?","Where is…?"]]
+@@@H123 1@@@
+function mkTime(h,m){const w=timeToPt(h,m);return {t:"time",pt:w,en:`${h}:${pad2(m)}${h===12&&m===0?" (noon)":""}`,say:w,gen:"time",val:[h,m],note:""}}
+@@@H124 36@@@
+ ["cabelo","o cabelo","hair","body",160,34,"Usually singular: Ela tem o cabelo longo"],
+ ["cabeca","a cabeça","head","body",160,82],
+ ["pescoco","o pescoço","neck","body",160,131],
+ ["ombro","o ombro","shoulder","body",101,153,"Plural: os ombros"],
+ ["peito","o peito","chest","body",132,182],
+ ["braco","o braço","arm","body",98,205,"Plural: os braços"],
+ ["barriga","a barriga","belly / stomach","body",188,232],
+ ["umbigo","o umbigo","belly button","body",160,246],
+ ["cotovelo","o cotovelo","elbow","body",81,256],
+ ["cintura","a cintura","waist","body",192,273],
+ ["antebraco","o antebraço","forearm","body",77,300],
+ ["quadril","o quadril","hip","body",192,306,"Plural: os quadris"],
+ ["pulso","o pulso","wrist","body",72,348,"Also means 'pulse'"],
+ ["polegar","o polegar","thumb","body",88,362],
+ ["mao","a mão","hand","body",64,378,"Feminine even though it ends in -o! Plural: as mãos"],
+ ["dedo","o dedo","finger","body",69,404,"Plural: os dedos"],
+ ["perna","a perna","leg","body",null,null,"The whole leg",["coxa","joelho","canela"]],
+ ["coxa","a coxa","thigh","body",135,380],
+ ["joelho","o joelho","knee","body",135,440],
+ ["canela","a canela","shin","body",135,498,"Also means 'cinnamon'!"],
+ ["tornozelo","o tornozelo","ankle","body",135,553],
+ ["pe","o pé","foot","body",144,572,"Plural: os pés · a pé = on foot"],
+ ["dedope","o dedo do pé","toe","body",116,575],
+ ["fcabelo","o cabelo","hair","face",160,58],
+ ["testa","a testa","forehead","face",160,128],
+ ["sobrancelha","a sobrancelha","eyebrow","face",117,151],
+ ["olho","o olho","eye","face",117,182,"Plural: os olhos"],
+ ["orelha","a orelha","ear","face",54,212,"'O ouvido' = inner ear / hearing"],
+ ["nariz","o nariz","nose","face",160,228],
+ ["bochecha","a bochecha","cheek","face",98,254],
+ ["rosto","o rosto","face","face",238,300,"Also 'a cara' (more casual)"],
+ ["labios","os lábios","lips","face",206,302,"Singular: o lábio"],
+ ["dentes","os dentes","teeth","face",172,298,"Singular: o dente"],
+ ["boca","a boca","mouth","face",146,310],
+ ["queixo","o queixo","chin","face",160,347],
+ ["fpescoco","o pescoço","neck","face",160,392]
+@@@H125 1@@@
+const genderOf=pt=>/^os /.test(pt)?"masculine plural":/^as /.test(pt)?"feminine plural":/^o /.test(pt)?"masculine":"feminine";
+@@@H126 1@@@
+let VXS=Object.assign({sub:"learn",topics:[...VX_KEYS],dir:"pt",len:10,open:false,bmode:"explore",bview:"body",labels:true},LS.get("vm_vxset",{}));
+@@@H127 1@@@
+const saveVX=()=>LS.set("vm_vxset",VXS);
+@@@H128 1@@@
+  ST.vx=ST.vx||{}; const s=ST.vx[pt]||(ST.vx[pt]={r:0,w:0,en,t}); s.en=en; s.t=t; ok?s.r++:s.w++; LS.set("vm_stats",ST);
+@@@H129 1@@@
+const VX_DIRL={pt:"PT→EN",en:"EN→PT",listen:"🎧 Listen"};
+@@@H130 1@@@
+       <div class="lvdesc">PT→EN shows the Portuguese word, EN→PT shows the English word, and 🎧 Listen only says it out loud. Then tap that spot on the body.</div>`
+@@@H131 1@@@
+    const tip=t==="abc"?`<p class="vx-tip">Spelling something? Ask <b>Como se escreve?</b> (How do you spell it?)</p>`:"";
+@@@H132 1@@@
+  ST.rounds.push({d:Date.now(),m:kind,n:total,x:total-right,s:0,a:acc}); ST.rounds=ST.rounds.slice(-60); LS.set("vm_stats",ST);
+@@@H133 1@@@
+    <h2 style="margin:0;color:var(--green);font-size:30px">${acc===100?"Perfeito! 🏆":acc>=75?"Muito bem! 🎉":"Bom trabalho! 💪"}</h2>
+@@@H134 1@@@
+      <button class="btn go" id="vxAgain">Próxima rodada ➜</button></div></div>`;
+@@@H135 1@@@
+  $("bPrompt").innerHTML=`<div class="bprompt"><span>${VXS.dir==="listen"?"🎧 Tap what you hear":`Toque: <b>${label}</b>`}</span>
+@@@H136 1@@@
+    $("bPrompt").innerHTML=`<div class="bprompt ok"><span>✅ Certo! <b>${t.pt}</b> = ${t.en}</span></div>`;
+@@@H137 1@@@
+  if(score>best){best=score;LS.set("vm_best",best)}
+@@@H138 1@@@
+const _lrV10=logRound; logRound=function(a,s,f){_lrV10(a,s,f); if(SET.fmt==="vocab"){ST.rounds[ST.rounds.length-1].m="vmatch";LS.set("vm_stats",ST);}};
+@@@H139 1@@@
+  const l=L(), dir={pt:"PT→EN",en:"EN→PT",mix:"Mixed"}[SET.dir];
+@@@H140 1@@@
+const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Médio",c:"#c9a400",d:"Present + past"},{n:"Difícil",c:"#f08c00",d:"Mixed tenses"},{n:"Expert",c:"#e63946",d:"Long, slang + subjunctive"}];
+@@@H141 248@@@
+{lv:0,ic:"☀️",t:"Meu dia",en:"My day",l:[
+ ["Oi! Eu me {chamo|am called|chamar} Ana e {moro|live|morar} em São Paulo.","Hi! My name is Ana and I live in São Paulo."],
+ ["Eu {acordo|wake up|acordar} às sete horas todos os dias.","I wake up at seven o'clock every day."],
+ ["Eu {tomo|have (drink)|tomar} café com leite e {como|eat|comer} pão com manteiga.","I have coffee with milk and eat bread with butter."],
+ ["Depois, eu {pego|take|pegar} o metrô para o trabalho.","Then I take the subway to work."],
+ ["Eu {trabalho|work|trabalhar} em um escritório no centro.","I work in an office downtown."],
+ ["À noite, eu {janto|have dinner|jantar} em casa e {assisto|watch|assistir} TV.","At night, I have dinner at home and watch TV."]],
+ q:[["Onde a Ana mora?","Where does Ana live?","Em São Paulo","No Rio","Em Salvador"],
+    ["A que horas ela acorda?","What time does she wake up?","Às sete horas","Às nove horas","Ao meio-dia"],
+    ["Como ela vai para o trabalho?","How does she get to work?","De metrô","De carro","A pé"]]},
+{lv:0,ic:"🥐",t:"Na padaria",en:"At the bakery",l:[
+ ["O Pedro {entra|walks in|entrar} na padaria da esquina.","Pedro walks into the corner bakery."],
+ ["— Bom dia! O que você {quer|want|querer}? — {pergunta|asks|perguntar} a atendente.","\"Good morning! What would you like?\" asks the clerk."],
+ ["— Eu {quero|want|querer} um {pão na chapa|grilled buttered roll} e um {pingado|coffee with a splash of milk}, por favor.","\"I'd like a grilled buttered roll and a coffee with a splash of milk, please.\""],
+ ["— Mais alguma coisa?","\"Anything else?\""],
+ ["— Não, só isso. Quanto {custa|costs|custar}?","\"No, that's all. How much is it?\""],
+ ["— São doze reais.","\"That's twelve reais.\""],
+ ["O Pedro {paga|pays|pagar}, {agradece|says thanks|agradecer} e {senta|sits down|sentar} perto da janela.","Pedro pays, says thanks and sits down near the window."]],
+ q:[["Onde fica a padaria?","Where is the bakery?","Na esquina","No shopping","No centro"],
+    ["O que o Pedro pede para beber?","What does Pedro order to drink?","Um pingado","Um suco","Uma cerveja"],
+    ["Quanto custa tudo?","How much is everything?","Doze reais","Dez reais","Vinte reais"]]},
+{lv:0,ic:"👨‍👩‍👧",t:"Minha família",en:"My family",l:[
+ ["A minha família é pequena, mas muito unida.","My family is small, but very close."],
+ ["O meu pai se chama Carlos. Ele {é|is|ser} professor e {ensina|teaches|ensinar} matemática.","My father's name is Carlos. He's a teacher and teaches math."],
+ ["A minha mãe, Lúcia, {trabalha|works|trabalhar} num hospital. Ela é enfermeira.","My mother, Lúcia, works in a hospital. She's a nurse."],
+ ["Eu {tenho|have|ter} uma irmã mais nova. Ela {tem|is (has)|ter} dez anos e {adora|loves|adorar} desenhar.","I have a younger sister. She is ten years old and loves to draw."],
+ ["No domingo, a gente {almoça|has lunch|almoçar} na casa da minha avó.","On Sunday, we have lunch at my grandma's house."],
+ ["Ela {cozinha|cooks|cozinhar} feijoada e todo mundo {conversa|chats|conversar} muito.","She cooks feijoada and everybody chats a lot."]],
+ q:[["Qual é a profissão do pai?","What is the father's job?","Professor","Médico","Motorista"],
+    ["Quantos anos tem a irmã?","How old is the sister?","Dez anos","Sete anos","Quinze anos"],
+    ["Onde a família almoça no domingo?","Where does the family have lunch on Sunday?","Na casa da avó","Num restaurante","Na praia"]]},
+{lv:0,ic:"🛒",t:"No mercado",en:"At the grocery store",l:[
+ ["Hoje é sábado e eu {preciso|need|precisar} fazer compras.","Today is Saturday and I need to go grocery shopping."],
+ ["Eu {pego|grab|pegar} um carrinho e {procuro|look for|procurar} as frutas.","I grab a cart and look for the fruit."],
+ ["As bananas {estão|are|estar} baratas, então eu {compro|buy|comprar} uma dúzia.","The bananas are cheap, so I buy a dozen."],
+ ["Também {preciso|need|precisar} de arroz, feijão, ovos e leite.","I also need rice, beans, eggs and milk."],
+ ["O arroz {fica|is (located)|ficar} no corredor três.","The rice is in aisle three."],
+ ["No caixa, a moça {pergunta|asks|perguntar}: — Débito ou crédito?","At the checkout, the young woman asks: \"Debit or credit?\""],
+ ["— Débito, por favor. Obrigado!","\"Debit, please. Thanks!\""]],
+ q:[["Que dia é hoje?","What day is it today?","Sábado","Segunda-feira","Domingo"],
+    ["Quantas bananas a pessoa compra?","How many bananas does the person buy?","Uma dúzia","Seis","Duas"],
+    ["Onde fica o arroz?","Where is the rice?","No corredor três","No caixa","Perto das frutas"]]},
+{lv:0,ic:"🏖️",t:"Na praia",en:"At the beach",l:[
+ ["Faz muito calor no Rio hoje.","It's very hot in Rio today."],
+ ["A Júlia e o Marcos {vão|go|ir} à praia de Copacabana.","Júlia and Marcos go to Copacabana beach."],
+ ["Eles {alugam|rent|alugar} duas cadeiras e um guarda-sol.","They rent two chairs and a beach umbrella."],
+ ["O Marcos {nada|swims|nadar} no mar e a Júlia {lê|reads|ler} um livro.","Marcos swims in the sea and Júlia reads a book."],
+ ["Um vendedor {passa|walks by|passar}: — Olha o mate! Olha o biscoito!","A vendor walks by: \"Get your mate tea! Get your biscuits!\""],
+ ["Eles {compram|buy|comprar} um mate gelado e {olham|watch|olhar} o pôr do sol.","They buy an iced mate tea and watch the sunset."]],
+ q:[["Para qual praia eles vão?","Which beach do they go to?","Copacabana","Ipanema","Leblon"],
+    ["O que a Júlia faz?","What does Júlia do?","Lê um livro","Nada no mar","Dorme"],
+    ["O que eles compram?","What do they buy?","Um mate gelado","Um sorvete","Uma água de coco"]]},
+{lv:1,ic:"🚇",t:"Um sábado em São Paulo",en:"A Saturday in São Paulo",l:[
+ ["No sábado de manhã, o Lucas {acordou|woke up|acordar} cedo.","On Saturday morning, Lucas woke up early."],
+ ["Ele {tomou|took|tomar} um banho rápido e {saiu|left|sair} de casa às oito e meia.","He took a quick shower and left home at eight thirty."],
+ ["Na esquina, ele {parou|stopped|parar} na padaria e {pediu|ordered|pedir} um pingado e um pão na chapa.","On the corner, he stopped at the bakery and ordered a coffee with milk and a grilled roll."],
+ ["Depois, ele {pegou|took|pegar} o metrô até a Avenida Paulista.","Then he took the subway to Avenida Paulista."],
+ ["Lá, ele {encontrou|met|encontrar} a Ana, uma amiga da faculdade.","There, he met Ana, a friend from college."],
+ ["— E aí, Ana! Faz {mó cota|ages (slang)} que não te vejo!","\"Hey, Ana! It's been ages since I saw you!\""],
+ ["— Pois é! {Bora|let's go (slang)} dar um {rolê|hangout / stroll (slang)} no parque?","\"I know! Want to go hang out in the park?\""],
+ ["Os dois {andaram|walked|andar} pelo parque e {conversaram|talked|conversar} muito.","The two walked through the park and talked a lot."],
+ ["À tarde, {começou|started|começar} a chover, então eles {voltaram|went back|voltar} de ônibus.","In the afternoon, it started to rain, so they went back by bus."],
+ ["O {busão|bus (slang)} {estava|was|estar} lotado, mas o dia {foi|was|ser} {da hora|awesome (slang)}.","The bus was packed, but the day was awesome."]],
+ q:[["A que horas o Lucas saiu de casa?","What time did Lucas leave home?","Às oito e meia","Às sete","Às dez"],
+    ["Quem ele encontrou?","Who did he meet?","A Ana","O irmão","O chefe"],
+    ["Por que eles voltaram de ônibus?","Why did they go back by bus?","Porque começou a chover","Porque estavam cansados","Porque o metrô fechou"]]},
+{lv:1,ic:"💼",t:"O primeiro dia no trabalho",en:"The first day at work",l:[
+ ["Ontem foi o meu primeiro dia num emprego novo.","Yesterday was my first day at a new job."],
+ ["Eu {acordei|woke up|acordar} muito cedo porque {estava|was|estar} nervoso.","I woke up very early because I was nervous."],
+ ["{Cheguei|I arrived|chegar} no escritório às oito e quinze, quinze minutos antes do horário.","I got to the office at 8:15, fifteen minutes early."],
+ ["A minha chefe, a Renata, me {apresentou|introduced|apresentar} para a equipe.","My boss, Renata, introduced me to the team."],
+ ["Todo mundo {foi|was|ser} muito simpático comigo.","Everyone was very friendly to me."],
+ ["De manhã, eu {aprendi|learned|aprender} a usar o sistema da empresa.","In the morning, I learned how to use the company's system."],
+ ["Na hora do almoço, os colegas me {convidaram|invited|convidar} para comer num restaurante por quilo.","At lunchtime, my coworkers invited me to eat at a pay-by-weight restaurant."],
+ ["No fim do dia, eu {voltei|went back|voltar} para casa cansado, mas feliz.","At the end of the day, I went home tired but happy."]],
+ q:[["Como ele se sentiu de manhã?","How did he feel in the morning?","Nervoso","Triste","Com raiva"],
+    ["Quem é a Renata?","Who is Renata?","A chefe","Uma colega","A irmã"],
+    ["Onde eles almoçaram?","Where did they have lunch?","Num restaurante por quilo","No escritório","Em casa"]]},
+{lv:1,ic:"✈️",t:"A viagem para o Rio",en:"The trip to Rio",l:[
+ ["Mês passado, eu e a minha esposa {viajamos|traveled|viajar} para o Rio de Janeiro.","Last month, my wife and I traveled to Rio de Janeiro."],
+ ["A gente {pegou|took|pegar} um avião em São Paulo e {chegou|arrived|chegar} em uma hora.","We took a plane in São Paulo and arrived in an hour."],
+ ["O hotel {ficava|was located|ficar} perto da praia de Ipanema.","The hotel was near Ipanema beach."],
+ ["No primeiro dia, a gente {subiu|went up|subir} o Pão de Açúcar de bondinho.","On the first day, we went up Sugarloaf Mountain by cable car."],
+ ["A vista {era|was|ser} incrível!","The view was incredible!"],
+ ["No segundo dia, {visitamos|we visited|visitar} o Cristo Redentor, mas {estava|it was|estar} cheio de nuvens.","On the second day, we visited Christ the Redeemer, but it was full of clouds."],
+ ["À noite, a gente {comeu|ate|comer} num restaurante na Lapa e {dançou|danced|dançar} samba.","At night, we ate at a restaurant in Lapa and danced samba."],
+ ["Foi uma viagem curta, mas a gente {adorou|loved|adorar}.","It was a short trip, but we loved it."]],
+ q:[["Como eles viajaram?","How did they travel?","De avião","De ônibus","De carro"],
+    ["Onde ficava o hotel?","Where was the hotel?","Perto de Ipanema","No centro","Na Lapa"],
+    ["Como estava o Cristo Redentor?","What was Christ the Redeemer like?","Cheio de nuvens","Fechado","Vazio"]]},
+{lv:1,ic:"🎂",t:"O jantar de aniversário",en:"The birthday dinner",l:[
+ ["Na sexta-feira foi o aniversário da minha mãe.","Friday was my mom's birthday."],
+ ["Eu e o meu irmão {decidimos|decided|decidir} preparar um jantar surpresa.","My brother and I decided to make a surprise dinner."],
+ ["Eu {comprei|bought|comprar} os ingredientes e ele {cozinhou|cooked|cozinhar} um risoto de camarão.","I bought the ingredients and he cooked a shrimp risotto."],
+ ["A gente também {fez|made|fazer} um bolo de chocolate, mas ele {queimou|burned} um pouco.","We also made a chocolate cake, but it burned a little."],
+ ["Quando a minha mãe {chegou|arrived|chegar}, todo mundo {gritou|shouted|gritar}: Surpresa!","When my mom arrived, everyone shouted: Surprise!"],
+ ["Ela {chorou|cried|chorar} de alegria e {abraçou|hugged|abraçar} a gente.","She cried with joy and hugged us."],
+ ["Mesmo com o bolo queimado, foi uma noite perfeita.","Even with the burned cake, it was a perfect night."]],
+ q:[["De quem era o aniversário?","Whose birthday was it?","Da mãe","Do irmão","Do pai"],
+    ["O que o irmão cozinhou?","What did the brother cook?","Risoto de camarão","Feijoada","Lasanha"],
+    ["O que aconteceu com o bolo?","What happened to the cake?","Queimou um pouco","Caiu no chão","Ficou perfeito"]]},
+{lv:1,ic:"🚌",t:"Perdi o ônibus",en:"I missed the bus",l:[
+ ["Hoje de manhã, tudo {deu errado|went wrong}.","This morning, everything went wrong."],
+ ["O meu despertador não {tocou|went off (rang)|tocar} e eu {acordei|woke up|acordar} atrasado.","My alarm didn't go off and I woke up late."],
+ ["Eu me {vesti|got dressed|vestir} correndo e {saí|left|sair} sem tomar café.","I got dressed in a rush and left without breakfast."],
+ ["Quando {cheguei|I got|chegar} no ponto, o ônibus {estava|was|estar} saindo.","When I got to the stop, the bus was leaving."],
+ ["Eu {corri|ran|correr} atrás dele, mas não {consegui|managed|conseguir} pegar.","I ran after it, but I couldn't catch it."],
+ ["Então eu {liguei|called|ligar} para o meu chefe e {expliquei|explained|explicar} o problema.","So I called my boss and explained the problem."],
+ ["Ele {riu|laughed|rir} e {disse|said|dizer}: — Tranquilo, acontece!","He laughed and said: \"No worries, it happens!\""]],
+ q:[["Por que ele acordou atrasado?","Why did he wake up late?","O despertador não tocou","Ele dormiu tarde","Ele estava doente"],
+    ["Ele tomou café?","Did he have breakfast?","Não","Sim, na padaria","Sim, em casa"],
+    ["O que o chefe fez?","What did the boss do?","Riu","Gritou","Desligou o telefone"]]},
+{lv:2,ic:"🧒",t:"Quando eu era criança",en:"When I was a kid",l:[
+ ["Quando eu {era|was|ser} criança, eu {morava|lived|morar} numa cidade pequena no interior de Minas.","When I was a kid, I lived in a small town in the countryside of Minas."],
+ ["A nossa casa {tinha|had|ter} um quintal enorme com uma mangueira.","Our house had a huge backyard with a mango tree."],
+ ["Todas as tardes, eu {brincava|used to play|brincar} na rua com os meus primos.","Every afternoon, I used to play in the street with my cousins."],
+ ["A gente {jogava|played|jogar} bola até escurecer e {voltava|came back|voltar} pra casa todo sujo.","We played soccer until it got dark and came home all dirty."],
+ ["A minha avó {fazia|made|fazer} pão de queijo quentinho e {contava|told|contar} histórias antigas.","My grandmother made warm cheese bread and told old stories."],
+ ["Eu {adorava|loved|adorar} ouvir as histórias dela antes de dormir.","I loved listening to her stories before bed."],
+ ["Hoje eu moro em São Paulo e a vida é muito mais corrida.","Today I live in São Paulo and life is much busier."],
+ ["Mas, sempre que {sinto|smell (feel)|sentir} cheiro de pão de queijo, eu me {lembro|remember|lembrar} daquela época.","But whenever I smell cheese bread, I remember those days."],
+ ["Um dia, eu {vou voltar|am going to go back|voltar} pra lá com os meus filhos.","One day, I'm going to go back there with my kids."]],
+ q:[["Onde ele morava quando era criança?","Where did he live as a child?","No interior de Minas","Em São Paulo","No Rio"],
+    ["O que a avó fazia?","What did the grandmother make?","Pão de queijo","Bolo de cenoura","Feijoada"],
+    ["O que ele quer fazer um dia?","What does he want to do one day?","Voltar com os filhos","Vender a casa","Mudar para o Rio"]]},
+{lv:2,ic:"🤝",t:"A entrevista de emprego",en:"The job interview",l:[
+ ["Amanhã às dez horas eu {vou ter|am going to have|ter} uma entrevista numa empresa de tecnologia.","Tomorrow at ten I'm going to have an interview at a tech company."],
+ ["Ontem eu {passei|spent|passar} a noite toda me preparando.","Yesterday I spent the whole night getting ready."],
+ ["Eu {pesquisei|researched} sobre a empresa e {treinei|practiced|treinar} as respostas com a minha namorada.","I researched the company and practiced my answers with my girlfriend."],
+ ["Ela {fingia|pretended} ser a gerente e me {fazia|asked (made)|fazer} perguntas difíceis.","She pretended to be the manager and asked me hard questions."],
+ ["— Por que você {quer|want|querer} trabalhar aqui? — ela {perguntou|asked|perguntar}.","\"Why do you want to work here?\" she asked."],
+ ["— Porque eu {acredito|believe|acreditar} que posso ajudar a empresa a crescer — eu {respondi|answered|responder}.","\"Because I believe I can help the company grow,\" I answered."],
+ ["Se tudo der certo, eu {começarei|will start|começar} no mês que vem.","If everything goes well, I will start next month."],
+ ["Hoje à noite, vou {dormir|sleep|dormir} cedo e {deixar|leave|deixar} a roupa pronta.","Tonight, I'm going to sleep early and leave my clothes ready."],
+ ["Estou nervoso, mas confiante. {Vai dar bom|It's going to work out (slang)}!","I'm nervous, but confident. It's going to work out!"]],
+ q:[["Quando é a entrevista?","When is the interview?","Amanhã às dez","Hoje à tarde","Na semana que vem"],
+    ["Quem ajudou ele a treinar?","Who helped him practice?","A namorada","O irmão","A gerente"],
+    ["O que ele vai fazer hoje à noite?","What will he do tonight?","Dormir cedo","Sair com amigos","Estudar inglês"]]},
+{lv:2,ic:"🏢",t:"O apartamento novo",en:"The new apartment",l:[
+ ["Semana passada, eu {aluguei|rented|alugar} um apartamento no bairro da Vila Mariana.","Last week, I rented an apartment in the Vila Mariana neighborhood."],
+ ["Ele é pequeno, mas tem uma varanda e fica perto do metrô.","It's small, but it has a balcony and it's close to the subway."],
+ ["No primeiro dia, eu {percebi|noticed|perceber} que a torneira da cozinha {estava|was|estar} pingando.","On the first day, I noticed the kitchen faucet was dripping."],
+ ["Também {faltava|was missing|faltar} uma lâmpada no banheiro e o chuveiro não {esquentava|heated up|esquentar}.","A light bulb was also missing in the bathroom and the shower didn't heat up."],
+ ["Eu {liguei|called|ligar} para o proprietário e {reclamei|complained|reclamar} educadamente.","I called the landlord and complained politely."],
+ ["Ele {prometeu|promised|prometer} mandar um encanador no dia seguinte.","He promised to send a plumber the next day."],
+ ["O encanador {consertou|fixed|consertar} a torneira e {trocou|replaced|trocar} o chuveiro em menos de uma hora.","The plumber fixed the faucet and replaced the shower in less than an hour."],
+ ["Agora o apartamento está perfeito e eu já {convidei|invited|convidar} os meus amigos para um jantar.","Now the apartment is perfect and I've already invited my friends for dinner."],
+ ["Vou {preparar|prepare|preparar} uma lasanha e, depois, a gente vai ver o jogo na TV.","I'm going to make a lasagna and then we'll watch the game on TV."]],
+ q:[["Onde fica o apartamento?","Where is the apartment?","Na Vila Mariana","No centro","Em Pinheiros"],
+    ["Qual era o problema da cozinha?","What was the problem in the kitchen?","A torneira pingava","O fogão não ligava","A janela estava quebrada"],
+    ["Quem consertou os problemas?","Who fixed the problems?","Um encanador","O próprio dono","Um amigo"]]},
+{lv:2,ic:"🍍",t:"A feira de domingo",en:"The Sunday street market",l:[
+ ["Todo domingo de manhã, a dona Marta {vai|goes|ir} à feira livre perto da casa dela.","Every Sunday morning, Dona Marta goes to the street market near her house."],
+ ["Ela {gosta|likes|gostar} de chegar cedo, quando as frutas ainda {estão|are|estar} fresquinhas.","She likes to arrive early, when the fruit is still nice and fresh."],
+ ["Hoje, o feirante {ofereceu|offered|oferecer} um pedaço de abacaxi para ela {experimentar|try|experimentar}.","Today, the vendor offered her a piece of pineapple to try."],
+ ["— Prova, freguesa! Tá docinho! — ele {gritou|shouted|gritar}.","\"Try it, ma'am! It's sweet!\" he shouted."],
+ ["Ela {provou|tasted}, {gostou|liked it|gostar} e {levou|took|levar} dois abacaxis.","She tasted it, liked it and took two pineapples."],
+ ["Depois, ela {parou|stopped|parar} na barraca de pastel e {pediu|ordered|pedir} um pastel de queijo e um caldo de cana.","Then she stopped at the pastel stand and ordered a cheese pastel and sugarcane juice."],
+ ["Enquanto {comia|was eating|comer}, ela {encontrou|ran into|encontrar} uma vizinha antiga.","While she was eating, she ran into an old neighbor."],
+ ["As duas {ficaram|stayed|ficar} conversando por quase uma hora.","The two of them stayed there chatting for almost an hour."],
+ ["Quando dona Marta {voltou|went back|voltar} para casa, {percebeu|realized|perceber} que tinha esquecido as bananas na barraca!","When Dona Marta went home, she realized she had left the bananas at the stand!"]],
+ q:[["Quando a dona Marta vai à feira?","When does Dona Marta go to the market?","Todo domingo de manhã","Todo sábado à tarde","Uma vez por mês"],
+    ["O que ela comeu na feira?","What did she eat at the market?","Um pastel de queijo","Um sanduíche","Uma salada de frutas"],
+    ["O que ela esqueceu?","What did she forget?","As bananas","Os abacaxis","A bolsa"]]},
+{lv:2,ic:"🕯️",t:"Uma noite sem luz",en:"A night without power",l:[
+ ["Na terça-feira à noite, {caiu|hit (fell)|cair} uma tempestade enorme em São Paulo.","On Tuesday night, a huge storm hit São Paulo."],
+ ["De repente, a luz {apagou|went out|apagar} no prédio inteiro.","Suddenly, the power went out in the whole building."],
+ ["Eu {estava|was|estar} cozinhando e o meu celular {tinha|had|ter} só dez por cento de bateria.","I was cooking and my phone had only ten percent battery."],
+ ["Eu {acendi|lit|acender} umas velas e {procurei|looked for|procurar} uma lanterna na gaveta.","I lit some candles and looked for a flashlight in the drawer."],
+ ["Os vizinhos {saíram|came out|sair} para o corredor e a gente {começou|started|começar} a conversar.","The neighbors came out into the hallway and we started talking."],
+ ["Alguém {trouxe|brought|trazer} um violão e a dona Rita {cantou|sang|cantar} músicas antigas.","Someone brought a guitar and Dona Rita sang old songs."],
+ ["Eu {morava|had been living|morar} lá havia dois anos e nunca {tinha conversado|had talked} com eles!","I had lived there for two years and had never talked to them!"],
+ ["A luz só {voltou|came back|voltar} depois da meia-noite.","The power only came back after midnight."],
+ ["Agora, toda sexta, a gente {se encontra|meets up} no salão do prédio para tocar e cantar.","Now, every Friday, we meet up in the building's party room to play and sing."]],
+ q:[["Por que a luz apagou?","Why did the power go out?","Por causa de uma tempestade","Porque não pagaram a conta","Por causa de uma festa"],
+    ["O que alguém trouxe?","What did someone bring?","Um violão","Uma pizza","Um rádio"],
+    ["Quando a luz voltou?","When did the power come back?","Depois da meia-noite","Às oito","No dia seguinte"]]},
+{lv:3,ic:"🎶",t:"Rolê na Augusta",en:"A night out on Augusta",l:[
+ ["Sexta à noite, o Thiago {mandou|sent|mandar} mensagem no grupo: — {Sextou|It's Friday! (slang)}! Quem {cola|is coming (slang)|colar} na Augusta hoje?","Friday night, Thiago texted the group: \"It's Friday! Who's coming to Augusta tonight?\""],
+ ["— {Demorou|For sure (slang)}! — {respondeu|replied|responder} a Bia. — Mas {tô sem grana|I'm broke (slang)}, viu?","\"For sure!\" Bia replied. \"But I'm broke, okay?\""],
+ ["— {Suave|No problem (slang)}, a gente vai num {boteco|cheap neighborhood bar} antes da {balada|club / party (slang)}.","\"No problem, we'll go to a cheap bar before the club.\""],
+ ["Eles se {encontraram|met up|encontrar} às dez, {tomaram|had|tomar} uma {breja|beer (slang)} e {riram|laughed|rir} muito.","They met up at ten, had a beer and laughed a lot."],
+ ["Lá pela meia-noite, a fila da balada {estava|was|estar} {embaçada|a nightmare (slang)}: mais de uma hora de espera.","Around midnight, the line for the club was a nightmare: over an hour's wait."],
+ ["— Mano, {bora meter o pé|let's get out of here (slang)}? — {sugeriu|suggested} o Thiago.","\"Bro, let's get out of here?\" Thiago suggested."],
+ ["Em vez de esperar, eles {acabaram|ended up|acabar} num karaokê de esquina, cantando sertanejo até as três da manhã.","Instead of waiting, they ended up at a corner karaoke bar, singing sertanejo until three in the morning."],
+ ["O Thiago, que {jurava|swore} que não sabia cantar, {pagou mico|embarrassed himself (slang)} no microfone, mas ninguém {ligou|cared|ligar}.","Thiago, who swore he couldn't sing, embarrassed himself on the mic, but nobody cared."],
+ ["No domingo, a Bia {postou|posted} o vídeo no grupo com a legenda: — Rolê aleatório, mas foi {da hora|awesome (slang)}! kkkk","On Sunday, Bia posted the video in the group with the caption: \"Random night out, but it was awesome! lol\""],
+ ["Desde então, toda sexta alguém {pergunta|asks|perguntar}: — E aí, karaokê hoje?","Since then, every Friday someone asks: \"So, karaoke tonight?\""]],
+ q:[["Por que a Bia estava preocupada?","Why was Bia worried?","Ela estava sem dinheiro","Ela estava doente","Ela tinha que trabalhar"],
+    ["Por que eles não entraram na balada?","Why didn't they go into the club?","A fila estava enorme","Estava fechada","Era muito cara"],
+    ["O que significa \"pagou mico\"?","What does \"pagou mico\" mean?","Passou vergonha","Pagou a conta","Ficou com raiva"]]},
+{lv:3,ic:"📱",t:"Treta no grupo da família",en:"Drama in the family group chat",l:[
+ ["Tudo {começou|started|começar} quando o tio Roberto {mandou|sent|mandar} uma notícia falsa no grupo da família.","It all started when Uncle Roberto sent a fake news story to the family group chat."],
+ ["A prima Camila, que é jornalista, {respondeu|replied|responder} na hora: — Tio, isso aí é fake, hein.","Cousin Camila, who's a journalist, replied right away: \"Uncle, that's fake, you know.\""],
+ ["O tio não {gostou|liked it|gostar} nada e {escreveu|wrote|escrever} um textão em letras maiúsculas.","Uncle didn't like it at all and wrote a huge rant in all caps."],
+ ["Em cinco minutos, {deu treta|drama broke out (slang)}: metade da família {defendia|was defending} o tio e a outra metade {concordava|agreed|concordar} com a Camila.","Within five minutes, drama broke out: half the family was defending the uncle and the other half agreed with Camila."],
+ ["A avó, que mal {sabia|knew how|saber} usar o celular, {mandou|sent|mandar} um áudio de três minutos pedindo paz.","Grandma, who barely knew how to use her phone, sent a three-minute voice note asking for peace."],
+ ["Ninguém {entendeu|understood|entender} nada, porque o áudio {estava|was|estar} cheio de barulho de panela.","Nobody understood a thing, because the audio was full of pot-and-pan noise."],
+ ["Para {acalmar|calm down} os ânimos, a tia Sônia {sugeriu|suggested} um almoço no domingo.","To calm everyone down, Aunt Sônia suggested a Sunday lunch."],
+ ["No fim, todo mundo {apareceu|showed up|aparecer}, comeu lasanha e {fingiu|pretended} que nada tinha acontecido.","In the end, everyone showed up, ate lasagna and pretended nothing had happened."],
+ ["Mas, na semana seguinte, o tio Roberto {mandou|sent|mandar} outra notícia... e tudo {recomeçou|started again}.","But the next week, Uncle Roberto sent another story... and it all started again."],
+ ["Como a Camila diz: — Grupo de família no Brasil é esporte radical.","As Camila says: \"A family group chat in Brazil is an extreme sport.\""]],
+ q:[["Por que começou a briga?","Why did the fight start?","O tio mandou uma notícia falsa","A prima esqueceu um aniversário","A avó saiu do grupo"],
+    ["Qual é a profissão da Camila?","What is Camila's job?","Jornalista","Advogada","Professora"],
+    ["O que a tia Sônia sugeriu?","What did Aunt Sônia suggest?","Um almoço no domingo","Sair do grupo","Ligar para o tio"]]},
+{lv:3,ic:"💭",t:"Se eu tivesse coragem",en:"If I had the courage",l:[
+ ["A Larissa {trabalha|has worked|trabalhar} num banco há oito anos e, sinceramente, {está|is|estar} cansada.","Larissa has worked at a bank for eight years and, honestly, she's tired."],
+ ["Toda noite, antes de dormir, ela {imagina|imagines|imaginar} outra vida.","Every night, before bed, she imagines another life."],
+ ["— Se eu {tivesse|had|ter} coragem, {largaria|would quit} tudo e {abriria|would open|abrir} uma cafeteria em Paraty.","\"If I had the courage, I'd quit everything and open a café in Paraty.\""],
+ ["Ela {sonha|dreams|sonhar} com um lugar pequeno, com cheiro de bolo e música brasileira tocando baixinho.","She dreams of a small place, smelling of cake, with Brazilian music playing softly."],
+ ["O problema é que ela {tem|has|ter} medo de {perder|losing|perder} a estabilidade.","The problem is she's afraid of losing her stability."],
+ ["Um dia, a amiga Fernanda {disse|said|dizer}: — Amiga, talvez você nunca {esteja|be|estar} totalmente pronta.","One day, her friend Fernanda said: \"Girl, maybe you'll never be completely ready.\""],
+ ["— Mas, se você não {tentar|try|tentar}, vai {passar|spend|passar} a vida pensando: e se...?","\"But if you don't try, you'll spend your life thinking: what if...?\""],
+ ["Aquela frase {ficou|stuck (stayed)|ficar} na cabeça da Larissa por semanas.","That sentence stuck in Larissa's head for weeks."],
+ ["Ela {começou|started|começar} a {economizar|save|economizar}, {fez|took|fazer} um curso de barista e {conversou|talked|conversar} com o gerente.","She started saving, took a barista course and talked to her manager."],
+ ["Hoje, dois anos depois, quem {visita|visits|visitar} Paraty pode tomar o melhor café da cidade no Café Coragem.","Today, two years later, anyone who visits Paraty can have the best coffee in town at Café Coragem."]],
+ q:[["Há quanto tempo a Larissa trabalhava no banco?","How long had Larissa worked at the bank?","Oito anos","Dois anos","Dez anos"],
+    ["Qual era o sonho dela?","What was her dream?","Abrir uma cafeteria","Viajar pelo mundo","Ser gerente do banco"],
+    ["Como se chama o café dela?","What is her café called?","Café Coragem","Café Paraty","Café da Fernanda"]]},
+{lv:3,ic:"🧳",t:"Perrengue na rodoviária",en:"Trouble at the bus terminal",l:[
+ ["Era véspera de feriado, e a rodoviária do Tietê {estava|was|estar} lotada.","It was the day before a holiday, and Tietê bus terminal was packed."],
+ ["O Gustavo {tinha comprado|had bought} uma passagem para Florianópolis, saindo às onze da noite.","Gustavo had bought a ticket to Florianópolis, leaving at eleven at night."],
+ ["Ele {chegou|arrived|chegar} às dez e meia, todo tranquilo, e {foi|went|ir} comer um salgado.","He arrived at ten thirty, totally relaxed, and went to eat a snack."],
+ ["Quando {voltou|came back|voltar}, {descobriu|found out|descobrir} que o ônibus {tinha mudado|had changed} de plataforma.","When he came back, he found out the bus had changed platforms."],
+ ["Ele {saiu|took off|sair} correndo com a mala, {atravessou|crossed|atravessar} o terminal inteiro e {chegou|arrived|chegar} sem fôlego... um minuto atrasado.","He took off running with his suitcase, crossed the whole terminal and arrived out of breath... one minute late."],
+ ["O ônibus {tinha acabado|had just} de sair.","The bus had just left."],
+ ["— Que {zica|bad luck (slang)}! — ele {pensou|thought|pensar}. — Esse feriado já {deu ruim|went wrong (slang)}.","\"What bad luck!\" he thought. \"This holiday has already gone wrong.\""],
+ ["No guichê, a atendente {explicou|explained|explicar} que só {havia|there was} vaga no ônibus das seis da manhã.","At the ticket window, the clerk explained there was only a seat on the 6 a.m. bus."],
+ ["Sem opção, ele {dormiu|slept|dormir} num banco da rodoviária, abraçado com a mala.","With no choice, he slept on a bench in the terminal, hugging his suitcase."],
+ ["Mas valeu a pena: em Floripa, {fez|it was (made)|fazer} sol o feriado inteiro, e ele {conheceu|met|conhecer} uma galera incrível no hostel.","But it was worth it: in Floripa it was sunny the whole holiday, and he met an amazing group of people at the hostel."],
+ ["Hoje ele {conta|tells|contar} essa história rindo e {jura|swears} que sempre {chega|arrives|chegar} uma hora antes.","Today he tells this story laughing and swears he always arrives an hour early."]],
+ q:[["Para onde o Gustavo ia viajar?","Where was Gustavo traveling to?","Florianópolis","Rio de Janeiro","Curitiba"],
+    ["Por que ele perdeu o ônibus?","Why did he miss the bus?","O ônibus mudou de plataforma","Ele dormiu demais","Ele esqueceu a passagem"],
+    ["Onde ele passou a noite?","Where did he spend the night?","Num banco da rodoviária","Num hotel","Na casa de um amigo"]]},
+{lv:3,ic:"✉️",t:"Carta para o meu eu do futuro",en:"A letter to my future self",l:[
+ ["Querido eu do futuro, quando você {ler|read|ler} esta carta, já {terão passado|will have passed} dez anos.","Dear future me, when you read this letter, ten years will have passed."],
+ ["Espero que você {esteja|are|estar} feliz e que ainda {tenha|have|ter} curiosidade pelo mundo.","I hope you're happy and that you're still curious about the world."],
+ ["Quando eu {escrevi|wrote|escrever} esta carta, eu {estava|was|estar} aprendendo português e {morria de medo|was terrified} de falar errado.","When I wrote this letter, I was learning Portuguese and was terrified of making mistakes."],
+ ["Se você já {estiver|are|estar} falando fluentemente, {lembre|remember|lembrar}-se de como tudo {começou|started|começar}: um verbo de cada vez.","If you're already speaking fluently, remember how it all started: one verb at a time."],
+ ["Se ainda não {estiver|are|estar}, não {desista|give up}. Errar faz parte.","If you're not there yet, don't give up. Making mistakes is part of it."],
+ ["Eu {gostaria|would like|gostar} que você {visitasse|visited|visitar} o Brasil de novo e {comesse|ate|comer} um pão de queijo em Minas por mim.","I'd like you to visit Brazil again and eat a pão de queijo in Minas for me."],
+ ["E, por favor, {mande|send|mandar} um {salve|shout-out (slang)} para a galera da padaria da esquina.","And please, send a shout-out to the crew at the corner bakery."],
+ ["Se a vida {ficar|gets|ficar} difícil, {respire|breathe}, {tome|have|tomar} um café e {lembre|remember|lembrar} que tudo passa.","If life gets hard, breathe, have a coffee and remember that everything passes."],
+ ["Quando você {terminar|finish|terminar} de ler, {guarde|put away|guardar} esta carta de novo. Daqui a dez anos, a gente {conversa|talks|conversar} mais.","When you finish reading, put this letter away again. Ten years from now, we'll talk some more."],
+ ["Com carinho, eu mesmo, do passado.","With love, me, from the past."]],
+ q:[["Quantos anos depois a carta deve ser lida?","How many years later should the letter be read?","Dez anos","Cinco anos","Um ano"],
+    ["O que a pessoa estava aprendendo?","What was the person learning?","Português","Violão","A cozinhar"],
+    ["O que fazer se a vida ficar difícil?","What to do if life gets hard?","Respirar e tomar um café","Desistir de tudo","Mudar de país"]]}
+@@@H142 2@@@
+let SPEECH=Object.assign({speed:"normal",voice:""},LS.get("vm_speech",{}));
+const saveSpeech=()=>LS.set("vm_speech",SPEECH);
+@@@H143 1@@@
+function voiceScore(v){
+@@@H144 4@@@
+  if(l==="pt-br") s+=100; else if(l.startsWith("pt")) s+=30; else return -1;
+  if(/natural|neural|premium|enhanced|aprimorad|online|wavenet/.test(n)) s+=40;
+  if(/luciana|francisca|thalita|antonio|ant[oô]nio|felipe|fernanda|vit[oó]ria|leila|daniel|google português do brasil/.test(n)) s+=20;
+  if(/eloquence|compact|joana|catarina|portugal/.test(n)) s-=25;
+@@@H145 0@@@
+@@@H146 1@@@
+    const v=pickVoice(); if(v){u.voice=v;u.lang=v.lang;} else u.lang="pt-BR";
+@@@H147 2@@@
+  $("spNow").textContent=cur?`Using: ${cur.name} (${cur.lang})`:"No Portuguese voice found on this device yet.";
+  $("spWarn").classList.toggle("hidden",!!(cur&&/pt.br/i.test(cur.lang.replace("_","-"))));
+@@@H148 1@@@
+  el.querySelectorAll("button").forEach(b=>b.onclick=()=>{SPEECH.speed=b.dataset.v;saveSpeech();syncSpeedUI();sayAlways("Olá! Vamos aprender português.");});
+@@@H149 2@@@
+$("spVoice").onchange=()=>{SPEECH.voice=$("spVoice").value;saveSpeech();fillVoiceSelect();sayAlways("Oi! Tudo bem? Eu sou a sua voz em português.");};
+$("spTest").onclick=()=>sayAlways("Bom dia! Hoje eu acordei cedo e tomei um café na padaria da esquina.");
+@@@H150 1@@@
+let STV=Object.assign({lv:"all",en:false,open:null},LS.get("vm_story",{}));
+@@@H151 1@@@
+const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
+@@@H152 1@@@
+   <div class="lvdesc">Fácil = short, present tense · Médio = present + past · Difícil = mixed tenses · Expert = longer stories with slang and the subjunctive.</div>`;
+@@@H153 1@@@
+      if(ok){score+=15; if(score>best){best=score;LS.set("vm_best",best)}}
+@@@H154 1@@@
+  ST.rounds.push({d:Date.now(),m:"story",n,x:n-right,s:0,a:Math.round(right/n*100),l:s.lv}); ST.rounds=ST.rounds.slice(-60); LS.set("vm_stats",ST);
+@@@H155 1@@@
+  $("stResult").innerHTML=`<div class="st-res ${right===n?"ok":""}"><b>${right===n?"Perfeito! 🏆":right>=2?"Muito bem! 🎉":"Bom trabalho! 💪"}</b> ${right}/${n} correct.
+@@@H156 1@@@
+/* ===== v16 data · Portuguese (Brazil) ===== */
+@@@H157 3@@@
+ ui:{tap:"Toque",correct:"Certo!",itWas:"Not quite. It was",me:"⭐ Eu",res:["Perfeito! 🏆","Muito bem! 🎉","Bom trabalho! 💪"],nextRound:"Próxima rodada ➜",
+   slangTab:"Gírias",phrHead:"Everyday phrases",phrSub:"Ready-to-use Portuguese for real situations.",idHead:"Idioms · expressões",idSub:"Literal meaning, real meaning and the closest English idiom.",
+   tempTip:"Brazil uses Celsius. Type a temperature in °C or °F to hear how Brazilians say it.",
+@@@H158 1@@@
+   treeDesc:"Quiz: tap the relative. PT→EN shows the Portuguese word, EN→PT shows the English, 🎧 Listen only says it.",
+@@@H159 1@@@
+ wgroups:{pron:{label:"Pronouns · me / it / them",c:"#0b7285"},poss:{label:"Possessives",c:"#5f3dc4"},refl:{label:"Reflexives",c:"#2b8a3e"},
+@@@H160 8@@@
+ gexpl:{pron:"object pronoun",poss:"possessive",refl:"reflexive pronoun",quest:"question word",neg:"negative word",cmp:"comparison",place:"place word (+ de)"},
+ winfo:{o:"o = it / him (masculine thing or person, written style)",a:"a = it / her (feminine)",os:"os = them (masculine or mixed)",me:"me = me / myself",te:"te = you (informal, used with você in Brazil)",nos:"nos = us / ourselves",
+   pra:"pra ele = to him (spoken). Written: lhe",ele:"Spoken Brazilian uses ele as an object: vi ele = I saw him",se:"se = himself / herself / yourself / each other",
+   meu:"meu = my (masculine noun)",minha:"minha = my (feminine noun)",seu:"seu = your (você). Agrees with the thing owned",dele:"dele = his (de + ele)",dela:"dela = her / hers (de + ela)",nossa:"nossa = our (feminine noun)",nossos:"nossos = our (masculine plural)",deles:"deles = their (de + eles)",
+   onde:"onde = where",qual:"qual = which / what. Use it with ser: Qual é…?",como:"como = how",quem:"quem = who",quanto:"quanto = how much",quantos:"quantos = how many (masculine)",quando:"quando = when","por que":"por que = why (two words in a question)","o que":"o que = what",
+   "não":"não = not. Double negatives are correct: não … nada",nunca:"nunca = never",nada:"nada = nothing / anything",ninguém:"ninguém = nobody / anybody",nenhuma:"nenhuma = no / none (feminine)","já":"já = already / yet",
+   melhor:"bom → melhor (never mais bom)",pior:"ruim → pior (never mais ruim)",mais:"o mais … = the most …",ótima:"ótimo = very good / great",tão:"tão … quanto = as … as",
+   embaixo:"embaixo de = under",["em cima"]:"em cima de = on top of","ao lado":"ao lado de = next to","na frente":"na frente de = in front of",atrás:"atrás de = behind",dentro:"dentro de = inside",entre:"entre = between",perto:"perto de = near"},
+@@@H161 51@@@
+  ["Cadê o livro? Eu não __ encontro.","o","Where's the book? I can't find it. (written style)","pron",["o","a","lhe","ele"]],
+  ["A chave? Eu __ deixei na mesa.","a","The key? I left it on the table.","pron",["a","o","lhe","la"]],
+  ["Os documentos? Já __ mandei.","os","The documents? I already sent them.","pron",["os","as","lhes","eles"]],
+  ["Ela __ ama muito.","me","She loves me a lot.","pron",["me","te","se","nos"]],
+  ["Eu __ ligo amanhã.","te","I'll call you tomorrow.","pron",["te","me","lhe","se"]],
+  ["Ele __ deu um presente.","nos","He gave us a gift.","pron",["nos","os","lhes","se"]],
+  ["Vou mandar a foto __ ele.","pra","I'll send the photo to him.","pron",["pra","de","em","com"]],
+  ["Eu vi __ no shopping.","ele","I saw him at the mall. (spoken Brazilian)","pron",["ele","dele","lhe","seu"]],
+  ["Vou __ ajudar.","te","I'm going to help you.","pron",["te","se","lhe","nos"]],
+  ["Este é o __ carro.","meu","This is my car.","poss",["meu","minha","seu","nosso"]],
+  ["A __ casa é perto.","minha","My house is close.","poss",["minha","meu","sua","nossa"]],
+  ["Esse livro é __?","seu","Is that book yours?","poss",["seu","sua","dele","teu"]],
+  ["O carro __ é novo.","dele","His car is new.","poss",["dele","dela","seu","deles"]],
+  ["A mãe __ é professora.","dela","Her mother is a teacher.","poss",["dela","dele","sua","delas"]],
+  ["A __ família é grande.","nossa","Our family is big.","poss",["nossa","nosso","minha","sua"]],
+  ["Os __ amigos chegaram.","nossos","Our friends arrived.","poss",["nossos","nossas","meus","seus"]],
+  ["A casa __ fica longe.","deles","Their house is far.","poss",["deles","delas","seus","dele"]],
+  ["Eu __ levanto às seis.","me","I get up at six.","refl",["me","se","te","nos"]],
+  ["Ela __ chama Ana.","se","Her name is Ana.","refl",["se","me","te","lhe"]],
+  ["Como você __ chama?","se","What's your name?","refl",["se","te","me","lhe"]],
+  ["A gente __ vê amanhã!","se","See you tomorrow!","refl",["se","nos","te","me"]],
+  ["Nós __ casamos em maio.","nos","We got married in May.","refl",["nos","se","os","me"]],
+  ["Eu __ lembro disso.","me","I remember that.","refl",["me","se","te","nos"]],
+  ["__ você mora?","onde","Where do you live?","quest",["onde","quando","quem","qual"]],
+  ["__ é o seu nome?","qual","What's your name?","quest",["qual","o que","quem","como"]],
+  ["__ você está?","como","How are you?","quest",["como","onde","quando","qual"]],
+  ["__ é ela?","quem","Who is she?","quest",["quem","qual","que","onde"]],
+  ["__ custa?","quanto","How much does it cost?","quest",["quanto","quantos","qual","como"]],
+  ["__ anos você tem?","quantos","How old are you?","quest",["quantos","quanto","quantas","qual"]],
+  ["__ você vai viajar?","quando","When are you going to travel?","quest",["quando","onde","como","quem"]],
+  ["__ você está triste?","por que","Why are you sad?","quest",["por que","porque","o que","como"]],
+  ["__ você quer comer?","o que","What do you want to eat?","quest",["o que","qual","quem","como"]],
+  ["Eu __ vi nada.","não","I didn't see anything.","neg",["não","ninguém","nada","nenhum"]],
+  ["Ela __ come carne.","nunca","She never eats meat.","neg",["nunca","nada","ninguém","nenhuma"]],
+  ["Não tem __ na geladeira.","nada","There's nothing in the fridge.","neg",["nada","ninguém","nunca","nenhum"]],
+  ["Não conheço __ aqui.","ninguém","I don't know anyone here.","neg",["ninguém","nenhum","nunca","nem"]],
+  ["Não tenho __ ideia.","nenhuma","I have no idea.","neg",["nenhuma","nenhum","nada","ninguém"]],
+  ["Você __ terminou? —Já!","já","Have you finished yet? —Yes, already!","neg",["já","ainda","nunca","nem"]],
+  ["Este café é __ que o outro.","melhor","This coffee is better than the other one.","cmp",["melhor","pior","maior","menor"]],
+  ["Hoje está __ que ontem.","pior","Today is worse than yesterday.","cmp",["pior","melhor","menor","maior"]],
+  ["Ele é o __ velho da família.","mais","He's the oldest in the family.","cmp",["mais","muito","tão","menos"]],
+  ["Essa comida está __!","ótima","This food is great!","cmp",["ótima","melhor","pior","maior"]],
+  ["Ela é __ alta quanto eu.","tão","She's as tall as I am.","cmp",["tão","mais","muito","tanto"]],
+  ["O gato está __ da mesa.","embaixo","The cat is under the table.","place",["embaixo","em cima","atrás","dentro"]],
+  ["O livro está __ da cama.","em cima","The book is on top of the bed.","place",["em cima","embaixo","perto","entre"]],
+  ["A farmácia fica __ do banco.","ao lado","The pharmacy is next to the bank.","place",["ao lado","dentro","embaixo","entre"]],
+  ["O carro está __ da casa.","na frente","The car is in front of the house.","place",["na frente","em cima","dentro","entre"]],
+  ["O jardim fica __ da casa.","atrás","The garden is behind the house.","place",["atrás","dentro","em cima","embaixo"]],
+  ["A chave está __ da bolsa.","dentro","The key is inside the bag.","place",["dentro","atrás","em cima","entre"]],
+  ["A escola fica __ o parque e o mercado.","entre","The school is between the park and the market.","place",["entre","ao lado","perto","dentro"]],
+  ["Moro __ da praia.","perto","I live near the beach.","place",["perto","entre","dentro","embaixo"]]
+@@@H162 9@@@
+  ${G16T(["Person","Subject","Object","To / for","Possessive","Reflexive"],[
+   ["I",G16B("eu"),"me","me · pra mim","meu / minha","me"],
+   ["you","você <span class='gn'>(tu)</span>","te · você*","te · pra você","seu / sua <span class='gn'>(teu)</span>","se"],
+   ["he · it (m.)","ele","o · ele*","lhe · pra ele","dele","se"],
+   ["she · it (f.)","ela","a · ela*","lhe · pra ela","dela","se"],
+   ["we","nós · a gente","nos · a gente*","nos · pra gente","nosso / nossa","nos · se"],
+   ["you all","vocês","vocês","pra vocês","de vocês","se"],
+   ["they","eles / elas","os, as · eles*","lhes · pra eles","deles / delas","se"]])}
+  <p class="gn">* Spoken Brazilian: <b>Eu vi ele</b> instead of the written <b>Eu o vi</b>. Both are correct for their context.</p></div>
+@@@H163 9@@@
+   <li>Subject “it” disappears: <b>É caro.</b> (It's expensive) · <b>Está chovendo.</b> (It's raining) · <b>É verdade.</b></li>
+   <li>For a specific thing, use <b>ele / ela</b> by its gender: <i>O carro? <b>Ele</b> é novo. A casa? <b>Ela</b> é grande.</i></li>
+   <li>As an object, Brazilians often just drop it: <i>Você viu meu celular? —<b>Vi.</b></i> (I saw it)</li>
+   <li>For ideas, use <b>isso / isto / aquilo</b>: <i><b>Isso</b> é ótimo!</i> (That's great) · <i>Não sei <b>disso</b>.</i></li></ul></div>
+  <div class="panel"><h3>👥 They / them</h3><ul class="gl">
+   <li><b>eles</b> = they (all male or mixed group) · <b>elas</b> = they (all female)</li>
+   <li>Object: <b>os / as</b> (written) or <b>eles / elas</b> (spoken): <i>Eu vi <b>eles</b> ontem.</i></li>
+   <li>“Their” = <b>deles / delas</b> after the noun: <i>a casa <b>deles</b></i></li>
+   <li><b>a gente</b> = we (very common), with the <b>ele</b> verb form: <i>A gente <b>vai</b>.</i></li></ul></div>
+@@@H164 3@@@
+   <li>The possessive agrees with the <b>thing owned</b>: <i>meu carro, minha casa, meus livros</i></li>
+   <li>In Brazil, <b>seu / sua</b> usually means <b>your</b>. For his / her, say <b>dele / dela</b>.</li>
+   <li>The article is optional: <i>(o) meu carro</i> · <i>(a) minha mãe</i></li></ul></div>
+@@@H165 3@@@
+   <li><b>chamar-se</b>: <i>Eu me chamo Andrew.</i> · <b>levantar-se</b>: <i>Me levanto cedo.</i></li>
+   <li><b>lembrar-se</b>, <b>sentar-se</b>, <b>casar-se</b>, <b>preocupar-se</b></li>
+   <li>Brazilians put the pronoun <b>before</b> the verb, even at the start: <i><b>Me</b> liga!</i></li></ul></div>
+@@@H166 6@@@
+  ${G16T(["Portuguese","English","Example"],[
+   [G16B("o que"),"what","O que você quer?"],[G16B("qual"),"which / what (+ ser)","Qual é o seu nome?"],[G16B("quem"),"who","Quem é ela?"],
+   [G16B("onde"),"where","Onde fica o banheiro?"],[G16B("aonde"),"where to","Aonde você vai?"],[G16B("de onde"),"where from","De onde você é?"],
+   [G16B("quando"),"when","Quando você chega?"],[G16B("como"),"how","Como você está?"],[G16B("por que"),"why","Por que você está aqui?"],
+   [G16B("quanto / quantos"),"how much / how many","Quanto custa? · Quantos anos?"]])}
+  <p class="gn">Answer “why” with <b>porque</b> (one word). Questions keep normal word order; just raise your voice at the end: <i>Você é brasileiro?</i></p>
+@@@H167 5@@@
+  ${G16T(["Portuguese","English","Example"],[
+   [G16B("não"),"not / no","Não sei."],[G16B("nunca"),"never","Nunca fui ao Rio."],[G16B("nada"),"nothing / anything","Não vi nada."],
+   [G16B("ninguém"),"nobody / anybody","Não tem ninguém."],[G16B("nenhum / nenhuma"),"no / none","Não tenho nenhuma ideia."],[G16B("nem"),"nor / not even","Nem eu!"],
+   [G16B("ainda não"),"not yet","Ainda não comi."],[G16B("não … mais"),"no longer","Não moro mais lá."],[G16B("também não"),"me neither / not … either","Eu também não."]])}
+  <p class="gn">Double negatives are correct: <b>Não</b> vi <b>nada</b>. If the negative word comes first, drop <b>não</b>: <i>Ninguém veio.</i> Brazilians also say <i>Não sei, não.</i> for emphasis.</p></div>
+@@@H168 4@@@
+   <li><b>mais … (do) que</b> = more … than · <b>menos … (do) que</b> = less … than</li>
+   <li><b>tão … quanto</b> = as … as · <b>tanto(s) … quanto</b> = as much / many as</li>
+   <li>Irregular: <b>bom → melhor</b> · <b>ruim → pior</b> · <b>grande → maior</b> · <b>pequeno → menor</b></li>
+   <li>Most: <b>o mais</b> alto · Very: <b>muito</b> bom or <b>-íssimo</b>: <i>lindíssimo</i></li></ul></div>
+@@@H169 2@@@
+   ${G16T(["Portuguese","English"],[["em cima de","on top of"],["embaixo de","under"],["dentro de","inside"],["fora de","outside"],["na frente de / em frente a","in front of / across from"],["atrás de","behind"],["ao lado de","next to"],["entre","between"],["perto de / longe de","near / far from"]])}
+   <p class="gn">de + o = <b>do</b>: <i>em cima <b>da</b> mesa, ao lado <b>do</b> banco</i></p></div>
+@@@H170 16@@@
+  weather:[["o tempo","the weather","Como está o tempo? · tempo also means time"],["o sol","sun","Faz sol / Está ensolarado = It's sunny"],["a chuva","rain","Está chovendo = It's raining"],["chover","to rain","Vai chover amanhã."],
+   ["a nuvem","cloud","Está nublado = It's cloudy"],["o vento","wind","Está ventando = It's windy"],["a tempestade","storm"],["o trovão","thunder"],["o raio","lightning"],["a neblina","fog"],
+   ["a neve","snow","It does snow in Brazil's far south!"],["o guarda-chuva","umbrella"],["Está quente.","It's hot.","Also: Faz calor"],["Está frio.","It's cold.","Also: Faz frio"],
+   ["Está abafado.","It's muggy."],["Está fresquinho.","It's nice and cool."],["Que calor!","It's so hot!"],["a temperatura","temperature"],["o grau","degree","Está fazendo 30 graus = It's 30 degrees"],
+   ["Quantos graus está fazendo?","What's the temperature?"],["abaixo de zero","below zero"],["a previsão do tempo","weather forecast"],["úmido","humid"],["seco","dry"],["a estação chuvosa","rainy season"]],
+  dir:[["vire à direita","turn right"],["vire à esquerda","turn left"],["siga em frente","go straight","Also: siga reto"],["volte","go back"],["atravesse a rua","cross the street"],
+   ["pegue a primeira à direita","take the first right"],["a segunda à esquerda","the second on the left"],["no final da rua","at the end of the street"],["na esquina","on the corner"],
+   ["no semáforo","at the traffic light","São Paulo: no farol"],["a quadra","block","duas quadras = two blocks"],["perto de","near"],["longe de","far from"],["ao lado de","next to"],
+   ["em frente a","across from"],["atrás de","behind"],["entre","between"],["à direita","on the right"],["à esquerda","on the left"],["o norte","north"],["o sul","south"],["o leste","east"],["o oeste","west"],
+   ["Como eu chego a…?","How do I get to…?"],["É longe daqui?","Is it far from here?"],["Fica a dez minutos a pé.","It's ten minutes on foot."],["Estou perdido.","I'm lost.","Perdida for a woman"],["Pode me mostrar no mapa?","Can you show me on the map?"]],
+  family:[["a família","family"],["o pai","father"],["a mãe","mother"],["os pais","parents"],["o irmão","brother"],["a irmã","sister"],["o filho","son"],["a filha","daughter"],["os filhos","children (sons and daughters)"],
+   ["o avô","grandfather","avô (closed ô) vs avó (open ó)"],["a avó","grandmother"],["os avós","grandparents"],["o neto","grandson"],["a neta","granddaughter"],["o tio","uncle"],["a tia","aunt"],
+   ["o primo","cousin (male)"],["a prima","cousin (female)"],["o sobrinho","nephew"],["a sobrinha","niece"],["o sogro","father-in-law"],["a sogra","mother-in-law"],["o cunhado","brother-in-law"],["a cunhada","sister-in-law"],
+   ["o genro","son-in-law"],["a nora","daughter-in-law"],["o marido","husband","Also o esposo"],["a esposa","wife","Also a mulher (casual)"],["o namorado","boyfriend"],["a namorada","girlfriend"],
+   ["o noivo","fiancé / groom","Never boyfriend!"],["a noiva","fiancée / bride"],["o casamento","wedding / marriage"],["casado","married"],["solteiro","single"],["o padrinho","godfather / best man"],
+   ["a madrinha","godmother / maid of honor"],["o enteado","stepson"],["o padrasto","stepfather"],["a madrasta","stepmother"],["o bebê","baby"],["o caçula","youngest child"],["o meio-irmão","half-brother"]]
+@@@H171 5@@@
+ tempPhrase:c=>{const a=Math.abs(c),w=a===0?"zero grau":a===1?"um grau":a===2?"dois graus":numToPt(a)+" graus";return "Está fazendo "+w+(c<0?" abaixo de zero":"")},
+ feel:c=>c>=30?["Que calor!","it's so hot!"]:c>=24?["Está quente.","it's warm"]:c>=17?["Está fresquinho.","it's pleasant"]:c>=8?["Está frio.","it's cold"]:["Está muito frio!","it's very cold!"],
+ landmarks:[["a padaria","bakery","🥖"],["a farmácia","pharmacy","💊"],["o banco","bank","🏦"],["a igreja","church","⛪"],["a escola","school","🏫"],["o parque","park","🌳"],["o mercado","market","🛒"],["o hospital","hospital","🏥"],
+   ["o restaurante","restaurant","🍽️"],["o hotel","hotel","🏨"],["o correio","post office","📮"],["o museu","museum","🏛️"],["o cinema","movie theater","🎬"],["a delegacia","police station","🚓"],["o posto de gasolina","gas station","⛽"],["a biblioteca","library","📚"]],
+ mapTxt:{go:n=>`Siga em frente ${["","uma quadra","duas quadras","três quadras"][n]}.`,right:"Vire à direita.",left:"Vire à esquerda.",final:s=>`O lugar fica na esquina, à sua ${s==="right"?"direita":"esquerda"}.`},
+@@@H172 4@@@
+ ftree:{avo:["o avô","grandfather","🧓",260,55],avoa:["a avó","grandmother","👵",360,55],
+  tia:["a tia","aunt (your uncle's wife)","👩",60,165],tio:["o tio","uncle (your dad's brother)","👨",150,165],pai:["o pai","father","👨",270,165],mae:["a mãe","mother","👩",350,165],sogro:["o sogro","father-in-law","🧓",520,165],sogra:["a sogra","mother-in-law","👵",610,165],
+  prima:["a prima","cousin (female)","👧",35,275],primo:["o primo","cousin (male)","👦",110,275],irmao:["o irmão","brother","👨",195,275],irma:["a irmã","sister","👩",270,275],eu:["eu","you","⭐",350,275],esposa:["a esposa","wife","👰",430,275],cunhado:["o cunhado","brother-in-law (your wife's brother)","🧔",590,275],
+  sobrinho:["o sobrinho","nephew (your brother's son)","👦",195,385],sobrinha:["a sobrinha","niece (your sister's daughter)","👧",270,385],filho:["o filho","son","👦",350,385],filha:["a filha","daughter","👧",430,385]},
+@@@H173 9@@@
+  ["🙏 Courtesy",[["Com licença.","Excuse me.","To pass by or get attention"],["Desculpa.","Sorry."],["Por favor.","Please."],["Obrigado. / Obrigada.","Thank you.","Men say obrigado, women obrigada"],["De nada.","You're welcome."],
+    ["Tudo bem?","How's it going?","Answer: Tudo bem! / Tudo ótimo!"],["Prazer!","Nice to meet you!","Also: Muito prazer"],["Bom dia. / Boa tarde. / Boa noite.","Good morning / afternoon / evening."],["Até logo!","See you later!"],["Fica à vontade.","Make yourself at home."]]],
+  ["💬 Small talk",[["De onde você é?","Where are you from?"],["Eu sou dos Estados Unidos.","I'm from the United States."],["O que você faz?","What do you do (for work)?"],["Você fala inglês?","Do you speak English?"],
+    ["Estou aprendendo português.","I'm learning Portuguese."],["Pode falar mais devagar?","Can you speak more slowly?"],["Pode repetir?","Can you repeat that?"],["Como se diz … em português?","How do you say … in Portuguese?"],["Não entendi.","I didn't understand."]]],
+  ["🍽️ Restaurant",[["Uma mesa para dois, por favor.","A table for two, please."],["O cardápio, por favor.","The menu, please."],["Eu vou querer…","I'll have…","The natural way to order"],["Sem gelo, por favor.","No ice, please."],
+    ["Está delicioso!","It's delicious!"],["A conta, por favor.","The check, please."],["Pode trazer mais um?","Can you bring one more?"],["Aceita cartão?","Do you take cards?"]]],
+  ["🛍️ Shopping",[["Quanto custa?","How much is it?"],["Está caro demais.","It's too expensive."],["Tem desconto?","Is there a discount?"],["Posso experimentar?","Can I try it on?"],["Só estou olhando.","I'm just looking."],["Vou levar.","I'll take it."]]],
+  ["🧳 Travel & help",[["Onde fica o banheiro?","Where's the bathroom?"],["Pode me ajudar?","Can you help me?"],["Estou perdido.","I'm lost."],["Pode tirar uma foto da gente?","Can you take a photo of us?"],["A que horas sai o ônibus?","What time does the bus leave?"],["Tem Wi-Fi?","Is there Wi-Fi?"]]],
+  ["🚨 Emergencies",[["Socorro!","Help!"],["Chame uma ambulância!","Call an ambulance!","Brazil: 192 ambulance, 190 police"],["Preciso de um médico.","I need a doctor."],["Fui roubado.","I was robbed."],["Estou passando mal.","I don't feel well."],["Onde fica a farmácia mais próxima?","Where's the nearest pharmacy?"]]]
+@@@H174 20@@@
+  ["Pagar o pato","To pay the duck","To take the blame for someone else","To take the fall","Ele quebrou o vaso e eu paguei o pato.","He broke the vase and I took the fall."],
+  ["Custar os olhos da cara","To cost the eyes of the face","To be very expensive","To cost an arm and a leg","Esse carro custou os olhos da cara.","This car cost an arm and a leg."],
+  ["Chover no molhado","To rain on what's already wet","To state the obvious","To beat a dead horse","Repetir isso é chover no molhado.","Repeating that is beating a dead horse."],
+  ["Engolir sapo","To swallow a frog","To put up with something unpleasant","To bite your tongue","No trabalho, às vezes a gente engole sapo.","At work, sometimes you bite your tongue."],
+  ["Enfiar o pé na jaca","To stick your foot in the jackfruit","To overdo it (food, drinks, partying)","To go overboard","No Natal eu enfiei o pé na jaca.","At Christmas I went overboard."],
+  ["Quebrar o galho","To break the branch","To help out with a quick fix","To help someone out","Você pode quebrar meu galho hoje?","Can you help me out today?"],
+  ["Ficar de molho","To stay soaking","To rest at home and recover","To lie low","Estou gripado, vou ficar de molho.","I have the flu, I'm going to lie low."],
+  ["Estar com a pulga atrás da orelha","To have a flea behind your ear","To be suspicious","To smell a rat","Fiquei com a pulga atrás da orelha.","I smelled a rat."],
+  ["Pisar na bola","To step on the ball","To mess up / let someone down","To drop the ball","Desculpa, eu pisei na bola.","Sorry, I dropped the ball."],
+  ["Tirar o cavalo da chuva","To take the horse out of the rain","To give up hope on something","Don't hold your breath","Pode tirar o cavalo da chuva, ele não vem.","Don't hold your breath, he's not coming."],
+  ["Falar pelos cotovelos","To talk through your elbows","To talk a lot","To talk someone's ear off","Minha tia fala pelos cotovelos.","My aunt talks your ear off."],
+  ["Ter a faca e o queijo na mão","To have the knife and the cheese in hand","To have everything you need to succeed","To hold all the cards","Agora você tem a faca e o queijo na mão.","Now you hold all the cards."],
+  ["Matar dois coelhos com uma cajadada só","To kill two rabbits with one blow","To get two things done at once","To kill two birds with one stone","Fui ao banco e ao mercado: matei dois coelhos com uma cajadada só.","Bank and market in one trip: two birds, one stone."],
+  ["Acertar na mosca","To hit the fly","To be exactly right","To hit the nail on the head","Você acertou na mosca!","You hit the nail on the head!"],
+  ["Fazer uma vaquinha","To make a little cow","To pool money together","To chip in","Vamos fazer uma vaquinha pro presente.","Let's chip in for the gift."],
+  ["Dar um jeitinho","To give a little way","To find a creative workaround","To find a way","A gente sempre dá um jeitinho.","We always find a way."],
+  ["Ficar a ver navios","To be left watching ships","To be left with nothing","To be left high and dry","Ele não veio e eu fiquei a ver navios.","He didn't show up and I was left high and dry."],
+  ["Encher linguiça","To stuff sausage","To add filler","To pad it out","Esse filme só enche linguiça.","This movie is all filler."],
+  ["Dar com os burros n'água","To lead the donkeys into the water","For a plan to fail","To come to nothing","O plano deu com os burros n'água.","The plan came to nothing."],
+  ["Cair a ficha","For the token to drop","To finally understand something","For the penny to drop","Só agora caiu a ficha!","The penny just dropped!"]
+@@@H175 27@@@
+  {lv:1,ic:"🍽️",t:"O almoço de domingo",en:"Sunday lunch",l:[
+   ["No domingo, a família inteira se {reuniu|got together} na casa dos meus avós.","On Sunday, the whole family got together at my grandparents' house."],
+   ["A minha avó {cozinhou|cooked|cozinhar} feijoada e o meu avô {fez|made|fazer} uma caipirinha.","My grandma cooked feijoada and my grandpa made a caipirinha."],
+   ["O meu tio {chegou|arrived|chegar} atrasado, como sempre, com a minha tia e os meus primos.","My uncle arrived late, as always, with my aunt and my cousins."],
+   ["A minha irmã {trouxe|brought|trazer} o namorado novo para {conhecer|meet|conhecer} todo mundo.","My sister brought her new boyfriend to meet everyone."],
+   ["Ele {estava|was|estar} nervoso, mas o meu pai {contou|told|contar} uma piada e todos {riram|laughed|rir}.","He was nervous, but my dad told a joke and everyone laughed."],
+   ["Depois do almoço, os meus sobrinhos {jogaram|played|jogar} bola no quintal.","After lunch, my nephews played soccer in the backyard."],
+   ["No fim da tarde, a minha mãe {disse|said|dizer}: — Essa família é barulhenta, mas eu {adoro|love it|adorar}!","At the end of the afternoon, my mom said: \"This family is loud, but I love it!\""]],
+   q:[["Onde a família almoçou?","Where did the family have lunch?","Na casa dos avós","Num restaurante","Na praia"],["Quem chegou atrasado?","Who arrived late?","O tio","O avô","A irmã"],["Quem a irmã trouxe?","Who did the sister bring?","O namorado novo","Uma amiga","O cachorro"]]},
+  {lv:2,ic:"🌧️",t:"Um passeio com chuva",en:"A rainy-day trip",l:[
+   ["A previsão do tempo {dizia|said|dizer} que ia fazer sol, então {fomos|we went|ir} para Petrópolis.","The forecast said it would be sunny, so we went to Petrópolis."],
+   ["Quando {chegamos|we arrived|chegar}, o céu {estava|was|estar} cinza e {fazia|it was|fazer} doze graus.","When we arrived, the sky was gray and it was twelve degrees."],
+   ["De repente, {começou|started|começar} a chover forte e ninguém {tinha|had|ter} guarda-chuva.","Suddenly it started to pour, and nobody had an umbrella."],
+   ["{Corremos|We ran|correr} para um café e {pedimos|we ordered|pedir} chocolate quente.","We ran to a café and ordered hot chocolate."],
+   ["Enquanto a chuva {caía|was falling|cair}, a gente {conversou|talked|conversar} por horas.","While the rain was falling, we talked for hours."],
+   ["À tarde, o sol {voltou|came back|voltar} e {visitamos|we visited|visitar} o Museu Imperial.","In the afternoon, the sun came back and we visited the Imperial Museum."],
+   ["Se {tivesse feito|had been} sol o dia todo, a gente não {teria descoberto|would have discovered} aquele café incrível.","If it had been sunny all day, we wouldn't have discovered that amazing café."]],
+   q:[["O que dizia a previsão?","What did the forecast say?","Que ia fazer sol","Que ia nevar","Que ia chover"],["Quantos graus fazia?","What was the temperature?","Doze graus","Trinta graus","Zero grau"],["O que eles pediram no café?","What did they order at the café?","Chocolate quente","Sorvete","Cerveja"]]},
+  {lv:2,ic:"🗺️",t:"Perdido em Salvador",en:"Lost in Salvador",l:[
+   ["No meu primeiro dia em Salvador, eu {saí|left|sair} do hotel sem o celular.","On my first day in Salvador, I left the hotel without my phone."],
+   ["Eu {queria|wanted|querer} ir ao Pelourinho, mas depois de meia hora {percebi|realized|perceber} que estava perdido.","I wanted to go to Pelourinho, but after half an hour I realized I was lost."],
+   ["{Parei|I stopped|parar} uma senhora na rua e {perguntei|asked|perguntar}: — Com licença, como eu chego ao Pelourinho?","I stopped a woman in the street and asked: \"Excuse me, how do I get to Pelourinho?\""],
+   ["— É fácil! {Siga|Go|seguir} em frente duas quadras e {vire|turn|virar} à esquerda na igreja.","\"It's easy! Go straight two blocks and turn left at the church.\""],
+   ["— Depois, {atravesse|cross|atravessar} a praça. O Pelourinho fica atrás do museu.","\"Then cross the square. Pelourinho is behind the museum.\""],
+   ["Eu {agradeci|thanked|agradecer}, {segui|followed|seguir} as instruções e {cheguei|arrived|chegar} em dez minutos.","I thanked her, followed the directions and arrived in ten minutes."],
+   ["Desde aquele dia, eu sempre {peço|ask for|pedir} informação: é a melhor aula de português!","Since that day, I always ask for directions: it's the best Portuguese lesson!"]],
+   q:[["O que ele esqueceu no hotel?","What did he forget at the hotel?","O celular","A carteira","O mapa"],["Onde ele tinha que virar à esquerda?","Where did he have to turn left?","Na igreja","No banco","Na praia"],["Onde fica o Pelourinho?","Where is Pelourinho?","Atrás do museu","Na frente do hotel","Ao lado da praia"]]}
+@@@H176 1@@@
+/* ===== v17 data · Portuguese (Brazil) ===== */
+@@@H177 2@@@
+ tiers:[["🧳","Turista"],["🎒","Viajante"],["🏠","Local"],["👑","Nativo"]],
+ ui:{correct:"Certo!",oddQ:"Qual não combina?",oddSub:"Tap the word that doesn't belong with the other three.",
+@@@H178 1@@@
+   levelUp:"Subiu de nível!",tryAgain:"Not quite. Try once more!"},
+@@@H179 30@@@
+  food:[["o café da manhã","breakfast"],["o almoço","lunch","The main meal of the day in Brazil"],["o jantar","dinner"],["o pão","bread"],["o queijo","cheese"],["o arroz","rice"],
+   ["o feijão","beans","Arroz com feijão is the everyday staple"],["a carne","meat"],["o frango","chicken (food)","A galinha = the live hen"],["o peixe","fish"],["o ovo","egg"],["a salada","salad"],
+   ["a fruta","fruit"],["a banana","banana"],["a maçã","apple"],["a laranja","orange"],["o açúcar","sugar"],["o sal","salt"],["a água","water","Água com gás = sparkling water"],
+   ["o suco","juice","Suco de laranja = orange juice"],["o leite","milk"],["a cerveja","beer"],["o vinho","wine"],["a sobremesa","dessert"],["o sorvete","ice cream"],
+   ["Estou com fome.","I'm hungry.","Lit. I'm with hunger"],["Estou com sede.","I'm thirsty."],["gostoso","tasty","Also delicioso"]],
+  feel:[["feliz","happy"],["triste","sad"],["cansado","tired"],["nervoso","nervous"],["com raiva","angry","Estou com raiva = I'm angry"],["preocupado","worried"],["animado","excited"],
+   ["entediado","bored"],["com medo","scared"],["calmo","calm"],["apaixonado","in love"],["com saudade","missing someone","Estou com saudade de você = I miss you"],
+   ["simpático","nice / friendly"],["engraçado","funny"],["inteligente","smart"],["tímido","shy"],["chato","annoying / boring"],["preguiçoso","lazy"],["trabalhador","hardworking"],
+   ["teimoso","stubborn"],["generoso","generous"],["educado","polite","Not 'educated'!"],["Estou de bom humor.","I'm in a good mood."],["Estou de mau humor.","I'm in a bad mood."]],
+  clothes:[["a roupa","clothes"],["a camisa","shirt"],["a camiseta","T-shirt"],["a calça","pants","A calça jeans = jeans"],["a bermuda","shorts"],["a saia","skirt"],["o vestido","dress"],
+   ["o casaco","coat / jacket"],["a blusa","blouse","Blusa de frio = sweater"],["o sapato","shoe"],["o tênis","sneakers"],["a sandália","sandal"],["o chinelo","flip-flops","Havaianas are chinelos"],
+   ["a meia","sock"],["o chapéu","hat"],["o boné","cap"],["os óculos","glasses","Óculos de sol = sunglasses"],["o cinto","belt"],["a bolsa","bag / purse"],["o relógio","watch"],
+   ["o pijama","pajamas"],["o terno","suit"],["a gravata","tie"],["vestir","to put on (clothes)"],["usar","to wear"]],
+  work:[["o trabalho","work / job"],["o escritório","office"],["a reunião","meeting"],["o chefe","boss","A chefe for a woman"],["o colega","coworker"],["o cliente","customer / client"],
+   ["a empresa","company"],["o salário","salary"],["o computador","computer"],["o e-mail","email"],["o relatório","report"],["o prazo","deadline"],["o projeto","project"],
+   ["a planilha","spreadsheet"],["a apresentação","presentation"],["o contrato","contract"],["a venda","sale","Vendas = the sales department"],["o pedido","order"],["as férias","vacation"],
+   ["a entrevista","interview"],["Vou te mandar por e-mail.","I'll email it to you."],["Estou em reunião.","I'm in a meeting."],["Pode me ligar?","Can you call me?"],
+   ["trabalhar de casa","to work from home","Brazilians also say home office"]],
+  health:[["o médico","doctor"],["a enfermeira","nurse"],["o pronto-socorro","emergency room"],["o remédio","medicine"],["a receita","prescription","Also means recipe!"],
+   ["a consulta","doctor's appointment"],["a dor","pain"],["Estou doente.","I'm sick."],["Estou com dor de cabeça.","I have a headache."],["a dor de garganta","sore throat"],
+   ["a dor de barriga","stomachache"],["a febre","fever"],["a gripe","flu"],["o resfriado","cold"],["a tosse","cough"],["a alergia","allergy"],["o dentista","dentist"],
+   ["o plano de saúde","health insurance"],["a vacina","vaccine"],["o comprimido","pill"],["Onde dói?","Where does it hurt?"],["Estou me sentindo melhor.","I'm feeling better."],
+   ["machucado","hurt / injured"],["grávida","pregnant"],["a ambulância","ambulance"]],
+  animals:[["o cachorro","dog","O cão is more formal"],["o gato","cat"],["o pássaro","bird"],["o cavalo","horse"],["a vaca","cow"],["o porco","pig"],["a galinha","hen","O frango = chicken as food"],
+   ["o rato","mouse / rat"],["o coelho","rabbit"],["o macaco","monkey"],["o leão","lion"],["o tigre","tiger"],["o elefante","elephant"],["a cobra","snake"],["o urso","bear"],
+   ["a borboleta","butterfly"],["a abelha","bee"],["o mosquito","mosquito","São Paulo: o pernilongo"],["a tartaruga","turtle"],["o tubarão","shark"],["a baleia","whale"],
+   ["o papagaio","parrot"],["a onça","jaguar","Brazil's big cat"],["o bicho de estimação","pet","Also o pet"]],
+  colors:[["vermelho","red"],["azul","blue"],["verde","green"],["amarelo","yellow"],["preto","black"],["branco","white"],["cinza","gray"],["rosa","pink"],["roxo","purple"],["marrom","brown"],
+   ["grande","big"],["pequeno","small"],["novo","new / young"],["velho","old"],["bonito","pretty / handsome"],["feio","ugly"],["caro","expensive"],["barato","cheap"],
+   ["fácil","easy"],["difícil","hard"],["rápido","fast"],["devagar","slow / slowly"],["quente","hot"],["frio","cold"],["limpo","clean"],["sujo","dirty"],["cheio","full"],["vazio","empty"]]
+@@@H180 1@@@
+ wgroups:{serestar:{label:"Ser vs estar",c:"#d6336c"},past:{label:"Past · perfeito vs imperfeito",c:"#7048e8"}},
+@@@H181 30@@@
+  ["Eu __ brasileiro.","sou","I'm Brazilian.","serestar",["sou","estou","é","está"],"ser = identity / nationality"],
+  ["Ela __ cansada hoje.","está","She's tired today.","serestar",["está","é","estou","sou"],"estar = how someone feels right now"],
+  ["Nós __ em casa.","estamos","We're at home.","serestar",["estamos","somos","estão","são"],"estar = where someone is"],
+  ["O João __ médico.","é","João is a doctor.","serestar",["é","está","são","estão"],"ser = profession"],
+  ["Que horas __?","são","What time is it?","serestar",["são","estão","é","está"],"ser = time · Que horas são? São três horas."],
+  ["Vocês __ prontos?","estão","Are you all ready?","serestar",["estão","são","está","é"],"estar pronto = to be ready (a state)"],
+  ["Hoje __ segunda-feira.","é","Today is Monday.","serestar",["é","está","são","estão"],"ser = days and dates"],
+  ["Meu irmão __ alto e magro.","é","My brother is tall and thin.","serestar",["é","está","são","estão"],"ser = physical description"],
+  ["O café __ frio.","está","The coffee is cold. (it got cold)","serestar",["está","é","estão","são"],"estar = a changed condition"],
+  ["Eles __ estudando agora.","estão","They're studying right now.","serestar",["estão","são","está","é"],"estar + -ndo = an action in progress"],
+  ["Minha mãe __ de Minas.","é","My mom is from Minas.","serestar",["é","está","são","estão"],"ser de = origin"],
+  ["Onde você __?","está","Where are you?","serestar",["está","é","estão","são"],"estar = location of a person"],
+  ["Esta casa __ minha.","é","This house is mine.","serestar",["é","está","são","estão"],"ser = possession"],
+  ["Hoje eu __ muito feliz!","estou","I'm really happy today!","serestar",["estou","sou","está","é"],"estar = emotion today · ser feliz = a happy person in general"],
+  ["O céu __ nublado.","está","The sky is cloudy.","serestar",["está","é","estão","são"],"estar = weather and conditions right now"],
+  ["A reunião __ às três.","é","The meeting is at three.","serestar",["é","está","são","estão"],"ser = when an event happens"],
+  ["Ontem eu __ ao cinema.","fui","Yesterday I went to the movies.","past",["fui","ia","vou","irei"],"perfeito = a finished action at a specific time (ontem)"],
+  ["Quando eu era criança, eu __ futebol todo dia.","jogava","When I was a kid, I played soccer every day.","past",["jogava","joguei","jogo","jogarei"],"imperfeito = a habit in the past (todo dia)"],
+  ["Eu __ quando o telefone tocou.","dormia","I was sleeping when the phone rang.","past",["dormia","dormi","durmo","dormirei"],"imperfeito = the background action that was going on"],
+  ["Semana passada ela __ três livros.","leu","Last week she read three books.","past",["leu","lia","lê","lerá"],"perfeito = a completed, countable result"],
+  ["Antigamente eu __ no Rio.","morava","I used to live in Rio.","past",["morava","morei","moro","morarei"],"imperfeito = used to (antigamente)"],
+  ["De repente, __ a chover.","começou","Suddenly, it started to rain.","past",["começou","começava","começa","começará"],"perfeito = a sudden event (de repente)"],
+  ["Ela __ 20 anos quando se casou.","tinha","She was 20 when she got married.","past",["tinha","teve","tem","terá"],"imperfeito = age in the past"],
+  ["Eram oito horas quando ele __.","chegou","It was eight o'clock when he arrived.","past",["chegou","chegava","chega","chegará"],"perfeito = the event that happened · eram = the time (background)"],
+  ["Sempre que eu ia à praia, eu __ sorvete.","tomava","Whenever I went to the beach, I'd have ice cream.","past",["tomava","tomei","tomo","tomarei"],"imperfeito = repeated habit (sempre que)"],
+  ["O dia __ lindo e fazia sol.","estava","The day was beautiful and sunny.","past",["estava","esteve","está","estará"],"imperfeito = describing the scene"],
+  ["Ano passado, nós __ para Portugal.","viajamos","Last year, we traveled to Portugal.","past",["viajamos","viajávamos","viajaremos","viajaríamos"],"perfeito = a finished trip (ano passado)"],
+  ["Enquanto eu cozinhava, minha filha __ TV.","assistia","While I was cooking, my daughter was watching TV.","past",["assistia","assistiu","assiste","assistirá"],"imperfeito = two things going on at once (enquanto)"],
+  ["Eu __ esse filme duas vezes.","vi","I saw that movie twice.","past",["vi","via","vejo","verei"],"perfeito = a counted, finished number of times"],
+  ["Quando morava em São Paulo, eu __ de metrô.","ia","When I lived in São Paulo, I'd go by subway.","past",["ia","fui","vou","irei"],"imperfeito = what you usually did back then"]
+@@@H182 3@@@
+    <li>Identity &amp; nationality: <i>Sou americano.</i></li><li>Profession: <i>Ela é médica.</i></li>
+    <li>Description &amp; personality: <i>Ele é alto. É simpático.</i></li><li>Origin: <i>Somos de São Paulo.</i></li>
+    <li>Time, days, dates: <i>São três horas. Hoje é sexta.</i></li><li>Events: <i>A festa é no sábado.</i></li><li>Possession: <i>O carro é meu.</i></li></ul></div>
+@@@H183 3@@@
+    <li>Feelings &amp; mood: <i>Estou cansado.</i></li><li>Location of people &amp; things: <i>Estou em casa.</i></li>
+    <li>Temporary condition: <i>O café está frio.</i></li><li>Weather now: <i>Está calor. Está chovendo.</i></li>
+    <li>Action in progress: <i>Estou trabalhando.</i></li><li>Results: <i>A porta está aberta.</i></li></ul></div>
+@@@H184 4@@@
+   <div><b>Same word, new meaning</b><span><i>Ele é chato</i> = he's an annoying person · <i>Ele está chato</i> = he's being annoying today.</span></div>
+   <div><b>Taste</b><span><i>A comida é boa</i> = good food in general · <i>A comida está boa</i> = it tastes good right now.</span></div>
+   <div><b>ficar for places</b><span>Brazilians use <b>ficar</b> for where buildings are: <i>Onde fica o banco?</i></span></div>
+   <div><b>Shortcut</b><span>Ask: is it <b>what it is</b> (ser) or <b>how / where it is right now</b> (estar)?</span></div>
+@@@H185 8@@@
+   <div class="sx-card ser"><b>Pretérito perfeito</b> · <i>falei, comi</i><ul class="gl">
+    <li>Finished action at a specific time: <i>Ontem <b>fui</b> ao mercado.</i></li><li>Sudden events: <i>De repente, <b>começou</b> a chover.</i></li>
+    <li>Counted times: <i><b>Vi</b> o filme duas vezes.</i></li><li>Story events in order: <i><b>Cheguei</b>, <b>tomei</b> banho e <b>dormi</b>.</i></li></ul>
+    <p class="gn">Clue words: ontem, semana passada, ano passado, de repente, uma vez</p></div>
+   <div class="sx-card est"><b>Pretérito imperfeito</b> · <i>falava, comia</i><ul class="gl">
+    <li>Habits, "used to": <i>Eu <b>jogava</b> bola todo dia.</i></li><li>Background &amp; description: <i>O dia <b>estava</b> lindo.</i></li>
+    <li>Age &amp; time: <i>Eu <b>tinha</b> dez anos. <b>Eram</b> oito horas.</i></li><li>Action going on: <i>Eu <b>dormia</b> quando você ligou.</i></li></ul>
+    <p class="gn">Clue words: sempre, todo dia, quando eu era…, antigamente, enquanto</p></div>
+@@@H186 1@@@
+  <p class="gp" style="margin-top:10px">🎬 <b>Think of a movie:</b> the imperfeito sets the scene (<i>chovia, eu estava em casa</i>), the perfeito is the action that happens (<i>alguém bateu na porta</i>).</p></div>`
+@@@B1 1@@@
+    <div><h1>Verbo Match!</h1><p class="sub">200 Brazilian Portuguese verbs, vocab, stories, grammar &amp; slang</p></div>
+@@@B2 1@@@
+    <button data-m="slang">😎 Gírias</button>
+@@@B3 1@@@
+        <div class="seg" id="dirSeg"><button data-d="pt">PT → EN</button><button data-d="en">EN → PT</button><button data-d="mix">🔀 Mixed</button></div>
+@@@B4 1@@@
+        <label title="Say Portuguese words aloud"><input type="checkbox" id="voice" checked> 🔊 Voice</label>
+@@@B5 1@@@
+  <div id="playWrap" style="position:relative"><section id="play"></section><div id="pauseOv" class="pause-ov hidden"><div><div style="font-size:44px">⏸️</div><h2>Pausado</h2><p id="pauseWhy">Your timer is stopped.</p><button class="btn go" id="resumeBtn">▶️ Continuar</button></div></div></div>
+@@@B6 1@@@
+    <p style="font-size:12px;color:var(--muted)">Click any verb to open its full conjugation. Forms shown are for <b>eu</b> (I). ★ = mastered · red number = times missed.</p>
+@@@B7 1@@@
+  <h2 id="mTitle">Muito bem! 🎉</h2>
+@@@B8 1@@@
+    <button class="btn go" id="mNext">Próxima rodada ➜</button>
+@@@B9 1@@@
+  <div class="sp-row2">Voice</div>
+@@@B10 2@@@
+  <div class="sp-tip" id="spWarn">⚠️ No Brazilian voice found. Words may sound like Portugal Portuguese.</div>
+  <div class="sp-tip"><b>Why so few voices on iPhone?</b> Apple only lets web apps use a small set of built-in voices. Voices you download in Settings (like <b>Luciana</b> or <b>Felipe Enhanced</b>) won't appear here, and installing an enhanced version can even hide the regular one. If a voice disappeared, delete the enhanced download in Settings → Accessibility → Read &amp; Speak → Voices → Portuguese.<br><b>Clearer speech:</b> try 🐢 Slow or 🚶 Relaxed.<br><b>On a computer:</b> Microsoft Edge includes natural voices (Francisca, Thalita) that this app picks automatically. ☁️ = needs internet.</div>
