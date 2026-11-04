@@ -1,6 +1,6 @@
 /* Verbo Match offline cache.
-   Bump VERSION every time you upload changed files (v26, v27, ...). */
-const VERSION = "verbo-match-v25";
+   Bump VERSION every time you upload changed files (v27, v28, ...). */
+const VERSION = "verbo-match-v26";
 const FILES = ["./", "./index.html", "./es.html", "./boot.js", "./app.css", "./theme-es.css", "./app-body.html", "./app.js",
   "./lang-pt.txt", "./lang-es.txt", "./manifest.json", "./icon-180.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 

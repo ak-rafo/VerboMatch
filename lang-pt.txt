@@ -1638,6 +1638,22 @@ const G18={
    <p class="gn">Example: <i>Ele tem uma deficiência. Ele não é atleta.</i> These are two separate facts; having a disability doesn't stop someone being an athlete.</p></div></details>`;
  })()
 };
+@@@H188 15@@@
+const G19NET=[
+ ["vc","you (você)","Texting shorthand","você"],["tb / tbm","also (também)","","também"],["pq","why / because (por que / porque)","","porque"],["q","what / that (que)","","que"],
+ ["td","everything / all (tudo)","Td bem? = Tudo bem?","tudo"],["blz","OK / cool (beleza)","","beleza"],["vlw","thanks (valeu)","","valeu"],["flw","bye / see ya (falou)","Casual sign-off","falou"],
+ ["obg","thank you (obrigado / obrigada)","","obrigado"],["pfv / pf","please (por favor)","","por favor"],["tmj","I got you (tamo junto)","","tamo junto"],["msg","message (mensagem)","","mensagem"],
+ ["hj","today (hoje)","","hoje"],["amn","tomorrow (amanhã)","","amanhã"],["cmg","with me (comigo)","","comigo"],["ctz","sure (certeza)","Ctz? = Are you sure?","certeza"],
+ ["qnd","when (quando)","","quando"],["mt / mto","a lot / very (muito)","","muito"],["nd","nothing (nada)","","nada"],["ngm","nobody (ninguém)","","ninguém"],
+ ["sdds","miss you (saudades)","Sdds de vc!","saudades"],["bj / bjs","kiss / kisses (beijo / beijos)","Friendly sign-off, even between friends","beijos"],["abs","hugs (abraços)","Friendly sign-off, more neutral than bjs","abraços"],
+ ["rs","lol (risos)","Softer than kkkk","risos"],["add","add (on social media)","Me add no Insta","adicionar"],
+ ["Prezado / Prezada","Dear (formal email)","Prezado Sr. Silva,"],["Olá, tudo bem?","Hi, how are you? (email opening)","The friendly default for work email"],
+ ["Segue em anexo…","Attached is… / Please find attached…","Segue em anexo o relatório."],["Fico no aguardo.","I look forward to your reply."],
+ ["Qualquer dúvida, estou à disposição.","Any questions, I'm available.","Very common closing line"],["Atenciosamente,","Sincerely / Best regards,","Formal sign-off"],["Abraços,","Best, / Cheers,","Friendly work sign-off"],
+ ["o zap / o zapzap","WhatsApp","Me chama no zap! = Message me on WhatsApp!"],["mandar um áudio","to send a voice note","Brazilians love voice notes"],["o print","screenshot","Tirar um print = take a screenshot"],
+ ["a arroba","@ (at sign)","joao arroba gmail ponto com"],["ponto com","dot com"],["a senha","password"],["o link","link","Me manda o link"],["curtir","to like (a post)","Curti sua foto"],
+ ["postar","to post"],["seguir","to follow (an account)"],["o story","story (Instagram)","Vi seu story"],["dar um Google","to Google it","Also: googlar"],["o grupo da família","the family group chat"]
+];
 @@@B1 1@@@
     <div><h1>Verbo Match!</h1><p class="sub">200 Brazilian Portuguese verbs, vocab, stories, grammar &amp; slang</p></div>
 @@@B2 1@@@

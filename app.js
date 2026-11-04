@@ -1,4 +1,7 @@
 /*BUILD v18*/
+/* topics added in later versions are kept through older migrations */
+function vxKnown(x){return VX_KEYS.includes(x)||x==="net"}
+function vmKnown(x){return VM_CATS.includes(x)||x==="net"}
 
 const $=id=>document.getElementById(id);
 const LS={get:(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -994,7 +997,7 @@ function faceSVG(){
 }
 /* ---------- vocab tab state ---------- */
 /*@@H126@@*/
-VXS.topics=VXS.topics.filter(t=>VX_KEYS.includes(t)); if(!VXS.topics.length) VXS.topics=[...VX_KEYS];
+VXS.topics=VXS.topics.filter(t=>vxKnown(t)); if(!VXS.topics.length) VXS.topics=[...VX_KEYS];
 if(!["learn","body","stories"].includes(VXS.sub)) VXS.sub="learn";
 /*@@H127@@*/
 let BQ=null, bSel=null;
@@ -1054,7 +1057,7 @@ function renderVocab(){
 }
 function vxGoMatch(){SET.fmt="vocab";SET.vcats=[...VXS.topics];saveSet();setMode("play");toast("🎯 Vocab match: "+(SET.vcats.length===VX_KEYS.length?"all topics":SET.vcats.map(k=>VM_LBL(k).label).join(", ")))}
 function vxLearn(a){
-  a.innerHTML=VXS.topics.map(t=>{
+  a.innerHTML=VXS.topics.filter(t=>VX_TOPICS[t]&&VX[t]).map(t=>{
     const T=VX_TOPICS[t], items=VX[t];
     let tool="";
     if(t==="num") tool=`<div class="vx-tool"><input type="number" inputmode="numeric" min="0" max="999999" placeholder="Type any number…" data-conv="num" value="347"><div class="vx-out" id="conv-num">${numToPt(347)}</div><button class="spk2" data-convsay="num" title="Hear it">🔊</button></div>`;
@@ -1171,15 +1174,16 @@ function bNext(){ if(!BQ) return; BQ.i++; renderBody(); }
    v10 · VOCAB MATCH inside the Match tab
    =================================================================== */
 const VM_CATS=[...VX_KEYS,"body"];
-const VM_LBL=k=>k==="body"?{label:"Body",ic:"🧍"}:VX_TOPICS[k];
+const VM_LBL=k=>k==="body"?{label:"Body",ic:"🧍"}:(VX_TOPICS[k]||{label:k,ic:"•"});
 if(!Array.isArray(SET.vcats)) SET.vcats=[...VM_CATS];
-SET.vcats=SET.vcats.filter(k=>VM_CATS.includes(k)); if(!SET.vcats.length) SET.vcats=[...VM_CATS];
+SET.vcats=SET.vcats.filter(k=>vmKnown(k)); if(!SET.vcats.length) SET.vcats=[...VM_CATS];
 const VX_BODY=[]; {const seen=new Set(); BP.forEach(p=>{if(!seen.has(p.pt)){seen.add(p.pt);VX_BODY.push({t:"body",pt:p.pt,en:p.en,say:p.pt,note:p.note})}})}
-const vmList=k=>k==="body"?VX_BODY:VX[k];
+const vmList=k=>k==="body"?VX_BODY:(VX[k]||[]);
 const VXMAP={};
 function vmItem(x){const key="vx:"+x.t+":"+x.pt; VXMAP[key]=x; return {v:{inf:key,vx:true},pt:x.pt,en:x.en,tense:null,vxi:x};}
 function buildVocabItems(n){
-  const lists=shuffle([...SET.vcats]).map(k=>{let arr=vmList(k).map(x=>({...x}));
+  let cats=SET.vcats.filter(k=>vmList(k).length); if(!cats.length) cats=VM_CATS.filter(k=>vmList(k).length);
+  const lists=shuffle([...cats]).map(k=>{let arr=vmList(k).map(x=>({...x}));
     if(VX_GEN[k]) for(let i=0;i<Math.max(3,Math.round(arr.length/5));i++) arr.push(VX_GEN[k]());
     return shuffle(arr).sort((a,b)=>vxWeak(b)-vxWeak(a));});
   const items=[],sp=new Set(),se=new Set(); let i=0,guard=0;
@@ -1855,9 +1859,9 @@ VM_CATS.splice(VM_CATS.indexOf("body"),0,"weather","dir","family","phrase","idio
 /* earlier code filtered saved choices against the old key lists; re-read the raw saved values */
 (function(){
   const rs=LS.get(LKEY("set"),{}), rv=LS.get(LKEY("vxset"),{});
-  if(Array.isArray(rs.vcats)){ const k=rs.vcats.filter(x=>VM_CATS.includes(x)); SET.vcats=!rs.v16&&k.length>=OLD_VM?[...VM_CATS]:(k.length?k:[...VM_CATS]); }
+  if(Array.isArray(rs.vcats)){ const k=rs.vcats.filter(x=>vmKnown(x)); SET.vcats=!rs.v16&&k.length>=OLD_VM?[...VM_CATS]:(k.length?k:[...VM_CATS]); }
   else SET.vcats=[...VM_CATS];
-  if(Array.isArray(rv.topics)){ const k=rv.topics.filter(x=>VX_KEYS.includes(x)); VXS.topics=!rv.v16&&k.length>=OLD_VX?[...VX_KEYS]:(k.length?k:[...VX_KEYS]); }
+  if(Array.isArray(rv.topics)){ const k=rv.topics.filter(x=>vxKnown(x)); VXS.topics=!rv.v16&&k.length>=OLD_VX?[...VX_KEYS]:(k.length?k:[...VX_KEYS]); }
   else VXS.topics=[...VX_KEYS];
   SET.v16=1; VXS.v16=1; /* saved by v17 migration */
 })();
@@ -2178,9 +2182,9 @@ NEW17.forEach(k=>{ VX_KEYS.push(k); VX[k]=G17.vx[k].map(([pt,en,note,sy])=>({t:k
 VM_CATS.splice(VM_CATS.indexOf("phrase"),0,...NEW17);
 (function(){
   const rs=LS.get(LKEY("set"),{}), rv=LS.get(LKEY("vxset"),{});
-  const kv=(Array.isArray(rs.vcats)?rs.vcats:[]).filter(x=>VM_CATS.includes(x));
+  const kv=(Array.isArray(rs.vcats)?rs.vcats:[]).filter(x=>vmKnown(x));
   SET.vcats=(!rs.v17&&(!kv.length||kv.length>=OLD17_VM))?[...VM_CATS]:(kv.length?kv:[...VM_CATS]);
-  const kt=(Array.isArray(rv.topics)?rv.topics:[]).filter(x=>VX_KEYS.includes(x));
+  const kt=(Array.isArray(rv.topics)?rv.topics:[]).filter(x=>vxKnown(x));
   VXS.topics=(!rv.v17&&(!kt.length||kt.length>=OLD17_VX))?[...VX_KEYS]:(kt.length?kt:[...VX_KEYS]);
   SET.v17=1; VXS.v17=1; saveSet(); saveVX();
 })();
@@ -2834,3 +2838,25 @@ renderTree=function(){
 };
 renderCtrls(); updSummary();
 if(mode==="words") renderWords(); if(mode==="vocab") renderVocab(); if(mode==="slang") renderSlang();
+
+/*@@H188@@*/
+/* =====================================================================
+   v25 · 💬 TEXTING, EMAIL & INTERNET vocab topic
+   ===================================================================== */
+(function(){
+  if(typeof G19NET==="undefined"||VX.net) return;
+  const OLD_VX=VX_KEYS.length, OLD_VM=VM_CATS.length;
+  const k=s=>String(s).toLowerCase().replace(/[¿?¡!.,;:…]/g,"").trim();
+  const have=new Set(); Object.values(VX).forEach(l=>(l||[]).forEach(x=>String(x.pt).split(/\s*\/\s*/).forEach(p=>have.add(k(p)))));
+  SLANG.forEach(s=>String(s.t).split(/\s*\/\s*/).forEach(p=>have.add(k(p))));
+  window.__netSkipped=[];
+  VX_TOPICS.net={label:"Texting, email & internet",ic:"📱"};
+  VX.net=G19NET.filter(([pt])=>{ const dup=String(pt).split(/\s*\/\s*/).every(p=>have.has(k(p))); if(dup) __netSkipped.push(pt); return !dup; })
+    .map(([pt,en,note,sy])=>({t:"net",pt,en,note:note||"",say:sy||pt}));
+  VX_KEYS.push("net"); VM_CATS.splice(VM_CATS.indexOf("phrase"),0,"net");
+  const rs=LS.get(LKEY("set"),{}), rv=LS.get(LKEY("vxset"),{});
+  if(!rs.v25){ const c=(rs.vcats||[]).filter(x=>vmKnown(x)); if(!c.length||c.length>=OLD_VM) SET.vcats=[...VM_CATS]; SET.v25=1; saveSet(); }
+  if(!rv.v25){ const t=(rv.topics||[]).filter(x=>vxKnown(x)); if(!t.length||t.length>=OLD_VX) VXS.topics=[...VX_KEYS]; VXS.v25=1; saveVX(); }
+})();
+renderCtrls(); updSummary();
+if(mode==="vocab") renderVocab(); else if(GAME_MODES.includes(mode)&&SET.fmt==="vocab") start();

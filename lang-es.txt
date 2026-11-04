@@ -1576,6 +1576,20 @@ const G18={
   </div></details>`;
  })()
 };
+@@@H188 13@@@
+const G19NET=[
+ ["q / k","what / that (que)","Texting shorthand · k is extra casual","que"],["xq / pq","why / because (por qué / porque)","","porque"],["tb / tmb","also (también)","","también"],
+ ["bn","good / well (bien)","","bien"],["tqm / tkm","love you lots (te quiero mucho)","Between friends and family","te quiero mucho"],
+ ["ntp","don't worry (no te preocupes)","","no te preocupes"],["ntc","just kidding (no te creas)","Mexico","no te creas"],["xfa / pls","please (por favor)","","por favor"],
+ ["msj","message (mensaje)","","mensaje"],["x","for / by (por)","x fa = por favor","por"],["d","of / from (de)","","de"],["salu2","greetings (saludos)","Playful sign-off","saludos"],
+ ["bss","kisses (besos)","Friendly sign-off","besos"],["grax","thanks (gracias)","","gracias"],["jajaja","lol","Spain also: jejeje · Mexico: jajaja","ja ja ja"],["finde","weekend (fin de semana)","Spain","fin de semana"],
+ ["Estimado / Estimada","Dear (formal email)","Estimado Sr. García:"],["Hola, ¿qué tal?","Hi, how are you? (email opening)","Friendly default for work email"],
+ ["Adjunto…","Attached is…","Te adjunto el informe."],["Quedo a la espera.","I look forward to your reply.","Also: Quedo atento / atenta"],
+ ["Cualquier duda, me avisas.","Any questions, let me know.","Very common closing line"],["Saludos cordiales,","Kind regards,","Formal sign-off"],["Un saludo,","Best, / Regards,","Spain's everyday sign-off"],
+ ["el wasap / el whats","WhatsApp","Mándame un wasap · Mexico: el whats"],["mandar un audio","to send a voice note"],["la captura de pantalla","screenshot","Spain also: el pantallazo"],
+ ["la arroba","@ (at sign)","juan arroba gmail punto com"],["punto com","dot com"],["la contraseña","password"],["el enlace","link","Also: el link"],["dar like","to like (a post)","Also: dar me gusta"],
+ ["subir una foto","to post a photo"],["seguir","to follow (an account)"],["la historia","story (Instagram)"],["googlear","to Google it"],["el grupo de la familia","the family group chat"]
+];
 @@@B1 1@@@
     <div><h1>Verbo Match!</h1><p class="sub">200 Spanish verbs, vocab, stories, grammar &amp; slang</p></div>
 @@@B2 1@@@
