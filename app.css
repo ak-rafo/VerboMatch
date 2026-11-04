@@ -738,3 +738,36 @@ html.dark[data-lang=es] .btn.go{background:#1f8a4c}
 html.dark .btn.alt{background:#c9a400;color:#10161d}
 html.dark .d-prev b,.dark .sp-row2{color:var(--muted)}
 html.dark .card .back{box-shadow:0 3px 0 #0a3d1f}
+/* ===== v19: clean header + single settings sheet ===== */
+.brand{padding-right:0!important}
+.brand>div:not(.lang-sw):not(.logo){min-width:0}
+.hdr-gear{margin-left:auto;flex:none;position:relative;border:0;background:rgba(255,255,255,.22);color:#fff;border-radius:50%;width:40px;height:40px;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.hdr-gear:hover{background:rgba(255,255,255,.32)}
+.hdr-gear .slowdot{position:absolute;right:-4px;bottom:-4px;font-size:12px;background:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center}
+.set-h{font-size:13px;font-weight:900;color:var(--blue);margin:16px 0 2px;padding-top:12px;border-top:1px solid var(--line)}
+.sp-box h2+.set-h{border-top:0;padding-top:0;margin-top:6px}
+.set-sec .sp-row2:first-of-type{margin-top:8px}
+.set-tips{margin-top:10px;font-size:12.5px}
+.set-tips summary{cursor:pointer;color:var(--muted);font-weight:700}
+#spModal .box{max-height:88vh;overflow-y:auto}
+@media(max-width:700px){
+  header{padding-bottom:10px}
+  .brand{gap:10px}
+  .brand h1{font-size:19px;white-space:nowrap}
+  .lang-sw{margin-left:2px}
+  .lang-sw button{padding:5px 9px;font-size:15px}
+  .hdr-gear{width:38px;height:38px;font-size:18px}
+  #spModal .box{max-height:92dvh}
+}
+@media(max-width:360px){.brand h1{font-size:17px}.logo{width:34px;height:34px}}
+html.dark .set-h{color:#9cc4ff}
+/* ===== v20 ===== */
+#setPanel.mini>:not(:first-child):not(#miniRow){display:none!important}
+#setPanel.mini #fmtSeg{display:none}
+#styleSeg{flex-wrap:wrap}
+.mroute-txt{flex-basis:100%;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:14px;line-height:1.45;position:relative;padding-right:34px}
+.mroute-txt b{color:var(--blue)}
+.mroute-txt .spk2{position:absolute;right:0;top:8px}
+#mInfo{flex-wrap:wrap}
+html.dark .mroute-txt b{color:#9cc4ff}
+@media(max-width:700px){#styleSeg button{flex:1 1 30%;padding:7px 4px;font-size:11.5px}}

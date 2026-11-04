@@ -2577,3 +2577,155 @@ document.addEventListener("keydown",e=>{
   if(el){ e.preventDefault(); el.click(); }
 });
 tagKeys();
+
+/* =====================================================================
+   v19 · ONE ⚙️ SETTINGS BUTTON (voice, speed, display, sound) · CLEAN HEADER
+   ===================================================================== */
+(function(){
+  /* header: [logo][title][PT|ES] ……… [⚙️] */
+  const brand=document.querySelector(".brand"), btns=document.querySelector(".hdr-btns");
+  const gear=document.createElement("button"); gear.className="hdr-gear"; gear.id="gearBtn"; gear.title="Settings"; gear.setAttribute("aria-label","Settings");
+  gear.innerHTML=`⚙️<span class="slowdot hidden" title="Slow speech on">🐢</span>`;
+  if(btns) btns.style.display="none";
+  brand.appendChild(gear);
+  /* move display controls into the voice sheet, then rename it Settings */
+  const sp=$("spModal").querySelector(".box"), dbox=$("dispModal").querySelector(".box");
+  sp.querySelector("h2").textContent="⚙️ Settings";
+  const disp=document.createElement("div"); disp.className="set-sec";
+  disp.innerHTML=`<div class="set-h">🎨 Display</div>`;
+  [...dbox.children].forEach(c=>{ if(c.tagName!=="H2"&&!c.querySelector("#dClose")) disp.appendChild(c); });
+  const voiceH=document.createElement("div"); voiceH.className="set-h"; voiceH.textContent="🔊 Voice & speed";
+  sp.querySelector("h2").after(voiceH);
+  const doneRow=$("spClose").parentElement; doneRow.before(disp);
+  const snd=document.createElement("div"); snd.className="set-sec";
+  snd.innerHTML=`<div class="set-h">🎵 Sound</div><div class="sp-row" style="gap:16px">
+    <label><input type="checkbox" id="gVoice"> Read words aloud in games</label><label><input type="checkbox" id="gSfx"> Sound effects</label></div>`;
+  doneRow.before(snd);
+  const lv=LANGC==="es"?"Spanish":"Portuguese";
+  const syncSnd=()=>{ $("gVoice").checked=$("voice").checked; $("gSfx").checked=$("sfx").checked; };
+  $("gVoice").onchange=()=>{ $("voice").checked=$("gVoice").checked; LS.set(LKEY("snd"),{v:$("voice").checked,s:$("sfx").checked}); };
+  $("gSfx").onchange=()=>{ $("sfx").checked=$("gSfx").checked; LS.set(LKEY("snd"),{v:$("voice").checked,s:$("sfx").checked}); };
+  $("voice").addEventListener("change",()=>LS.set(LKEY("snd"),{v:$("voice").checked,s:$("sfx").checked}));
+  $("sfx").addEventListener("change",()=>LS.set(LKEY("snd"),{v:$("voice").checked,s:$("sfx").checked}));
+  const saved=LS.get(LKEY("snd"),null); if(saved){ $("voice").checked=saved.v; $("sfx").checked=saved.s; }
+  /* hide the duplicate checkboxes in the Match panel */
+  [$("voice"),$("sfx")].forEach(x=>x.closest("label").classList.add("hidden"));
+  /* collapse long tips behind a toggle */
+  const tips=[...sp.querySelectorAll(".sp-tip")].filter(t=>t.id!=="spWarn");
+  if(tips.length){ const d=document.createElement("details"); d.className="set-tips"; d.innerHTML=`<summary>ℹ️ Why do voices sound different?</summary>`; tips[0].before(d); tips.forEach(t=>d.appendChild(t)); }
+  const open=()=>{ openSpeech(); syncSnd(); $("dTheme").querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.v===DISP.theme));
+    $("dSize").querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.v===DISP.size)); };
+  gear.onclick=open; $("spkSet").onclick=open; $("dispBtn").onclick=open;
+  const slow=()=>gear.querySelector(".slowdot").classList.toggle("hidden",!(SPEECH.speed==="slow"||SPEECH.speed==="relaxed"));
+  const _ss=syncSpeedUI; syncSpeedUI=function(){ _ss(); slow(); }; slow();
+  /* the "Pairs" row only has the dropdown left: keep it tidy */
+})();
+
+/* =====================================================================
+   v20 · MAP & ODD ONE OUT IN THE MATCH TAB · KEY HINTS ONLY ON MATCH ·
+         STORIES LAST IN VOCAB · MAP DIRECTIONS FOR ANY BUILDING
+   ===================================================================== */
+const MINI=["map","odd"];
+const isMini=()=>MINI.includes(SET.style);
+if(MINI.includes(VXS.xsub)){ VXS.xsub=null; saveVX(); }
+
+/* ---- 🧭 directions from ⭐ to any building ---- */
+function routeTo(t){
+  let best=null,bc=1e9;
+  const rec=(x,y,h,steps,path,segs,cost)=>{
+    for(let n=1;n<=3;n++){
+      const nx=x+HD[h][0]*n, ny=y+HD[h][1]*n; if(nx<0||nx>4||ny<0||ny>4) break;
+      const st=[...steps,{t:"go",n}], p=[...path,[nx,ny]], c=cost+n;
+      ["right","left"].forEach(side=>{ if(frontBlock(nx,ny,h,side)===t&&c+segs*2<bc){ bc=c+segs*2; best={steps:st,side,target:t,path:p,end:[nx,ny,h]}; } });
+      if(segs<3) ["right","left"].forEach(turn=>rec(nx,ny,(h+(turn==="right"?1:3))%4,[...st,{t:turn}],p,segs+1,c));
+    }
+  };
+  rec(2,0,0,[],[[2,0]],1,0); return best;
+}
+const _mSel20=mSelect;
+mSelect=function(i,silent){
+  _mSel20(i,true);
+  const r=routeTo(i); if(!r) return;
+  const pt=routeText(r,false), en=routeText(r,true);
+  mDrawPath(r);
+  $("mInfo").insertAdjacentHTML("beforeend",`<div class="mroute-txt">🧭 <b>${pt}</b><div class="gn"><i>${en}</i></div><button class="spk2" id="mRouteSay" title="Hear the directions">🔊</button></div>`);
+  $("mRouteSay").onclick=()=>sayAlways(pt);
+  if(!silent) sayAlways(LM[i][0]+". "+pt);
+};
+
+/* ---- Vocab: drop Map & Odd (now in Match), Stories at the end ---- */
+const _rv20=renderVocab;
+renderVocab=function(){
+  if(MINI.includes(VXS.xsub)) VXS.xsub=null;
+  const pv=$("play").querySelector("#vxArea"); if(pv) pv.removeAttribute("id");
+  _rv20();
+  const seg=$("vxSub"); if(!seg) return;
+  seg.querySelectorAll('[data-s="map"],[data-s="odd"]').forEach(b=>b.remove());
+  const st=seg.querySelector('[data-s="stories"]'); if(st) seg.appendChild(st);
+};
+
+/* ---- Match: 🗺️ Map and 🕵️ Odd as game styles ---- */
+(function(){
+  const seg=$("styleSeg");
+  seg.insertAdjacentHTML("beforeend",`<button data-v="map">🗺️ Map</button><button data-v="odd">🕵️ Odd one out</button>`);
+  seg.querySelectorAll("button").forEach(b=>b.onclick=()=>{SET.style=b.dataset.v;saveSet();setMode("play")});
+  const row=document.createElement("div"); row.id="miniRow"; row.className="sp-row hidden"; $("styleSeg").closest(".sp-row").after(row);
+})();
+function miniSettings(){
+  const row=$("miniRow"), on=isMini();
+  $("setPanel").classList.toggle("mini",on); row.classList.toggle("hidden",!on);
+  if(!on) return;
+  row.innerHTML=`${SET.style==="map"?`<span class="ctl-lbl">Directions</span><div class="seg" id="miniDir">${Object.entries(VX_DIRL).map(([k,l])=>`<button data-v="${k}" class="${VXS.dir===k?"on":""}">${l}</button>`).join("")}</div>`:""}
+    <label>Rounds <select id="miniLen">${[6,8,10,15,20].map(n=>`<option ${n===VXS.len?"selected":""}>${n}</option>`).join("")}</select></label>
+    <div class="lvdesc" style="flex-basis:100%">${SET.style==="map"?"Explore: tap any building to see and hear how to get there from ⭐. Quiz: follow the directions and tap where you end up. 🎧 Listen hides the text.":"Four words appear: three share a topic, one doesn't. Keys 1–4 work on a keyboard."}</div>`;
+  row.querySelectorAll("#miniDir button").forEach(b=>b.onclick=()=>{VXS.dir=b.dataset.v;saveVX();MQ=null;newMini();miniSettings();updSummary();});
+  $("miniLen").onchange=()=>{VXS.len=+$("miniLen").value;saveVX();MQ=null;OQ=null;newMini();updSummary();};
+}
+function newMini(){
+  const vv=$("vocabView"); if(vv.querySelector("#vxArea")) vv.innerHTML="";
+  clearInterval(timer); round=null; paused=false; $("pauseOv").classList.add("hidden");
+  $("play").innerHTML=`<div id="vxArea"></div>`;
+  if(SET.style==="map"){ if(!VXS.mmode) VXS.mmode="quiz"; MQ=null; renderMap(); } else { OQ=null; renderOdd(); }
+  stats();
+}
+const _rm20=renderMap;
+renderMap=function(){
+  _rm20();
+  if(!$("play").contains($("vxArea"))) return;
+  document.querySelectorAll("#mMode button").forEach(b=>b.onclick=()=>{VXS.mmode=b.dataset.v;MQ=null;mSel=null;saveVX();newMini();updSummary();});
+};
+const _nm20=newMatch;
+newMatch=function(){ if(isMini()) newMini(); else _nm20(); };
+const _st20=start;
+start=function(){
+  const pv=$("play").querySelector("#vxArea"); if(pv&&!(isMini()&&GAME_MODES.includes(mode))) $("play").innerHTML="";
+  _st20();
+  const game=!$("gameCtrls").classList.contains("hidden"), mini=game&&isMini();
+  $("stats").classList.toggle("hidden",!game||mini);
+  ["hintBtn","pauseBtn"].forEach(id=>$(id).classList.toggle("hidden",mini));
+  const kh=$("keyHelp"); if(kh) kh.classList.toggle("hidden",!game||SET.style==="map");
+  miniSettings();
+};
+const _kh20=keyHelp;
+keyHelp=function(){ _kh20(); const h=$("keyHelp"); if(!h) return;
+  if(SET.style==="odd") h.innerHTML=`⌨️ <b>1–4</b> pick a word · <b>Enter</b> next · <b>Shift+N</b> new round`;
+  h.classList.toggle("hidden",$("gameCtrls").classList.contains("hidden")||SET.style==="map"); };
+const _rc20=renderCtrls;
+renderCtrls=function(){ _rc20(); $("styleSeg").querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.v===SET.style)); miniSettings(); };
+const _us20=updSummary;
+updSummary=function(){
+  if(!isMini()) return _us20();
+  if(!$("setSummary")) return;
+  $("setSummary").innerHTML=SET.style==="map"?`<b>🗺️ Map</b> · ${VXS.mmode==="quiz"?"Quiz":"Explore"} · ${VX_DIRL[VXS.dir]} · ${VXS.len} rounds`:`<b>🕵️ Odd one out</b> · ${VXS.len} rounds`;
+};
+document.addEventListener("keydown",e=>{
+  if(SET.style!=="odd"||$("gameCtrls").classList.contains("hidden")||!OQ||document.querySelector(".modal.show")||/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
+  if(!OQ.answered&&/^[1-4]$/.test(e.key)){ e.preventDefault(); oddAnswer(+e.key-1); }
+  else if(OQ.answered&&e.key==="Enter"){ e.preventDefault(); oddNext(); }
+});
+/* jumping to Review / Match-these from elsewhere switches back to tile matching */
+const _sr20=startReview; startReview=function(){ if(isMini()){SET.style="tiles";saveSet();} _sr20(); };
+const _vg20=vxGoMatch; vxGoMatch=function(){ if(isMini()){SET.style="tiles";saveSet();} _vg20(); };
+const _rp20=renderPhr; renderPhr=function(sub){ _rp20(sub); const b=$("phrMatch"); if(!b) return; const o=b.onclick; b.onclick=()=>{ if(isMini()){SET.style="tiles";saveSet();} o(); }; };
+renderCtrls(); updSummary();
+if(GAME_MODES.includes(mode)) start(); else if(mode==="vocab") renderVocab();
