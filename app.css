@@ -804,3 +804,21 @@ html.dark .mroute-txt b{color:#9cc4ff}
   #optWrap #conjCtrls,#optWrap #vcatCtrls{border-top:0;padding-top:0}
   #optWrap .chip{padding:3px 9px;font-size:11.5px}
 }
+/* ===== v22: centered level labels, bigger diagrams on phones ===== */
+.abc-tip .gt{margin:6px 0}
+@media(max-width:700px){
+  .lv{height:34px;padding:0 3px 3px;line-height:1;justify-content:center!important;align-items:center}
+  .body-stage{padding:8px 6px 10px;border-radius:12px}
+  .body-svg{max-height:74vh}
+  .map-svg{max-height:none;width:100%;margin-top:4px}
+  #mStage .body-top .gn{display:none}
+  .body-wrap{grid-template-columns:minmax(0,1fr)!important}.body-stage{min-width:0}
+  .tree-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -6px;scrollbar-width:none}
+  .tree-scroll::-webkit-scrollbar{display:none}
+  .tree-svg{width:640px;max-width:none;max-height:none}
+  .tree-scroll:after{content:"⟷ swipe to see the whole family";display:block;text-align:center;font-size:11px;color:var(--muted);margin-top:2px}
+  .fn .fl{font-size:12px}
+  .plist{margin-top:2px}
+}
+/* v22: desktop level buttons, label centered with a slim color bar underneath */
+@media(min-width:701px){ .lv{justify-content:center;position:relative;padding-bottom:4px} .lv i{position:absolute;left:8px;right:8px;bottom:5px;height:4px!important;width:auto} }

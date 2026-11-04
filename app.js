@@ -2758,3 +2758,79 @@ function optLabel(){
 const _rc21=renderCtrls; renderCtrls=function(){ _rc21(); optLabel(); };
 const _st21=start; start=function(){ _st21(); optLabel(); };
 optLabel();
+
+/*@@H187@@*/
+
+/* =====================================================================
+   v22 · CENTERED LEVEL LABELS · BIGGER DIAGRAMS ON PHONES ·
+         LESSON NOTES MERGED IN (no duplicates)
+   ===================================================================== */
+if(G18){
+  const ART22=LANGC==="es"?/^(el|la|los|las|un|una) /:/^(o|a|os|as|um|uma) /;
+  const nk=s=>String(s).toLowerCase().normalize("NFC").replace(/[¿?¡!.,;:…]/g,"").replace(ART22,"").trim();
+  const seen=new Set();
+  const addKeys=pt=>String(pt).split(/\s*\/\s*/).forEach(p=>seen.add(nk(p)));
+  Object.values(VX).forEach(list=>(list||[]).forEach(x=>addKeys(x.pt)));
+  VX_BODY.forEach(x=>addKeys(x.pt));
+  G16.phrases.forEach(([,l])=>l.forEach(([pt])=>addKeys(pt)));
+  SLANG.forEach(s=>addKeys(s.t));
+  const isDup=pt=>String(pt).split(/\s*\/\s*/).every(p=>seen.has(nk(p)));
+  window.__dupSkipped=[];
+  const take=pt=>{ if(isDup(pt)){ window.__dupSkipped.push(pt); return false; } addKeys(pt); return true; };
+  /* vocab topics */
+  Object.entries(G18.vx).forEach(([t,list])=>{ if(!VX[t]) return;
+    list.forEach(([pt,en,note,sy])=>{ if(take(pt)) VX[t].push({t,pt,en,note:note||"",say:sy||pt}); }); });
+  /* phrases: new groups or merged into existing ones */
+  G18.phrases.forEach(([cat,list])=>{
+    const keep=list.filter(([pt])=>take(pt)); if(!keep.length) return;
+    const g=G16.phrases.find(([c])=>c===cat); if(g) g[1].push(...keep); else G16.phrases.push([cat,keep]);
+    keep.forEach(([pt,en,note])=>VX.phrase.push({t:"phrase",pt,en,note:note||"",say:pt,cat})); });
+  /* slang */
+  G18.slang.forEach(([t,m,ex,en,r,c,n])=>{ if(!take(t)) return; SLANG.push({i:SLANG.length,t,m,ex,en,r,c,n}); if(!SCATS.includes(c)) SCATS.push(c); });
+  SLANG.sort((a,b)=>REG_ORDER.indexOf(a.r)-REG_ORDER.indexOf(b.r)||a.i-b.i).forEach((s,k)=>s.rank=k+1);
+  /* idioms */
+  const idSeen=new Set(VX.idiom.map(x=>nk(x.pt)));
+  G18.idioms.forEach(x=>{ if(idSeen.has(nk(x[0]))||isDup(x[0])){window.__dupSkipped.push(x[0]);return;} idSeen.add(nk(x[0])); G16.idioms.push(x);
+    VX.idiom.push({t:"idiom",pt:x[0],en:x[2],note:"≈ "+x[3],say:x[0],lit:x[1],eq:x[3],ex:x[4],exen:x[5]}); });
+  /* grammar: common-mistakes quiz */
+  Object.assign(WGROUPS,G18.wgroups);
+  const wSeen=new Set(WITEMS.map(i=>i.s));
+  G18.witems.forEach(([s,a,en,g,opts,why])=>{ if(!wSeen.has(s)) WITEMS.push({id:WITEMS.length,s,a,en,g,opts,why}); });
+  (function(){ const rw=LS.get(LKEY("wset"),{});
+    if(!rw.v22){ WSET.cats=[...new Set([...WSET.cats,...Object.keys(G18.wgroups)])]; WSET.v22=1; saveW(); } })();
+  /* grammar guide: this/that table, divertir-se, mau/mal, tenho/tinha/tive */
+  const _rg22=renderGuide;
+  renderGuide=function(){
+    _rg22();
+    const body=$("wBody"), h3=t=>[...body.querySelectorAll(".panel h3")].find(h=>h.textContent.includes(t));
+    const tt=h3("this / that"); if(tt) tt.closest(".panel").outerHTML=G18.thisThat;
+    const rf=h3("Reflexive"); if(rf) rf.closest(".panel").insertAdjacentHTML("beforeend",G18.divertir);
+    const cp=h3("Comparisons"); if(cp){ const ul=cp.closest(".panel").querySelector("ul"); if(ul) ul.insertAdjacentHTML("beforeend",G18.mauMal); }
+    const ps=$("g-past"); if(ps) ps.insertAdjacentHTML("beforeend",G18.tenhoTinha);
+  };
+  /* verb notes in the Verb Bank pop-up */
+  const _ov22=openVerb;
+  openVerb=function(inf){ _ov22(inf); const n=G18.vnotes[inf]; if(n) $("vBody").insertAdjacentHTML("afterbegin",`<div class="vstat">📝 ${n}</div>`); };
+  /* alphabet: pronunciation patterns, A–Z list, sound-alikes */
+  new MutationObserver(()=>{ const s=[...document.querySelectorAll("#vocabView details.vx-sec")].find(d=>/^🔤/.test(d.querySelector("summary").textContent.trim()));
+    if(s&&!s.querySelector(".abc-tip")){ const h=s.querySelector(".vx-in"); if(h){ h.insertAdjacentHTML("afterbegin",`<div class="abc-tip">${G18.abcTip}</div>`); } } })
+    .observe($("vocabView"),{childList:true,subtree:true});
+  /* slang tab: sensitive-words note at the bottom (never used in games) */
+  const _rs22=renderSlang;
+  renderSlang=function(){ _rs22(); if((SSET.sub||"slang")==="slang") $("slangView").insertAdjacentHTML("beforeend",G18.sensitive); };
+}
+/* one home per word: directions live in 🧭 Directions only (also clears older city / phrase repeats) */
+(function(){ if(!VX.dir) return;
+  const k=s=>String(s).toLowerCase().replace(/[¿?¡!.,;:…]/g,"").trim(), D=new Set(VX.dir.map(x=>k(x.pt)));
+  ["city","phrase"].forEach(t=>{ if(VX[t]) VX[t]=VX[t].filter(x=>!D.has(k(x.pt))); });
+  G16.phrases.forEach(g=>{ g[1]=g[1].filter(([pt])=>!D.has(k(pt))); });
+})();
+/* family tree: readable size on phones, scroll sideways, centered on ⭐ */
+const _rt22=renderTree;
+renderTree=function(){
+  _rt22(); const svg=$("treeSvg"); if(!svg) return;
+  const w=document.createElement("div"); w.className="tree-scroll"; svg.before(w); w.appendChild(svg);
+  if(innerWidth<=700) setTimeout(()=>{ w.scrollLeft=Math.max(0,350/660*w.scrollWidth-w.clientWidth/2); },60);
+};
+renderCtrls(); updSummary();
+if(mode==="words") renderWords(); if(mode==="vocab") renderVocab(); if(mode==="slang") renderSlang();

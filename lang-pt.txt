@@ -289,7 +289,7 @@ function accent(b,strong){const m={a:"á",i:"í",e:strong?"é":"ê",o:"ô"},l=b.
  {n:"Fácil",c:"#009c3b",pairs:6,pool:30,irr:false,tenses:["pres"],persons:["eu"],hints:Infinity,secPer:0,pen:0,reset:false,lives:0},
  {n:"Médio",c:"#c9a400",pairs:8,pool:80,irr:false,tenses:["pres","pret","go"],persons:["eu","voce"],hints:3,secPer:0,pen:0,reset:true,lives:0},
  {n:"Difícil",c:"#f08c00",pairs:10,pool:150,irr:false,tenses:["pres","pret","imp","go","fut"],persons:["eu","voce","nos"],hints:1,secPer:12,pen:5,reset:true,lives:0},
- {n:"Expert",c:"#e63946",pairs:12,pool:200,irr:true,tenses:ALLT,persons:ALLP,hints:0,secPer:7.5,pen:10,reset:true,lives:3}
+ {n:"Mestre",c:"#e63946",pairs:12,pool:200,irr:true,tenses:ALLT,persons:ALLP,hints:0,secPer:7.5,pen:10,reset:true,lives:3}
 @@@H38 5@@@
 const TRAPS=[["ser","estar"],["saber","conhecer"],["jogar","tocar","brincar"],["levar","trazer"],["ouvir","escutar"],["olhar","ver","assistir"],
  ["pôr","colocar"],["acabar","terminar"],["viver","morar"],["pedir","perguntar"],["ligar","chamar"],["achar","encontrar","procurar"],
@@ -877,7 +877,7 @@ const _lrV10=logRound; logRound=function(a,s,f){_lrV10(a,s,f); if(SET.fmt==="voc
 @@@H139 1@@@
   const l=L(), dir={pt:"PT→EN",en:"EN→PT",mix:"Mixed"}[SET.dir];
 @@@H140 1@@@
-const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Médio",c:"#c9a400",d:"Present + past"},{n:"Difícil",c:"#f08c00",d:"Mixed tenses"},{n:"Expert",c:"#e63946",d:"Long, slang + subjunctive"}];
+const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Médio",c:"#c9a400",d:"Present + past"},{n:"Difícil",c:"#f08c00",d:"Mixed tenses"},{n:"Mestre",c:"#e63946",d:"Long, slang + subjunctive"}];
 @@@H141 248@@@
 {lv:0,ic:"☀️",t:"Meu dia",en:"My day",l:[
  ["Oi! Eu me {chamo|am called|chamar} Ana e {moro|live|morar} em São Paulo.","Hi! My name is Ana and I live in São Paulo."],
@@ -1153,7 +1153,7 @@ let STV=Object.assign({lv:"all",en:false,open:null},LS.get("vm_story",{}));
 @@@H151 1@@@
 const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
 @@@H152 1@@@
-   <div class="lvdesc">Fácil = short, present tense · Médio = present + past · Difícil = mixed tenses · Expert = longer stories with slang and the subjunctive.</div>`;
+   <div class="lvdesc">Fácil = short, present tense · Médio = present + past · Difícil = mixed tenses · Mestre = longer stories with slang and the subjunctive.</div>`;
 @@@H153 1@@@
       if(ok){score+=15; if(score>best){best=score;LS.set("vm_best",best)}}
 @@@H154 1@@@
@@ -1462,6 +1462,140 @@ const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
     <p class="gn">Clue words: sempre, todo dia, quando eu era…, antigamente, enquanto</p></div>
 @@@H186 1@@@
   <p class="gp" style="margin-top:10px">🎬 <b>Think of a movie:</b> the imperfeito sets the scene (<i>chovia, eu estava em casa</i>), the perfeito is the action that happens (<i>alguém bateu na porta</i>).</p></div>`
+@@@H187 133@@@
+/* ===== v22 data · Portuguese: Andrew's lesson notes (cleaned, merged without duplicates) ===== */
+const G18={
+ vx:{
+  family:[["o senhor / a senhora","sir / ma'am · Mr. / Mrs.","Respectful: Prazer em conhecer o senhor"],["o moço / a moça","young man / young woman","Also how you call someone whose name you don't know: Moço, por favor!"],
+   ["o rapaz","young man / guy"],["a mulher","woman","Can also mean wife: a minha mulher"],["a futura esposa","future wife"],["o irmão mais velho","older brother","Irmão mais novo = younger brother"],
+   ["a vovó / a vó","grandma (affectionate)"],["a bisavó / a bisa","great-grandmother","Bisa is the affectionate short form"],["a babá","nanny / babysitter","Not baba (drool)!"],
+   ["a pessoa favorita","favorite person"],["juntos","together","Há quanto tempo vocês estão juntos?"],["o anel de noivado","engagement ring"],["o pedido de casamento","marriage proposal"],
+   ["o aplicativo de encontros","dating app","Also: o site de encontros = dating website"]],
+  num:[["a dúzia","dozen (12)"],["meio / meia","half","Meio also means middle or somewhat · not to be confused with meu (my)"],["o número","number"],["o milhão","million","Not milho (corn)!"]],
+  years:[["um ano atrás","a year ago","Also: há um ano"],["mais cedo ou mais tarde","sooner or later"],["antes","before"],["depois","after / later"],
+   ["próximo / próxima","next","Also nearby: a farmácia mais próxima"],["último / última","last / final","a última aula = the last lesson"]],
+  days:[["o dia festivo","festive day / celebration","Not necessarily a public holiday (o feriado)"]],
+  weather:[["o clima","climate","Also used for 'weather': Como está o clima hoje?"],["o calor","heat / hot weather","Está calor = It's hot out"]],
+  food:[["a comida","food","Qual é sua comida favorita?"],["comer / beber","to eat / to drink"],["a cachaça","Brazilian sugarcane spirit","Used in the caipirinha"],["os cogumelos","mushrooms"],
+   ["o milho","corn","Not milhão (million)!"],["o mamão","papaya","Mamão com açúcar = a piece of cake (idiom)"],["a feijoada","black bean and pork stew"],["a uva","grape"],
+   ["a salsicha","sausage (hot-dog style)","O salsichão = a large sausage"],["o churrasco","barbecue / grilled meat"],["os pães","breads / bread rolls","Singular: o pão"],
+   ["a caneca","mug","O caneco = a big mug or tankard · a xícara = a teacup"],["É melhor quente.","It's better hot."]],
+  house:[["a localização","location"],["se mudar","to move (house)","Eu me mudei para São Paulo"],["tomar banho","to shower / bathe","The everyday way to say it · also: tomar uma ducha. Not 'duchar'"],
+   ["arrumar a casa","to tidy the house","Limpar a casa = to clean it"],["se arrumar","to get ready / dress up","Eu me arrumo para a festa"],["o coque","hair bun"],["o rabo de cavalo","ponytail","Lit. horse's tail"],
+   ["a carteira","wallet"],["a moeda","coin","Achei uma moeda na minha carteira"]],
+  work:[["o emprego","job / employment","O trabalho = work in general"],["o vendedor / a vendedora","salesperson","More natural than 'homem de vendas'"],["a conferência de trabalho","work conference","Also: conferência profissional"],
+   ["o professor / a professora","teacher / professor","Professor universitário = university professor"],["o quadro branco","whiteboard"],["o ator / a atriz","actor / actress"],
+   ["o zelador / a zeladora","caretaker / building superintendent"],["o juiz / a juíza","judge"],["o bombeiro / a bombeira","firefighter"],["o apicultor / a apicultora","beekeeper"],
+   ["o presidente / a presidente","president"],["o governador / a governadora","governor"],["o prefeito / a prefeita","mayor"],["o discurso","speech / address"],
+   ["a fábrica","factory"],["o cantor / a cantora","singer","Plural: cantores (not 'cantares')"],["o músico / a musicista","musician"]],
+  city:[["a praia","beach","Na praia = at the beach"],["a festa","party","Festa à fantasia = costume party"],["a viagem","trip","Viajar = to travel · Quanto tempo dura a viagem?"],["o sul","south"],["o time","sports team","Qual é o seu time? = Which team do you support?"]],
+  feel:[["alegre","cheerful","A alegria = joy"],["assustado / assustada","scared","Assustador = scary. Don't mix them up!"],["impaciente","impatient"],["curioso / curiosa","curious"],
+   ["interessante","interesting"],["estranho / estranha","strange / odd"],["tranquilo / tranquila","calm / relaxed"],["ótimo / ótima","great / excellent"],["maravilhoso / maravilhosa","wonderful"],
+   ["perfeito / perfeita","perfect"],["horrível","horrible"],["péssimo / péssima","terrible"],["ruim","bad","Plural: ruins"],["inútil","useless","Plural: inúteis"],
+   ["rigoroso / rigorosa","strict","Also: estrito"],["certinho / certinha","proper / rule-following","Often teasing"],["diferente","different"],["frenético / frenética","frantic / very energetic"]],
+  animals:[["o crocodilo","crocodile"],["o esquilo","squirrel","Tranquilo como esquilo = chill (slang)"],["a zebra","zebra"],["o passarinho","little bird"],["os bois","oxen / cattle","Singular: o boi"]]
+ },
+ phrases:[
+  ["🗣️ Everyday chat",[["Quais são seus planos para essa semana?","What are your plans for this week?","Also: Quais planos você tem…?"],["Meus planos são…","My plans are…","Meus planos são trabalhar e ajudar na propriedade do meu amigo."],
+    ["Sem planos.","No plans."],["Boa ideia!","Good idea!"],["É verdade.","That's true."],["O que é isso? / O que é aquilo?","What is this? / What is that (over there)?"],
+    ["Não tenho perguntas.","I don't have any questions.","Sem perguntas = no questions"],["Eu estou brincando.","I'm joking."],["Eu preciso de um café.","I need a coffee."],
+    ["Boa sorte!","Good luck!"],["Parabéns!","Congratulations! / Happy birthday!","Parabéns para ele! = Congrats to him!"],["Saúde!","Cheers! / Bless you!","Also the noun 'health'"],
+    ["Você é o melhor! / Você é a melhor!","You're the best!","O melhor to a man · a melhor to a woman"],["Me ajuda muito.","It helps me a lot."],["Você está pensando em português!","You're thinking in Portuguese!"],
+    ["Você lembra o que fizemos na última aula?","Do you remember what we did in the last lesson?"],["Eu acho que vai chover.","I think it's going to rain.","Achar = to think (opinion)"],["Isso é melhor do que aquilo.","This is better than that."]]],
+  ["💍 Relationships",[["Como vocês se conheceram?","How did you meet?"],["Há quanto tempo vocês estão juntos?","How long have you been together?"],["Nós nos conhecemos em um aplicativo de encontros.","We met on a dating app."],
+    ["Minha pessoa favorita é minha namorada.","My favorite person is my girlfriend."],["O nome do meu irmão mais velho é…","My older brother's name is…"],["Não tenho filhos, mas tenho um sobrinho.","I don't have children, but I have a nephew."],
+    ["Eu vou ajudá-la.","I'm going to help her.","Spoken: Eu vou ajudar ela"],["Foi um belo pedido de casamento.","It was a lovely marriage proposal."],["Ela ficou surpresa.","She was surprised."],
+    ["Você aceita casar comigo?","Will you marry me?"],["Você aceita passar o resto da vida comigo?","Will you spend the rest of your life with me?"],["Você quer compartilhar uma vida comigo?","Do you want to share a life with me?"],
+    ["Prazer em conhecer o senhor / a senhora.","Nice to meet you, sir / ma'am."]]],
+  ["🎉 Plans & events",[["Eu fui a uma festa no sábado.","I went to a party on Saturday.","Spoken: fui em uma festa"],["Sábado eu vou me encontrar com amigos.","On Saturday I'm going to meet up with friends."],
+    ["Eu vou viajar para Nova York com a minha namorada.","I'm going to travel to New York with my girlfriend."],["Quanto tempo dura a viagem?","How long does the trip take?"],
+    ["Eu vou tirar fotos, e você vai se divertir.","I'm going to take photos, and you're going to have fun."],["Eu trabalhei muito.","I worked a lot."],["Como está o tempo hoje?","What's the weather like today?","Also: Como está o clima hoje?"],
+    ["Qual é sua comida favorita?","What's your favorite food?"],["Eu quero meia dúzia de ovos.","I want half a dozen eggs."],["Tenho trinta anos.","I'm thirty years old.","More natural than 'Minha idade é trinta anos'"]]],
+  ["⛪ Faith",[["Deus é bom.","God is good."],["Deus proverá.","God will provide."]]]
+ ],
+ slang:[
+  ["Tudo beleza? / E aí, beleza?","everything good? / hey, how's it going?","E aí, beleza? — Beleza!","Hey, how's it going? — All good!","Nacional","Greetings","Tudo belezinha? is the extra-friendly version"],
+  ["na paz / tudo em paz","all good / at peace","Como você tá? — Na paz.","How are you? — All good.","Nacional","Greetings",""],
+  ["nada demais","nothing much / no big deal","O que você fez ontem? — Nada demais.","What did you do yesterday? — Nothing much.","Nacional","Expressions",""],
+  ["foi mal","my bad / sorry","Foi mal, esqueci de te ligar.","My bad, I forgot to call you.","Nacional","Expressions","Foi mals = playful version · Desculpe / Perdão = more polite"],
+  ["de boas na lagoa","chilling / all relaxed","Tô de boas na lagoa hoje.","I'm just chilling today.","Nacional","Expressions","Rhyming version of de boa"],
+  ["tranquilo como esquilo","chill (lit. calm like a squirrel)","Pode deixar, tô tranquilo como esquilo.","No worries, I'm totally chill.","Nacional","Expressions","Playful rhyme"],
+  ["suave na nave","all good / smooth","Tudo certo? — Suave na nave!","All good? — Smooth sailing!","Nacional","Expressions","Rhyming version of suave"],
+  ["saquei","got it","Entendeu? — Saquei!","Got it? — Got it!","Nacional","Reactions","Also: captei (I grasped it)"],
+  ["tendeu?","get it? (short for entendeu?)","É assim que funciona, tendeu?","That's how it works, get it?","Nacional","Expressions",""],
+  ["tá osso","it's tough / things are rough","Tá osso pagar o aluguel esse mês.","Paying rent is rough this month.","Nacional","Expressions",""],
+  ["tutu / cascalho","money (slang)","Tô sem tutu.","I'm out of cash.","Nacional","Money & work","Grana is still the most useful word"],
+  ["lá ele!","not me! (dodging a double meaning)","Ele disse que gosta de banana. — Lá ele!","He said he likes bananas. — Not me!","Nacional","Internet","Joking way to distance yourself from an innuendo"],
+  ["paia","lame / disappointing","A festa foi paia.","The party was lame.","Nacional","Reactions","Not palha (straw)"],
+  ["doguinho","doggy","Que doguinho fofo!","What a cute doggy!","Nacional","Internet",""]
+ ],
+ idioms:[
+  ["Mamão com açúcar","Papaya with sugar","Something very easy","A piece of cake","Essa prova foi mamão com açúcar.","This test was a piece of cake."],
+  ["Ossos do ofício","Bones of the trade","The unavoidable hassles of a job","Comes with the territory","Trabalhar no feriado? Ossos do ofício.","Working on the holiday? Comes with the territory."],
+  ["É uma pedreira","It's a quarry","It's a very tough challenge","It's an uphill battle","Esse projeto é uma pedreira.","This project is an uphill battle."],
+  ["Música para os ouvidos","Music for the ears","Something great to hear","Music to my ears","Sexta-feira de folga? Música para os ouvidos!","Friday off? Music to my ears!"],
+  ["Água que passarinho não bebe","Water that little birds don't drink","A joking name for alcohol, usually cachaça","The hard stuff","Ele pediu um copo de água que passarinho não bebe.","He ordered a glass of the hard stuff."]
+ ],
+ wgroups:{mist:{label:"Common mistakes",c:"#e8590c"}},
+ witems:[
+  ["Ele é um homem __.","mau","He is a bad man.","mist",["mau","mal","má","maus"],"mau = bad (adjective, opposite of bom) · mal = badly (opposite of bem)"],
+  ["Eu dormi __ ontem.","mal","I slept badly last night.","mist",["mal","mau","má","ruim"],"mal = badly (adverb, opposite of bem)"],
+  ["São pessoas __.","más","They are bad people.","mist",["más","mal","maus","má"],"más = feminine plural of mau · pessoas ruins also works"],
+  ["Eu não __ a cidade dele.","conheço","I don't know his city.","mist",["conheço","sei","acho","encontro"],"conhecer = be familiar with people, places, things"],
+  ["Eu não __ a resposta.","sei","I don't know the answer.","mist",["sei","conheço","acho","penso"],"saber = know facts, answers, how to do something"],
+  ["Tu __ divertes muito.","te","You have a lot of fun.","mist",["te","se","me","lhe"],"tu te divertes · você se diverte"],
+  ["Gosto __ música.","dessa","I like that song.","mist",["dessa","desse","nessa","disso"],"de + essa = dessa (feminine)"],
+  ["Ele está __ escritório.","nesse","He's in that office.","mist",["nesse","nessa","desse","nisso"],"em + esse = nesse (masculine)"],
+  ["Eu __ trinta anos.","tenho","I'm thirty years old.","mist",["tenho","sou","estou","tinha"],"Age uses ter: Tenho trinta anos"],
+  ["Quando era criança, eu __ um cachorro.","tinha","When I was a kid, I had a dog.","mist",["tinha","tive","tenho","teve"],"tinha = had / used to have (ongoing past)"],
+  ["Ano passado eu __ uma gripe forte.","tive","Last year I had a bad flu.","mist",["tive","tinha","tenho","tem"],"tive = had (a finished event)"],
+  ["Ela ficou __ com o filme de terror.","assustada","She got scared by the horror movie.","mist",["assustada","assustadora","alegre","curiosa"],"assustado = scared · assustador = scary"],
+  ["O filme de terror é muito __.","assustador","The horror movie is very scary.","mist",["assustador","assustado","alegre","curioso"],"assustador = scary · assustado = scared"],
+  ["Meus __ moram no Brasil.","pais","My parents live in Brazil.","mist",["pais","país","pai","paz"],"pais = parents · país = country · pai = father"],
+  ["O Brasil é um __ enorme.","país","Brazil is a huge country.","mist",["país","pais","paz","pai"],"país (with accent) = country"],
+  ["Minha __ cuida do meu sobrinho.","babá","My nanny looks after my nephew.","mist",["babá","baba","bebê","avó"],"babá = nanny · baba = drool"],
+  ["Esse carro é muito __.","caro","This car is very expensive.","mist",["caro","carro","cara","barato"],"caro = expensive · carro = car"],
+  ["A minha __ faz o melhor bolo.","avó","My grandmother makes the best cake.","mist",["avó","avô","vó","mãe"],"avó (open ó) = grandmother · avô (closed ô) = grandfather"],
+  ["Há quanto tempo vocês estão __?","juntos","How long have you been together?","mist",["juntos","junto","casados","namorando"],"juntos agrees with vocês (plural)"],
+  ["Davi __ ajuda muito com meu português.","me","Davi helps me a lot with my Portuguese.","mist",["me","é","se","lhe"],"Davi me ajuda (no 'é')"]
+ ],
+ vnotes:{
+  saber:"<b>saber</b> = know facts, answers or how to do something (<i>Não sei a resposta</i>). For people, places and things you're familiar with, use <b>conhecer</b>.",
+  conhecer:"<b>conhecer</b> = know or be familiar with people, places, things (<i>Eu não conheço o Rio</i>). For facts, use <b>saber</b>.",
+  achar:"<b>achar</b> = to find, and also to think / believe: <i>Eu acho que vai chover</i>. <i>Achei uma moeda</i> = I found a coin.",
+  encontrar:"<b>encontrar</b> = to find or to meet: <i>Encontrei uma moeda</i> · <i>Vou me encontrar com amigos</i>.",
+  poder:"<b>poder</b> = can / be able to. As a noun, <i>o poder</i> = power.",
+  brincar:"<b>brincar</b> = to play for fun or to joke: <i>Estou brincando!</i> = I'm joking! For games and sports use <b>jogar</b>.",
+  jogar:"<b>jogar</b> = to play a game or sport, and also to throw: <i>jogar o lixo fora</i>.",
+  lembrar:"<b>lembrar</b> = to remember: <i>Você lembra o que fizemos na última aula?</i>",
+  gostar:"<b>gostar</b> always takes <b>de</b>: <i>Ela gosta <b>das</b> músicas do Harry</i> (de + as).",
+  cuidar:"<b>cuidar</b> usually takes <b>de</b>: <i>Ela cuida do sobrinho</i>.",
+  limpar:"<b>limpar a casa</b> = clean it · <b>arrumar a casa</b> = tidy it.",
+  consertar:"<b>consertar</b> = to repair. <b>arrumar</b> can also mean fix, but it's broader: tidy, organize, get (a job).",
+  sentir:"<b>Sinto sua falta</b> = I miss you. Also: <b>Estou com saudade de você</b>. Saudade is a noun (the feeling of missing), not a verb.",
+  ter:"<b>tenho</b> = I have · <b>tinha</b> = I had / used to have (ongoing) · <b>tive</b> = I had (finished event). Age: <i>Tenho trinta anos</i>.",
+  levantar:"<b>levantar</b> = get up / raise / lift. <b>Levantar uma grana</b> = raise some money."
+ },
+ thisThat:`<div class="panel"><h3>👉 This / that · este, esse, aquele</h3>
+   ${G16T(["Meaning","Masculine","Feminine","Neutral"],[["this (near me)","este","esta","isto"],["that (near you) · <b>also “this” in Brazilian speech</b>","esse","essa","isso"],["that (over there)","aquele","aquela","aquilo"]])}
+   <p class="gn">Neutral forms (<b>isto, isso, aquilo</b>) point to an idea or unnamed thing: <i>Isso é interessante.</i> · <i>O que é aquilo?</i> Brazilians say <i>essa semana</i> for “this week”.</p>
+   ${G16T(["","+ este / esta / isto","+ esse / essa / isso","+ aquele / aquela / aquilo"],[[G16B("em"),"neste / nesta / nisto","nesse / nessa / nisso","naquele / naquela / naquilo"],[G16B("de"),"deste / desta / disto","desse / dessa / disso","daquele / daquela / daquilo"],[G16B("a"),"—","—","àquele / àquela / àquilo"]])}</div>`,
+ divertir:`<div class="gn" style="margin-top:8px"><b>divertir-se</b> (to have fun): eu me divirto · tu te divertes · você / ele / ela se diverte · nós nos divertimos · vocês / eles se divertem.
+   <br><b>divertir</b> = to entertain someone · <b>a diversão</b> = fun.</div>`,
+ mauMal:`<li><b>mau / má</b> = bad (adjective, opposite of <b>bom / boa</b>): <i>um homem mau, pessoas más</i> · <b>mal</b> = badly / unwell (opposite of <b>bem</b>): <i>Dormi mal.</i></li>`,
+ tenhoTinha:`<p class="gn">⏳ <b>tenho</b> (I have) · <b>tinha</b> (I had / used to have, imperfeito) · <b>tive</b> (I had, a finished event, perfeito).</p>`,
+ abcTip:`<div class="vx-tool" style="display:block"><b>🔊 Pronunciation patterns</b> <span class="gn">(approximate; accents vary by region)</span>
+   ${G16T(["Pattern","Sound","Examples"],[["NH","like Spanish ñ","senhor, senhora"],["Ç","s sound (before a, o, u)","caçar, açúcar"],["H at the start","silent","hora, hotel, hospital"],
+    ["G + a/o/u","hard g","gato, gola"],["G + e/i · J","like the s in “measure”","gente, girafa, janela, julho"],["R at the start · RR","strong, often h-like","rato, rei · carro, terra"],
+    ["R between vowels","quick tap","caro, arara"],["K · W · Y","foreign words and names","kiwi, yoga"]])}
+   <p class="gn" style="margin:6px 0 0">Spelling check: <b>quilo, quilômetro, ótimo, você, xícara, última, pronúncia</b>. <i>Boa pronúncia</i> = good pronunciation · <i>sotaque</i> = accent.</p>
+   <p class="gn" style="margin:6px 0 0">🔤 Practice A–Z: atalho · beber · cuidar · divertir · ele · fumar · gato · haver · interessante · janela · kiwi · limpar · mulher · nome · ótimo · poder · queijo · Rafaela · seu · tudo · uva · você · Wendryl · xícara · yoga · zebra</p>
+   <p class="gn" style="margin:6px 0 0">🪤 Sound-alikes: <b>pais</b> parents / <b>país</b> country · <b>avó</b> / <b>avô</b> · <b>caro</b> / <b>carro</b> · <b>cabelo</b> / <b>cavalo</b> · <b>milho</b> / <b>milhão</b> · <b>meio</b> / <b>meu</b> · <b>babá</b> / <b>baba</b> · <b>palha</b> / <b>paia</b> · <b>pão</b> / <b>pau</b> (careful: vulgar meaning)</p></div>`,
+ sensitive:`<details class="fold" style="margin-top:12px"><summary>⚠️ Recognize, don't use · sensitive words</summary><div style="padding:0 14px 12px">
+   ${G16T(["Word","Meaning","Say instead"],[["cu","vulgar (anus). No accent.","nádegas = buttocks (neutral)"],["merda / bosta","vulgar: shit / crap","Que droga! (mild)"],["cocô","poop (child-friendly)","fine to use"],
+    ["aleijado","crippled: offensive as a label","pessoa com deficiência"],["índio","older term","indígena · povos indígenas"],["traveco","slur: never use","travesti is the identity term used in Brazil"],["bêbado / bêbada","drunk","fine to use"]])}
+   <p class="gn">Example: <i>Ele tem uma deficiência. Ele não é atleta.</i> These are two separate facts; having a disability doesn't stop someone being an athlete.</p></div></details>`
+};
 @@@B1 1@@@
     <div><h1>Verbo Match!</h1><p class="sub">200 Brazilian Portuguese verbs, vocab, stories, grammar &amp; slang</p></div>
 @@@B2 1@@@

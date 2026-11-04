@@ -328,7 +328,7 @@ VERBS.forEach(v=>{ const c=simple(v.inf); v.p=c.pres[0]; v.pt=c.pret[0]; v.i=c.i
  {n:"Fácil",c:"#009c3b",pairs:6,pool:30,irr:false,tenses:["pres"],persons:["yo"],hints:Infinity,secPer:0,pen:0,reset:false,lives:0},
  {n:"Medio",c:"#c9a400",pairs:8,pool:80,irr:false,tenses:["pres","pret","go"],persons:["yo","tu"],hints:3,secPer:0,pen:0,reset:true,lives:0},
  {n:"Difícil",c:"#f08c00",pairs:10,pool:150,irr:false,tenses:["pres","pret","imp","go","fut"],persons:["yo","tu","el","nos"],hints:1,secPer:12,pen:5,reset:true,lives:0},
- {n:"Experto",c:"#e63946",pairs:12,pool:200,irr:true,tenses:ALLT,persons:ALLP,hints:0,secPer:7.5,pen:10,reset:true,lives:3}
+ {n:"Maestro",c:"#e63946",pairs:12,pool:200,irr:true,tenses:ALLT,persons:ALLP,hints:0,secPer:7.5,pen:10,reset:true,lives:3}
 @@@H38 6@@@
 const TRAPS=[["ser","estar"],["saber","conocer"],["llevar","traer"],["oír","escuchar"],["mirar","ver"],["pedir","preguntar"],["jugar","tocar"],
  ["tomar","beber"],["volver","regresar"],["empezar","comenzar"],["terminar","acabar"],["buscar","encontrar"],["tener","haber"],["decir","hablar"],
@@ -926,7 +926,7 @@ const _lrV10=logRound; logRound=function(a,s,f){_lrV10(a,s,f); if(SET.fmt==="voc
 /* ===================================================================
    STORIES (Spanish) ({word|meaning|verb} = tappable word)
    =================================================================== */
-const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Medio",c:"#c9a400",d:"Present + past"},{n:"Difícil",c:"#f08c00",d:"Mixed tenses"},{n:"Experto",c:"#e63946",d:"Long, slang + subjunctive"}];
+const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Medio",c:"#c9a400",d:"Present + past"},{n:"Difícil",c:"#f08c00",d:"Mixed tenses"},{n:"Maestro",c:"#e63946",d:"Long, slang + subjunctive"}];
 @@@H141 246@@@
 {lv:0,ic:"☀️",t:"Mi día",en:"My day",l:[
  ["¡Hola! Me {llamo|am called|llamar} Lucía y {vivo|live|vivir} en Madrid.","Hi! My name is Lucía and I live in Madrid."],
@@ -1212,7 +1212,7 @@ let STV=Object.assign({lv:"all",en:false,open:null},LS.get("es_story",{}));
 @@@H151 1@@@
 const saveStory=()=>LS.set("es_story",{lv:STV.lv,en:STV.en,done:STV.done});
 @@@H152 1@@@
-   <div class="lvdesc">Fácil = short, present tense · Medio = present + past · Difícil = mixed tenses · Experto = longer stories with slang and the subjunctive.</div>`;
+   <div class="lvdesc">Fácil = short, present tense · Medio = present + past · Difícil = mixed tenses · Maestro = longer stories with slang and the subjunctive.</div>`;
 @@@H153 1@@@
       if(ok){score+=15; if(score>best){best=score;LS.set("es_best",best)}}
 @@@H154 1@@@
@@ -1525,6 +1525,8 @@ const saveStory=()=>LS.set("es_story",{lv:STV.lv,en:STV.en,done:STV.done});
 @@@H186 2@@@
   <p class="gp" style="margin-top:10px">🎬 <b>Think of a movie:</b> the imperfecto sets the scene (<i>llovía, yo estaba en casa</i>), the indefinido is the action that happens (<i>alguien llamó a la puerta</i>).</p>
   <p class="gn">🇪🇸 Spain also uses <b>he hablado</b> (pretérito perfecto) for things that happened today or this week: <i>Hoy he comido paella.</i> Latin America usually says <i>Hoy comí paella.</i></p></div>`
+@@@H187 1@@@
+const G18=null;
 @@@B1 1@@@
     <div><h1>Verbo Match!</h1><p class="sub">200 Spanish verbs, vocab, stories, grammar &amp; slang</p></div>
 @@@B2 1@@@
