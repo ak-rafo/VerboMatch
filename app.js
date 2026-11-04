@@ -2803,17 +2803,17 @@ if(G18){
   renderGuide=function(){
     _rg22();
     const body=$("wBody"), h3=t=>[...body.querySelectorAll(".panel h3")].find(h=>h.textContent.includes(t));
-    const tt=h3("this / that"); if(tt) tt.closest(".panel").outerHTML=G18.thisThat;
-    const rf=h3("Reflexive"); if(rf) rf.closest(".panel").insertAdjacentHTML("beforeend",G18.divertir);
-    const cp=h3("Comparisons"); if(cp){ const ul=cp.closest(".panel").querySelector("ul"); if(ul) ul.insertAdjacentHTML("beforeend",G18.mauMal); }
-    const ps=$("g-past"); if(ps) ps.insertAdjacentHTML("beforeend",G18.tenhoTinha);
+    const tt=h3("this / that"); if(tt&&G18.thisThat) tt.closest(".panel").outerHTML=G18.thisThat;
+    const rf=h3("Reflexive"); if(rf&&G18.divertir) rf.closest(".panel").insertAdjacentHTML("beforeend",G18.divertir);
+    const cp=h3("Comparisons"); if(cp&&G18.mauMal){ const ul=cp.closest(".panel").querySelector("ul"); if(ul) ul.insertAdjacentHTML("beforeend",G18.mauMal); }
+    const ps=$("g-past"); if(ps&&G18.tenhoTinha) ps.insertAdjacentHTML("beforeend",G18.tenhoTinha);
   };
   /* verb notes in the Verb Bank pop-up */
   const _ov22=openVerb;
-  openVerb=function(inf){ _ov22(inf); const n=G18.vnotes[inf]; if(n) $("vBody").insertAdjacentHTML("afterbegin",`<div class="vstat">📝 ${n}</div>`); };
+  openVerb=function(inf){ _ov22(inf); const n=(G18.vnotes||{})[inf]; if(n) $("vBody").insertAdjacentHTML("afterbegin",`<div class="vstat">📝 ${n}</div>`); };
   /* alphabet: pronunciation patterns, A–Z list, sound-alikes */
   new MutationObserver(()=>{ const s=[...document.querySelectorAll("#vocabView details.vx-sec")].find(d=>/^🔤/.test(d.querySelector("summary").textContent.trim()));
-    if(s&&!s.querySelector(".abc-tip")){ const h=s.querySelector(".vx-in"); if(h){ h.insertAdjacentHTML("afterbegin",`<div class="abc-tip">${G18.abcTip}</div>`); } } })
+    if(G18.abcTip&&s&&!s.querySelector(".abc-tip")){ const h=s.querySelector(".vx-in"); if(h){ h.insertAdjacentHTML("afterbegin",`<div class="abc-tip">${G18.abcTip}</div>`); } } })
     .observe($("vocabView"),{childList:true,subtree:true});
   /* slang tab: sensitive-words note at the bottom (never used in games) */
   const _rs22=renderSlang;

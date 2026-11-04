@@ -1462,7 +1462,7 @@ const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
     <p class="gn">Clue words: sempre, todo dia, quando eu era…, antigamente, enquanto</p></div>
 @@@H186 1@@@
   <p class="gp" style="margin-top:10px">🎬 <b>Think of a movie:</b> the imperfeito sets the scene (<i>chovia, eu estava em casa</i>), the perfeito is the action that happens (<i>alguém bateu na porta</i>).</p></div>`
-@@@H187 166@@@
+@@@H187 175@@@
 /* ===== v22 data · Portuguese: Andrew's lesson notes (cleaned, merged without duplicates) ===== */
 const G18={
  vx:{
@@ -1511,7 +1511,16 @@ const G18={
     ["Eu vou viajar para Nova York com a minha namorada.","I'm going to travel to New York with my girlfriend."],["Quanto tempo dura a viagem?","How long does the trip take?"],
     ["Eu vou tirar fotos, e você vai se divertir.","I'm going to take photos, and you're going to have fun."],["Eu trabalhei muito.","I worked a lot."],["Como está o tempo hoje?","What's the weather like today?","Also: Como está o clima hoje?"],
     ["Qual é sua comida favorita?","What's your favorite food?"],["Eu quero meia dúzia de ovos.","I want half a dozen eggs."],["Tenho trinta anos.","I'm thirty years old.","More natural than 'Minha idade é trinta anos'"]]],
-  ["⛪ Faith",[["Deus é bom.","God is good."],["Deus proverá.","God will provide."]]]
+  ["⛪ Faith",[["Graças a Deus!","Thank God!","The most common one: Graças a Deus, deu tudo certo."],["Se Deus quiser.","God willing.","Used for any future plan: Amanhã a gente viaja, se Deus quiser."],
+    ["Vai com Deus!","Go with God! / Take care!","A warm goodbye. Reply: Amém! or Fica com Deus!"],["Fica com Deus!","Stay with God! / Take care!","The goodbye from the person staying"],
+    ["Deus te abençoe!","God bless you!","Also: Deus abençoe (shortened)"],["A bênção, mãe! / A bênção, vó!","Your blessing, Mom / Grandma!","Traditional greeting to elders · reply: Deus te abençoe!"],
+    ["Amém!","Amen!","Also used as 'so be it' / 'I agree!'"],["Meu Deus!","My God! / Oh my gosh!","Everyday surprise; not rude"],["Nossa Senhora!","Holy Mary! / Wow!","Often shortened to Nossa!"],
+    ["Deus me livre!","God forbid!","Deus me livre de pegar trânsito hoje!"],["Deus é fiel.","God is faithful.","Very common on cars, shops and social media"],
+    ["Deus é bom.","God is good.","Deus é bom o tempo todo = God is good all the time"],["Deus proverá.","God will provide."],["Deus sabe o que faz.","God knows what he's doing.","Said to accept something hard"],
+    ["Que Deus te proteja.","May God protect you."],["Glória a Deus!","Glory to God!","Common among evangélicos"],["Aleluia!","Hallelujah!","Also a joking 'finally!': Aleluia, o ônibus chegou!"],
+    ["A paz do Senhor!","The peace of the Lord!","Greeting between evangelical Christians"],["Em nome de Jesus.","In Jesus' name."],
+    ["Vou rezar por você.","I'll pray for you.","Rezar = pray (Catholic) · orar = pray (more evangelical)"],["Vamos à missa.","Let's go to Mass.","O culto = the (evangelical) service"],
+    ["Tenho fé.","I have faith.","A fé = faith"]]]
  ],
  slang:[
   ["Tudo beleza? / E aí, beleza?","everything good? / hey, how's it going?","E aí, beleza? — Beleza!","Hey, how's it going? — All good!","Nacional","Greetings","Tudo belezinha? is the extra-friendly version"],

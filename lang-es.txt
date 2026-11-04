@@ -1525,8 +1525,57 @@ const saveStory=()=>LS.set("es_story",{lv:STV.lv,en:STV.en,done:STV.done});
 @@@H186 2@@@
   <p class="gp" style="margin-top:10px">🎬 <b>Think of a movie:</b> the imperfecto sets the scene (<i>llovía, yo estaba en casa</i>), the indefinido is the action that happens (<i>alguien llamó a la puerta</i>).</p>
   <p class="gn">🇪🇸 Spain also uses <b>he hablado</b> (pretérito perfecto) for things that happened today or this week: <i>Hoy he comido paella.</i> Latin America usually says <i>Hoy comí paella.</i></p></div>`
-@@@H187 1@@@
-const G18=null;
+@@@H187 50@@@
+/* ===== v24 data · Spanish: faith phrases + recognize-don't-use list ===== */
+const G18={
+ vx:{}, slang:[], idioms:[], wgroups:{}, witems:[], vnotes:{},
+ phrases:[
+  ["⛪ Faith",[["¡Gracias a Dios!","Thank God!","The most common one: Gracias a Dios, todo salió bien."],["Si Dios quiere.","God willing.","Used for any future plan: Mañana viajamos, si Dios quiere."],
+    ["Primero Dios.","God willing (Mexico).","Very Mexican: Primero Dios, nos vemos el lunes."],["Ojalá.","Hopefully / I hope so.","From Arabic 'God willing' · Ojalá que llueva = I hope it rains"],
+    ["¡Que Dios te bendiga!","God bless you!","Also: Dios te bendiga · ¡Bendiciones! (very common in texts)"],["Vaya con Dios.","Go with God.","A warm goodbye · also: Que Dios te acompañe"],
+    ["Amén.","Amen.","Also used as 'so be it' / 'I agree!'"],["¡Dios mío!","My God! / Oh my gosh!","Everyday surprise; not rude"],["¡Virgen santa! / ¡Ay, Virgencita!","Holy Mary! / Oh my!","Mexico especially · also ¡Santo cielo!"],
+    ["¡Dios me libre!","God forbid!","Also: ¡Dios no lo quiera!"],["Dios es bueno.","God is good.","Dios es bueno todo el tiempo = God is good all the time"],["Dios proveerá.","God will provide."],
+    ["Dios sabe lo que hace.","God knows what he's doing.","Said to accept something hard"],["Que Dios te proteja.","May God protect you."],["Dios te pague.","God repay you / thank you so much.","Heartfelt thanks, common with elders"],
+    ["¡Gloria a Dios!","Glory to God!"],["¡Aleluya!","Hallelujah!","Also a joking 'finally!'"],["En el nombre de Jesús.","In Jesus' name."],
+    ["Voy a rezar por ti.","I'll pray for you.","Rezar (Catholic) · orar (more evangelical)"],["Vamos a misa.","Let's go to Mass.","El culto = the (evangelical) service"],
+    ["Tengo fe.","I have faith.","La fe = faith"],["¡Jesús! / ¡Salud!","Bless you! (after a sneeze)","¡Jesús! is common in Spain and Mexico"]]]
+ ],
+ sensitive:(()=>{
+  const G=[
+   ["🟡","Rude / crude","Common in casual speech, but avoid with strangers, at work and with family.","#c9a400",[
+    ["mierda","shit","¡Qué lata! / ¡Miércoles!"],["cagar · cagada","to shit · screw-up","ir al baño · error"],["mear","to piss","hacer pipí"],["culo","ass","trasero / pompis (Mex)"],
+    ["tetas","tits","pecho / senos"],["carajo · ¡vete al carajo!","damn · go to hell","¡caray! / déjame en paz"],["maldito / maldita","damned","fastidioso"],["joder","damn! / to annoy (🇪🇸); vulgar 'f***' elsewhere","¡vaya! / fastidiar"],
+    ["hostia","damn! / a punch (🇪🇸, strong in Spain)","¡ostras!"],["idiota · imbécil · estúpido","idiot · imbecile · stupid","tonto / bobo"],["gilipollas","jerk / idiot (🇪🇸)","tonto"],["pendejo / pendeja","idiot / jerk (🇲🇽, strong)","tonto"],
+    ["cabrón / cabrona","bastard (affectionate between close friends in 🇲🇽🇪🇸)","—"],["huevón / güevón","lazy jerk / dude (very casual)","flojo (for lazy)"],["naco / naca","tacky, classist insult (🇲🇽)","—"],["mamón / mamona","stuck-up jerk (🇲🇽)","creído"],
+    ["pinche","damn / lousy (🇲🇽: pinche tráfico)","dichoso"]]],
+   ["🟠","Strong swears","Very common in movies and music, but strong. Don't use them until you really know the setting.","#f08c00",[
+    ["chingar","to f*** (🇲🇽, hundreds of forms)","fregar"],["¡Chinga tu madre! · ¡Vete a la chingada!","very strong insult · go to hell (🇲🇽)","—"],["chingado · ¡No manches!","f***ed · no way (the polite version)","¡No manches! is fine"],
+    ["¡No mames!","no f***ing way! (🇲🇽)","¡No manches! / ¡No inventes!"],["¿Qué pedo?","what's up / what the hell (🇲🇽, vulgar-casual)","¿Qué onda?"],["¡A la verga!","holy s***! / f*** off (🇲🇽)","¡Híjole!"],
+    ["puta / hijo de puta","whore / son of a bitch","—"],["¡Me cago en…!","s***! (lit. I s*** on…, 🇪🇸)","¡Mecachis!"],["¡Vete a la mierda!","go to hell / f*** off","déjame en paz"],
+    ["culero / culera","asshole / coward (🇲🇽)","—"],["ojete","jerk / asshole (🇲🇽)","—"],["hijueputa · malparido","son of a bitch (🇨🇷)","—"],["¡Puta madre!","f***! (frustration)","¡Ay, caramba!"]]],
+   ["🔴","Sexual / very vulgar","Know them so you can recognize them, especially in jokes and double meanings.","#e63946",[
+    ["verga","penis (vulgar, 🇲🇽 · also 'awesome' in some slang)","—"],["polla","penis (vulgar, 🇪🇸)","—"],["pinga","penis (vulgar, 🇨🇷 & Caribbean)","—"],
+    ["coño","vagina (🇪🇸); used as 'damn!' in Spain","¡caramba!"],["panocha","vagina (vulgar, 🇲🇽)","—"],["follar","to f*** (🇪🇸)","—"],["cachar","to have sex / to catch (🇨🇷 context)","—"]]],
+   ["🪤","Innocent words that turn vulgar","Normal in one country, rude in another. The most common learner mistakes.","#7048e8",[
+    ["coger","to take / grab in 🇪🇸 · to f*** in 🇲🇽 & 🇨🇷","Latin America: tomar / agarrar"],["pedo","fart · drunk / problem / 'what's up' in 🇲🇽","pum · borracho · problema"],
+    ["huevos","eggs · also testicles (jokes everywhere)","Mexico sometimes says blanquillos for eggs"],["concha","shell · vulgar in 🇦🇷🇨🇱","—"],["papaya","papaya · vulgar in parts of Latin America","fruta bomba (Cuba)"]]],
+   ["⛔","Slurs & offensive labels · never use","These hurt people. Some are reclaimed inside communities, but not for learners to use.","#495057",[
+    ["maricón · marica","gay slur","gay"],["joto · puto (as an insult)","gay slur (🇲🇽)","gay"],["playo","gay slur (🇨🇷)","gay"],["tortillera","lesbian slur","lésbica"],
+    ["sudaca","slur for South Americans (🇪🇸)","sudamericano"],["indio (as an insult)","racist insult","indígena · pueblos indígenas"],["retrasado / retrasada","ableist insult","—"],["mongólico","ableist insult","persona con síndrome de Down"]]]
+  ];
+  const n=G.reduce((a,g)=>a+g[4].length,0);
+  return `<details class="fold sens" style="margin-top:12px"><summary>⚠️ Recognize, don't use · ${n} swears &amp; sensitive words</summary><div class="sens-in">
+   <p class="gn">So you understand them in movies, music and the street, and never say them by accident. Regions: 🇪🇸 Spain · 🇲🇽 Mexico · 🇨🇷 Costa Rica. These words are kept out of games, quizzes, search and audio.</p>
+   ${G.map(([ic,t,d,c,rows])=>`<div class="sens-g" style="--c:${c}"><div class="sens-h"><span>${ic}</span><b>${t}</b><span class="gn">${rows.length}</span></div><p class="gn">${d}</p>
+     <table class="gt"><thead><tr><th>Word</th><th>Meaning</th><th>Say instead</th></tr></thead><tbody>${rows.map(([w,m,s])=>`<tr><td><b>${w}</b></td><td>${m}</td><td>${s==="—"?`<span class="gn">just don't</span>`:`<i>${s}</i>`}</td></tr>`).join("")}</tbody></table></div>`).join("")}
+   <div class="sens-g" style="--c:#009c3b"><div class="sens-h"><span>✅</span><b>Safe everyday swaps</b></div>
+    <p class="gn" style="margin:4px 0 0">Mild exclamations anyone can use: <b>¡Caramba!</b> · <b>¡Caray!</b> · <b>¡Rayos!</b> · <b>¡Híjole!</b> 🇲🇽 · <b>¡Chin!</b> 🇲🇽 · <b>¡Ostras!</b> 🇪🇸 · <b>¡Mecachis!</b> 🇪🇸 · <b>¡Miércoles!</b> (polite for mierda) · <b>¡Qué torta!</b> 🇨🇷 · <b>¡Diay!</b> 🇨🇷 · <b>¡Qué lata!</b> (what a drag).</p></div>
+   <div class="sens-g" style="--c:#3a86ff"><div class="sens-h"><span>📱</span><b>Text abbreviations</b></div>
+    <p class="gn" style="margin:4px 0 0"><b>hdp</b> hijo de puta · <b>alv</b> a la verga 🇲🇽 · <b>ntc</b> no te creas (just kidding) · <b>nmms</b> no mames 🇲🇽 · <b>ptm</b> puta madre.
+     Harmless ones: <b>jajaja</b> (lol) · <b>xq</b> (porque) · <b>tqm</b> (te quiero mucho) · <b>ntp</b> (no te preocupes) · <b>q onda</b>.</p></div>
+  </div></details>`;
+ })()
+};
 @@@B1 1@@@
     <div><h1>Verbo Match!</h1><p class="sub">200 Spanish verbs, vocab, stories, grammar &amp; slang</p></div>
 @@@B2 1@@@
