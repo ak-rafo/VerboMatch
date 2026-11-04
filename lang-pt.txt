@@ -156,7 +156,7 @@ BUILD v18
 ["economizar","to save (money)","save","saved"],
 ["custar","to cost","cost","cost (past)"],
 ["valer","to be worth","am worth","was worth",{p:"valho"}],
-["faltar","to be missing / lack","lack","lacked"],
+["faltar","to be missing / lack","am missing","was missing"],
 ["caber","to fit","fit","fit (past)",{p:"caibo",pt:"coube"}],
 ["doer","to hurt / ache","hurt","hurt (past)",{p:"doo"}],
 ["adorar","to love / adore","adore","adored"],
@@ -265,7 +265,7 @@ function accent(b,strong){const m={a:"á",i:"í",e:strong?"é":"ê",o:"ô"},l=b.
   const mqp=[base+"ra",base+"ras",base+"ra",ac+"ramos",base+"ram"];
   const pb=inf==="pôr"?"por":inf;
   const pinf=[inf,pb+"es",inf,pb+"mos",pb+"em"];
-  const part=I.part||(c==="ar"?st+"ado":/[aeiou]$/.test(st)?st+"ído":st+"ido");
+  const part=I.part||(c==="ar"?st+"ado":(/[aeiou]$/.test(st)&&!/[gq]u$/.test(st))?st+"ído":st+"ido");
   const ger=I.ger||st+(c==="ar"?"ando":c==="er"?"endo":"indo");
   const impA=["—",I.tu||pres[2],psub[2],psub[3],psub[4]];
   const impN=["—","não "+psub[1],"não "+psub[2],"não "+psub[3],"não "+psub[4]];
@@ -579,7 +579,7 @@ const saveW=()=>LS.set("vm_wset",WSET);
 ["parça","partner / buddy","Valeu, parça!","Thanks, buddy!","SP","People","Short for 'parceiro'. Huge in SP and funk/rap culture."],
 ["mina","girl / woman","Aquela mina é minha amiga.","That girl is my friend.","SP","People","Very common in SP. Neutral-casual, not rude."],
 ["moleque","kid / young guy","O moleque joga muito!","That kid plays really well!","SP","People","Can be affectionate ('meu moleque') or 'brat'."],
-["boy / boyzinho","rich kid / preppy guy","Ele é mó boyzinho, só anda de carro importado.","He's such a rich kid, only drives imported cars.","SP","People","SP term for playboy types. Also 'boy' = boyfriend in the Nordeste."],
+["boy / boyzinho","rich kid / preppy guy","Ele é mó boyzinho, só anda de carro importado.","He's such a rich kid, only drives imported cars.","SP","People","SP term for playboy types."],
 ["patricinha","preppy / spoiled girl","Ela virou patricinha depois da faculdade.","She became a preppy girl after college.","Nacional","People","Male version: mauricinho."],
 ["chegado","close friend","Ele é chegado meu.","He's a close friend of mine.","SP","People","Also 'ser chegado em' = to be into something."],
 ["nóis","we / us (slangy 'nós')","É nóis, mano!","We're together, bro! / That's us!","SP","Expressions","'É nóis' = solidarity, 'we got this'. SP periphery classic."],
@@ -824,7 +824,7 @@ function mkTime(h,m){const w=timeToPt(h,m);return {t:"time",pt:w,en:`${h}:${pad2
  ["quadril","o quadril","hip","body",192,306,"Plural: os quadris"],
  ["pulso","o pulso","wrist","body",72,348,"Also means 'pulse'"],
  ["polegar","o polegar","thumb","body",88,362],
- ["mao","a mão","hand","body",64,378,"Feminine even though it ends in -o! Plural: as mãos"],
+ ["mao","a mão","hand","body",64,378,"Feminine, even though most -ão nouns (o pão, o feijão) are masculine. Plural: as mãos"],
  ["dedo","o dedo","finger","body",69,404,"Plural: os dedos"],
  ["perna","a perna","leg","body",null,null,"The whole leg",["coxa","joelho","canela"]],
  ["coxa","a coxa","thigh","body",135,380],
@@ -1057,7 +1057,7 @@ const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Médio",c:
     ["O que alguém trouxe?","What did someone bring?","Um violão","Uma pizza","Um rádio"],
     ["Quando a luz voltou?","When did the power come back?","Depois da meia-noite","Às oito","No dia seguinte"]]},
 {lv:3,ic:"🎶",t:"Rolê na Augusta",en:"A night out on Augusta",l:[
- ["Sexta à noite, o Thiago {mandou|sent|mandar} mensagem no grupo: — {Sextou|It's Friday! (slang)}! Quem {cola|is coming (slang)|colar} na Augusta hoje?","Friday night, Thiago texted the group: \"It's Friday! Who's coming to Augusta tonight?\""],
+ ["Sexta à noite, o Thiago {mandou|sent|mandar} mensagem no grupo: — {Sextou|It's Friday! (slang)}! Quem {cola|is coming (slang)} na Augusta hoje?","Friday night, Thiago texted the group: \"It's Friday! Who's coming to Augusta tonight?\""],
  ["— {Demorou|For sure (slang)}! — {respondeu|replied|responder} a Bia. — Mas {tô sem grana|I'm broke (slang)}, viu?","\"For sure!\" Bia replied. \"But I'm broke, okay?\""],
  ["— {Suave|No problem (slang)}, a gente vai num {boteco|cheap neighborhood bar} antes da {balada|club / party (slang)}.","\"No problem, we'll go to a cheap bar before the club.\""],
  ["Eles se {encontraram|met up|encontrar} às dez, {tomaram|had|tomar} uma {breja|beer (slang)} e {riram|laughed|rir} muito.","They met up at ten, had a beer and laughed a lot."],
@@ -1184,14 +1184,14 @@ const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
   ["A chave? Eu __ deixei na mesa.","a","The key? I left it on the table.","pron",["a","o","lhe","la"]],
   ["Os documentos? Já __ mandei.","os","The documents? I already sent them.","pron",["os","as","lhes","eles"]],
   ["Ela __ ama muito.","me","She loves me a lot.","pron",["me","te","se","nos"]],
-  ["Eu __ ligo amanhã.","te","I'll call you tomorrow.","pron",["te","me","lhe","se"]],
+  ["Eu __ ligo amanhã.","te","I'll call you tomorrow.","pron",["te","me","o","se"]],
   ["Ele __ deu um presente.","nos","He gave us a gift.","pron",["nos","os","lhes","se"]],
   ["Vou mandar a foto __ ele.","pra","I'll send the photo to him.","pron",["pra","de","em","com"]],
   ["Eu vi __ no shopping.","ele","I saw him at the mall. (spoken Brazilian)","pron",["ele","dele","lhe","seu"]],
-  ["Vou __ ajudar.","te","I'm going to help you.","pron",["te","se","lhe","nos"]],
+  ["Vou __ ajudar.","te","I'm going to help you.","pron",["te","se","me","os"]],
   ["Este é o __ carro.","meu","This is my car.","poss",["meu","minha","seu","nosso"]],
   ["A __ casa é perto.","minha","My house is close.","poss",["minha","meu","sua","nossa"]],
-  ["Esse livro é __?","seu","Is that book yours?","poss",["seu","sua","dele","teu"]],
+  ["Esse livro é __?","seu","Is that book yours? (você)","poss",["seu","sua","seus","suas"]],
   ["O carro __ é novo.","dele","His car is new.","poss",["dele","dela","seu","deles"]],
   ["A mãe __ é professora.","dela","Her mother is a teacher.","poss",["dela","dele","sua","delas"]],
   ["A __ família é grande.","nossa","Our family is big.","poss",["nossa","nosso","minha","sua"]],
@@ -1321,11 +1321,11 @@ const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
 @@@H174 20@@@
   ["Pagar o pato","To pay the duck","To take the blame for someone else","To take the fall","Ele quebrou o vaso e eu paguei o pato.","He broke the vase and I took the fall."],
   ["Custar os olhos da cara","To cost the eyes of the face","To be very expensive","To cost an arm and a leg","Esse carro custou os olhos da cara.","This car cost an arm and a leg."],
-  ["Chover no molhado","To rain on what's already wet","To state the obvious","To beat a dead horse","Repetir isso é chover no molhado.","Repeating that is beating a dead horse."],
+  ["Chover no molhado","To rain on what's already wet","To state the obvious / say what everyone knows","Preaching to the choir","Repetir isso é chover no molhado.","Repeating that is just preaching to the choir."],
   ["Engolir sapo","To swallow a frog","To put up with something unpleasant","To bite your tongue","No trabalho, às vezes a gente engole sapo.","At work, sometimes you bite your tongue."],
   ["Enfiar o pé na jaca","To stick your foot in the jackfruit","To overdo it (food, drinks, partying)","To go overboard","No Natal eu enfiei o pé na jaca.","At Christmas I went overboard."],
   ["Quebrar o galho","To break the branch","To help out with a quick fix","To help someone out","Você pode quebrar meu galho hoje?","Can you help me out today?"],
-  ["Ficar de molho","To stay soaking","To rest at home and recover","To lie low","Estou gripado, vou ficar de molho.","I have the flu, I'm going to lie low."],
+  ["Ficar de molho","To stay soaking","To rest at home and recover","To rest up","Estou gripado, vou ficar de molho.","I have the flu, I'm going to rest up at home."],
   ["Estar com a pulga atrás da orelha","To have a flea behind your ear","To be suspicious","To smell a rat","Fiquei com a pulga atrás da orelha.","I smelled a rat."],
   ["Pisar na bola","To step on the ball","To mess up / let someone down","To drop the ball","Desculpa, eu pisei na bola.","Sorry, I dropped the ball."],
   ["Tirar o cavalo da chuva","To take the horse out of the rain","To give up hope on something","Don't hold your breath","Pode tirar o cavalo da chuva, ele não vem.","Don't hold your breath, he's not coming."],
@@ -1404,7 +1404,7 @@ const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
    ["o papagaio","parrot"],["a onça","jaguar","Brazil's big cat"],["o bicho de estimação","pet","Also o pet"]],
   colors:[["vermelho","red"],["azul","blue"],["verde","green"],["amarelo","yellow"],["preto","black"],["branco","white"],["cinza","gray"],["rosa","pink"],["roxo","purple"],["marrom","brown"],
    ["grande","big"],["pequeno","small"],["novo","new / young"],["velho","old"],["bonito","pretty / handsome"],["feio","ugly"],["caro","expensive"],["barato","cheap"],
-   ["fácil","easy"],["difícil","hard"],["rápido","fast"],["devagar","slow / slowly"],["quente","hot"],["frio","cold"],["limpo","clean"],["sujo","dirty"],["cheio","full"],["vazio","empty"]]
+   ["fácil","easy"],["difícil","hard"],["rápido","fast"],["lento","slow","Devagar = slowly: Fala devagar, por favor"],["quente","hot"],["frio","cold"],["limpo","clean"],["sujo","dirty"],["cheio","full"],["vazio","empty"]]
 @@@H180 1@@@
  wgroups:{serestar:{label:"Ser vs estar",c:"#d6336c"},past:{label:"Past · perfeito vs imperfeito",c:"#7048e8"}},
 @@@H181 30@@@
@@ -1564,7 +1564,7 @@ const G18={
   ["O Brasil é um __ enorme.","país","Brazil is a huge country.","mist",["país","pais","paz","pai"],"país (with accent) = country"],
   ["Minha __ cuida do meu sobrinho.","babá","My nanny looks after my nephew.","mist",["babá","baba","bebê","avó"],"babá = nanny · baba = drool"],
   ["Esse carro é muito __.","caro","This car is very expensive.","mist",["caro","carro","cara","barato"],"caro = expensive · carro = car"],
-  ["A minha __ faz o melhor bolo.","avó","My grandmother makes the best cake.","mist",["avó","avô","vó","mãe"],"avó (open ó) = grandmother · avô (closed ô) = grandfather"],
+  ["A minha __ faz o melhor bolo.","avó","My grandmother makes the best cake.","mist",["avó","avô","tia","mãe"],"avó (open ó) = grandmother · avô (closed ô) = grandfather"],
   ["Há quanto tempo vocês estão __?","juntos","How long have you been together?","mist",["juntos","junto","casados","namorando"],"juntos agrees with vocês (plural)"],
   ["Davi __ ajuda muito com meu português.","me","Davi helps me a lot with my Portuguese.","mist",["me","é","se","lhe"],"Davi me ajuda (no 'é')"]
  ],

@@ -108,7 +108,7 @@ BUILD v18
 ["ahorrar","to save (money)","save","saved"],
 ["costar","to cost","cost","cost (past)",{sc:"ue"}],
 ["valer","to be worth","am worth","was worth"],
-["faltar","to be missing / lack","lack","lacked"],
+["faltar","to be missing / lack","am missing","was missing"],
 ["caber","to fit","fit","fit (past)"],
 ["doler","to hurt · me duele = it hurts me","hurt","hurt (past)",{sc:"ue"}],
 ["odiar","to hate","hate","hated"],
@@ -222,7 +222,7 @@ BUILD v18
  conducir:{pret:"conduje condujiste condujo condujimos condujisteis condujeron"},
  traducir:{pret:"traduje tradujiste tradujo tradujimos tradujisteis tradujeron"},
  producir:{pret:"produje produjiste produjo produjimos produjisteis produjeron"},
- "reír":{pres:"río ríes ríe reímos reís ríen",pret:"reí reíste rió reímos reísteis rieron",psub:"ría rías ría riamos riáis rían",fst:"reir",part:"reído",ger:"riendo"},
+ "reír":{pres:"río ríes ríe reímos reís ríen",pret:"reí reíste rio reímos reísteis rieron",psub:"ría rías ría riamos riáis rían",fst:"reir",part:"reído",ger:"riendo"},
  "sonreír":{from:"reír",pre:"son"},
  mantener:{from:"tener",pre:"man",tu:"mantén"},
  construir:{pret:"construí construiste construyó construimos construisteis construyeron",uir:1},
@@ -243,11 +243,13 @@ function lastRep(s,from,to){ const i=s.lastIndexOf(from); return i<0?s:s.slice(0
 function scStrong(st,sc){ return sc==="ie"?lastRep(st,"e","ie"):sc==="ue"?lastRep(st,"o","ue"):sc==="i"?lastRep(st,"e","i"):sc==="uj"?lastRep(st,"u","ue"):st; }
 function scWeak2(st,sc){ return sc==="ie"||sc==="i"?lastRep(st,"e","i"):sc==="ue"?lastRep(st,"o","u"):st; }
 function accentLast(st){ const i=Math.max(st.lastIndexOf("i"),st.lastIndexOf("u")); if(i<0) return st; return st.slice(0,i)+(st[i]==="i"?"í":"ú")+st.slice(i+1); }
-@@@H27 29@@@
+@@@H27 31@@@
   const I=IRR[inf]||{}, v=VMAP[inf]||{};
   if(I.from){ const b=simple(I.from), pre=I.pre, out={};
+    /* sonreír: son+rio → sonrió (two syllables keep the accent) */
     for(const k in b){ out[k]=Array.isArray(b[k])?b[k].map(f=>f==="—"?f:f.startsWith("no ")?"no "+pre+f.slice(3):pre+f):pre+b[k]; }
     if(I.tu) out.impA=[out.impA[0],I.tu,...out.impA.slice(2)];
+    if(inf==="sonreír") out.pret=out.pret.map(f=>f==="sonrio"?"sonrió":f);
     return _simple[inf]=out; }
   const raw=inf.replace("í","i"), c=raw.slice(-2), st=raw.slice(0,-2), E=ENDS[c], sc=v.sc||"";
   const isIr=c==="ir";
@@ -687,14 +689,14 @@ const saveW=()=>LS.set("es_wset",WSET);
 ["diay","well / so / come on","Diay, mae, ¿qué hacemos?","So, dude, what do we do?","CR","Expressions","Filler for surprise, doubt or 'well…'."],
 ["brete","job / work","Tengo mucho brete esta semana.","I have a lot of work this week.","CR","Money & work","Bretear = to work."],
 ["harina","money","No tengo harina para salir.","I don't have money to go out.","CR","Money & work","Lit. 'flour'."],
-["un rojo","a 1,000-colón bill","Me costó dos rojos.","It cost me two thousand colones.","CR","Money & work","The old 1,000 bill was red."],
-["un tucán","a 5,000-colón bill","Te debo un tucán.","I owe you five thousand colones.","CR","Money & work","The 5,000 bill has a toucan on it."],
+["un rojo","a 1,000-colón bill","Me costó dos rojos.","It cost me two thousand colones.","CR","Money & work","The 1,000 bill is red."],
+["un tucán","a 5,000-colón bill","Te debo un tucán.","I owe you five thousand colones.","CR","Money & work","Slang from an older bill design; still heard."],
 ["chunche","thing / gadget","Pasame ese chunche.","Pass me that thing.","CR","Everyday","Use it for anything you can't name."],
 ["vara","thing / issue","¿Qué es esa vara?","What's that thing?","CR","Everyday","¡Qué vara! = What a situation!"],
 ["chinear","to pamper / spoil","Mi abuela me chinea mucho.","My grandma spoils me a lot.","CR","Love & dating","Chineado = spoiled."],
 ["¡Qué chiva!","How cool!","Tu carro nuevo está muy chiva.","Your new car is really cool.","CR","Reactions","Chiva = cool, great."],
 ["tico / tica","Costa Rican","Mi novia es tica.","My girlfriend is Costa Rican.","CR","People","From Costa Ricans' habit of saying chiquitico (tiny)."],
-["jupa","head","Me duele la jupa.","My head hurts.","CR","Everyday","Jupón = stubborn."],
+["jupa","head","Me duele la jupa.","My head hurts.","CR","Everyday",""],
 ["birra","beer","Vamos por unas birras.","Let's go for some beers.","CR","Food & drink","Also used in Spain."],
 ["guaro","sugarcane liquor","Pidieron un guaro con limón.","They ordered a cane liquor with lime.","CR","Food & drink","Cacique is the classic brand."],
 ["casado","typical lunch plate","Para almorzar, un casado con pollo.","For lunch, a casado with chicken.","CR","Food & drink","Rice, beans, salad, plantain and meat. Lit. 'married'."],
@@ -712,7 +714,7 @@ const saveW=()=>LS.set("es_wset",WSET);
 ["salado","unlucky / tough luck","¡Qué salado! Se fue la luz.","Tough luck! The power went out.","CR","Reactions","Lit. 'salty'."],
 ["despiche","mess / chaos","La casa quedó hecha un despiche.","The house was left a total mess.","CR","Expressions","Also a wild party."],
 ["mejenga","pickup soccer game","Hay mejenga en la plaza a las cinco.","There's a pickup soccer game in the plaza at five.","CR","Going out","Soccer is life in Costa Rica."],
-["al chile","seriously / for real","Al chile, no sé qué pasó.","Seriously, I don't know what happened.","CR","Expressions","Also common in Mexico, where it means 'honestly'."]
+["al chile","honestly / straight up","Al chile, no sé qué pasó.","Honestly, I don't know what happened.","MX","Expressions","Very casual Mexican slang · avoid in formal settings."]
 @@@H96 3@@@
 const SREG={ES:{c:"#c60b1e",l:"Spain",f:"🇪🇸"},MX:{c:"#006847",l:"Mexico",f:"🇲🇽"},CR:{c:"#002b7f",l:"Costa Rica",f:"🇨🇷"}};
 const REG_ORDER=["ES","MX","CR"];
@@ -811,10 +813,10 @@ const dayPart=h=>h>=1&&h<=5?" de la madrugada":h<12?" de la mañana":h<20?" de l
   ["de la noche","at night"],["de madrugada","in the early hours (after midnight)"],["¿A qué hora?","At what time?"],["a las ocho","at eight o'clock"],
   ["ahora","now","Mexico: ahorita can mean now… or later"],["temprano","early"],["tarde","late","Also 'la tarde' = the afternoon"],["el segundo","second (time)"],["el minuto","minute"],["la hora","hour"],
   ["media hora","half an hour"]],
- days:[["el lunes","Monday","Weeks start on Monday in Spanish calendars"],["el martes","Tuesday","¡Martes 13! is the unlucky day, not Friday"],["el miércoles","Wednesday"],["el jueves","Thursday"],
+ days:[["el lunes","Monday · on Monday","Weeks start on Monday · 'on Monday' is just el lunes (no en)"],["el martes","Tuesday","¡Martes 13! is the unlucky day, not Friday"],["el miércoles","Wednesday"],["el jueves","Thursday"],
   ["el viernes","Friday"],["el sábado","Saturday"],["el domingo","Sunday"],["el día","day","Masculine even though it ends in -a"],["hoy","today"],
   ["ayer","yesterday"],["mañana","tomorrow","Also 'la mañana' = the morning · pasado mañana = day after tomorrow"],["anteayer","the day before yesterday"],["pasado mañana","the day after tomorrow"],
-  ["¿Qué día es hoy?","What day is today?"],["el lunes","on Monday (no 'en')","say: el lunes","el lunes"],["los lunes","on Mondays (every Monday)"],["el día laborable","weekday / workday"],
+  ["¿Qué día es hoy?","What day is today?"],["los lunes","on Mondays (every Monday)"],["el día laborable","weekday / workday"],
   ["el día festivo","public holiday","Also: el feriado (Latin America)"]],
  weeks:[["la semana","week"],["esta semana","this week"],["la semana pasada","last week"],["la semana que viene","next week","Also: la próxima semana"],
   ["el fin de semana","weekend","Often shortened to el finde"],["la quincena","two weeks / fortnight","Also a twice-monthly paycheck in Mexico"],["todas las semanas","every week"],["por semana","per week"],
@@ -1012,7 +1014,7 @@ const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Medio",c:"
  ["El primer día, {visitamos|we visited|visitar} Monte Albán, unas ruinas zapotecas.","On the first day, we visited Monte Albán, some Zapotec ruins."],
  ["¡La vista {era|was|ser} increíble!","The view was incredible!"],
  ["El segundo día, {probamos|we tried|probar} el mole negro y los chapulines.","On the second day, we tried black mole and grasshoppers."],
- ["Mi esposa no {quiso|wanted|querer} comer chapulines, pero yo {comí|ate|comer} un montón.","My wife refused to eat grasshoppers, but I ate a ton."],
+ ["Mi esposa no {quiso|refused (didn't want)|querer} comer chapulines, pero yo {comí|ate|comer} un montón.","My wife refused to eat grasshoppers, but I ate a ton."],
  ["{Fue|It was|ser} un viaje corto, pero nos {encantó|loved it|encantar}.","It was a short trip, but we loved it."]],
  q:[["¿Cómo viajaron?","How did they travel?","En avión","En autobús","En coche"],
     ["¿Dónde estaba el hotel?","Where was the hotel?","Cerca del Zócalo","En la playa","En las ruinas"],
@@ -1035,10 +1037,10 @@ const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Medio",c:"
  ["Cuando {llegué|I got|llegar} a la parada, el bus {estaba|was|estar} saliendo.","When I got to the stop, the bus was leaving."],
  ["{Corrí|I ran|correr} detrás de él, pero no lo {alcancé|caught (reached)|alcanzar}.","I ran after it, but I didn't catch it."],
  ["Entonces {llamé|called|llamar} a mi jefe en San José y le {expliqué|explained|explicar} el problema.","So I called my boss in San José and explained the problem."],
- ["Él se {rió|laughed|reír} y {dijo|said|decir}: —Tranquilo, {mae|dude (Costa Rica)}, ¡pura vida!","He laughed and said: \"Relax, dude, all good!\""]],
+ ["Él se {rio|laughed|reír} y {dijo|said|decir}: —Tranquilo, {mae|dude (Costa Rica)}, ¡pura vida!","He laughed and said: \"Relax, dude, all good!\""]],
  q:[["¿Por qué se despertó tarde?","Why did he wake up late?","La alarma no sonó","Se acostó tarde","Estaba enfermo"],
     ["¿Desayunó?","Did he have breakfast?","No","Sí, en casa","Sí, en la parada"],
-    ["¿Qué hizo el jefe?","What did the boss do?","Se rió","Gritó","Colgó el teléfono"]]},
+    ["¿Qué hizo el jefe?","What did the boss do?","Se rio","Gritó","Colgó el teléfono"]]},
 {lv:2,ic:"🧒",t:"Cuando era niño",en:"When I was a kid",l:[
  ["Cuando {era|was|ser} niño, {vivía|lived|vivir} en un pueblo pequeño de Costa Rica, cerca de un volcán.","When I was a kid, I lived in a small town in Costa Rica, near a volcano."],
  ["Nuestra casa {tenía|had|tener} un patio enorme con un árbol de mango.","Our house had a huge backyard with a mango tree."],
@@ -1063,7 +1065,7 @@ const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Medio",c:"
  ["Esta noche {voy a dormir|I'm going to sleep|dormir} temprano y {dejaré|I will leave|dejar} la ropa preparada.","Tonight I'm going to sleep early and I'll leave my clothes ready."],
  ["Estoy nervioso, pero tranquilo. ¡Va a salir {de lujo|great (slang)}!","I'm nervous, but calm. It's going to go great!"]],
  q:[["¿Cuándo es la entrevista?","When is the interview?","Mañana a las diez","Hoy por la tarde","La semana que viene"],
-    ["¿Quién le ayudó a practicar?","Who helped him practice?","Su novia","Su hermano","Su jefe"],
+    ["¿Quién lo ayudó a practicar?","Who helped him practice?","Su novia","Su hermano","Su jefe"],
     ["¿Qué va a hacer esta noche?","What will he do tonight?","Dormir temprano","Salir con amigos","Estudiar inglés"]]},
 {lv:2,ic:"🏢",t:"El piso nuevo",en:"The new apartment",l:[
  ["La semana pasada {alquilé|I rented|alquilar} un piso en el barrio de Lavapiés, en Madrid.","Last week I rented an apartment in the Lavapiés neighborhood in Madrid."],
@@ -1113,7 +1115,7 @@ const STORY_LV=[{n:"Fácil",c:"#009c3b",d:"Short, present tense"},{n:"Medio",c:"
  ["—Tío, ¿y si nos vamos a un karaoke? —{propuso|suggested} Javi.","\"Dude, what if we go to a karaoke bar?\" Javi suggested."],
  ["{Acabaron|They ended up|acabar} cantando canciones de los noventa hasta las cuatro de la mañana.","They ended up singing nineties songs until four in the morning."],
  ["Javi, que {juraba|swore} que no {sabía|knew how|saber} cantar, lo {petó|smashed it (Spain slang)} con una de Shakira.","Javi, who swore he couldn't sing, smashed it with a Shakira song."],
- ["El domingo, Marta {subió|posted (uploaded)|subir} el vídeo al grupo: —{Flipé|I was blown away (Spain slang)|flipar} con vosotros, jajaja.","On Sunday, Marta posted the video in the group: \"You guys blew my mind, hahaha.\""],
+ ["El domingo, Marta {subió|posted (uploaded)|subir} el vídeo al grupo: —{Flipé|I was blown away (Spain slang)} con vosotros, jajaja.","On Sunday, Marta posted the video in the group: \"You guys blew my mind, hahaha.\""],
  ["Desde entonces, cada viernes alguien {pregunta|asks|preguntar}: —¿Karaoke o qué?","Since then, every Friday someone asks: \"Karaoke or what?\""]],
  q:[["¿Por qué estaba preocupada Marta?","Why was Marta worried?","No tenía dinero","Estaba enferma","Tenía que trabajar"],
     ["¿Por qué no entraron en la discoteca?","Why didn't they go into the club?","La cola era enorme","Estaba cerrada","Era muy cara"],
@@ -1251,7 +1253,7 @@ const saveStory=()=>LS.set("es_story",{lv:STV.lv,en:STV.en,done:STV.done});
   ["Este es __ coche.","mi","This is my car.","poss",["mi","mis","tu","su"]],
   ["__ hermanos viven en Madrid.","mis","My brothers live in Madrid.","poss",["mis","mi","sus","tus"]],
   ["¿Es __ libro?","tu","Is it your book? (informal)","poss",["tu","tú","su","te"]],
-  ["__ casa es muy bonita.","su","Her house is very pretty.","poss",["su","sus","la","suya"]],
+  ["__ casa es muy bonita.","su","Her house is very pretty.","poss",["su","sus","suyo","suya"]],
   ["__ abuelos son de México.","nuestros","Our grandparents are from Mexico.","poss",["nuestros","nuestras","nuestro","sus"]],
   ["Esa mochila es __.","mía","That backpack is mine.","poss",["mía","mi","mío","mis"]],
   ["El coche de __ es rojo.","él","His car is red.","poss",["él","el","su","lo"]],
@@ -1356,7 +1358,7 @@ const saveStory=()=>LS.set("es_story",{lv:STV.lv,en:STV.en,done:STV.done});
    ["el primo","cousin (male)"],["la prima","cousin (female)"],["el sobrino","nephew"],["la sobrina","niece"],["el suegro","father-in-law"],["la suegra","mother-in-law"],["el cuñado","brother-in-law"],["la cuñada","sister-in-law"],
    ["el yerno","son-in-law"],["la nuera","daughter-in-law"],["el esposo","husband","Also el marido"],["la esposa","wife","Also la mujer"],["el novio","boyfriend / fiancé / groom","Context decides!"],["la novia","girlfriend / fiancée / bride"],
    ["el prometido","fiancé (formal)"],["la boda","wedding"],["casado","married"],["soltero","single"],["el padrino","godfather / best man"],["la madrina","godmother / maid of honor"],
-   ["el compadre","co-parent / close family friend","Your child's godfather, or your own child's godparent"],["el hijastro","stepson"],["el padrastro","stepfather"],["la madrastra","stepmother"],["el bebé","baby"],["el benjamín","youngest child"],["el medio hermano","half-brother"]]
+   ["el compadre","co-father (your child's godfather)","You and your child's godfather call each other compadre · Mexico: also a close buddy"],["el hijastro","stepson"],["el padrastro","stepfather"],["la madrastra","stepmother"],["el bebé","baby"],["el benjamín","youngest child"],["el medio hermano","half-brother"]]
 @@@H171 5@@@
  tempPhrase:c=>{const a=Math.abs(c),n=a===0?"cero":numToPt(a).replace(/veintiuno$/,"veintiún").replace(/uno$/,"un"),w=n+(a===1?" grado":" grados");return "Estamos a "+w+(c<0?" bajo cero":"")},
  feel:c=>c>=30?["¡Qué calor!","it's so hot!"]:c>=24?["Hace calor.","it's warm"]:c>=17?["Hace buen tiempo.","it's pleasant"]:c>=8?["Hace frío.","it's cold"]:["¡Hace mucho frío!","it's very cold!"],
@@ -1461,7 +1463,7 @@ const saveStory=()=>LS.set("es_story",{lv:STV.lv,en:STV.en,done:STV.done});
    ["¿Dónde le duele?","Where does it hurt?"],["Me siento mejor.","I feel better."],["herido","hurt / injured","Also lastimado"],["embarazada","pregnant","Not 'embarrassed'!"],["la ambulancia","ambulance"]],
   animals:[["el perro","dog"],["el gato","cat"],["el pájaro","bird"],["el caballo","horse"],["la vaca","cow"],["el cerdo","pig","Mexico: el puerco · Costa Rica: el chancho"],["la gallina","hen"],
    ["el ratón","mouse"],["el conejo","rabbit"],["el mono","monkey"],["el león","lion"],["el tigre","tiger"],["el elefante","elephant"],["la serpiente","snake","Also la culebra"],
-   ["el oso","bear"],["la mariposa","butterfly"],["la abeja","bee"],["el mosquito","mosquito","Mexico: el zancudo"],["la tortuga","turtle"],["el tiburón","shark"],["la ballena","whale"],
+   ["el oso","bear"],["la mariposa","butterfly"],["la abeja","bee"],["el mosquito","mosquito","Central America & Colombia: el zancudo"],["la tortuga","turtle"],["el tiburón","shark"],["la ballena","whale"],
    ["el loro","parrot"],["el perezoso","sloth","Costa Rica's star animal (perezoso also means lazy)"],["la mascota","pet"]],
   colors:[["rojo","red"],["azul","blue"],["verde","green"],["amarillo","yellow"],["negro","black"],["blanco","white"],["gris","gray"],["rosa","pink","Also rosado"],["morado","purple"],
    ["café","brown","Mexico & Costa Rica · Spain: marrón"],["grande","big"],["pequeño","small","Mexico also: chico"],["nuevo","new"],["viejo","old"],["bonito","pretty"],["feo","ugly"],
@@ -1554,8 +1556,8 @@ const G18={
     ["puta / hijo de puta","whore / son of a bitch","—"],["¡Me cago en…!","s***! (lit. I s*** on…, 🇪🇸)","¡Mecachis!"],["¡Vete a la mierda!","go to hell / f*** off","déjame en paz"],
     ["culero / culera","asshole / coward (🇲🇽)","—"],["ojete","jerk / asshole (🇲🇽)","—"],["hijueputa · malparido","son of a bitch (🇨🇷)","—"],["¡Puta madre!","f***! (frustration)","¡Ay, caramba!"]]],
    ["🔴","Sexual / very vulgar","Know them so you can recognize them, especially in jokes and double meanings.","#e63946",[
-    ["verga","penis (vulgar, 🇲🇽 · also 'awesome' in some slang)","—"],["polla","penis (vulgar, 🇪🇸)","—"],["pinga","penis (vulgar, 🇨🇷 & Caribbean)","—"],
-    ["coño","vagina (🇪🇸); used as 'damn!' in Spain","¡caramba!"],["panocha","vagina (vulgar, 🇲🇽)","—"],["follar","to f*** (🇪🇸)","—"],["cachar","to have sex / to catch (🇨🇷 context)","—"]]],
+    ["verga","penis (vulgar, 🇲🇽 · also 'awesome' in some slang)","—"],["polla","penis (vulgar, 🇪🇸)","—"],["pinga","penis (vulgar, Caribbean)","—"],
+    ["coño","vagina (🇪🇸); used as 'damn!' in Spain","¡caramba!"],["panocha","vagina (vulgar, 🇲🇽)","—"],["follar","to f*** (🇪🇸)","—"],["cachar","to catch / to get it in most places · vulgar (sex) in Peru","—"]]],
    ["🪤","Innocent words that turn vulgar","Normal in one country, rude in another. The most common learner mistakes.","#7048e8",[
     ["coger","to take / grab in 🇪🇸 · to f*** in 🇲🇽 & 🇨🇷","Latin America: tomar / agarrar"],["pedo","fart · drunk / problem / 'what's up' in 🇲🇽","pum · borracho · problema"],
     ["huevos","eggs · also testicles (jokes everywhere)","Mexico sometimes says blanquillos for eggs"],["concha","shell · vulgar in 🇦🇷🇨🇱","—"],["papaya","papaya · vulgar in parts of Latin America","fruta bomba (Cuba)"]]],
