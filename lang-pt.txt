@@ -1462,7 +1462,7 @@ const saveStory=()=>LS.set("vm_story",{lv:STV.lv,en:STV.en,done:STV.done});
     <p class="gn">Clue words: sempre, todo dia, quando eu era…, antigamente, enquanto</p></div>
 @@@H186 1@@@
   <p class="gp" style="margin-top:10px">🎬 <b>Think of a movie:</b> the imperfeito sets the scene (<i>chovia, eu estava em casa</i>), the perfeito is the action that happens (<i>alguém bateu na porta</i>).</p></div>`
-@@@H187 133@@@
+@@@H187 166@@@
 /* ===== v22 data · Portuguese: Andrew's lesson notes (cleaned, merged without duplicates) ===== */
 const G18={
  vx:{
@@ -1591,10 +1591,43 @@ const G18={
    <p class="gn" style="margin:6px 0 0">Spelling check: <b>quilo, quilômetro, ótimo, você, xícara, última, pronúncia</b>. <i>Boa pronúncia</i> = good pronunciation · <i>sotaque</i> = accent.</p>
    <p class="gn" style="margin:6px 0 0">🔤 Practice A–Z: atalho · beber · cuidar · divertir · ele · fumar · gato · haver · interessante · janela · kiwi · limpar · mulher · nome · ótimo · poder · queijo · Rafaela · seu · tudo · uva · você · Wendryl · xícara · yoga · zebra</p>
    <p class="gn" style="margin:6px 0 0">🪤 Sound-alikes: <b>pais</b> parents / <b>país</b> country · <b>avó</b> / <b>avô</b> · <b>caro</b> / <b>carro</b> · <b>cabelo</b> / <b>cavalo</b> · <b>milho</b> / <b>milhão</b> · <b>meio</b> / <b>meu</b> · <b>babá</b> / <b>baba</b> · <b>palha</b> / <b>paia</b> · <b>pão</b> / <b>pau</b> (careful: vulgar meaning)</p></div>`,
- sensitive:`<details class="fold" style="margin-top:12px"><summary>⚠️ Recognize, don't use · sensitive words</summary><div style="padding:0 14px 12px">
-   ${G16T(["Word","Meaning","Say instead"],[["cu","vulgar (anus). No accent.","nádegas = buttocks (neutral)"],["merda / bosta","vulgar: shit / crap","Que droga! (mild)"],["cocô","poop (child-friendly)","fine to use"],
-    ["aleijado","crippled: offensive as a label","pessoa com deficiência"],["índio","older term","indígena · povos indígenas"],["traveco","slur: never use","travesti is the identity term used in Brazil"],["bêbado / bêbada","drunk","fine to use"]])}
-   <p class="gn">Example: <i>Ele tem uma deficiência. Ele não é atleta.</i> These are two separate facts; having a disability doesn't stop someone being an athlete.</p></div></details>`
+ sensitive:(()=>{
+  const G=[
+   ["🟡","Rude / crude","Common in casual speech, but avoid with strangers, at work and with family.","#c9a400",[
+    ["bosta","crap","que droga"],["merda","shit","que droga / que porcaria"],["cagar","to shit","ir ao banheiro"],["cagada","screw-up (vulgar)","besteira / erro"],
+    ["mijar","to piss","fazer xixi"],["peido","fart","pum"],["bunda","butt (informal, not a swear)","bumbum"],["peitos","tits (crude for breasts)","seios"],
+    ["diabo · que diabo","devil · what the hell","que coisa"],["inferno · vai pro inferno","hell · go to hell","me deixa em paz"],["maldito / maldita","damned / cursed","chato"],["desgraça","damn it / disaster","que azar"],
+    ["idiota","idiot","bobo"],["imbecil","imbecile","bobo"],["burro / burra","stupid (lit. donkey)","distraído"],["otário / otária","sucker / fool","bobo"],
+    ["babaca","jerk / douchebag","chato"],["pentelho","pubic hair; also a pest (person)","chato"],["corno","cuckold (insult)","—"],["safado / safada","shameless / naughty","sem-vergonha"],
+    ["sacanagem","dirty trick; also sexual stuff","que injustiça"],["tesão","horny / sexual desire","—"]]],
+   ["🟠","Strong swears","Very common, but strong. Don't use them until you really know the setting.","#f08c00",[
+    ["porra","f***! / damn! (exclamation)","pô / caramba"],["caralho","f***! / damn! (also vulgar: penis)","caraca / caramba"],["cacete","damn! (also vulgar: penis)","caramba"],
+    ["puta que pariu · PQP","f***ing hell! (lit. the whore who gave birth)","nossa senhora! / putz!"],["foda · é foda","f***ing hard · it's a pain","é difícil / tá osso"],["foder · se foder","to f*** · to get screwed","se dar mal"],
+    ["fodido / fodida","screwed / f***ed","ferrado"],["vai se foder · VSF","f*** off","me deixa em paz"],["puta","whore (insult)","—"],["filho da puta · FDP","son of a bitch","—"],
+    ["cu","ass(hole). No accent.","bumbum / nádegas"],["vai tomar no cu · VTNC / TNC","up yours / f*** off","—"],["cuzão","asshole (person)","chato"],["escroto / escrota","scumbag (also: scrotum)","—"],
+    ["arrombado / arrombada","very vulgar insult","—"],["vagabundo / vagabunda","bum; vagabunda = slut (insult)","preguiçoso (for 'lazy')"],["piranha","slut (lit. piranha fish)","—"],["vadia","slut / bitch","—"],
+    ["desgraçado / desgraçada","bastard","—"]]],
+   ["🔴","Sexual / very vulgar","Know them so you can recognize them, especially in jokes and double meanings.","#e63946",[
+    ["pau","penis (vulgar). Careful: pão (bread) sounds close!","—"],["pica","penis (vulgar)","—"],["piroca","penis (vulgar)","—"],
+    ["buceta / boceta","vagina (very vulgar)","—"],["xoxota","vagina (vulgar)","—"]]],
+   ["⛔","Slurs & offensive labels · never use","These hurt people. Some are reclaimed inside communities, but not for learners to use.","#495057",[
+    ["viado","gay slur","gay"],["bicha","gay slur","gay"],["sapatão","lesbian slur","lésbica"],["traveco","slur against travestis","travesti / pessoa trans"],
+    ["macaco (to a person)","racist insult. Fine for the animal only.","—"],["retardado / retardada","ableist insult","—"],["mongol / mongoloide","ableist insult","pessoa com síndrome de Down"],
+    ["aleijado / aleijada","crippled: offensive as a label","pessoa com deficiência"]]]
+  ];
+  const n=G.reduce((a,g)=>a+g[4].length,0);
+  return `<details class="fold sens" style="margin-top:12px"><summary>⚠️ Recognize, don't use · ${n} swears &amp; sensitive words</summary><div class="sens-in">
+   <p class="gn">So you understand them in movies, music and the street, and never say them by accident. These words are kept out of games, quizzes, search and audio.</p>
+   ${G.map(([ic,t,d,c,rows])=>`<div class="sens-g" style="--c:${c}"><div class="sens-h"><span>${ic}</span><b>${t}</b><span class="gn">${rows.length}</span></div><p class="gn">${d}</p>
+     <table class="gt"><thead><tr><th>Word</th><th>Meaning</th><th>Say instead</th></tr></thead><tbody>${rows.map(([w,m,s])=>`<tr><td><b>${w}</b></td><td>${m}</td><td>${s==="—"?`<span class="gn">just don't</span>`:`<i>${s}</i>`}</td></tr>`).join("")}</tbody></table></div>`).join("")}
+   <div class="sens-g" style="--c:#009c3b"><div class="sens-h"><span>✅</span><b>Safe everyday swaps</b></div>
+    <p class="gn" style="margin:4px 0 0">Mild exclamations anyone can use: <b>putz</b> · <b>poxa</b> · <b>caramba</b> · <b>caraca</b> · <b>pô</b> · <b>nossa</b> · <b>que droga</b> · <b>que saco</b> (what a drag).
+     Neutral words: <b>nádegas</b> (buttocks) · <b>cocô</b> (poop) · <b>bêbado</b> (drunk) · <b>indígena</b> (Indigenous; <i>índio</i> is outdated).</p></div>
+   <div class="sens-g" style="--c:#3a86ff"><div class="sens-h"><span>📱</span><b>Text abbreviations</b></div>
+    <p class="gn" style="margin:4px 0 0"><b>PQP</b> puta que pariu · <b>VSF</b> vai se foder · <b>FDP</b> filho da puta · <b>TNC / VTNC</b> vai tomar no cu · <b>KRL</b> caralho · <b>PRR</b> porra.
+     Harmless ones: <b>kkkk</b> (lol) · <b>rs</b> (risos) · <b>vc</b> (você) · <b>tb</b> (também) · <b>blz</b> (beleza).</p></div>
+   <p class="gn">Example: <i>Ele tem uma deficiência. Ele não é atleta.</i> These are two separate facts; having a disability doesn't stop someone being an athlete.</p></div></details>`;
+ })()
 };
 @@@B1 1@@@
     <div><h1>Verbo Match!</h1><p class="sub">200 Brazilian Portuguese verbs, vocab, stories, grammar &amp; slang</p></div>

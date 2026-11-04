@@ -822,3 +822,19 @@ html.dark .mroute-txt b{color:#9cc4ff}
 }
 /* v22: desktop level buttons, label centered with a slim color bar underneath */
 @media(min-width:701px){ .lv{justify-content:center;position:relative;padding-bottom:4px} .lv i{position:absolute;left:8px;right:8px;bottom:5px;height:4px!important;width:auto} }
+/* ===== v23: sensitive words ===== */
+.sens>summary{color:#b02a37}
+.sens-in{padding:0 14px 12px}
+.sens-g{border-left:4px solid var(--c);background:#fafbf9;border-radius:10px;padding:8px 10px;margin:10px 0}
+.sens-h{display:flex;align-items:center;gap:6px;font-size:14px}.sens-h b{color:var(--c)}.sens-h .gn{margin-left:auto}
+.sens-g p.gn{margin:2px 0 6px}
+.sens-g .gt td{font-size:12.5px;vertical-align:top}
+html.dark .sens-g{background:#1d2631}
+html.dark .sens>summary{color:#ff8f8f}
+@media(max-width:700px){
+  #slangView .sens table thead{display:table-header-group}
+  #slangView .sens tbody tr{display:table-row;padding:0;border:0;position:static}
+  #slangView .sens tbody td{display:table-cell!important;padding:5px 4px;border-bottom:1px solid var(--line);font-size:12px;grid-column:auto}
+  #slangView .sens tbody td:nth-child(1){display:table-cell!important;width:34%}
+  #slangView .sens tbody td:nth-child(3){color:inherit}
+}
