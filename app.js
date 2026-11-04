@@ -198,7 +198,6 @@ function setPause(on,why){
 $("pauseBtn").onclick=()=>setPause(!paused);
 $("resumeBtn").onclick=()=>setPause(false);
 document.addEventListener("visibilitychange",()=>{ if(document.hidden) setPause(true,"Paused automatically while you were away."); });
-document.addEventListener("keydown",e=>{ if((e.key==="p"||e.key==="P")&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)&&!$("gameCtrls").classList.contains("hidden")) setPause(!paused); });
 function startTimer(){
   clearInterval(timer); t0=Date.now(); pausedMs=0; paused=false; $("pauseOv").classList.add("hidden");
   $("pauseBtn").classList.remove("on"); $("pauseBtn").innerHTML='⏸️<span class="ab-l">&nbsp;Pause</span>'; const lim=round.limit;
@@ -273,7 +272,7 @@ function pick(el){
   if(sel[s]===el){el.classList.remove("sel");sel[s]=null;return}
   if(sel[s]) sel[s].classList.remove("sel");
   sel[s]=el; el.classList.add("sel");
-  if(el.dataset.lang==="pt") say(el.firstChild.textContent);
+  if(el.dataset.lang==="pt") say(el.querySelector("span").textContent);
   if(sel.L&&sel.R){
     const a=sel.L,b=sel.R; round.moves++; round.sel={L:null,R:null};
     a.classList.remove("sel");b.classList.remove("sel");
@@ -629,7 +628,7 @@ function showQ(){
     <div class="bar" style="margin:8px 0 18px"><i style="width:${pct}%"></i></div>
     <div class="qs">${it.s.replace("__",'<span class="blank" id="blank">?</span>')}</div>
     <div class="qen">${it.en}</div>
-    <div class="qopts">${opts.map((o,k)=>`<button class="qo" data-o="${o}"><small>${k+1}</small>${o}</button>`).join("")}</div>
+    <div class="qopts">${opts.map((o,k)=>`<button class="qo" data-o="${o}">${o}</button>`).join("")}</div>
     <div id="qfb" class="qfb"></div>
    </div>`;
   $("wBody").querySelectorAll(".qo").forEach(b=>b.onclick=()=>answer(b));
@@ -646,7 +645,7 @@ function answer(btn){
 /*@@H87@@*/
   say(correct);
 /*@@H88@@*/
-    <button class="btn go" id="qNext">${WR.i+1<WR.items.length?"Next ➜":"See results"}</button> <span class="gn">or press Enter</span>`;
+    <button class="btn go" id="qNext">${WR.i+1<WR.items.length?"Next ➜":"See results"}</button>`;
   $("qNext").onclick=nextQ; $("qNext").focus();
 }
 function nextQ(){ WR.answered=false; if(++WR.i<WR.items.length) showQ(); else wFinish(); }
@@ -705,11 +704,6 @@ function wFinish(){
     else { const keep=WSET.len; WSET.len=Math.max(4,its.length); newSMatchFrom(its); WSET.len=keep; } };
 }
 function newSMatchFrom(its){ const orig=wpool; wpool=()=>{const rest=orig().filter(x=>!its.includes(x));return [...its,...rest]}; newSMatch(); wpool=orig; }
-document.addEventListener("keydown",e=>{
-  if(mode!=="words"||!WR||WR.type!=="fill"||/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)&&document.activeElement.id!=="qNext") return;
-  if(!WR.answered&&/^[1-4]$/.test(e.key)){ const b=$("wBody").querySelectorAll(".qo")[+e.key-1]; if(b) answer(b); }
-  else if(WR.answered&&e.key==="Enter"){ e.preventDefault(); nextQ(); }
-});
 function wordsStatsHTML(){
   const rows=Object.entries(ST.words||{}).filter(([,s])=>s.w>0).map(([k,s])=>({k,...s,acc:Math.round(s.r/(s.r+s.w)*100)}))
     .sort((a,b)=>b.w/(b.r+b.w+1)-a.w/(a.r+a.w+1)||b.w-a.w).slice(0,12);
@@ -1594,7 +1588,7 @@ function showType(){
     <div class="ty-sub">Type it in ${TLANG}${it.person?" · include the pronoun or not, your choice":""}</div>
     <div class="ty-row"><input class="ty-in" id="tyIn" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" lang="${LANGC}" placeholder="Your answer…"></div>
     ${accKeysHTML()}
-    <div class="ty-acts"><button class="btn go" id="tyCheck">Check ↵</button><button class="btn ghost" id="tyIdk">I don't know</button></div>
+    <div class="ty-acts"><button class="btn go" id="tyCheck">Check</button><button class="btn ghost" id="tyIdk">I don't know</button></div>
     <div class="ty-fb" id="tyFb"></div>
     <div class="ty-dots">${round.items.map((x,k)=>`<i class="${k<TY.i?(x.missed?"bad":"ok"):k===TY.i?"cur":""}"></i>`).join("")}</div>`;
   const inp=$("tyIn"); bindAccKeys($("tyCard"),inp);
@@ -2294,11 +2288,6 @@ function sbReveal(ok,gaveUp){
   sayAlways(it.pt);
 }
 function sbNext(){ if(++SB.i<SB.n) sbShow(); else g16Result($("wBody").querySelector(".sb")||$("wBody"),SB,"sbuild",()=>newSB(),wr=>newSB(SB.items.filter(x=>wr.some(w=>w.pt===x.pt)))); }
-document.addEventListener("keydown",e=>{
-  if(mode!=="words"||WSET.sub!=="build"||!SB||/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
-  if(e.key==="Enter"&&$("sbCheck")&&!$("sbCheck").disabled){ e.preventDefault(); $("sbCheck").click(); }
-  else if(e.key==="Backspace"&&!SB.done&&SB.placed.length){ e.preventDefault(); SB.placed.pop(); sbDraw(); }
-});
 const _rw17=renderWords;
 renderWords=function(){
   const b=WSET.sub==="build";
@@ -2347,7 +2336,7 @@ function renderOdd(){
   a.innerHTML=`<div class="body-stage odd" id="oStage">
     <div class="qtop"><span class="tag" style="--c:var(--blue)">🕵️ ${U17.oddQ}</span><span class="gn">${OQ.i+1} / ${OQ.n} · ✅ ${OQ.right} · 🔥 ${OQ.streak}</span></div>
     <p class="gn" style="margin:6px 0 10px">${U17.oddSub}</p>
-    <div class="odd-grid">${r.cards.map((c,i)=>`<button class="odd-c" data-i="${i}"><small>${i+1}</small><b>${c.x.pt}</b><span class="odd-en"></span></button>`).join("")}</div>
+    <div class="odd-grid">${r.cards.map((c,i)=>`<button class="odd-c" data-i="${i}"><b>${c.x.pt}</b><span class="odd-en"></span></button>`).join("")}</div>
     <div class="ty-acts"><button class="btn ghost" id="oHear">🔊 Hear all four</button></div>
     <div class="ty-fb" id="oFb"></div></div>`;
   a.querySelectorAll(".odd-c").forEach(b=>b.onclick=()=>oddAnswer(+b.dataset.i));
@@ -2366,15 +2355,10 @@ function oddAnswer(i){
   sayAlways(o.say||o.pt);
   $("oFb").innerHTML=`<div class="${ok?"fb-ok":"fb-bad"}">${ok?"✅ "+U17.correct:"❌ Not quite."}</div>
     <div class="fb-why">Three are <b>${TA.ic} ${TA.label}</b> · <b class="hl">${o.pt}</b> is <b>${TB.ic} ${TB.label}</b></div>
-    <button class="btn go" id="oNext">${OQ.i+1<OQ.n?"Next ➜":"See results"}</button> <span class="gn">or press Enter</span>`;
+    <button class="btn go" id="oNext">${OQ.i+1<OQ.n?"Next ➜":"See results"}</button>`;
   $("oNext").onclick=oddNext;
 }
 function oddNext(){ if(!OQ) return; OQ.i++; OQ.r=oddRound(); renderOdd(); }
-document.addEventListener("keydown",e=>{
-  if(mode!=="vocab"||VXS.xsub!=="odd"||!OQ||/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
-  if(!OQ.answered&&/^[1-4]$/.test(e.key)) oddAnswer(+e.key-1);
-  else if(OQ.answered&&e.key==="Enter"){ e.preventDefault(); oddNext(); }
-});
 const _rv17=renderVocab;
 renderVocab=function(){
   const isOdd=VXS.xsub==="odd";
@@ -2390,7 +2374,7 @@ renderVocab=function(){
   ab.insertAdjacentHTML("beforeend",`<button class="btn go ab" id="oNew">↻ New</button>`);
   $("oNew").onclick=()=>{OQ=null;renderOdd();};
   $("vxSetPanel").innerHTML=`<div class="sp-row"><span class="ctl-lbl">Rounds</span><label><select id="oLen">${[6,8,10,15,20].map(n=>`<option ${n===VXS.len?"selected":""}>${n}</option>`).join("")}</select></label></div>
-    <div class="lvdesc">Four words appear: three share a topic, one doesn't. Uses Family, Food, Feelings, Clothes, Work, Health, Animals, Colors, House, City, Weather, Months and Body. Keys 1–4 work on a keyboard.</div>`;
+    <div class="lvdesc">Four words appear: three share a topic, one doesn't. Uses Family, Food, Feelings, Clothes, Work, Health, Animals, Colors, House, City, Weather, Months and Body.</div>`;
   $("oLen").onchange=()=>{VXS.len=+$("oLen").value;saveVX();OQ=null;renderVocab();};
   renderOdd();
 };
@@ -2539,48 +2523,6 @@ applyDisplay();
   $("dispModal").onclick=e=>{if(e.target.id==="dispModal")$("dispModal").classList.remove("show")};
 })();
 
-/* ---------- ⌨️ full keyboard play in Match ---------- */
-const KL="1234567890-=", KR="asdfgjklzxcv", KM="abcdefghijklmnoqrstuvwxyz";
-function tagKeys(){
-  if(!$("play")||$("play").classList.contains("hidden")) return;
-  const tiles=$("play").querySelectorAll(".tile");
-  if(tiles.length){
-    $("play").querySelectorAll('.tile[data-side="L"]').forEach((t,i)=>{ if(!t.dataset.key&&KL[i]){t.dataset.key=KL[i];t.insertAdjacentHTML("afterbegin",`<kbd class="kk">${KL[i]}</kbd>`);} });
-    $("play").querySelectorAll('.tile[data-side="R"]').forEach((t,i)=>{ if(!t.dataset.key&&KR[i]){t.dataset.key=KR[i];t.insertAdjacentHTML("afterbegin",`<kbd class="kk">${KR[i].toUpperCase()}</kbd>`);} });
-  }
-  $("play").querySelectorAll(".card").forEach((c,i)=>{ if(!c.dataset.key&&KM[i]){c.dataset.key=KM[i];c.insertAdjacentHTML("beforeend",`<kbd class="kk kc">${KM[i].toUpperCase()}</kbd>`);} });
-  keyHelp();
-}
-function keyHelp(){
-  let h=$("keyHelp");
-  if(!h){ h=document.createElement("div"); h.id="keyHelp"; h.className="keyhelp"; $("gameCtrls").after(h); }
-  const st=SET.style;
-  h.innerHTML=st==="type"?`⌨️ <b>Enter</b> check / next · <b>/</b> hint · <b>Esc</b> I don't know · <b>Shift+N</b> new round · <b>P</b> pause`
-    :st==="memory"?`⌨️ <b>A–Z</b> flip a card · <b>/</b> hint · <b>Shift+N</b> new round · <b>P</b> pause · <b>Enter</b> next round`
-    :`⌨️ <b>1–0</b> pick left · <b>A–V</b> pick right · <b>Backspace</b> clear · <b>/</b> hint · <b>Shift+N</b> new round · <b>P</b> pause · <b>Enter</b> next round`;
-}
-new MutationObserver(()=>tagKeys()).observe($("play"),{childList:true});
-document.addEventListener("keydown",e=>{
-  if(e.metaKey||e.ctrlKey||e.altKey) return;
-  const tag=document.activeElement&&document.activeElement.tagName, typing=/INPUT|SELECT|TEXTAREA/.test(tag);
-  const anyModal=document.querySelector(".modal.show");
-  if($("modal").classList.contains("show")){ if(e.key==="Enter"){ e.preventDefault(); $("mNext").click(); } return; }
-  if(anyModal) return;
-  const game=!$("gameCtrls").classList.contains("hidden"); if(!game) return;
-  if(e.key==="N"&&e.shiftKey&&!typing){ e.preventDefault(); $("newBtn").click(); return; }
-  if(SET.style==="type"){
-    if(e.key==="/"&&$("tyIn")&&!TY.answered){ e.preventDefault(); $("hintBtn").click(); }
-    else if(e.key==="Escape"&&$("tyIdk")&&!TY.answered){ e.preventDefault(); $("tyIdk").click(); }
-    return;
-  }
-  if(typing) return;
-  if(e.key==="/"){ e.preventDefault(); $("hintBtn").click(); return; }
-  if(e.key==="Backspace"&&round&&round.sel){ e.preventDefault(); ["L","R"].forEach(s=>{ if(round.sel[s]){round.sel[s].classList.remove("sel");round.sel[s]=null;} }); return; }
-  const k=e.key.toLowerCase(); if(k.length!==1||k==="p") return;
-  const el=$("play").querySelector(`[data-key="${CSS.escape(k)}"]`+(SET.style==="memory"?".card":".tile"));
-  if(el){ e.preventDefault(); el.click(); }
-});
-tagKeys();
 
 /* =====================================================================
    v19 · ONE ⚙️ SETTINGS BUTTON (voice, speed, display, sound) · CLEAN HEADER
@@ -2681,7 +2623,7 @@ function miniSettings(){
   if(!on) return;
   row.innerHTML=`${SET.style==="map"?`<span class="ctl-lbl">Directions</span><div class="seg" id="miniDir">${Object.entries(VX_DIRL).map(([k,l])=>`<button data-v="${k}" class="${VXS.dir===k?"on":""}">${l}</button>`).join("")}</div>`:""}
     <label>Rounds <select id="miniLen">${[6,8,10,15,20].map(n=>`<option ${n===VXS.len?"selected":""}>${n}</option>`).join("")}</select></label>
-    <div class="lvdesc" style="flex-basis:100%">${SET.style==="map"?"Explore: tap any building to see and hear how to get there from ⭐. Quiz: follow the directions and tap where you end up. 🎧 Listen hides the text.":"Four words appear: three share a topic, one doesn't. Keys 1–4 work on a keyboard."}</div>`;
+    <div class="lvdesc" style="flex-basis:100%">${SET.style==="map"?"Explore: tap any building to see and hear how to get there from ⭐. Quiz: follow the directions and tap where you end up. 🎧 Listen hides the text.":"Four words appear: three share a topic, one doesn't."}</div>`;
   row.querySelectorAll("#miniDir button").forEach(b=>b.onclick=()=>{VXS.dir=b.dataset.v;saveVX();MQ=null;newMini();miniSettings();updSummary();});
   $("miniLen").onchange=()=>{VXS.len=+$("miniLen").value;saveVX();MQ=null;OQ=null;newMini();updSummary();};
 }
@@ -2707,13 +2649,8 @@ start=function(){
   const game=!$("gameCtrls").classList.contains("hidden"), mini=game&&isMini();
   $("stats").classList.toggle("hidden",!game||mini);
   ["hintBtn","pauseBtn"].forEach(id=>$(id).classList.toggle("hidden",mini));
-  const kh=$("keyHelp"); if(kh) kh.classList.toggle("hidden",!game||SET.style==="map");
   miniSettings();
 };
-const _kh20=keyHelp;
-keyHelp=function(){ _kh20(); const h=$("keyHelp"); if(!h) return;
-  if(SET.style==="odd") h.innerHTML=`⌨️ <b>1–4</b> pick a word · <b>Enter</b> next · <b>Shift+N</b> new round`;
-  h.classList.toggle("hidden",$("gameCtrls").classList.contains("hidden")||SET.style==="map"); };
 const _rc20=renderCtrls;
 renderCtrls=function(){ _rc20(); $("styleSeg").querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.v===SET.style)); miniSettings(); };
 const _us20=updSummary;
@@ -2722,11 +2659,6 @@ updSummary=function(){
   if(!$("setSummary")) return;
   $("setSummary").innerHTML=SET.style==="map"?`<b>🗺️ Map</b> · ${VXS.mmode==="quiz"?"Quiz":"Explore"} · ${VX_DIRL[VXS.dir]} · ${VXS.len} rounds`:`<b>🕵️ Odd one out</b> · ${VXS.len} rounds`;
 };
-document.addEventListener("keydown",e=>{
-  if(SET.style!=="odd"||$("gameCtrls").classList.contains("hidden")||!OQ||document.querySelector(".modal.show")||/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
-  if(!OQ.answered&&/^[1-4]$/.test(e.key)){ e.preventDefault(); oddAnswer(+e.key-1); }
-  else if(OQ.answered&&e.key==="Enter"){ e.preventDefault(); oddNext(); }
-});
 /* jumping to Review / Match-these from elsewhere switches back to tile matching */
 const _sr20=startReview; startReview=function(){ if(isMini()){SET.style="tiles";saveSet();} _sr20(); };
 const _vg20=vxGoMatch; vxGoMatch=function(){ if(isMini()){SET.style="tiles";saveSet();} _vg20(); };
@@ -2860,3 +2792,7 @@ if(mode==="words") renderWords(); if(mode==="vocab") renderVocab(); if(mode==="s
 })();
 renderCtrls(); updSummary();
 if(mode==="vocab") renderVocab(); else if(GAME_MODES.includes(mode)&&SET.fmt==="vocab") start();
+
+/* v26: keyboard shortcuts removed; only typing in Type it / Fill the Blank remains */
+if($("keyHelp")) $("keyHelp").remove();
+document.querySelectorAll("#play .kk").forEach(k=>k.remove());

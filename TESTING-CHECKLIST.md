@@ -12,12 +12,12 @@ Tick each box. If something fails, take a screenshot and note the step number.
 ## 1 · Start-up & layout
 - [ ] The app opens to the last language you used (🇧🇷 or 🇪🇸).
 - [ ] No loading spinner stays on screen for more than 2 seconds.
-- [ ] Header: title, PT/ES switch, **Aa** and **🔊** buttons all visible and not overlapping.
+- [ ] Header: title, PT/ES switch and ⚙️ button all visible and not overlapping.
 - [ ] Bottom bar sits flush at the bottom on **every** tab (check Match with 6 pairs).
 - [ ] Turn the phone sideways: header becomes slim, nothing is cut off.
 
 ## 2 · Match tab
-- [ ] Tile match: play one full round, finish screen appears, **Próxima rodada / Siguiente ronda** works.
+- [ ] Tile match: tapping a word speaks the word itself (not a number). Play one full round, finish screen appears, **Próxima rodada / Siguiente ronda** works.
 - [ ] Memory flip and ⌨️ Type it each start a round.
 - [ ] Type it: the iPhone keyboard opens, accent buttons (á ç ñ…) insert letters, **Check** works.
 - [ ] Daily bar shows level, streak, today's count, and **Review now** (if verbs are due).

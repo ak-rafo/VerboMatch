@@ -669,13 +669,7 @@ main,.modal>.box{zoom:var(--zoom,1)}
 .hdr-btns .hdr-spk{position:static;transform:none}
 #dispBtn{font-weight:900;letter-spacing:-.5px;min-width:38px;justify-content:center}
 .d-prev{background:#f4f7f3;border-radius:10px;padding:10px 12px;margin:12px 0 0;font-size:16px}
-.kk{display:none;font:800 10px system-ui,sans-serif;background:#eef2ee;color:#5b6475;border:1px solid #d5ddd2;border-bottom-width:2px;border-radius:5px;padding:1px 5px;min-width:18px;text-align:center;flex:none}
-.card .kk.kc{position:absolute;right:6px;bottom:6px;z-index:3}
 .card{position:relative}
-.keyhelp{display:none;font-size:12px;color:var(--muted);margin:-4px 0 10px 4px}
-.keyhelp b{background:#eef2ee;border:1px solid #d5ddd2;border-radius:4px;padding:0 4px;font-size:11px;color:var(--ink)}
-@media (hover:hover) and (pointer:fine){ .kk{display:inline-block} .keyhelp{display:block} }
-.card.flip .kk.kc,.card.ok .kk.kc{display:none}
 @media(max-width:700px){ .brand{padding-right:96px} }
 
 /* ===== v18: 🌙 dark mode ===== */
