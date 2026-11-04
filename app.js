@@ -2729,3 +2729,32 @@ const _vg20=vxGoMatch; vxGoMatch=function(){ if(isMini()){SET.style="tiles";save
 const _rp20=renderPhr; renderPhr=function(sub){ _rp20(sub); const b=$("phrMatch"); if(!b) return; const o=b.onclick; b.onclick=()=>{ if(isMini()){SET.style="tiles";saveSet();} o(); }; };
 renderCtrls(); updSummary();
 if(GAME_MODES.includes(mode)) start(); else if(mode==="vocab") renderVocab();
+
+/* =====================================================================
+   v21 · COMPACT MATCH SETTINGS ON MOBILE (same options, less space)
+   ===================================================================== */
+(function(){
+  const SHORT={tiles:["🎯","Tiles"],memory:["🃏","Memory"],type:["⌨️","Type"],map:["🗺️","Map"],odd:["🕵️","Odd"]};
+  $("styleSeg").querySelectorAll("button").forEach(b=>{ const s=SHORT[b.dataset.v]; if(!s) return;
+    const full=b.textContent.replace(/^\S+\s/,"");
+    b.innerHTML=`<span class="si">${s[0]}</span><span class="sl-f">${full}</span><span class="sl-s">${s[1]}</span>`; });
+  /* pairs joins the direction row; traps becomes compact */
+  const dirRow=$("dirSeg").closest(".sp-row"), pairsLbl=$("pairs").closest("label"), pairsRow=pairsLbl.parentElement;
+  dirRow.appendChild(pairsLbl); if(![...pairsRow.children].some(c=>!c.classList.contains("hidden"))) pairsRow.classList.add("hidden");
+  $("trapBtn").innerHTML=`🪤<span class="sl-f"> Traps</span>`;
+  /* tenses / persons / categories fold away on phones */
+  const wrap=document.createElement("div"); wrap.id="optWrap";
+  $("vcatCtrls").before(wrap); wrap.append($("vcatCtrls"),$("conjCtrls"));
+  const tog=document.createElement("button"); tog.id="optTog"; tog.className="opt-tog"; wrap.before(tog);
+  tog.onclick=()=>{ wrap.classList.toggle("open"); tog.classList.toggle("open"); };
+})();
+function optLabel(){
+  const t=$("optTog"); if(!t) return;
+  let txt="";
+  if(SET.fmt==="conj") txt=`⚙️ Tenses &amp; persons <b>${SET.tenses.length}</b> · <b>${SET.persons.length}</b>`;
+  else if(SET.fmt==="vocab") txt=`⚙️ Categories <b>${SET.vcats.length===VM_CATS.length?"All":SET.vcats.length}</b>`;
+  t.innerHTML=txt+`<span class="chev">▾</span>`; t.classList.toggle("none",!txt||isMini());
+}
+const _rc21=renderCtrls; renderCtrls=function(){ _rc21(); optLabel(); };
+const _st21=start; start=function(){ _st21(); optLabel(); };
+optLabel();
