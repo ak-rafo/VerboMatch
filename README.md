@@ -1,17 +1,20 @@
-# Dad Bard 🪕
-*Songs of the home bar, sung slightly off-key.*
+# Verbo Match · how the files fit together
 
-## Put it on GitHub
-Upload these files to the top level of your repo (replace the old ones):
-`index.html`, `sw.js`, `manifest.webmanifest`, `icon-180.png`, `icon-192.png`, `icon-512.png`.
-You can delete any old `.js` files and the old `icons/` folder; everything now lives inside `index.html`.
+Both languages now share **one codebase**. Fix or add something once and it works in Portuguese and Spanish.
 
-Open the site once on your iPhone while online so it saves for offline use. Your notes, ratings,
-edits and new recipes stay on the phone (back them up in Tavern → Export JSON).
+| File | What it is | Edit it when… |
+|---|---|---|
+| `index.html` / `es.html` | Tiny start pages (title, colors, icons) | almost never |
+| `boot.js` | Loader that assembles the app | almost never |
+| `app.js` | **All shared app logic** (games, settings, stats, XP…) | adding features or fixing bugs |
+| `app.css` | **All shared styles**, including dark mode | changing the look |
+| `app-body.html` | Shared page layout (header, tabs, pop-ups) | changing the layout |
+| `theme-es.css` | Spanish red/orange colors | Spanish colors only |
+| `lang-pt.txt` / `lang-es.txt` | Language packs: verbs, vocab, stories, slang, grammar text | changing words or content |
+| `sw.js` | Offline cache | **bump `VERSION` on every upload** |
 
-## What's inside
-- **Songbook**: sorted into four styles (Spirit-forward, Sour, Highball, Flip) plus your Andrew's category.
-- **✏️ Edit** any drink, or tap ＋ to create a new recipe in any category (or as a new style of an existing drink).
-- **Bloodlines**: Evolution timeline/tree and the six Codex families (Highball renamed).
-- **Apothecary**: super juice (Kevin Kos), syrups, acid adjusting.
-- **Tavern**: your recipes & edits, backups, calculator check, and hidden songs & craft pages.
+`app.js` and `app-body.html` contain markers like `/*@@H12@@*/`. Each marker is filled from the matching `@@@H12 …@@@` block in the language pack. Don't delete or rename markers.
+
+The app needs a web address to run (GitHub Pages). Opening `index.html` straight from your computer's files won't work.
+
+To get help with an update, attach all the files above, or the latest zip.
