@@ -1,11 +1,10 @@
 /* Verbo Match offline cache.
-   Bump VERSION every time you upload changed files (v29, v30, ...). */
-const VERSION = "verbo-match-v28";
+   Bump VERSION every time you upload changed files (v30, v31, ...). */
+const VERSION = "verbo-match-v29";
 const FILES = ["./", "./index.html", "./es.html", "./boot.js", "./app.css", "./theme-es.css", "./app-body.html", "./app.js",
-  "./lang-pt.txt", "./lang-es.txt", "./manifest.json", "./icon-180.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
+  "./lang-pt.txt", "./lang-es.txt", "./manifest.json", "./icon-180.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./favicon-32.png"];
 
 self.addEventListener("install", e => {
-  /* cache what exists; a missing icon must never break the install */
   e.waitUntil(caches.open(VERSION).then(c => Promise.all(FILES.map(f => c.add(new Request(f, { cache: "reload" })).catch(() => null)))));
   self.skipWaiting();
 });
@@ -13,9 +12,6 @@ self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION).map(k => caches.delete(k)))));
   self.clients.claim();
 });
-
-/* Offline-first: answer instantly from the saved copy, then refresh it quietly in the background.
-   Requests with ?fresh=… (sent by boot.js when files are out of sync) always go to the network. */
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   const url = new URL(e.request.url);
@@ -39,7 +35,6 @@ self.addEventListener("fetch", e => {
       status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
   }));
 });
-
 function fetchWithTimeout(req, ms) {
   return new Promise((resolve, reject) => {
     const t = setTimeout(() => reject(new Error("timeout")), ms);
